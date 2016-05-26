@@ -1,0 +1,18 @@
+\documentclass{article}
+\usepackage[style=authoryear-ibid,backend=bibtex]{biblatex}
+\DeclareBibliographyCategory{cited}
+\AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
+\addbibresource{references.bib}
+
+\nocite{*}
+
+\begin{document}
+In 1988 C was totally awesome. \parencite{KandR}
+According to \textcite{CUEDCplusplus} C++ was even better.
+
+  \printbibliography[title=Cited,category=cited]
+
+
+\printbibliography[title=All]
+
+\end{document}

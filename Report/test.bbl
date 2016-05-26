@@ -1,0 +1,82 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{CUEDCplusplus}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Love}{L.}%
+     {T.P.}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LT1}
+  \strng{fullhash}{LT1}
+  \field{sortinit}{L}
+  \field{title}{{CUED C++}}
+  \verb{url}
+  \verb http://www-h.eng.cam.ac.uk/help/tpl/languages/C++.html
+  \endverb
+\endentry
+
+\entry{test}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {a}{a}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Prentice-Hall, Inc.}%
+  }
+  \strng{namehash}{a1}
+  \strng{fullhash}{a1}
+  \field{labelyear}{1988}
+  \field{sortinit}{A}
+  \field{title}{{b}}
+  \field{year}{1988}
+\endentry
+
+\entry{KandR}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Kernighan}{K.}%
+     {Brian~W.}{B.~W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ritchie}{R.}%
+     {Dennis~M.}{D.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Prentice-Hall, Inc.}%
+  }
+  \strng{namehash}{KBWRDM1}
+  \strng{fullhash}{KBWRDM1}
+  \field{labelyear}{1988}
+  \field{sortinit}{K}
+  \field{title}{{The C Programming Language Second Edition}}
+  \field{year}{1988}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

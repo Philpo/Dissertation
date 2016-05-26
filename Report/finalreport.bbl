@@ -1,0 +1,2229 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{Akiya2011}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Akiya}{A.}%
+     {Naoko}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Scott Bury}}{S.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wassick}{W.}%
+     {John~M.}{J.~M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ANSWJM1}
+  \strng{fullhash}{ANSWJM1}
+  \field{labelyear}{2011}
+  \field{sortinit}{A}
+  \field{booktitle}{Winter Simulation Conference}
+  \field{number}{2010}
+  \field{pages}{2194\bibrangedash 2205}
+  \field{title}{{A General Model for Soft Body Simulation in Motion}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Akiya, Scott Bury, Wassick - 2011 - A General Model for So
+  \verb ft Body Simulation in Motion.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Not very useful P4. Hooke's equations%
+  }
+  \field{year}{2011}
+\endentry
+
+\entry{Baraff1998}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Baraff}{B.}%
+     {David}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Witkin}{W.}%
+     {Andrew}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BDWA1}
+  \strng{fullhash}{BDWA1}
+  \field{labelyear}{1998}
+  \field{sortinit}{B}
+  \field{booktitle}{SIGGRAPH}
+  \field{pages}{43\bibrangedash 54}
+  \field{title}{{Large Steps in Cloth Simulation}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Baraff, Witkin - 1998 - Large Steps in Cloth Simulation.pd
+  \verb f:pdf
+  \endverb
+  \field{annotation}{%
+  Lot's of detail, key paper in the field, suggests implicit integration (may
+  be only be useful for triangular mesh), useful for films/animation, may not
+  be so for games P1. physical model overview, -ve of explicit, +ve of implicit
+  P2. constraint solving, implicit timestep, cost results, cost of continuum,
+  -ve of Breen et al. P3. internal force types {\&}amp; values, force equation,
+  generic force equation (relevant for triangular meshes only?), implicit
+  integrator info P3-4. explicit {\&}amp; implicit Euler P5. need for dampening
+  P6-7. constraint handling P9. step size P9-10. performance results%
+  }
+  \field{year}{1998}
+\endentry
+
+\entry{Bartels2014}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Bartels}{B.}%
+     {Pieterjan}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cloth,Collision detection,Collision response i,Garments}
+  \strng{namehash}{BP1}
+  \strng{fullhash}{BP1}
+  \field{labelyear}{2014}
+  \field{sortinit}{B}
+  \field{abstract}{%
+  In this report, some of the major techniques for Cloth Simulation will be
+  outlined. This includes a mass-spring model, relevant integration methods and
+  collision handling algorithms. Some recent techniques for realistically
+  tearing cloth will also be discussed. The presented techniques will be used
+  in the author's project for Animation Software Engineering.%
+  }
+  \field{title}{{Simulation of Tearable Cloth}}
+  \verb{url}
+  \verb https://nccastaff.bournemouth.ac.uk/jmacey/CGITech/reports2015/PBartels
+  \verb {\_}PieterjanBartels{\_}CGITECH{\_}final.pdf
+  \endverb
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Bartels - 2014 - Simulation of Tearable Cloth.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Good simple summary P2. force definitions P3. read references, spring forces,
+  -ve of springs {\&}amp; alternate approach P4. need for integrators, explicit
+  Euler P5. -ve of explicit, implicit Euler, Taylor expansion P6. -ve of
+  implicit, need for constraints%
+  }
+  \field{year}{2014}
+  \field{urlday}{10}
+  \field{urlmonth}{03}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Bender2013}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Bender}{B.}%
+     {Jan}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Weber}{W.}%
+     {Daniel}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Diziol}{D.}%
+     {Raphael}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cloth simulation,GPU-based simulation,Multi-resolution model,Shape
+  matching}
+  \strng{namehash}{BJWDDR1}
+  \strng{fullhash}{BJWDDR1}
+  \field{labelyear}{2013}
+  \field{sortinit}{B}
+  \field{title}{{Fast and stable cloth simulation based on multi-resolution
+  shape matching}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Bender, Weber, Diziol - 2013 - Fast and stable cloth simul
+  \verb ation based on multi-resolution shape matching.pdf:pdf
+  \endverb
+  \field{journaltitle}{Computers and Graphics (Pergamon)}
+  \field{annotation}{%
+  Not directly relevant, but introduces a different way of modelling cloth. May
+  be useful for lit review? P1. -ve of explicit {\&}amp; implicit, stiffness
+  concerns P2. -ve of explicit, read reference 6, constraint details, +ve of
+  shape mapping%
+  }
+  \field{year}{2013}
+\endentry
+
+\entry{Bourg2013}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Bourg}{B.}%
+     {David~M.}{D.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bywalec}{B.}%
+     {Bryan}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {O'Reilly}%
+  }
+  \strng{namehash}{BDMBB1}
+  \strng{fullhash}{BDMBB1}
+  \field{labelyear}{2013}
+  \field{sortinit}{B}
+  \field{edition}{Second}
+  \field{isbn}{ISBN 9781449361051}
+  \field{title}{{Physics for Game Developers}}
+  \verb{url}
+  \verb https://www.dawsonera.com/abstract/9781449361051
+  \endverb
+  \list{location}{1}{%
+    {Sebastopol}%
+  }
+  \field{annotation}{%
+  Equations missing, not super useful (torrent maybe?)%
+  }
+  \field{year}{2013}
+\endentry
+
+\entry{Boxerman2003}{thesis}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Boxerman}{B.}%
+     {Eddy}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BE1}
+  \strng{fullhash}{BE1}
+  \field{labelyear}{2003}
+  \field{sortinit}{B}
+  \field{title}{{Speeding Up Cloth Simulation}}
+  \list{institution}{1}{%
+    {The University of British Columbia}%
+  }
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Boxerman - 2003 - Speeding Up Cloth Simulation.pdf:pdf
+  \endverb
+  \field{type}{phdthesis}
+  \field{annotation}{%
+  maths heavy, some useful info P5. contribution of Breen et al. P8. different
+  cloth resistances P25. need for integrators with mass-spring, formal ODE
+  series definition P36. implicit Euler definition%
+  }
+  \field{year}{2003}
+\endentry
+
+\entry{Bridson2002}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Bridson}{B.}%
+     {Robert}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fedkiw}{F.}%
+     {Ronald}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Anderson}{A.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BRFRAJ1}
+  \strng{fullhash}{BRFRAJ1}
+  \field{labelyear}{2002}
+  \field{sortinit}{B}
+  \field{booktitle}{SIGGRAPH}
+  \field{pages}{594\bibrangedash 603}
+  \field{title}{{Robust Treatment of Collisions, Contact and Friction for Cloth
+  Animation}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Bridson, Fedkiw, Anderson - 2002 - Robust Treatment of Col
+  \verb lisions, Contact and Friction for Cloth Animation.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Not useful, focus is on collisions P1. collisions big issue%
+  }
+  \field{year}{2002}
+\endentry
+
+\entry{Choi2002}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Choi}{C.}%
+     {Kwang-Jin}{K.-J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ko}{K.}%
+     {Hyeong-Seok}{H.-S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CKJKHS1}
+  \strng{fullhash}{CKJKHS1}
+  \field{labelyear}{2002}
+  \field{sortinit}{C}
+  \field{booktitle}{SIGGRAPH}
+  \field{pages}{604\bibrangedash 611}
+  \field{title}{{Stable but Responsive Cloth}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Choi, Ko - 2002 - Stable but Responsive Cloth.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Focus on modelling buckling and folds P1. different technique similarities,
+  timestep issues, focus on buckling and folds, -ve of implicit P2. -ve of
+  implicit, energy based technique (?), why continuum not good, mesh size
+  info., baraff {\&}amp; witkin info., + of physical models P3. connection
+  types, force equations P4. cloth buckling definition P5. damping {\&}amp;
+  need P6. semi implicit integrator P6-7. performance results%
+  }
+  \field{year}{2002}
+\endentry
+
+\entry{Choi2005}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Choi}{C.}%
+     {Kwang~Jin}{K.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ko}{K.}%
+     {Hyeong~Seok}{H.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cloth simulation,Collision resolution,Garment design}
+  \strng{namehash}{CKJKHS1}
+  \strng{fullhash}{CKJKHS1}
+  \field{labelyear}{2005}
+  \field{sortinit}{C}
+  \field{pages}{585\bibrangedash 592}
+  \field{title}{{Research problems in clothing simulation}}
+  \field{volume}{37}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Choi, Ko - 2005 - Research problems in clothing simulation
+  \verb .pdf:pdf
+  \endverb
+  \field{journaltitle}{Computer Aided Design}
+  \field{annotation}{%
+  Dated, but some useful info P2. different goals of different cloth
+  communities P3. read reference 24 P3-4. +ve of continuum P4. -ve of
+  continuum, efficiency concerns%
+  }
+  \field{year}{2005}
+\endentry
+
+\entry{Conger2004}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Conger}{C.}%
+     {David}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Course Technology / Cengage Learning}%
+  }
+  \strng{namehash}{CD1}
+  \strng{fullhash}{CD1}
+  \field{labelyear}{2004}
+  \field{sortinit}{C}
+  \field{edition}{First}
+  \field{title}{{Physics Modeling for Game Programmers}}
+  \verb{url}
+  \verb http://site.ebrary.com/lib/staffordshire/reader.action?docID=10065752
+  \endverb
+  \list{location}{1}{%
+    {Boston}%
+  }
+  \field{annotation}{%
+  Cloth simulation p. 299 onwards Good code examples%
+  }
+  \field{year}{2004}
+\endentry
+
+\entry{DeFarias2008}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {{De Farias}}{D.}%
+     {Thiago S M~C}{T.~S. M.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Almeida}{A.}%
+     {Mozart W~S}{M.~W.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Teixeira}{T.}%
+     {Jo{\~{a}}o Marcelo X~N}{J.~M. X.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Teichrieb}{T.}%
+     {Veronica}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kelner}{K.}%
+     {Judith}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{DTSMC+1}
+  \strng{fullhash}{DTSMCAMWSTJMXNTVKJ1}
+  \field{labelyear}{2008}
+  \field{sortinit}{D}
+  \field{booktitle}{Proceedings - Symposium on Computer Architecture and High
+  Performance Computing}
+  \field{title}{{A high performance massively parallel approach for real time
+  deformable body physics simulation}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/De Farias et al. - 2008 - A high performance massively par
+  \verb allel approach for real time deformable body physics simulation.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Not really useful P3. reference on continuum mechanics P3-4. continuum
+  mechanics derivation%
+  }
+  \field{year}{2008}
+\endentry
+
+\entry{Desbrun1999}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Desbrun}{D.}%
+     {Mathieu}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Schr{\"{o}}der}{S.}%
+     {Peter}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Barr}{B.}%
+     {Alan}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Morgan Kaufmann Publishers Inc.}%
+  }
+  \strng{namehash}{DMSPBA1}
+  \strng{fullhash}{DMSPBA1}
+  \field{labelyear}{1999}
+  \field{sortinit}{D}
+  \field{booktitle}{Graphics Interface}
+  \field{pages}{1\bibrangedash 8}
+  \field{title}{{Interactive Animation of Structured Deformable Objects}}
+  \list{location}{1}{%
+    {San Francisco}%
+  }
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Desbrun, Schr{\"{o}}der, Barr - 1999 - Interactive Animati
+  \verb on of Structured Deformable Objects.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Some useful quotes, details an implicit integrator for animating mass-spring
+  models P1. quote on +ve of mass-spring, quote on explicit time step, quote on
+  neural net approach to cloth (follow reference?) P2. explicit time step
+  quote, implicit and explicit euler definitions, implicit vs explicit P3. how
+  to solve implicit euler P4. +ve/-ve of implicit, converting algorithm to 2D
+  P5. +ve/-ve of springs, need for constraints P6. implicit timestep%
+  }
+  \field{year}{1999}
+\endentry
+
+\entry{Enqvist2010}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Enqvist}{E.}%
+     {Henrik}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{3D Studio Max textures,3D animation,3D modeling,3D technology,CMP Game
+  Media Group,Computer Game Developers Conference,Dreamcast
+  development,Gamasutra Exchange,Game Developer magazine,Game Developers
+  Conference,Independent Game Developers Conference,Nintendo development,PC
+  game,PS2,Playstation 2,Playstation development,Xbox game,arcade
+  development,artificial intelligence,digital assets,digital entertainment,free
+  3D models,free shaders,free textures,game animation,game audio,game
+  business,game design,game developer,game development,game development
+  software,game directory,game industry research,game jobs,game news,game
+  producer,game programmer,game programming,game technology,new game,online
+  game development,videogame,virtual reality}
+  \strng{namehash}{EH1}
+  \strng{fullhash}{EH1}
+  \field{labelyear}{2010}
+  \field{sortinit}{E}
+  \field{title}{{The Secrets Of Cloth Simulation In Alan Wake}}
+  \verb{url}
+  \verb http://www.gamasutra.com/view/feature/132771/the{\_}secrets{\_}of{\_}cl
+  \verb oth{\_}simulation{\_}in{\_}.php?page=1
+  \endverb
+  \field{annotation}{%
+  good example of how to do cloth for games P2 Para 1-2. cloth model Para 6.
+  verlet integration para 8-12. constraint relaxation Para 10-14. -ve of verlet
+  {\&}amp; constraints%
+  }
+  \field{year}{2010}
+  \field{urlday}{03}
+  \field{urlmonth}{03}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Ertekin2014}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Ertekin}{E.}%
+     {Burak}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{EB1}
+  \strng{fullhash}{EB1}
+  \field{labelyear}{2014}
+  \field{sortinit}{E}
+  \field{title}{{Cloth Simulation}}
+  \verb{url}
+  \verb https://nccastaff.bournemouth.ac.uk/jmacey/CGITech/reports2015/BErtekin
+  \verb {\_}burakertekin-cgitech.pdf
+  \endverb
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Ertekin - 2014 - Cloth Simulation.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Good simple summary, with easy to understand equations P1. why use
+  mass-spring, read reference 4 P2. need for implicit integrators, spring
+  equations, read reference 6 P2-3. spring arrangements P3. explicit {\&}amp;
+  implicit Euler%
+  }
+  \field{year}{2014}
+  \field{urlday}{10}
+  \field{urlmonth}{03}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Garre2008}{misc}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Garre}{G.}%
+     {Carlos}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {P{\'{e}}rez}{P.}%
+     {Alvaro}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GCPA1}
+  \strng{fullhash}{GCPA1}
+  \field{labelyear}{2008}
+  \field{sortinit}{G}
+  \field{booktitle}{Computer}
+  \field{number}{June}
+  \field{title}{{A simple Mass-Spring system for Character Animation}}
+  \verb{url}
+  \verb http://www.gmrv.es/{~}cgarre/APO{\_}MassSpring{\_}Jun08.pdf
+  \endverb
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Garre, P{\'{e}}rez - 2008 - A simple Mass-Spring system fo
+  \verb r Character Animation.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Useful equation derivations P2-3. Hooke's laws P3. equations of motions,
+  Leapfrog integrator definition {\&}amp; +ve vs euler P4-6. Code samples
+  useful P5. Hooke's laws%
+  }
+  \field{year}{2008}
+  \field{urlday}{25}
+  \field{urlmonth}{05}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Gibson1997}{report}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Gibson}{G.}%
+     {Sarah F.~F.}{S.~F.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mirtich}{M.}%
+     {Brian}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GSFFMB1}
+  \strng{fullhash}{GSFFMB1}
+  \field{labelyear}{1997}
+  \field{sortinit}{G}
+  \field{title}{{A Survey of Deformable Modeling in Computer Graphics}}
+  \list{location}{1}{%
+    {Cambridge}%
+  }
+  \list{institution}{1}{%
+    {MERL}%
+  }
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Gibson, Mirtich - 1997 - A Survey of Deformable Modeling i
+  \verb n Computer Graphics.pdf:pdf
+  \endverb
+  \field{type}{techreport}
+  \field{annotation}{%
+  Not directly useful, but some info on +/- of different modelling approaches.
+  Continuum equations too in a more accessible form P1. need for accurate
+  modelling P4. + of physical models P4-5. Newtonian mechanics P5. general
+  equations {\&}amp; ODE P7-8. +/- of mass-spring P8. continuum approach
+  {\&}amp; energy equation P8-9. need for integrators P9-15. FEM equations P15.
+  -ve of continuum P16-17. +/- of continuum%
+  }
+  \field{year}{1997}
+\endentry
+
+\entry{Harada2006}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Harada}{H.}%
+     {Takahiro}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{HT1}
+  \strng{fullhash}{HT1}
+  \field{labelyear}{2006}
+  \field{sortinit}{H}
+  \field{title}{{Real-time Cloth Simulation Interacting with Deforming
+  High-Resolution Models}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Harada - 2006 - Real-time Cloth Simulation Interacting wit
+  \verb h Deforming High-Resolution Models.pdf:pdf
+  \endverb
+  \field{journaltitle}{SIGGRAPH}
+  \field{annotation}{%
+  Very short, not good, no details, maybe a useful approach for dealing with
+  explicit instability P1. Handling explicit integrator instability%
+  }
+  \field{year}{2006}
+\endentry
+
+\entry{Harada2008}{incollection}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Harada}{H.}%
+     {Takahiro}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Pearson Education Inc.}%
+  }
+  \keyw{GPU GPGPU NVIDIA OpenGL Open{\_}GL DirectX DX8 DX9 DX}
+  \strng{namehash}{HT1}
+  \strng{fullhash}{HT1}
+  \field{labelyear}{2008}
+  \field{sortinit}{H}
+  \field{booktitle}{GPU Gems 3}
+  \field{chapter}{29}
+  \field{title}{{Real-Time Rigid Body Simulation on GPUs}}
+  \verb{url}
+  \verb http://http.developer.nvidia.com/GPUGems3/gpugems3{\_}ch29.html
+  \endverb
+  \field{annotation}{%
+  Not very useful Maybe an example of how simulation still too expensive for
+  real time?%
+  }
+  \field{year}{2008}
+\endentry
+
+\entry{Jakobsen2005}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Jakobsen}{J.}%
+     {Thomas}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{3d,Flash,actionscript,collision,flash game development,flash
+  tutorial,game programming,physics,tutorials}
+  \strng{namehash}{JT1}
+  \strng{fullhash}{JT1}
+  \field{labelyear}{2005}
+  \field{sortinit}{J}
+  \field{title}{{Advanced Character Physics}}
+  \verb{url}
+  \verb http://www.gotoandplay.it/{\_}articles/2005/08/advCharPhysics.php
+  \endverb
+  \field{annotation}{%
+  alternate technique using a different spring model {\&}amp; no differential
+  equations. Developed for game, possibly less accurate than Provot due to
+  iterative nature Para 2. game use Para 3. game compromises; speed {\&}amp;
+  stability vs accuracy Para 4. time/accuracy trade off; iterative {\&}amp;
+  less accurate than Provot (?) Para 8. verlet integration {\&}amp; definition,
+  +/- Para 10. code example Para 18. -ve of springs Para 23. correcting
+  constraints Para 24. code example Para 27. code example Para 28. iterative
+  constraint solving para 29. -ve of iterative Para 31. +ve for cloth
+  simulation Para 34. speed up techniques%
+  }
+  \field{year}{2005}
+  \field{urlday}{03}
+  \field{urlmonth}{03}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Kang2000}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Kang}{K.}%
+     {Young-Min}{Y.-M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Choi}{C.}%
+     {Jeong-Hyeon}{J.-H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cho}{C.}%
+     {Hwan-Gue}{H.-G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KYMCJHCHG1}
+  \strng{fullhash}{KYMCJHCHG1}
+  \field{labelyear}{2000}
+  \field{sortinit}{K}
+  \field{booktitle}{Computer Graphics International}
+  \field{title}{{Fast and Stable Animation of Cloth with an Approximated
+  Implicit Method}}
+  \list{location}{1}{%
+    {Geneva}%
+  }
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Kang, Choi, Cho - 2000 - Fast and Stable Animation of Clot
+  \verb h with an Approximated Implicit Method.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  useful equations, detailed implicit info. P1. cloth simulation definition,
+  physical model definition, - of implicit P2. mass-spring definition, - of
+  explicit/implicit, euler equation, spring equation P2-3. implicit equations
+  P3. -ve of implicit P4. enhanced implicit integrator%
+  }
+  \field{year}{2000}
+\endentry
+
+\entry{Kim2011}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Kim}{K.}%
+     {Tae-Yong}{T.-Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KTY1}
+  \strng{fullhash}{KTY1}
+  \field{labelyear}{2011}
+  \field{sortinit}{K}
+  \field{title}{{Character Clothing in PhysX-3}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Kim - 2011 - Character Clothing in PhysX-3.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  proof that commercial engines using PBD, no mention of cloth model though P9.
+  + of PBD P10. - of explicit Euler P11-12. PDB overview%
+  }
+  \field{year}{2011}
+\endentry
+
+\entry{Lander2000a}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Lander}{L.}%
+     {Jeff}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{3D Studio Max textures,3D animation,3D modeling,3D technology,CMP Game
+  Media Group,Computer Game Developers Conference,Dreamcast
+  development,Gamasutra Exchange,Game Developer magazine,Game Developers
+  Conference,Independent Game Developers Conference,Nintendo development,PC
+  game,PS2,Playstation 2,Playstation development,Xbox game,arcade
+  development,artificial intelligence,digital assets,digital entertainment,free
+  3D models,free shaders,free textures,game animation,game audio,game
+  business,game design,game developer,game development,game development
+  software,game directory,game industry research,game jobs,game news,game
+  producer,game programmer,game programming,game technology,new game,online
+  game development,videogame,virtual reality}
+  \strng{namehash}{LJ1}
+  \strng{fullhash}{LJ1}
+  \field{labelyear}{2000}
+  \field{extrayear}{1}
+  \field{sortinit}{L}
+  \field{title}{{Collision Response: Bouncy, Trouncy, Fun}}
+  \verb{url}
+  \verb http://www.gamasutra.com/view/feature/3427/collision{\_}response{\_}bou
+  \verb ncy{\_}.php
+  \endverb
+  \field{annotation}{%
+  Derivations of the hooke equations for mass-spring models%
+  }
+  \field{year}{2000}
+  \field{urlday}{24}
+  \field{urlmonth}{03}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Lander2000}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Lander}{L.}%
+     {Jeff}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{3D Studio Max textures,3D animation,3D modeling,3D technology,CMP Game
+  Media Group,Computer Game Developers Conference,Dreamcast
+  development,Gamasutra Exchange,Game Developer magazine,Game Developers
+  Conference,Independent Game Developers Conference,Nintendo development,PC
+  game,PS2,Playstation 2,Playstation development,Xbox game,arcade
+  development,artificial intelligence,digital assets,digital entertainment,free
+  3D models,free shaders,free textures,game animation,game audio,game
+  business,game design,game developer,game development,game development
+  software,game directory,game industry research,game jobs,game news,game
+  producer,game programmer,game programming,game technology,new game,online
+  game development,videogame,virtual reality}
+  \strng{namehash}{LJ1}
+  \strng{fullhash}{LJ1}
+  \field{labelyear}{2000}
+  \field{extrayear}{2}
+  \field{sortinit}{L}
+  \field{title}{{Devil in the Blue Faceted Dress: Real Time Cloth Animation}}
+  \verb{url}
+  \verb http://www.gamasutra.com/view/feature/131851/devil{\_}in{\_}the{\_}blue
+  \verb {\_}faceted{\_}dress{\_}.php
+  \endverb
+  \field{annotation}{%
+  focus on games P2. Para 3. problems with only structural springs Para 5.
+  added shear springs Para 6-8. need for bend spring, +ve of bend springs Para
+  9. different cloth properties Para 10. stiffness problems P3. Para 1-2. -ve
+  of springs%
+  }
+  \field{year}{2000}
+  \field{urlday}{03}
+  \field{urlmonth}{03}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Magnenat-Thalmann2006}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Magnenat-Thalmann}{M.-T.}%
+     {Nadia}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Thalmann}{T.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Wiley}%
+  }
+  \strng{namehash}{MTNTD1}
+  \strng{fullhash}{MTNTD1}
+  \field{labelyear}{2004}
+  \field{sortinit}{M}
+  \field{booktitle}{Handbook of Virtual Humans}
+  \field{edition}{1st}
+  \field{title}{{Handbook of Virtual Humans}}
+  \list{location}{1}{%
+    {Chichester}%
+  }
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Magnenat-Thalmann, Thalmann - 2006 - Handbook of Virtual H
+  \verb umans.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Very dense, not super useful P227. +/- of continuum P234. 2nd order ODEs
+  P235. explicit integrator comparison P237. - if implicit%
+  }
+  \field{year}{2004}
+\endentry
+
+\entry{Mesit2007}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Mesit}{M.}%
+     {Jaruwan}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Guha}{G.}%
+     {Ratan}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chaudhry}{C.}%
+     {Shafaq}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Implicit integration method,Internal pressure force,Mass-spring
+  system,Soft body simulation}
+  \strng{namehash}{MJGRCS1}
+  \strng{fullhash}{MJGRCS1}
+  \field{labelyear}{2007}
+  \field{sortinit}{M}
+  \field{title}{{3D soft body simulation using mass-spring system with internal
+  pressure force and simplified implicit integration}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Mesit, Guha, Chaudhry - 2007 - 3D soft body simulation usi
+  \verb ng mass-spring system with internal pressure force and simplified impli
+  \verb cit int.pdf:pdf
+  \endverb
+  \field{journaltitle}{Journal of Computers}
+  \field{annotation}{%
+  Useful info. on how to use mass-spring models for 3D simulations P1. 2
+  references to follow, +/- of mass-spring models P2. reference to follow (?),
+  Hooke equations P3. Newton's 2nd law derivation, why integrators are needed,
+  Euler integrator definitions, +/- implicit vs explicit, explicit step size
+  P4. Force definitions P5-6. Implicit Euler derivation%
+  }
+  \field{year}{2007}
+\endentry
+
+\entry{Mesit2008}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Mesit}{M.}%
+     {Jaruwan}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Guha}{G.}%
+     {Ratan~K.}{R.~K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IEEE}%
+  }
+  \keyw{Animation,Asia,Biological system modeling,Computational
+  modeling,Computer science,Computer simulation,Deformable models,Medical
+  simulation,Springs,Surgery,broken springs,computer animation,explicit Euler
+  integration,leaking effect,physically-based animation,physically-based
+  simulation,soft body,soft body objects,soft body simulation}
+  \strng{namehash}{MJGRK1}
+  \strng{fullhash}{MJGRK1}
+  \field{labelyear}{2008}
+  \field{sortinit}{M}
+  \field{booktitle}{2008 Second Asia International Conference on Modelling {\&}
+  Simulation (AMS)}
+  \field{pages}{390\bibrangedash 395}
+  \field{shorttitle}{Modeling {\&} Simulation, 2008. AICMS 08. Second Asia}
+  \field{title}{{Soft Body Simulation with Leaking Effect}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Mesit, Guha - 2008 - Soft Body Simulation with Leaking Eff
+  \verb ect.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  P1. why use mass-spring models P2. mass-spring model diagram (Provotian),
+  Hooke's laws P3. Explicit Euler derivation, gravity derivation%
+  }
+  \field{year}{2008}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{Miguel2012}{article}{}
+  \name{author}{7}{}{%
+    {{}%
+     {Miguel}{M.}%
+     {E}{E}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bradley}{B.}%
+     {D}{D}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Thomaszewski}{T.}%
+     {B}{B}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bickel}{B.}%
+     {B}{B}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Matusik}{M.}%
+     {W}{W}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Otaduy}{O.}%
+     {M.~A}{M.~A}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Marschner}{M.}%
+     {S}{S}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ME+1}
+  \strng{fullhash}{MEBDTBBBMWOMAMS1}
+  \field{labelyear}{2012}
+  \field{sortinit}{M}
+  \field{number}{2}
+  \field{pages}{519\bibrangedash 528}
+  \field{title}{{Data-Driven Estimation of Cloth Simulation Models}}
+  \field{volume}{31}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Miguel et al. - 2012 - Data-Driven Estimation of Cloth Sim
+  \verb ulation Models.pdf:pdf
+  \endverb
+  \field{journaltitle}{Computer Graphics Forum}
+  \field{annotation}{%
+  Not useful, focus on really accurate modelling using exact cloth parameters
+  P2. num parameters for different model types, +ve of continuum%
+  }
+  \field{year}{2012}
+\endentry
+
+\entry{Mongus2012}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Mongus}{M.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Repnik}{R.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Mernik}{M.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {??alik}{a.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Evolutionary algorithm,Mass-spring particle system,Textile simulation}
+  \strng{namehash}{MD+1}
+  \strng{fullhash}{MDRBMMaB1}
+  \field{labelyear}{2012}
+  \field{sortinit}{M}
+  \field{title}{{A hybrid evolutionary algorithm for tuning a cloth-simulation
+  model}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Mongus et al. - 2012 - A hybrid evolutionary algorithm for
+  \verb  tuning a cloth-simulation model.pdf:pdf
+  \endverb
+  \field{journaltitle}{Applied Soft Computing Journal}
+  \field{annotation}{%
+  Focus is on realistic cloth models, not directly relevant for games, where
+  appearance is more important P1. +/- geometric techniques, -ve of continuum,
+  read references 13, 15 {\&}amp; 20 P2. problems with realistic modelling,
+  mass-spring model {\&}amp; params, Euler {\&}amp; Verlet integrators P3.
+  dampened Verlet, Hooke equations, final mass-spring equations%
+  }
+  \field{year}{2012}
+\endentry
+
+\entry{Muller2006}{inproceedings}{}
+  \name{author}{4}{}{%
+    {{}%
+     {M{\"{u}}ller}{M.}%
+     {Matthias}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Heidelberger}{H.}%
+     {Bruno}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hennix}{H.}%
+     {Marcus}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ratcliff}{R.}%
+     {John}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MM+1}
+  \strng{fullhash}{MMHBHMRJ1}
+  \field{labelyear}{2006}
+  \field{sortinit}{M}
+  \field{booktitle}{VRIPHYS}
+  \field{pages}{71\bibrangedash 80}
+  \field{title}{{Position Based Dynamics}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/M{\"{u}}ller et al. - 2006 - Position Based Dynamics.pdf:p
+  \verb df
+  \endverb
+  \field{annotation}{%
+  different approach to animating cloth; method used by commercial physics
+  engines (probably) P1-2. +ve of PBD P3. constraint definitions, PBD
+  algorithm, +ve of PBD%
+  }
+  \field{year}{2006}
+\endentry
+
+\entry{Ng1996}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Ng}{N.}%
+     {Hing~N.}{H.~N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Grimsdale}{G.}%
+     {Richard~L.}{R.~L.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{NHNGRL1}
+  \strng{fullhash}{NHNGRL1}
+  \field{labelyear}{1996}
+  \field{sortinit}{N}
+  \field{pages}{28\bibrangedash 42}
+  \field{title}{{Computer Graphics Techniques for Modeling Cloth}}
+  \field{volume}{16}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Ng, Grimsdale - 1996 - Computer Graphics Techniques for Mo
+  \verb deling Cloth - ng.pdf:pdf
+  \endverb
+  \field{journaltitle}{IEEE Computer Graphics {\&} Applications}
+  \field{annotation}{%
+  Useful summary of all available techniques (at time of writing) P1-4.
+  geometric techniques P1. how flex objects can now be modelled, simulating
+  based on mech. properties too expensive, +ve of physics for games i.e. can be
+  less accurate, +/- of geometric P2. +/- of Weil P4-9. Physical techniques P4.
+  +/- of enery and force based P6. sakaguchi et al. (follow reference) force
+  definitions P7-8. technique costs P9. Provot equations {\&}amp; cost (1
+  minute for 1 second) P9-11. hybrid techniques P10. Kunii et al. +/- of
+  physical {\&}amp; geometric P12. table of +/- different techniques P11-12.
+  conclusion +/- of physical {\&}amp; geometric%
+  }
+  \field{year}{1996}
+\endentry
+
+\entry{NVidia2007}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {NVidia}{N.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{N1}
+  \strng{fullhash}{N1}
+  \field{labelyear}{2007}
+  \field{sortinit}{N}
+  \field{title}{{Cloth Simulation}}
+  \verb{url}
+  \verb http://developer.download.nvidia.com/SDK/10/direct3d/Source/Cloth/doc/C
+  \verb loth.pdf
+  \endverb
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/NVidia - 2007 - Cloth Simulation.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  GPU accelerated approach P2. cost vs realism P3. spring constraints, model
+  information P4. GPU algorithm outline P4-7. GPU algorithm details%
+  }
+  \field{year}{2007}
+  \field{urlday}{25}
+  \field{urlmonth}{05}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Oconnor2003}{misc}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{O 'connor}}{O.}%
+     {Corey}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Stevens}{S.}%
+     {Keith}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{OCSK1}
+  \strng{fullhash}{OCSK1}
+  \field{labelyear}{2003}
+  \field{sortinit}{O}
+  \field{title}{{Modeling Cloth Using Mass Spring Systems}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/O 'connor, Stevens - 2003 - Modeling Cloth Using Mass Spri
+  \verb ng Systems.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Little basic, but some use as has simple derivations of integrators {\&}amp;
+  cloth equations P1. need for realistic cloth P2. cost of mass-spring model
+  P2-3. spring types P3-4. mass-spring equations P4. Euler {\&}amp; 4th order
+  runge-katta integrators%
+  }
+  \field{year}{2003}
+  \field{urlday}{10}
+  \field{urlmonth}{03}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Ozgen2010a}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Ozgen}{O.}%
+     {Oktar}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kallmann}{K.}%
+     {Marcelo}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ramirez}{R.}%
+     {Lynnette~Es}{L.~E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Coimbra}{C.}%
+     {Carlos~Fm}{C.~F.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Algorithms,Categories and Subject Descriptors,Cloth
+  simulation,Design,Experimentation Additional Key Words and Phrases,I35
+  [Computer Graphics],I37 [Computer Graphics],Three-Dimensional Graphics and
+  Realism—Animation,fractional derivatives,physically-based
+  animation,underwater simulation}
+  \strng{namehash}{OO+1}
+  \strng{fullhash}{OOKMRLECCF1}
+  \field{labelyear}{2010}
+  \field{sortinit}{O}
+  \field{number}{23}
+  \field{title}{{Underwater Cloth Simulation with Fractional Derivatives}}
+  \field{volume}{29}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Ozgen et al. - 2010 - Underwater Cloth Simulation with Fra
+  \verb ctional Derivatives.pdf:pdf
+  \endverb
+  \field{journaltitle}{ACM Trans. Graph}
+  \field{annotation}{%
+  Not very useful P2. drag force {\&}amp; need, need for damping%
+  }
+  \field{year}{2010}
+\endentry
+
+\entry{Parent2012}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Parent}{P.}%
+     {Rick}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{PR1}
+  \strng{fullhash}{PR1}
+  \field{labelyear}{2012}
+  \field{sortinit}{P}
+  \field{edition}{Third}
+  \field{title}{{Computer Animation Algorithms and Techniques}}
+  \verb{url}
+  \verb https://www.dawsonera.com/readonline/9780124159730/startPage/20
+  \endverb
+  \list{location}{1}{%
+    {Waltham}%
+  }
+  \field{annotation}{%
+  Chapter 7.5%
+  }
+  \field{year}{2012}
+\endentry
+
+\entry{Plath2000}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Plath}{P.}%
+     {Jan}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PJ1}
+  \strng{fullhash}{PJ1}
+  \field{labelyear}{2000}
+  \field{sortinit}{P}
+  \field{number}{24}
+  \field{pages}{897\bibrangedash 905}
+  \field{title}{{Realistic modelling of textiles using interacting particle
+  systems}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Plath - 2000 - Realistic modelling of textiles using inter
+  \verb acting particle systems.pdf:pdf
+  \endverb
+  \field{journaltitle}{Computers {\&} Graphics}
+  \field{annotation}{%
+  not directly useful, cellular automata approach. Cost too high? P1. cost of
+  some models, Feynman model P2. - of energy based%
+  }
+  \field{year}{2000}
+\endentry
+
+\entry{Provot2001}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Provot}{P.}%
+     {Xavier}{X.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PX1}
+  \strng{fullhash}{PX1}
+  \field{labelyear}{1995}
+  \field{sortinit}{P}
+  \field{booktitle}{Graphics Interface'95}
+  \field{pages}{141\bibrangedash 155}
+  \field{title}{{Deformation Constraints in a Mass-Spring Model to Describe
+  Rigid Cloth Behaviour}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Provot - 1995 - Deformation Constraints in a Mass-Spring M
+  \verb odel to Describe Rigid Cloth Behaviour.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  key paper, first to propose spring model P1. best model choice for animation
+  purposes P1-2. elasticity problems P3. need for stiffness {\&}amp; effects,
+  -ve of breen et al., read reference 9, spring types P4. deformation rate, why
+  cloth isn't super-elastic, max deformation, lack of realism due to high
+  damping, stiffness {\&}amp; time step problems, P5. constraint solving
+  algorithm P6. deformation rates {\&}amp; targets, results%
+  }
+  \field{year}{1995}
+\endentry
+
+\entry{SantosSouza2014}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {{Santos Souza}}{S.}%
+     {Marco}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wangenheim}{W.}%
+     {Aldo~Von}{A.~V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Comunello}{C.}%
+     {Eros}{E.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Half-Edge Data Structure,Interactive Animation,Physics-Based
+  Animation,Tearing Simulation,—Cloth Simulation}
+  \strng{namehash}{SMWAVCE1}
+  \strng{fullhash}{SMWAVCE1}
+  \field{labelyear}{2014}
+  \field{sortinit}{S}
+  \field{number}{1}
+  \field{pages}{44\bibrangedash 48}
+  \field{title}{{Fast Simulation of Cloth Tearing}}
+  \field{volume}{5}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Santos Souza, Wangenheim, Comunello - Unknown - Fast Simul
+  \verb ation of Cloth Tearing.pdf:pdf
+  \endverb
+  \field{journaltitle}{SBC Journal on Interactive Systems}
+  \field{annotation}{%
+  Not directly useful, focus is entirely on tearing and not on modelling P1.
+  read reference 2 (?)%
+  }
+  \field{year}{2014}
+\endentry
+
+\entry{Schmitt2013}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Schmitt}{S.}%
+     {N}{N}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Knuth}{K.}%
+     {M}{M}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bender}{B.}%
+     {J}{J}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Kuijper}{K.}%
+     {A}{A}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{I37 [Computer Graphics],Three-Dimensional Graphics and
+  Realism—Animation}
+  \strng{namehash}{SN+1}
+  \strng{fullhash}{SNKMBJKA1}
+  \field{labelyear}{2013}
+  \field{sortinit}{S}
+  \field{title}{{Multilevel Cloth Simulation using GPU Surface Sampling}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Schmitt et al. - 2013 - Multilevel Cloth Simulation using
+  \verb GPU Surface Sampling.pdf:pdf
+  \endverb
+  \field{journaltitle}{Workshop on Virtual Reality Interaction and Physical
+  Simulation VRIPHYS}
+  \field{annotation}{%
+  Not directly relevant, no real discussion on mass-spring models P2. read
+  references HES03 {\&}amp; ZH07, -ve of explicit, need for GPU based
+  approaches P3. -ve of constraint solvers P6. constraint solvers%
+  }
+  \field{year}{2013}
+\endentry
+
+\entry{Selle2009}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Selle}{S.}%
+     {Andrew}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Su}{S.}%
+     {Jonathan}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Irving}{I.}%
+     {Geoffrey}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fedkiw}{F.}%
+     {Ronald}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SA+1}
+  \strng{fullhash}{SASJIGFR1}
+  \field{labelyear}{2009}
+  \field{sortinit}{S}
+  \field{number}{15}
+  \field{pages}{339\bibrangedash 350}
+  \field{title}{{Robust High-Resolution Cloth Using Parallelism, History-Based
+  Collisions and Accurate Friction}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Selle et al. - 2009 - Robust High-Resolution Cloth Using P
+  \verb arallelism, History-Based Collisions and Accurate Friction.pdf:pdf
+  \endverb
+  \field{journaltitle}{IEEE Transactions on Visualization and Computer
+  Graphics}
+  \field{annotation}{%
+  not useful; focus is on high realism rather than interactivity P1. different
+  goals for different cloth uses, problems with cloth, -ve of integrators%
+  }
+  \field{year}{2009}
+\endentry
+
+\entry{Tang2013}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Tang}{T.}%
+     {Min}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Tong}{T.}%
+     {Ruofeng}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Narain}{N.}%
+     {Rahul}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Meng}{M.}%
+     {Chang}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Manocha}{M.}%
+     {Dinesh}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{TM+1}
+  \strng{fullhash}{TMTRNRMCMD1}
+  \field{labelyear}{2013}
+  \field{sortinit}{T}
+  \field{title}{{A GPU-based streaming algorithm for high-resolution cloth
+  simulation}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Tang et al. - 2013 - A GPU-based streaming algorithm for h
+  \verb igh-resolution cloth simulation.pdf:pdf
+  \endverb
+  \field{journaltitle}{Computer Graphics Forum}
+  \field{annotation}{%
+  GPU accelerated approach. Compared with a CPU implementation using an I7;
+  useful to show performance considerations still relevant P1. speedup results
+  P2. GPU algorithm overvview P3. Kernel info. P3-4. integrator definitions P4.
+  explicit {\&}amp; implicit integrators P5. timestep definition, test devices
+  P7. data on speed up vs CPU%
+  }
+  \field{year}{2013}
+\endentry
+
+\entry{Vassilev2001}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Vassilev}{V.}%
+     {T}{T}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Spanlang}{S.}%
+     {B}{B}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chrysanthou}{C.}%
+     {Y}{Y}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{VTSBCY1}
+  \strng{fullhash}{VTSBCY1}
+  \field{labelyear}{2001}
+  \field{sortinit}{V}
+  \field{booktitle}{Eurographics}
+  \field{title}{{Fast Cloth Animation on Walking Avatars}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Vassilev, Spanlang, Chrysanthou - 2001 - Fast Cloth Animat
+  \verb ion on Walking Avatars.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  uses mass-spring model, proposes new approach for dealing with super
+  elasticity P1-2. baraff {\&}amp; witkin cost P2. +/- of Provot, internal
+  force definition, integrator {\&}amp; timestep limitations P3. - of
+  mass-spring P3. new super elasticity approach P7. results%
+  }
+  \field{year}{2001}
+\endentry
+
+\entry{Vassilev2002}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Vassilev}{V.}%
+     {Tzvetomir}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Spanlang}{S.}%
+     {Bernhard}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{VTSB1}
+  \strng{fullhash}{VTSB1}
+  \field{labelyear}{2002}
+  \field{sortinit}{V}
+  \field{booktitle}{East-West Vision}
+  \field{title}{{A Mass-Spring Model For Real Time Deformable Solids}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Vassilev, Spanlang - 2002 - A MASS - SPRING MODEL FOR REAL
+  \verb  TIME DEFORMABLE SOLIDS.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Not very useful P2. definition of mass-spring model%
+  }
+  \field{year}{2002}
+\endentry
+
+\entry{Vassilev2010}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Vassilev}{V.}%
+     {Tzvetomir~Ivanov}{T.~I.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{GPU programming,cloth modelling,parallel computing}
+  \strng{namehash}{VTI1}
+  \strng{fullhash}{VTI1}
+  \field{labelyear}{2010}
+  \field{sortinit}{V}
+  \field{booktitle}{CompSysTech}
+  \field{pages}{131\bibrangedash 136}
+  \field{title}{{Comparison of Several Parallel API for Cloth Modelling On
+  Modern GPUs}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Vassilev - 2010 - Comparison of Several Parallel API for C
+  \verb loth Modelling On Modern GPUs.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  May not be relevant, but shows that performance still a consideration P1. use
+  for cloth simulation, + of Provot P2. Euler time step issues P3-4. GPU
+  algorithm overview P4. GPU kernels%
+  }
+  \field{year}{2010}
+\endentry
+
+\entry{Vassilev2011}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Vassilev}{V.}%
+     {Tzvetomir~Ivanov}{T.~I.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{GPU programming,cloth modelling,parallel computing}
+  \strng{namehash}{VTI1}
+  \strng{fullhash}{VTI1}
+  \field{labelyear}{2011}
+  \field{sortinit}{V}
+  \field{booktitle}{CompSysTech}
+  \field{pages}{204\bibrangedash 209}
+  \field{title}{{Comparison of Parallel Algorithms for Modelling Mass-springs
+  Systems with Several APIs on Modern GPUs}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Vassilev - 2011 - Comparison of Parallel Algorithms for Mo
+  \verb delling Mass-springs Systems with Several APIs on Modern GPUs.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Brief overview of 2 GPU algorithms for mass-spring models P1. read reference
+  8 P1-2. +ve of Provot P2. Euler time step limitation P3. mass-spring GPU
+  algorithms P4. results%
+  }
+  \field{year}{2011}
+\endentry
+
+\entry{Volino2005}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Volino}{V.}%
+     {Pascal}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Cordier}{C.}%
+     {Frederic}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Magnenat-Thalmann}{M.-T.}%
+     {Nadia}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cloth simulation,Fashion design,Pattern prototyping,Virtual garments}
+  \strng{namehash}{VPCFMTN1}
+  \strng{fullhash}{VPCFMTN1}
+  \field{labelyear}{2005}
+  \field{sortinit}{V}
+  \field{number}{6}
+  \field{pages}{593\bibrangedash 608}
+  \field{title}{{From early virtual garment simulation to interactive fashion
+  design}}
+  \field{volume}{37}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Volino, Cordier, Magnenat-Thalmann - 2005 - From early vir
+  \verb tual garment simulation to interactive fashion design.pdf:pdf
+  \endverb
+  \field{journaltitle}{Computer-Aided Design}
+  \field{annotation}{%
+  focus on accurate modelling of patterns etc. P1. real time considerations P2.
+  how to extract cloth parameters P3. explicit {\&}amp; implicit integration
+  P4. -ve of implicit%
+  }
+  \field{year}{2005}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{Volino1995}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Volino}{V.}%
+     {Pascal}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Courchesne}{C.}%
+     {Martin}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Magnenat-Thalmann}{M.-T.}%
+     {Nadia}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{VPCMMTN1}
+  \strng{fullhash}{VPCMMTN1}
+  \field{labelyear}{1995}
+  \field{sortinit}{V}
+  \field{booktitle}{SIGGRAPH}
+  \field{pages}{137\bibrangedash 144}
+  \field{title}{{Versatile and Efficient Techniques for Simulating Cloth and
+  Other Deformable Objects}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Volino, Courchesne, Magnenat-Thalmann - 1995 - Versatile a
+  \verb nd Efficient Techniques for Simulating Cloth and Other Deformable Objec
+  \verb ts.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Not useful%
+  }
+  \field{year}{1995}
+\endentry
+
+\entry{Volino1997a}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Volino}{V.}%
+     {Pascal}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Magnenat-Thalmann}{M.-T.}%
+     {Nadia}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{VPMTN1}
+  \strng{fullhash}{VPMTN1}
+  \field{labelyear}{1997}
+  \field{extrayear}{1}
+  \field{sortinit}{V}
+  \field{booktitle}{International Conference on Virtual Systems and MultiMedia}
+  \field{pages}{109\bibrangedash 118}
+  \field{title}{{Developing Simulation Techniques for an Interactive Clothing
+  System}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Volino, Magnenat-Thalmann - 1997 - Developing Simulation T
+  \verb echniques for an Interactive Clothing System.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  not very useful, different use case; focus on more realistic modelling for
+  clothing design etc. P1. different use case P2. -ve of different models P4.
+  need for integrators. +ve of explicit%
+  }
+  \field{year}{1997}
+\endentry
+
+\entry{Volino1997}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Volino}{V.}%
+     {Pascal}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Magnenat-Thalmann}{M.-T.}%
+     {Nadia}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{VPMTN1}
+  \strng{fullhash}{VPMTN1}
+  \field{labelyear}{1997}
+  \field{extrayear}{2}
+  \field{sortinit}{V}
+  \field{booktitle}{JWS97-B}
+  \field{title}{{Interactive Cloth Simulation: Problems and Solutions}}
+  \list{location}{1}{%
+    {Geneva}%
+  }
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Volino, Magnenat-Thalmann - 1997 - Interactive Cloth Simul
+  \verb ation Problems and Solutions.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  interesting comparison and info about different model types P2. continuum
+  models P3. +/- of continuum, particle models, - of mass-spring P4.overview of
+  particle models P5. force approach overview, ODE model P6. integrators,
+  stability {\&}amp; timestep control, mesh size vs computation time%
+  }
+  \field{year}{1997}
+\endentry
+
+\entry{Volino2001}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Volino}{V.}%
+     {Pascal}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Magnenat-Thalmann}{M.-T.}%
+     {Nadia}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{VPMTN1}
+  \strng{fullhash}{VPMTN1}
+  \field{labelyear}{2001}
+  \field{sortinit}{V}
+  \field{booktitle}{Conference on Computer Graphics International}
+  \field{title}{{Comparing Efficiency of Integration Methods}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Volino, Magnenat-Thalmann - 2001 - Comparing Efficiency of
+  \verb  Integration Methods.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Excellent, follow references P1. + of particle models (follow references),
+  considerations for choosing integrator P2. different integrator types, number
+  of calcs for different integrators P3. performance considerations,
+  computation time data P4. integrator stability graph, runge-katta vs
+  midpoint, -ve of implicit Euler P4-5. -ve of explicit P5. -ve of implicit,
+  cost of increasing mesh size, stability graph P6. implicit vs explicit P8-9.
+  +/- of implicit {\&}amp; explicit%
+  }
+  \field{year}{2001}
+\endentry
+
+\entry{Wacker2005a}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Wacker}{W.}%
+     {Markus}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Thomaszewski}{T.}%
+     {Bernhard}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Keckeisen}{K.}%
+     {Michael}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{WMTBKM1}
+  \strng{fullhash}{WMTBKM1}
+  \field{labelyear}{2005}
+  \field{sortinit}{W}
+  \field{booktitle}{Eurographics}
+  \field{title}{{Physical Models, Numerical Solvers for Cloth Animation and
+  Virtual Cloth Design}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Wacker, Thomaszewski, Keckeisen - 2005 - Physical Models,
+  \verb Numerical Solvers for Cloth Animation and Virtual Cloth Design.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Lots of in depth detail into formal derivations. May be a bit dense and
+  unnecessary P1. +ve of physical models, different aims for different areas
+  P2. formal definition of forces {\&}amp; ODEs, Hooke {\&}amp; dampening laws,
+  different spring coefficients P3. info. on spring correction pass, +ve of
+  mass-spring P4. energy based models P4-5. continuum based models, -ve of
+  discrete modelling, cost of continuum P6. cloth properties defined P9. formal
+  hooke derivation P10. formal explicit Euler {\&}amp; midpoint derivations
+  P11. Diagrams showing integrator efficiency {\&}amp; accuracy P12. explicit
+  Euler time step derivation, implicit Euler derivation {\&}amp; time step
+  derivation P13-14. Verlet/leapfrog derivation P14. explicit vs implicit
+  efficiency diagrams P15. +ve/-ve of implicit P17. references to follow%
+  }
+  \field{year}{2005}
+\endentry
+
+\entry{Wang2009a}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Wang}{W.}%
+     {Jianchun}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hu}{H.}%
+     {Xinrong}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhuang}{Z.}%
+     {Yi}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Adaptive Rung-Kutta algorithm,Computer assisted tomography
+  technology,Data-driven strategy,Spring-mass model}
+  \strng{namehash}{WJHXZY1}
+  \strng{fullhash}{WJHXZY1}
+  \field{labelyear}{2009}
+  \field{sortinit}{W}
+  \field{booktitle}{International Conference on Wireless Networks and
+  Information Systems, WNIS 2009}
+  \field{pages}{282 \bibrangedash  285}
+  \field{title}{{The dynamic cloth simulation performance analysis based on the
+  improved spring-mass model}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Wang, Hu, Zhuang - 2009 - The dynamic cloth simulation per
+  \verb formance analysis based on the improved spring-mass model.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Good paper, more modern performance analysis P1. different fields of cloth
+  simulation, mass-spring justification, different force resistances P2.
+  external forces, ODEs, integrator choice P3. explicit Euler, midpoint,
+  runge-katta 4 P3-4. adapative runge-katta P4. performance results (no
+  reference to hardware used)%
+  }
+  \field{year}{2009}
+\endentry
+
+\entry{Wang2004}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Wang}{W.}%
+     {Xiuzhong}{X.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Devarajan}{D.}%
+     {Venkat}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{WXDV1}
+  \strng{fullhash}{WXDV1}
+  \field{labelyear}{2004}
+  \field{sortinit}{W}
+  \field{booktitle}{SIGGRAPH}
+  \field{pages}{317\bibrangedash 323}
+  \field{title}{{2D Structured Mass-spring System Parameter Optimization based
+  on Axisymmetric Bending for Rigid Cloth Simulation}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Wang, Devarajan - 2004 - 2D Structured Mass-spring System
+  \verb Parameter Optimization based on Axisymmetric Bending for Rigid Cloth Si
+  \verb mulatio.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  not super useful, maths is very dense and not relevant to project focus P1.
+  different uses P2. + of triangular meshes%
+  }
+  \field{year}{2004}
+\endentry
+
+\entry{Xinrong2009}{inproceedings}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Xinrong}{X.}%
+     {Hu}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yan}{Y.}%
+     {Bai}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Shuqin}{S.}%
+     {Cui}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Xiaoqin}{X.}%
+     {Du}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhongmin}{Z.}%
+     {Deng}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cloth model,Continuous model,Discrete model,Geometrical model}
+  \strng{namehash}{XH+1}
+  \strng{fullhash}{XHYBSCXDZD1}
+  \field{labelyear}{2009}
+  \field{sortinit}{X}
+  \field{booktitle}{2009 Second ISECS International Colloquium on Computing,
+  Communication, Control, and Management, CCCM 2009}
+  \field{title}{{Review of cloth modeling}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Xinrong et al. - 2009 - Review of cloth modeling.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Short but interesting summary P1-2. geometric models P2. -ve of geometric,
+  continuous models P2-3. discrete models P3. +ve of mass-spring, continuous vs
+  discrete%
+  }
+  \field{year}{2009}
+\endentry
+
+\entry{Yalcn}{misc}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Yal{\c{c}}ın}{Y.}%
+     {M~Adil}{M.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yıldız}{Y.}%
+     {Cansın}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{YMAYC1}
+  \strng{fullhash}{YMAYC1}
+  \field{sortinit}{Y}
+  \field{title}{{Techniques for Animating Cloth}}
+  \verb{url}
+  \verb http://www.cs.bilkent.edu.tr/{~}cansin/projects/cs567-animation/cloth/c
+  \verb loth-paper.pdf
+  \endverb
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Yal{\c{c}}ın, Yıldız - Unknown - Techniques for Animati
+  \verb ng Cloth.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  brief overview of some techniques P1. warp {\&}amp; weft definitions, cloth
+  properties {\&}amp; diagram P2. cost vs realism debate, physical models
+  definition P2-5. overview of physical techniques P3. -ve of continuum P4. +ve
+  of Provot, explicit Euler P5. try to read reference 15 P9. try to find
+  reference 19%
+  }
+  \field{urlday}{25}
+  \field{urlmonth}{05}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Zeller2005}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Zeller}{Z.}%
+     {Cyril}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cloth Simulation GPU}
+  \strng{namehash}{ZC1}
+  \strng{fullhash}{ZC1}
+  \field{labelyear}{2005}
+  \field{sortinit}{Z}
+  \field{booktitle}{SIGGRAPH}
+  \field{title}{{Cloth Simulation On The GPU}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Zeller - 2005 - Cloth Simulation On The GPU.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  GPU based approach, shows performance still a concern (?) P4. cloth model P5.
+  verlet integration P6-7. spring constraints P8. algorithm P10-13. GPU
+  simulation P17. performnace%
+  }
+  \field{year}{2005}
+\endentry
+
+\entry{Zhang2001}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Zhang}{Z.}%
+     {Dongliang}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Yuen}{Y.}%
+     {Matthew M~F}{M.~M.~F.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Cloth simulation,Collision detection,Multilevel meshes,Physically based
+  modeling}
+  \strng{namehash}{ZDYMMF1}
+  \strng{fullhash}{ZDYMMF1}
+  \field{labelyear}{2001}
+  \field{sortinit}{Z}
+  \field{title}{{Cloth simulation using multilevel meshes}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Zhang, Yuen - 2001 - Cloth simulation using multilevel mes
+  \verb hes.pdf:pdf
+  \endverb
+  \field{journaltitle}{Computers and Graphics (Pergamon)}
+  \field{annotation}{%
+  Multi level meshes not necessarily useful, but another technique to discuss
+  in lit review P1. read reference 1, model cost considerations P2. +/-
+  geometric {\&}amp; physical techniques, different mass-spring model, how to
+  choose point masses, spring equation P3. explicit Euler, + of multi level
+  meshes P3-4. derivation of minimum time step size%
+  }
+  \field{year}{2001}
+\endentry
+
+\entry{Zhenfang2012}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Zhenfang}{Z.}%
+     {Cao}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Bing}{B.}%
+     {He}{H.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{-Cloth Simulation,Mass-Spring,Super-Elasticity}
+  \strng{namehash}{ZCBH1}
+  \strng{fullhash}{ZCBH1}
+  \field{labelyear}{2012}
+  \field{sortinit}{Z}
+  \field{booktitle}{National Conference on Information Technology and Computer
+  Science}
+  \field{pages}{323\bibrangedash 327}
+  \field{title}{{Research of Fast Cloth Simulation Based on Mass- Spring
+  Model}}
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Zhenfang, Bing - 2012 - Research of Fast Cloth Simulation
+  \verb Based on Mass- Spring Model.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  Not very useful for dissertation topic, but has some interesting
+  super-elasticity details (not sure if necessary for my project) P1. super
+  elasticity definition, read reference 11, -ve of super elasticity correction
+  P2. force equations, -ve of runge-katta, Taylor expansion equations P2-3.
+  super elasticity resolution P3. improved super elasticity resolution%
+  }
+  \field{year}{2012}
+\endentry
+
+\entry{Zink2007}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Zink}{Z.}%
+     {Nico}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hardy}{H.}%
+     {Alexandre}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \strng{namehash}{ZNHA1}
+  \strng{fullhash}{ZNHA1}
+  \field{labelyear}{2007}
+  \field{sortinit}{Z}
+  \field{booktitle}{AFRIGRAPH}
+  \field{pages}{187\bibrangedash 195}
+  \field{title}{{Cloth Simulation and Collision Detection using Geometry
+  Images}}
+  \list{location}{1}{%
+    {New York}%
+  }
+  \verb{file}
+  \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
+  \verb p/Downloaded/Zink, Hardy - 2007 - Cloth Simulation and Collision Detect
+  \verb ion using Geometry Images.pdf:pdf
+  \endverb
+  \field{annotation}{%
+  uses mass spring system with geometry images P1. different usecases,
+  simulation costs P2. geometry images, + of mass-spring P3. +/- explicit
+  {\&}amp; implicit P5. - of mass-spring%
+  }
+  \field{year}{2007}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

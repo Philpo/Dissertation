@@ -1,0 +1,34 @@
+\chapter{Introduction}
+
+As computational power has increased, research into techniques which allow a computer to simulate intelligence has boomed. Investigating techniques for teaching computers to play games as good as, or better, than humans is a popular research area. This sort of research is interesting in an academic sense, but could also find applications in modern video games, where there is a demand for ever more realistic artificial intelligence to provide a challenging experience for players. Research in this area has had some successes, with computers now able to beat the best human grandmasters at chess and several other board games.
+\\Connect 4 was solved in 1988 by Victor Allis and he described a program, VICTOR, which plays Connect 4 according to nine strategic rules and is capable of always winning\cite{connect4}. This is a similar approach taken to other successful game playing programs; their 'intelligence' is based on a set of strongly defined rules for playing the game.
+\\This project aims to take a different approach to playing Connect 4; applying stochastic optimisation computational intelligence techniques to attempt to learn the best way of playing Connect 4, essentially learning the strategic rules.
+
+\section{Project Aims}
+The aim of this project is to investigate the application of population based optimisation techniques to playing Connect 4 in The Arena, a Java based framework that allows player modules to be automatically played against each other.
+Specifically, three algorithms will be investigated: 
+\begin{itemize}
+\item {Genetic Algorithms}
+\item {Evolution Strategies}
+\item {Particle Swarm Optimisation}
+\end{itemize}
+
+This aim was split into a number of objectives, which will be used in evaluating the success of the project (see chapter \ref{sec:eval}).
+These objectives are listed below.
+\begin{itemize}
+\item {Implement and test the chosen population based optimisation algorithms, producing a generic implementation}
+\item {Adapt the generic implementation to work with Connect 4 in The Arena}
+\item {Evaluate the effectiveness of the different algorithms in playing Connect 4}
+\item {Compare the effectiveness and efficiency of the different algorithms}
+\end{itemize}
+
+\section{Report Structure}
+This report will detail the research, design and testing for the project and is structured as follows:
+\begin{itemize}
+  \item{Chapter 1: introduction. A brief description of the project and a listing of the project's aims and objectives}
+  \item{Chapter 2: literature review. The research carried out for the project. Describes the structure and operation of the three chosen optimisation algorithms}
+  \item{Chapter 3: system specification. Lists the requirements of the system to be developed and gives details of the development methodology employed and the time plan for the development process}
+  \item{Chapter 4: system design. Details and discusses the design of the system and the testing processes. Gives details of any implementation problems and how they affected the design}
+  \item{Chapter 5: evaluation. Presents the results of testing the system and evaluates the success of the project against the objectives}
+  \item{Chapter 6: conclusion. A final discussion on the successes and limitations of the project and suggestions for future work}
+\end{itemize}
