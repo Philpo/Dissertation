@@ -8,63 +8,66 @@
 \BOOKMARK [2][-]{subsection.1.1.2}{Cloth Models}{section.1.1}% 8
 \BOOKMARK [3][-]{subsubsection.1.1.2.1}{Geometric Models}{subsection.1.1.2}% 9
 \BOOKMARK [3][-]{subsubsection.1.1.2.2}{Physically-based Models}{subsection.1.1.2}% 10
-\BOOKMARK [1][-]{section.1.2}{Optimisation}{chapter.1}% 11
-\BOOKMARK [2][-]{subsection.1.2.1}{Stochastic Optimisation}{section.1.2}% 12
-\BOOKMARK [1][-]{section.1.3}{Computational Intelligence}{chapter.1}% 13
-\BOOKMARK [1][-]{section.1.4}{Evolutionary Algorithms}{chapter.1}% 14
-\BOOKMARK [2][-]{subsection.1.4.1}{Encoding}{section.1.4}% 15
-\BOOKMARK [2][-]{subsection.1.4.2}{Operators}{section.1.4}% 16
-\BOOKMARK [2][-]{subsection.1.4.3}{Generic Evolutionary Algorithm}{section.1.4}% 17
-\BOOKMARK [2][-]{subsection.1.4.4}{Specific Evolutionary Algorithms}{section.1.4}% 18
-\BOOKMARK [2][-]{subsection.1.4.5}{Genetic Algorithms}{section.1.4}% 19
-\BOOKMARK [3][-]{subsubsection.1.4.5.1}{Encoding}{subsection.1.4.5}% 20
-\BOOKMARK [3][-]{subsubsection.1.4.5.2}{Selection}{subsection.1.4.5}% 21
-\BOOKMARK [3][-]{subsubsection.1.4.5.3}{Recombination}{subsection.1.4.5}% 22
-\BOOKMARK [3][-]{subsubsection.1.4.5.4}{Mutation}{subsection.1.4.5}% 23
-\BOOKMARK [3][-]{subsubsection.1.4.5.5}{Configurable Parameters}{subsection.1.4.5}% 24
-\BOOKMARK [2][-]{subsection.1.4.6}{Evolution Strategies}{section.1.4}% 25
-\BOOKMARK [3][-]{subsubsection.1.4.6.1}{Encoding}{subsection.1.4.6}% 26
-\BOOKMARK [3][-]{subsubsection.1.4.6.2}{Selection}{subsection.1.4.6}% 27
-\BOOKMARK [3][-]{subsubsection.1.4.6.3}{Recombination}{subsection.1.4.6}% 28
-\BOOKMARK [3][-]{subsubsection.1.4.6.4}{Mutation}{subsection.1.4.6}% 29
-\BOOKMARK [3][-]{subsubsection.1.4.6.5}{Constraint Handling}{subsection.1.4.6}% 30
-\BOOKMARK [3][-]{subsubsection.1.4.6.6}{Configurable Parameters}{subsection.1.4.6}% 31
-\BOOKMARK [1][-]{section.1.5}{Swarm Intelligence}{chapter.1}% 32
-\BOOKMARK [2][-]{subsection.1.5.1}{Particle Swarm Optimisation}{section.1.5}% 33
-\BOOKMARK [3][-]{subsubsection.1.5.1.1}{Basic Particle Swarm Optimisation Algorithm}{subsection.1.5.1}% 34
-\BOOKMARK [3][-]{subsubsection.1.5.1.2}{gbest Particle Swarm Optimisation}{subsection.1.5.1}% 35
-\BOOKMARK [3][-]{subsubsection.1.5.1.3}{lbest PSO}{subsection.1.5.1}% 36
-\BOOKMARK [3][-]{subsubsection.1.5.1.4}{Inertia Weight}{subsection.1.5.1}% 37
-\BOOKMARK [3][-]{subsubsection.1.5.1.5}{Velocity Clamping}{subsection.1.5.1}% 38
-\BOOKMARK [3][-]{subsubsection.1.5.1.6}{Bound Handling}{subsection.1.5.1}% 39
-\BOOKMARK [3][-]{subsubsection.1.5.1.7}{Configurable Parameters}{subsection.1.5.1}% 40
-\BOOKMARK [1][-]{section.1.6}{Connect 4}{chapter.1}% 41
-\BOOKMARK [1][-]{section.1.7}{Technologies}{chapter.1}% 42
-\BOOKMARK [2][-]{subsection.1.7.1}{The Arena}{section.1.7}% 43
-\BOOKMARK [2][-]{subsection.1.7.2}{Computational Intelligence Libraries}{section.1.7}% 44
-\BOOKMARK [0][-]{appendix.A}{Class Diagrams}{}% 45
-\BOOKMARK [1][-]{section.A.1}{Optimisation library Class Diagram}{appendix.A}% 46
-\BOOKMARK [1][-]{section.A.2}{The Arena Class Diagram}{appendix.A}% 47
-\BOOKMARK [0][-]{appendix.B}{Phase One Test Results}{}% 48
-\BOOKMARK [1][-]{section.B.1}{Genetic Algorithm}{appendix.B}% 49
-\BOOKMARK [2][-]{subsection.B.1.1}{Binary Tournament Selection With Two-point Crossover}{section.B.1}% 50
-\BOOKMARK [2][-]{subsection.B.1.2}{Binary Tournament Selection With One-point Crossover}{section.B.1}% 51
-\BOOKMARK [2][-]{subsection.B.1.3}{Rank Selection With Two-point Crossover}{section.B.1}% 52
-\BOOKMARK [2][-]{subsection.B.1.4}{Rank Selection With One-point Crossover}{section.B.1}% 53
-\BOOKMARK [2][-]{subsection.B.1.5}{Proportional Selection With Two-point Crossover}{section.B.1}% 54
-\BOOKMARK [2][-]{subsection.B.1.6}{Proportional Selection With One-point Crossover}{section.B.1}% 55
-\BOOKMARK [2][-]{subsection.B.1.7}{Proportional Selection With Adjusted Numbers of Parents}{section.B.1}% 56
-\BOOKMARK [2][-]{subsection.B.1.8}{Binary Tournament Selection With Two-point Crossover in Shark}{section.B.1}% 57
-\BOOKMARK [1][-]{section.B.2}{Evolution Strategies}{appendix.B}% 58
-\BOOKMARK [2][-]{subsection.B.2.1}{\(,\) Selection With Discrete Recombination}{section.B.2}% 59
-\BOOKMARK [2][-]{subsection.B.2.2}{\(,\) Selection With Intermediate Recombination}{section.B.2}% 60
-\BOOKMARK [2][-]{subsection.B.2.3}{\(,\) Selection With Global Discrete Recombination}{section.B.2}% 61
-\BOOKMARK [2][-]{subsection.B.2.4}{\(,\) Selection With Global Intermediate Recombination}{section.B.2}% 62
-\BOOKMARK [2][-]{subsection.B.2.5}{\(+\) Selection With Discrete Recombination}{section.B.2}% 63
-\BOOKMARK [2][-]{subsection.B.2.6}{\(+\) Selection With Intermediate Recombination}{section.B.2}% 64
-\BOOKMARK [2][-]{subsection.B.2.7}{\(+\) Selection With Global Discrete Recombination}{section.B.2}% 65
-\BOOKMARK [2][-]{subsection.B.2.8}{\(+\) Selection With Global Intermediate Recombination}{section.B.2}% 66
-\BOOKMARK [2][-]{subsection.B.2.9}{\(+\) Selection With Discrete Recombination in Shark}{section.B.2}% 67
-\BOOKMARK [1][-]{section.B.3}{Particle Swarm Optimisation}{appendix.B}% 68
-\BOOKMARK [2][-]{subsection.B.3.1}{Optimisation Results}{section.B.3}% 69
-\BOOKMARK [2][-]{subsection.B.3.2}{Optimisation Results in Shark}{section.B.3}% 70
+\BOOKMARK [4][-]{paragraph.1.1.2.2.1}{Continuum Models}{subsubsection.1.1.2.2}% 11
+\BOOKMARK [4][-]{paragraph.1.1.2.2.2}{Discrete Models}{subsubsection.1.1.2.2}% 12
+\BOOKMARK [2][-]{subsection.1.1.3}{Mass-Spring Models}{section.1.1}% 13
+\BOOKMARK [1][-]{section.1.2}{Optimisation}{chapter.1}% 14
+\BOOKMARK [2][-]{subsection.1.2.1}{Stochastic Optimisation}{section.1.2}% 15
+\BOOKMARK [1][-]{section.1.3}{Computational Intelligence}{chapter.1}% 16
+\BOOKMARK [1][-]{section.1.4}{Evolutionary Algorithms}{chapter.1}% 17
+\BOOKMARK [2][-]{subsection.1.4.1}{Encoding}{section.1.4}% 18
+\BOOKMARK [2][-]{subsection.1.4.2}{Operators}{section.1.4}% 19
+\BOOKMARK [2][-]{subsection.1.4.3}{Generic Evolutionary Algorithm}{section.1.4}% 20
+\BOOKMARK [2][-]{subsection.1.4.4}{Specific Evolutionary Algorithms}{section.1.4}% 21
+\BOOKMARK [2][-]{subsection.1.4.5}{Genetic Algorithms}{section.1.4}% 22
+\BOOKMARK [3][-]{subsubsection.1.4.5.1}{Encoding}{subsection.1.4.5}% 23
+\BOOKMARK [3][-]{subsubsection.1.4.5.2}{Selection}{subsection.1.4.5}% 24
+\BOOKMARK [3][-]{subsubsection.1.4.5.3}{Recombination}{subsection.1.4.5}% 25
+\BOOKMARK [3][-]{subsubsection.1.4.5.4}{Mutation}{subsection.1.4.5}% 26
+\BOOKMARK [3][-]{subsubsection.1.4.5.5}{Configurable Parameters}{subsection.1.4.5}% 27
+\BOOKMARK [2][-]{subsection.1.4.6}{Evolution Strategies}{section.1.4}% 28
+\BOOKMARK [3][-]{subsubsection.1.4.6.1}{Encoding}{subsection.1.4.6}% 29
+\BOOKMARK [3][-]{subsubsection.1.4.6.2}{Selection}{subsection.1.4.6}% 30
+\BOOKMARK [3][-]{subsubsection.1.4.6.3}{Recombination}{subsection.1.4.6}% 31
+\BOOKMARK [3][-]{subsubsection.1.4.6.4}{Mutation}{subsection.1.4.6}% 32
+\BOOKMARK [3][-]{subsubsection.1.4.6.5}{Constraint Handling}{subsection.1.4.6}% 33
+\BOOKMARK [3][-]{subsubsection.1.4.6.6}{Configurable Parameters}{subsection.1.4.6}% 34
+\BOOKMARK [1][-]{section.1.5}{Swarm Intelligence}{chapter.1}% 35
+\BOOKMARK [2][-]{subsection.1.5.1}{Particle Swarm Optimisation}{section.1.5}% 36
+\BOOKMARK [3][-]{subsubsection.1.5.1.1}{Basic Particle Swarm Optimisation Algorithm}{subsection.1.5.1}% 37
+\BOOKMARK [3][-]{subsubsection.1.5.1.2}{gbest Particle Swarm Optimisation}{subsection.1.5.1}% 38
+\BOOKMARK [3][-]{subsubsection.1.5.1.3}{lbest PSO}{subsection.1.5.1}% 39
+\BOOKMARK [3][-]{subsubsection.1.5.1.4}{Inertia Weight}{subsection.1.5.1}% 40
+\BOOKMARK [3][-]{subsubsection.1.5.1.5}{Velocity Clamping}{subsection.1.5.1}% 41
+\BOOKMARK [3][-]{subsubsection.1.5.1.6}{Bound Handling}{subsection.1.5.1}% 42
+\BOOKMARK [3][-]{subsubsection.1.5.1.7}{Configurable Parameters}{subsection.1.5.1}% 43
+\BOOKMARK [1][-]{section.1.6}{Connect 4}{chapter.1}% 44
+\BOOKMARK [1][-]{section.1.7}{Technologies}{chapter.1}% 45
+\BOOKMARK [2][-]{subsection.1.7.1}{The Arena}{section.1.7}% 46
+\BOOKMARK [2][-]{subsection.1.7.2}{Computational Intelligence Libraries}{section.1.7}% 47
+\BOOKMARK [0][-]{appendix.A}{Class Diagrams}{}% 48
+\BOOKMARK [1][-]{section.A.1}{Optimisation library Class Diagram}{appendix.A}% 49
+\BOOKMARK [1][-]{section.A.2}{The Arena Class Diagram}{appendix.A}% 50
+\BOOKMARK [0][-]{appendix.B}{Phase One Test Results}{}% 51
+\BOOKMARK [1][-]{section.B.1}{Genetic Algorithm}{appendix.B}% 52
+\BOOKMARK [2][-]{subsection.B.1.1}{Binary Tournament Selection With Two-point Crossover}{section.B.1}% 53
+\BOOKMARK [2][-]{subsection.B.1.2}{Binary Tournament Selection With One-point Crossover}{section.B.1}% 54
+\BOOKMARK [2][-]{subsection.B.1.3}{Rank Selection With Two-point Crossover}{section.B.1}% 55
+\BOOKMARK [2][-]{subsection.B.1.4}{Rank Selection With One-point Crossover}{section.B.1}% 56
+\BOOKMARK [2][-]{subsection.B.1.5}{Proportional Selection With Two-point Crossover}{section.B.1}% 57
+\BOOKMARK [2][-]{subsection.B.1.6}{Proportional Selection With One-point Crossover}{section.B.1}% 58
+\BOOKMARK [2][-]{subsection.B.1.7}{Proportional Selection With Adjusted Numbers of Parents}{section.B.1}% 59
+\BOOKMARK [2][-]{subsection.B.1.8}{Binary Tournament Selection With Two-point Crossover in Shark}{section.B.1}% 60
+\BOOKMARK [1][-]{section.B.2}{Evolution Strategies}{appendix.B}% 61
+\BOOKMARK [2][-]{subsection.B.2.1}{\(,\) Selection With Discrete Recombination}{section.B.2}% 62
+\BOOKMARK [2][-]{subsection.B.2.2}{\(,\) Selection With Intermediate Recombination}{section.B.2}% 63
+\BOOKMARK [2][-]{subsection.B.2.3}{\(,\) Selection With Global Discrete Recombination}{section.B.2}% 64
+\BOOKMARK [2][-]{subsection.B.2.4}{\(,\) Selection With Global Intermediate Recombination}{section.B.2}% 65
+\BOOKMARK [2][-]{subsection.B.2.5}{\(+\) Selection With Discrete Recombination}{section.B.2}% 66
+\BOOKMARK [2][-]{subsection.B.2.6}{\(+\) Selection With Intermediate Recombination}{section.B.2}% 67
+\BOOKMARK [2][-]{subsection.B.2.7}{\(+\) Selection With Global Discrete Recombination}{section.B.2}% 68
+\BOOKMARK [2][-]{subsection.B.2.8}{\(+\) Selection With Global Intermediate Recombination}{section.B.2}% 69
+\BOOKMARK [2][-]{subsection.B.2.9}{\(+\) Selection With Discrete Recombination in Shark}{section.B.2}% 70
+\BOOKMARK [1][-]{section.B.3}{Particle Swarm Optimisation}{appendix.B}% 71
+\BOOKMARK [2][-]{subsection.B.3.1}{Optimisation Results}{section.B.3}% 72
+\BOOKMARK [2][-]{subsection.B.3.2}{Optimisation Results in Shark}{section.B.3}% 73
