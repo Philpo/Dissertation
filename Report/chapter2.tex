@@ -28,6 +28,7 @@ Cloth has three mechanical properties that control its behaviour; stretching, sh
 \end{figure}
 
 \subsubsection{Visual Properties}
+\label{sec:visual properties}
 The mechanical properties of cloth, discussed above, cause cloth to exhibit two visual properties. These properties arise from the fact that cloth is typically non-elastic, due to stretch and shear resistances, but highly flexible, due to low bend resistance.
 \\Firstly, cloth will drape over objects and secondly the cloth will form many folds and wrinkles. Fig \ref{fig:visual properties} demonstrates the visual properties of cloth.
 \begin{figure}[tp]
@@ -53,7 +54,7 @@ By contrast, physically-based models are concerned with the accurate modelling o
 \begin{equation}
 \begin{split}
 \label{eq:general ODE}
-  &\ddot{x} = M^{-1}(-\frac{\delta E}{\delta x} + F)
+  &\ddot{x} = M^{-1}\bigg(-\frac{\delta E}{\delta x} + F\bigg)
   \\\text{where:}
   \\&\text{x is a vector representing the geometric state of the system}
   \\&\text{M is a diagonal matrix representing the mass distribution of the system}
@@ -76,8 +77,142 @@ According to \textcite[2]{Choi2002}, "Cloth is not a homogeneous continuum. Ther
 \\By far the most popular technique is the mass-spring model. This model is popular as it is simple, easy to implement and offers a good balance between accuracy and efficiency. This model is the most common model used for dynamic, real-time simulations and as such, it has been chosen for this project and will now be described in more detail.
 
 \subsection{Mass-Spring Models}
-Mass-spring models were first proposed for use in cloth simulation in \textcite{Provot2001}.
+Mass-spring models were first proposed for use in cloth simulation in \textcite{Provot2001}. Using these models, the cloth is discretised as a 2-dimensional mesh of point masses, either regular or triangular, connected by linear springs.
 
+\subsubsection{Provot Model}
+Using the mass-spring model proposed in \textcite{Provot2001} the cloth is modelled as a regular mesh of point masses. The points are connected together using three different types of springs:
+\begin{itemize}
+  \item{Structural springs, connecting particle [i, j] to particles [i + 1, j] and [i, j + 1]. These springs resist structural deformations of the cloth, and provide the overall cloth structure. Structural springs are not enough to provide a realistic cloth model. Fig \ref{fig:structural only} shows the results of running a cloth simulation with structural springs only. As can be seen, this does not produce a realistic image}
+  \item{Shear springs, connecting particle [i, j] to particle [i + 1, j + 1] and particle [i + 1, j] to particle [i, j + 1]. These springs provide shearing resistance for the cloth. By adding shear springs, the realism of the model is improved; Fig \ref{fig:structural and shear} shows the improved fidelity afforded by shear springs}
+  \item{Bend springs, connecting particle [i, j] to particles [i + 2, j] and [i, j + 2]. These springs model bend resistance}
+\end{itemize}
+
+\begin{figure}
+\centering
+\subfigure[Initial configuration]{\label{fig:structural initial}\includegraphics[width=60mm]{Figures/lander_02.png}}
+\subfigure[Result of running the simulation]{\label{fig:structural results}\includegraphics[width=60mm]{Figures/lander_03.png}}
+\caption[Cloth with structural springs only]{Cloth with structural springs only \parencite[2]{Lander2000}}
+\label{fig:structural only}
+\end{figure}
+
+\begin{figure}
+\centering
+\subfigure[Initial configuration]{\label{fig:shear initial}\includegraphics[width=60mm]{Figures/lander_04.png}}
+\subfigure[Result of running the simulation]{\label{fig:shear results}\includegraphics[width=60mm]{Figures/lander_05.png}}
+\caption[Cloth with structural and shear springs]{Cloth with structural and shear springs \parencite[2]{Lander2000}}
+\label{fig:structural and shear}
+\end{figure}
+
+Fig \ref{fig:provot model} shows the arrangement of these springs for a small cloth model.
+\begin{figure}[tp]
+   \begin{center}
+     \includegraphics{Figures/provot_mesh_structure.png}
+   \end{center}
+   \caption[Provot cloth model]{Provot cloth model \parencite[2]{Lander2000}}
+   \label{fig:provot model}
+\end{figure}
+
+To animate the mesh, forces are applied to the particles and are calculated using Newton's second law:
+\begin{equation}
+\begin{split}
+\label{eq:newton second law}
+  &F_{ij} = m_{ij}a_{ij}
+\\\text{where:}
+\\&F_{ij}\text{ is the total sum of forces acting on particle ij}
+\\&m_{ij}\text{ is the mass of particle ij}
+\\&a_{ij}\text{ is the acceleration of particle ij}
+\end{split}
+\end{equation}
+
+The total force acting on a particle is defined as:
+\begin{equation}
+\label{eq:total force}
+  F_{total} = \Sigma F_{external} + \Sigma F_{internal}
+\end{equation}
+
+F$_{external}$ are external forces acting on the mesh, such as gravity and wind.
+\\Gravity is calculated by:
+\begin{equation}
+\begin{split}
+\label{eq:gravity}
+  &F_{g} = m_{ij}G
+  \\\text{where:}
+  \\&\text{G is the gravitational constant}
+\end{split}
+\end{equation}
+Wind is calculated by:
+\begin{equation}
+\begin{split}
+\label{eq:wind}
+  &F_{wind} = w(n_{ij}\bullet\overrightarrow{W})
+  \\\text{where:}
+  \\&\text{n$_{ij}$ is the surface normal of particle ij}
+  \\&\text{$\overrightarrow{W}$ is the wind direction vector}
+  \\&\text{w is the wind constant}
+\end{split}
+\end{equation}
+
+F$_{internal}$ are the resultant forces of the springs connecting the mesh.
+\\The spring force is calculated using the Hooke equation \parencite[201]{Parent2012}:
+\begin{equation}
+\begin{split}
+\label{eq:hooke equation}
+  &F_{spring} = -k_{s}(L_{c}-L_{r})\frac{p_{2}-p_{1}}{\parallel p_{2}-p_{1}\parallel}
+  \\\text{where:}
+  \\&\text{k$_{s}$ is the spring stiffness coefficient}
+  \\&\text{L$_{c}$ is the current length of the spring}
+  \\&\text{L$_{r}$ is the initial, or rest, length of the spring}
+  \\&\text{p$_{1}$ \& p$_{2}$ are the positions of the two connected particles}
+\end{split}
+\end{equation}
+Using this equation, the cloth will be modelled with pure elastic springs and will oscillate indefinitely. However, as mentioned in \ref{sec:visual properties} and \parencite[1]{Provot2001}, cloth is a non-elastic medium and therefore the model needs to account for the energy lost due to internal friction in the cloth.
+\\This is typically modelled as an extra internal damping force, calculated using \parencite[201]{Parent2012}:
+\begin{equation}
+\begin{split}
+\label{eq:spring damping}
+  &F_{damping} = -k_{d}(\dot{p_{2}}-\dot{p_{1}})\bullet\bigg(\frac{p_{2}-p_{1}}{\parallel p_{2}-p_{1}\parallel}\bigg)\bigg(\frac{p_{2}-p_{1}}{\parallel p_{2}-p_{1}\parallel}\bigg)
+  \\\text{where:}
+  \\&\text{k$_{d}$ is the spring damping coefficient}
+  \\&\text{$\dot{p_{1}}$ \& $\dot{p_{2}}$ are the velocities of the two connected particles}
+  \\&\text{p$_{1}$ \& p$_{2}$ are the positions of the two connected particles}
+\end{split}
+\end{equation}
+
+\subsubsection{Choi Ko Model}
+A different mass-spring model was proposed in \textcite{Choi2002} and aims to improve the buckling behaviour of the cloth, resulting in more realistic draping and wrinkling behaviour.
+\\The cloth is modelled in a similar way to the Provot method, but additional bend springs are added, connecting particle [i, j] to particle [i + 2, j + 2] and particle [i + 2, j] to particle [i, j + 2]; fig \ref{fig:choi ko model} shows the arrangement of springs.
+\begin{figure}[tp]
+   \begin{center}
+     \includegraphics{Figures/choi_ko_model.png}
+   \end{center}
+   \caption[Choi Ko cloth model]{Choi Ko cloth model \parencite[2]{Choi2002}}
+   \label{fig:choi ko model}
+\end{figure}
+\\This model uses an energy-based approach, of the general formula \ref{eq:general energy equation}\parencite[3]{Bartels2014}, to calculate the forces acting on individual particles.
+\begin{equation}
+\begin{split}
+\label{eq:general energy equation}
+  &F = \bigg(\frac{\delta E(S)}{\delta x}, \frac{\delta E(S)}{\delta y}, \frac{\delta E(S)}{\delta z}\bigg)
+  \\\text{where:}
+  \\&\text{E(S) is an energy function of S, a representation of the cloth's state}
+\end{split}
+\end{equation}
+Two types of interactions are defined, type 1 and type 2. Type 1 interactions model stretch and shear resistances, the red lines in \ref{fig:choi ko model}, and are represented by a linear spring model. Type 2 interactions model bend forces, the blue lines in \ref{fig:choi ko model}, and helps prevent the so called post-buckling instability problem. The interested reader should see \textcite{Choi2002} for more information on the energy functions for each interaction type.
+
+\subsubsection{Justification of Choice}
+Mass-spring models are suitable for use in this project as they are efficient and simple to implement; "Mass-spring models are the most efficient as well as the simplest of the cloth models.  This method is one of the most popular techniques for simulating cloth, especially when interactive frame rates are required" \parencite[2]{Zink2007}. As this project is concerned with the real time animation of cloth, mass-spring models are therefore the obvious choice.
+\\Mass-spring models are also the most common method of modelling cloth in video games, used in games such as Alan Wake, \parencite[2]{Enqvist2010}, and Hitman: Codename 47, \parencite[1]{Jakobsen2005}, as well as commercial physics engines for games, such as Havok\textsuperscript{\textregistered} and PhysX\textsuperscript{\textregistered}. Again, since this project is concerned with the simulation of cloth for use in a video game, mass-spring models are the logical choice.
+\\In particular, the Provot model will be used for this project as the force-based approach requires the solving of a much simpler series of equations than the energy-based approach of the Choi Ko model, and is therefore likely to be more computationally efficient.
+\\\\One disadvantage of the mass-spring model is that it does not achieve realistic animation of cloth as "mass-spring systems do not model any specific material and are not related to measured properties of real clothes" \parencite[3]{Wacker2005a}. However, by careful tuning of the spring stiffness coefficients pleasing results can be achieved; \textcite{Mongus2012} have shown that, with tuning, mass-spring models can reproduce the drape of a cloth with an accuracy of 97\%.
+\\Another disadvantage of mass-spring models is what Provot calls 'super-elasticity'; springs are allowed to deform too much, leading to unrealistic looking cloth. This is caused because "the springs are “ideal” and they have unlimited linear deformation rate" \parencite[3]{Vassilev2001}. To counter this effect, Provot suggests enforcing length constraints on structural and shear springs. First the position of the particles are updated, then the deformation of the springs are calculated. If this deformation value is greater than some threshold, $\tau_{c}$, then the position of the connected particles are adjusted so the deformation rate equals $\tau_{c}$. Fig \ref{fig:super-elasticity} shows the super-elasticity problem and the results of employing Provot's corrective method. As can be seen, correcting the super-elasticity results in a much more realistic model.
+
+\begin{figure}
+\centering
+\subfigure[Super-elasticity effect]{\label{fig:super-elasticity}\includegraphics[width=60mm]{Figures/super_elasticity.png}}
+\subfigure[Result of correcting super-elasticity]{\label{fig:super-elasticity correction}\includegraphics[width=60mm]{Figures/super_elasticity_corrected.png}}
+\caption[Super-elasticity problems]{Super-elasticity problems \parencite[4,6]{Provot2001}}
+\label{fig:super-elasticity}
+\end{figure}
 
 \section{Optimisation}
 In simple terms, mathematical optimisation, also known as mathematical programming, is the process of finding the optimal solution to some function based on a set of constraints.
