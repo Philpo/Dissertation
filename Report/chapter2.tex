@@ -174,7 +174,6 @@ Using this equation, the cloth will be modelled with pure elastic springs and wi
   \\\text{where:}
   \\&\text{k$_{d}$ is the spring damping coefficient}
   \\&\text{$\dot{p_{1}}$ \& $\dot{p_{2}}$ are the velocities of the two connected particles}
-  \\&\text{p$_{1}$ \& p$_{2}$ are the positions of the two connected particles}
 \end{split}
 \end{equation}
 
@@ -213,6 +212,92 @@ Mass-spring models are suitable for use in this project as they are efficient an
 \caption[Super-elasticity problems]{Super-elasticity problems \parencite[4,6]{Provot2001}}
 \label{fig:super-elasticity}
 \end{figure}
+
+\subsection{Numerical Integration for Mass-Spring Models}
+As mentioned above, physically-based models for cloth simulation require solving a series of differential equations, discretised in space and time. According to \textcite[5]{Wacker2005a}, "since particle systems already represent a discretization in space, only a system of ordinary differential equations has to be solved". For the Mass-Spring model using Newtonian mechanics a series of second order ODEs, of the form \ref{eq:newtonian ODE}, must be solved \parencite[5]{Zink2007}.
+\begin{equation}
+\label{eq:newtonian ODE}
+  \frac{\delta^{2}x}{\delta t^{2}} = M^{-1}F(x, v)
+\end{equation}
+This can be converted into a coupled series of first order ODEs with the addition of an extra variable \parencite[5]{Zink2007}:
+\begin{equation}
+\label{eq:1st order ODE}
+  \frac{\delta}{\delta t} \bigg(\begin{array}{c}  x \\ v \end{array}\bigg) = \bigg(\begin{array}{c}  v \\ M^{-1}F(x, v) \end{array}\bigg)
+\end{equation}
+Equations \ref{eq:newtonian ODE} and \ref{eq:1st order ODE} cannot be solved analytically, and therefore it is necessary to use a numerical method, or integrator, to approximate them at discrete time intervals. There are many integration methods that could be chosen, typically classified as either explicit or implicit, and the most popular choices will be described now.
+
+\subsubsection{Explicit Integrators}
+Most of the early work on physically-based cloth simulation used explicit integrators as they are simple and easy to implement; they only require information about the state of the system at the previous interval to calculate the current state.
+\\The most commonly used explicit integrators are the Runge-Kutta family of integrators.
+
+\paragraph{Euler}\leavevmode\\
+The first order Runge-Kutta integrator, or explicit Euler, was used in \textcite{Provot2001} to approximate a Mass-Spring system.
+\\Equation \ref{eq:1st order ODE} is approximated by \parencite[3]{Wang2009a}:
+\begin{equation}
+\begin{split}
+\label{eq:explicit euler formal}
+  &v_{i + \Delta t} = v_{i} + \Delta t F(t_{i}, v_{i})
+  \\\text{where:}
+  \\&\text{$v_{i}$ and $x_{i}$ are the velocity and position of a particle at time interval i}
+  \\&\text{$\Delta t$ is the time step}
+\end{split}
+\end{equation}
+When applied to the Provot Mass-Spring model, this gives \parencite[3]{Provot2001}:
+\begin{equation}
+\begin{split}
+\label{eq:explicit euler provot}
+  &a_{i, j}(t + \Delta t) = \frac{1}{m_{i, j}}F_{i, j}(t)
+  \\&v_{i, j}(t + \Delta t) = v_{i, j}(t) + \Delta ta_{i, j}(t + \Delta t)
+  \\&x_{i, j}(t + \Delta t) = x_{i, j}(t) + \Delta tv_{i, j}(t + \Delta t)
+  \\\text{where:}
+  \\&\text{$a_{i, j}$, $m_{i, j}$, $v_{i, j}$ and $x_{i, j}$ are the acceleration, mass, velocity and position of particle i, j respectively}
+\end{split}
+\end{equation}
+The explicit Euler method is computationally cheap but can result in numerical instability if too large a time step is used. Mathematically, the explicit Euler method is stable only if the time step is less than the natural period of the system, approximated as $\pi\sqrt{\frac{m}{K}}$, where K is the maximum stiffness in the system. \textcite[2]{Vassilev2001} found that in fact explicit Euler is only stable for $\Delta t$ values less than $0.4\pi\sqrt{\frac{m}{K}}$. 
+\\As cloth generally does not stretch easily, this results in high stiffness in the structural and shear springs, which necessitates the use of a small time step if the explicit Euler integrator is chosen. This can impact the overall performance of the simulation, as while this integrator is cheap, the frequency of calculations is high as a result of the time step limitations.
+
+\paragraph{Midpoint}\leavevmode\\
+The explicit Midpoint integrator is a second order Runge-Kutta method and modifies the Euler integrator to give greater stability.
+\\Equation \ref{eq:explicit euler formal} is modified to give the following \parencite[3]{Wang2009a}:
+\begin{equation}
+\label{eq:midpoint}
+  v_{i + \Delta t} = v_{i} + \Delta t F\bigg(t_{i} + \frac{\Delta t}{2}, v_{i} + \frac{\Delta t}{2}F(t_{i}, v_{i})\bigg)
+\end{equation}
+Since this method requires two derivatives, the computational cost is greater than Euler. However, because the midpoint method affords greater numerical stability (see fig \ref{fig:stability regions}), a larger time step can be used which increases the overall simulation performance; \textcite{Wang2009a} have shown that the midpoint integrator offers close to twice the simulation performance over explicit Euler.
+\begin{figure}[tp]
+   \begin{center}
+     \includegraphics{Figures/stability_diagram.png}
+   \end{center}
+   \caption[Explicit integrator stability regions]{Explicit integrator stability regions \parencite[4]{Wang2009a}}
+   \label{fig:stability regions}
+\end{figure}
+
+\paragraph{Fourth order Runge-Kutta}\leavevmode\\
+The Fourth order Runge-Kutta integrator offers greater stability using larger time steps over the midpoint method and is formulated as \parencite[3]{Wang2009a}:
+\begin{equation}
+\begin{split}
+\label{eq:4th order rk}
+  &v_{i + \Delta t} = v_{i} + \frac{\Delta t}{6}(k_{1} + 2k_{2} + 2k_{3} +  k_{4})
+  \\&k_{1} = F(t_{i} + v_{i})
+  \\&k_{2} = F\bigg(t_{i} + \frac{\Delta t}{2}, v_{i} + \frac{\Delta t}{2}k_{1}\bigg)
+  \\&k_{3} = F\bigg(t_{i} + \frac{\Delta t}{2}, v_{i} + \frac{\Delta t}{2}k_{2}\bigg)
+  \\&k_{4} = F\bigg(t_{i} + \Delta t, v_{i} + \frac{\Delta t}{2}k_{3}\bigg)
+\end{split}
+\end{equation}
+This integrator has a significantly higher computational cost than the other methods discussed, however \textcite[4]{Volino2001} have shown that the Runge-Kutta integrator supports time steps almost six times larger than the midpoint method. Therefore, given that Runge-Kutta is three times as computationally expensive as midpoint, this suggests that this integrator can lead to twice the overall simulation performance. \textcite[4]{Wang2009a} have also shown that the fourth order Runge-Kutta integrator offers simulation performance over midpoint and explicit Euler.
+
+\paragraph{Verlet}\leavevmode\\
+Verlet integration is an alternative to the Runge-Kutta family of integrators. It avoids velocity calculations by approximating the velocity of a particle using its previous positions.
+\\A particle's new position is approximated by \parencite[2]{Mongus2012}:
+\begin{equation}
+\label{eq:verlet}
+  x_{i + \Delta t} = 2x_{i} - x_{i - \Delta t} + a_{i + \Delta t}\Delta t^{2}
+\end{equation}
+This method is computationally fast and reasonably stable, as "velocity is implicitly given and consequently it is harder for velocity and position to come out of sync" \parencite[1]{Jakobsen2005}. However it does still suffer from time step issues; figures 11 and 13 in \textcite[14-15]{Wacker2005a} show that below a certain threshold Verlet integration is less stable than explicit Euler, but more stable over that threshold.
+
+\subsubsection{Implicit Integrators}
+
+\subsubsection{Position Based Dynamics}
 
 \section{Optimisation}
 In simple terms, mathematical optimisation, also known as mathematical programming, is the process of finding the optimal solution to some function based on a set of constraints.

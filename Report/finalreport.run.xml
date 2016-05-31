@@ -83,7 +83,7 @@
       <file>finalreport-blx.bib</file>
     </requires>
     <requires type="editable">
-      <file>Bibliography/library.bib</file>
+      <file>Bibliography/Dissertation.bib</file>
     </requires>
     <requires type="static">
       <file>biblatex.bst</file>

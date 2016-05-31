@@ -34,122 +34,138 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.1.3.3}Justification of Choice}{21}{subsubsection.1.1.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Optimisation}{22}{section.1.2}
+\contentsline {subsection}{\numberline {1.1.4}Numerical Integration for Mass-Spring Models}{22}{subsection.1.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}Stochastic Optimisation}{24}{subsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.1.4.1}Explicit Integrators}{23}{subsubsection.1.1.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Computational Intelligence}{24}{section.1.3}
+\contentsline {paragraph}{\numberline {1.1.4.1.1}Euler}{23}{paragraph.1.1.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Evolutionary Algorithms}{25}{section.1.4}
+\contentsline {paragraph}{\numberline {1.1.4.1.2}Midpoint}{24}{paragraph.1.1.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.1}Encoding}{25}{subsection.1.4.1}
+\contentsline {paragraph}{\numberline {1.1.4.1.3}Fourth order Runge-Kutta}{25}{paragraph.1.1.4.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.2}Operators}{26}{subsection.1.4.2}
+\contentsline {paragraph}{\numberline {1.1.4.1.4}Verlet}{25}{paragraph.1.1.4.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.3}Generic Evolutionary Algorithm}{26}{subsection.1.4.3}
+\contentsline {subsubsection}{\numberline {1.1.4.2}Implicit Integrators}{26}{subsubsection.1.1.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.4}Specific Evolutionary Algorithms}{27}{subsection.1.4.4}
+\contentsline {subsubsection}{\numberline {1.1.4.3}Position Based Dynamics}{26}{subsubsection.1.1.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.5}Genetic Algorithms}{28}{subsection.1.4.5}
+\contentsline {section}{\numberline {1.2}Optimisation}{26}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.5.1}Encoding}{28}{subsubsection.1.4.5.1}
+\contentsline {subsection}{\numberline {1.2.1}Stochastic Optimisation}{26}{subsection.1.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.5.2}Selection}{29}{subsubsection.1.4.5.2}
+\contentsline {section}{\numberline {1.3}Computational Intelligence}{28}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.5.3}Recombination}{32}{subsubsection.1.4.5.3}
+\contentsline {section}{\numberline {1.4}Evolutionary Algorithms}{28}{section.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.5.4}Mutation}{33}{subsubsection.1.4.5.4}
+\contentsline {subsection}{\numberline {1.4.1}Encoding}{28}{subsection.1.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.5.5}Configurable Parameters}{35}{subsubsection.1.4.5.5}
+\contentsline {subsection}{\numberline {1.4.2}Operators}{29}{subsection.1.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.4.6}Evolution Strategies}{35}{subsection.1.4.6}
+\contentsline {subsection}{\numberline {1.4.3}Generic Evolutionary Algorithm}{29}{subsection.1.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.6.1}Encoding}{36}{subsubsection.1.4.6.1}
+\contentsline {subsection}{\numberline {1.4.4}Specific Evolutionary Algorithms}{30}{subsection.1.4.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.6.2}Selection}{36}{subsubsection.1.4.6.2}
+\contentsline {subsection}{\numberline {1.4.5}Genetic Algorithms}{31}{subsection.1.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.6.3}Recombination}{37}{subsubsection.1.4.6.3}
+\contentsline {subsubsection}{\numberline {1.4.5.1}Encoding}{31}{subsubsection.1.4.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.6.4}Mutation}{37}{subsubsection.1.4.6.4}
+\contentsline {subsubsection}{\numberline {1.4.5.2}Selection}{33}{subsubsection.1.4.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.6.5}Constraint Handling}{38}{subsubsection.1.4.6.5}
+\contentsline {subsubsection}{\numberline {1.4.5.3}Recombination}{35}{subsubsection.1.4.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.4.6.6}Configurable Parameters}{41}{subsubsection.1.4.6.6}
+\contentsline {subsubsection}{\numberline {1.4.5.4}Mutation}{36}{subsubsection.1.4.5.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.5}Swarm Intelligence}{41}{section.1.5}
+\contentsline {subsubsection}{\numberline {1.4.5.5}Configurable Parameters}{38}{subsubsection.1.4.5.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.5.1}Particle Swarm Optimisation}{41}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.4.6}Evolution Strategies}{38}{subsection.1.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.5.1.1}Basic Particle Swarm Optimisation Algorithm}{42}{subsubsection.1.5.1.1}
+\contentsline {subsubsection}{\numberline {1.4.6.1}Encoding}{39}{subsubsection.1.4.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.5.1.2}gbest Particle Swarm Optimisation}{42}{subsubsection.1.5.1.2}
+\contentsline {subsubsection}{\numberline {1.4.6.2}Selection}{39}{subsubsection.1.4.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.5.1.3}lbest PSO}{42}{subsubsection.1.5.1.3}
+\contentsline {subsubsection}{\numberline {1.4.6.3}Recombination}{40}{subsubsection.1.4.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.5.1.4}Inertia Weight}{43}{subsubsection.1.5.1.4}
+\contentsline {subsubsection}{\numberline {1.4.6.4}Mutation}{40}{subsubsection.1.4.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.5.1.5}Velocity Clamping}{44}{subsubsection.1.5.1.5}
+\contentsline {subsubsection}{\numberline {1.4.6.5}Constraint Handling}{41}{subsubsection.1.4.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.5.1.6}Bound Handling}{45}{subsubsection.1.5.1.6}
+\contentsline {subsubsection}{\numberline {1.4.6.6}Configurable Parameters}{44}{subsubsection.1.4.6.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.5.1.7}Configurable Parameters}{46}{subsubsection.1.5.1.7}
+\contentsline {section}{\numberline {1.5}Swarm Intelligence}{44}{section.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.6}Connect 4}{46}{section.1.6}
+\contentsline {subsection}{\numberline {1.5.1}Particle Swarm Optimisation}{45}{subsection.1.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.7}Technologies}{47}{section.1.7}
+\contentsline {subsubsection}{\numberline {1.5.1.1}Basic Particle Swarm Optimisation Algorithm}{45}{subsubsection.1.5.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.7.1}The Arena}{47}{subsection.1.7.1}
+\contentsline {subsubsection}{\numberline {1.5.1.2}gbest Particle Swarm Optimisation}{45}{subsubsection.1.5.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.7.2}Computational Intelligence Libraries}{48}{subsection.1.7.2}
+\contentsline {subsubsection}{\numberline {1.5.1.3}lbest PSO}{46}{subsubsection.1.5.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Class Diagrams}{50}{appendix.A}
+\contentsline {subsubsection}{\numberline {1.5.1.4}Inertia Weight}{47}{subsubsection.1.5.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Optimisation library Class Diagram}{50}{section.A.1}
+\contentsline {subsubsection}{\numberline {1.5.1.5}Velocity Clamping}{48}{subsubsection.1.5.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}The Arena Class Diagram}{52}{section.A.2}
+\contentsline {subsubsection}{\numberline {1.5.1.6}Bound Handling}{48}{subsubsection.1.5.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Phase One Test Results}{54}{appendix.B}
+\contentsline {subsubsection}{\numberline {1.5.1.7}Configurable Parameters}{49}{subsubsection.1.5.1.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.1}Genetic Algorithm}{55}{section.B.1}
+\contentsline {section}{\numberline {1.6}Connect 4}{49}{section.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.1}Binary Tournament Selection With Two-point Crossover}{55}{subsection.B.1.1}
+\contentsline {section}{\numberline {1.7}Technologies}{50}{section.1.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.2}Binary Tournament Selection With One-point Crossover}{56}{subsection.B.1.2}
+\contentsline {subsection}{\numberline {1.7.1}The Arena}{50}{subsection.1.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.3}Rank Selection With Two-point Crossover}{57}{subsection.B.1.3}
+\contentsline {subsection}{\numberline {1.7.2}Computational Intelligence Libraries}{51}{subsection.1.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.4}Rank Selection With One-point Crossover}{58}{subsection.B.1.4}
+\contentsline {chapter}{\numberline {A}Class Diagrams}{54}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.5}Proportional Selection With Two-point Crossover}{59}{subsection.B.1.5}
+\contentsline {section}{\numberline {A.1}Optimisation library Class Diagram}{54}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.6}Proportional Selection With One-point Crossover}{60}{subsection.B.1.6}
+\contentsline {section}{\numberline {A.2}The Arena Class Diagram}{56}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.7}Proportional Selection With Adjusted Numbers of Parents}{61}{subsection.B.1.7}
+\contentsline {chapter}{\numberline {B}Phase One Test Results}{58}{appendix.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.8}Binary Tournament Selection With Two-point Crossover in Shark}{62}{subsection.B.1.8}
+\contentsline {section}{\numberline {B.1}Genetic Algorithm}{59}{section.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.2}Evolution Strategies}{63}{section.B.2}
+\contentsline {subsection}{\numberline {B.1.1}Binary Tournament Selection With Two-point Crossover}{59}{subsection.B.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.1}$(\mu ,\lambda )$ Selection With Discrete Recombination}{63}{subsection.B.2.1}
+\contentsline {subsection}{\numberline {B.1.2}Binary Tournament Selection With One-point Crossover}{60}{subsection.B.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.2}$(\mu ,\lambda )$ Selection With Intermediate Recombination}{64}{subsection.B.2.2}
+\contentsline {subsection}{\numberline {B.1.3}Rank Selection With Two-point Crossover}{61}{subsection.B.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.3}$(\mu ,\lambda )$ Selection With Global Discrete Recombination}{65}{subsection.B.2.3}
+\contentsline {subsection}{\numberline {B.1.4}Rank Selection With One-point Crossover}{62}{subsection.B.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.4}$(\mu ,\lambda )$ Selection With Global Intermediate Recombination}{66}{subsection.B.2.4}
+\contentsline {subsection}{\numberline {B.1.5}Proportional Selection With Two-point Crossover}{63}{subsection.B.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.5}$(\mu +\lambda )$ Selection With Discrete Recombination}{67}{subsection.B.2.5}
+\contentsline {subsection}{\numberline {B.1.6}Proportional Selection With One-point Crossover}{64}{subsection.B.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.6}$(\mu +\lambda )$ Selection With Intermediate Recombination}{68}{subsection.B.2.6}
+\contentsline {subsection}{\numberline {B.1.7}Proportional Selection With Adjusted Numbers of Parents}{65}{subsection.B.1.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.7}$(\mu +\lambda )$ Selection With Global Discrete Recombination}{69}{subsection.B.2.7}
+\contentsline {subsection}{\numberline {B.1.8}Binary Tournament Selection With Two-point Crossover in Shark}{66}{subsection.B.1.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.8}$(\mu +\lambda )$ Selection With Global Intermediate Recombination}{70}{subsection.B.2.8}
+\contentsline {section}{\numberline {B.2}Evolution Strategies}{67}{section.B.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.9}$(\mu +\lambda )$ Selection With Discrete Recombination in Shark}{71}{subsection.B.2.9}
+\contentsline {subsection}{\numberline {B.2.1}$(\mu ,\lambda )$ Selection With Discrete Recombination}{67}{subsection.B.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.3}Particle Swarm Optimisation}{72}{section.B.3}
+\contentsline {subsection}{\numberline {B.2.2}$(\mu ,\lambda )$ Selection With Intermediate Recombination}{68}{subsection.B.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.3.1}Optimisation Results}{72}{subsection.B.3.1}
+\contentsline {subsection}{\numberline {B.2.3}$(\mu ,\lambda )$ Selection With Global Discrete Recombination}{69}{subsection.B.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.3.2}Optimisation Results in Shark}{73}{subsection.B.3.2}
+\contentsline {subsection}{\numberline {B.2.4}$(\mu ,\lambda )$ Selection With Global Intermediate Recombination}{70}{subsection.B.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.2.5}$(\mu +\lambda )$ Selection With Discrete Recombination}{71}{subsection.B.2.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.2.6}$(\mu +\lambda )$ Selection With Intermediate Recombination}{72}{subsection.B.2.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.2.7}$(\mu +\lambda )$ Selection With Global Discrete Recombination}{73}{subsection.B.2.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.2.8}$(\mu +\lambda )$ Selection With Global Intermediate Recombination}{74}{subsection.B.2.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.2.9}$(\mu +\lambda )$ Selection With Discrete Recombination in Shark}{75}{subsection.B.2.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.3}Particle Swarm Optimisation}{76}{section.B.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.3.1}Optimisation Results}{76}{subsection.B.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {B.3.2}Optimisation Results in Shark}{77}{subsection.B.3.2}

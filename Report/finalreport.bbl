@@ -45,7 +45,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Akiya, Scott Bury, Wassick - 2011 - A General Model for So
-  \verb ft Body Simulation in Motion.pdf:pdf
+  \verb ft Body Simulation in Motion(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Not very useful P4. Hooke's equations%
@@ -75,8 +75,8 @@
   \field{title}{{Large Steps in Cloth Simulation}}
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/Baraff, Witkin - 1998 - Large Steps in Cloth Simulation.pd
-  \verb f:pdf
+  \verb p/Downloaded/Baraff, Witkin - 1998 - Large Steps in Cloth Simulation(2)
+  \verb .pdf:pdf
   \endverb
   \field{annotation}{%
   Lot's of detail, key paper in the field, suggests implicit integration (may
@@ -118,7 +118,7 @@
   \endverb
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/Bartels - 2014 - Simulation of Tearable Cloth.pdf:pdf
+  \verb p/Downloaded/Bartels - 2014 - Simulation of Tearable Cloth(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Good simple summary P2. force definitions P3. read references, spring forces,
@@ -161,7 +161,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Bender, Weber, Diziol - 2013 - Fast and stable cloth simul
-  \verb ation based on multi-resolution shape matching.pdf:pdf
+  \verb ation based on multi-resolution shape matching(2).pdf:pdf
   \endverb
   \field{journaltitle}{Computers and Graphics (Pergamon)}
   \field{annotation}{%
@@ -226,7 +226,7 @@
   }
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/Boxerman - 2003 - Speeding Up Cloth Simulation.pdf:pdf
+  \verb p/Downloaded/Boxerman - 2003 - Speeding Up Cloth Simulation(2).pdf:pdf
   \endverb
   \field{type}{phdthesis}
   \field{annotation}{%
@@ -266,7 +266,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Bridson, Fedkiw, Anderson - 2002 - Robust Treatment of Col
-  \verb lisions, Contact and Friction for Cloth Animation.pdf:pdf
+  \verb lisions, Contact and Friction for Cloth Animation(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Not useful, focus is on collisions P1. collisions big issue%
@@ -296,7 +296,7 @@
   \field{title}{{Stable but Responsive Cloth}}
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/Choi, Ko - 2002 - Stable but Responsive Cloth.pdf:pdf
+  \verb p/Downloaded/Choi, Ko - 2002 - Stable but Responsive Cloth(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Focus on modelling buckling and folds P1. different technique similarities,
@@ -333,7 +333,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Choi, Ko - 2005 - Research problems in clothing simulation
-  \verb .pdf:pdf
+  \verb (2).pdf:pdf
   \endverb
   \field{journaltitle}{Computer Aided Design}
   \field{annotation}{%
@@ -412,7 +412,8 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/De Farias et al. - 2008 - A high performance massively par
-  \verb allel approach for real time deformable body physics simulation.pdf:pdf
+  \verb allel approach for real time deformable body physics simulation(2).pdf:
+  \verb pdf
   \endverb
   \field{annotation}{%
   Not really useful P3. reference on continuum mechanics P3-4. continuum
@@ -455,7 +456,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Desbrun, Schr{\"{o}}der, Barr - 1999 - Interactive Animati
-  \verb on of Structured Deformable Objects.pdf:pdf
+  \verb on of Structured Deformable Objects(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Some useful quotes, details an implicit integrator for animating mass-spring
@@ -526,7 +527,7 @@
   \endverb
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/Ertekin - 2014 - Cloth Simulation.pdf:pdf
+  \verb p/Downloaded/Ertekin - 2014 - Cloth Simulation(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Good simple summary, with easy to understand equations P1. why use
@@ -566,7 +567,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Garre, P{\'{e}}rez - 2008 - A simple Mass-Spring system fo
-  \verb r Character Animation.pdf:pdf
+  \verb r Character Animation(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Useful equation derivations P2-3. Hooke's laws P3. equations of motions,
@@ -606,7 +607,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Gibson, Mirtich - 1997 - A Survey of Deformable Modeling i
-  \verb n Computer Graphics.pdf:pdf
+  \verb n Computer Graphics(2).pdf:pdf
   \endverb
   \field{type}{techreport}
   \field{annotation}{%
@@ -637,7 +638,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Harada - 2006 - Real-time Cloth Simulation Interacting wit
-  \verb h Deforming High-Resolution Models.pdf:pdf
+  \verb h Deforming High-Resolution Models(2).pdf:pdf
   \endverb
   \field{journaltitle}{SIGGRAPH}
   \field{annotation}{%
@@ -742,7 +743,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Kang, Choi, Cho - 2000 - Fast and Stable Animation of Clot
-  \verb h with an Approximated Implicit Method.pdf:pdf
+  \verb h with an Approximated Implicit Method(2).pdf:pdf
   \endverb
   \field{annotation}{%
   useful equations, detailed implicit info. P1. cloth simulation definition,
@@ -768,7 +769,7 @@
   \field{title}{{Character Clothing in PhysX-3}}
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/Kim - 2011 - Character Clothing in PhysX-3.pdf:pdf
+  \verb p/Downloaded/Kim - 2011 - Character Clothing in PhysX-3(2).pdf:pdf
   \endverb
   \field{annotation}{%
   proof that commercial engines using PBD, no mention of cloth model though P9.
@@ -884,7 +885,7 @@
   }
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/Magnenat-Thalmann, Thalmann - 2006 - Handbook of Virtual H
+  \verb p/Downloaded/Magnenat-Thalmann, Thalmann - 2004 - Handbook of Virtual H
   \verb umans.pdf:pdf
   \endverb
   \field{annotation}{%
@@ -924,7 +925,7 @@
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Mesit, Guha, Chaudhry - 2007 - 3D soft body simulation usi
   \verb ng mass-spring system with internal pressure force and simplified impli
-  \verb cit int.pdf:pdf
+  \verb cit (2).pdf:pdf
   \endverb
   \field{journaltitle}{Journal of Computers}
   \field{annotation}{%
@@ -970,7 +971,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Mesit, Guha - 2008 - Soft Body Simulation with Leaking Eff
-  \verb ect.pdf:pdf
+  \verb ect(2).pdf:pdf
   \endverb
   \field{annotation}{%
   P1. why use mass-spring models P2. mass-spring model diagram (Provotian),
@@ -1029,7 +1030,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Miguel et al. - 2012 - Data-Driven Estimation of Cloth Sim
-  \verb ulation Models.pdf:pdf
+  \verb ulation Models(2).pdf:pdf
   \endverb
   \field{journaltitle}{Computer Graphics Forum}
   \field{annotation}{%
@@ -1072,7 +1073,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Mongus et al. - 2012 - A hybrid evolutionary algorithm for
-  \verb  tuning a cloth-simulation model.pdf:pdf
+  \verb  tuning a cloth-simulation model(2).pdf:pdf
   \endverb
   \field{journaltitle}{Applied Soft Computing Journal}
   \field{annotation}{%
@@ -1117,8 +1118,8 @@
   \field{title}{{Position Based Dynamics}}
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/M{\"{u}}ller et al. - 2006 - Position Based Dynamics.pdf:p
-  \verb df
+  \verb p/Downloaded/M{\"{u}}ller et al. - 2006 - Position Based Dynamics(2).pd
+  \verb f:pdf
   \endverb
   \field{annotation}{%
   different approach to animating cloth; method used by commercial physics
@@ -1151,7 +1152,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Ng, Grimsdale - 1996 - Computer Graphics Techniques for Mo
-  \verb deling Cloth - ng.pdf:pdf
+  \verb deling Cloth.pdf:pdf
   \endverb
   \field{journaltitle}{IEEE Computer Graphics {\&} Applications}
   \field{annotation}{%
@@ -1187,7 +1188,7 @@
   \endverb
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/NVidia - 2007 - Cloth Simulation.pdf:pdf
+  \verb p/Downloaded/NVidia - 2007 - Cloth Simulation(2).pdf:pdf
   \endverb
   \field{annotation}{%
   GPU accelerated approach P2. cost vs realism P3. spring constraints, model
@@ -1220,7 +1221,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/O 'connor, Stevens - 2003 - Modeling Cloth Using Mass Spri
-  \verb ng Systems.pdf:pdf
+  \verb ng Systems(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Little basic, but some use as has simple derivations of integrators {\&}amp;
@@ -1272,7 +1273,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Ozgen et al. - 2010 - Underwater Cloth Simulation with Fra
-  \verb ctional Derivatives.pdf:pdf
+  \verb ctional Derivatives(2).pdf:pdf
   \endverb
   \field{journaltitle}{ACM Trans. Graph}
   \field{annotation}{%
@@ -1329,7 +1330,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Plath - 2000 - Realistic modelling of textiles using inter
-  \verb acting particle systems.pdf:pdf
+  \verb acting particle systems(2).pdf:pdf
   \endverb
   \field{journaltitle}{Computers {\&} Graphics}
   \field{annotation}{%
@@ -1358,7 +1359,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Provot - 1995 - Deformation Constraints in a Mass-Spring M
-  \verb odel to Describe Rigid Cloth Behaviour.pdf:pdf
+  \verb odel to Describe Rigid Cloth Behaviour(2).pdf:pdf
   \endverb
   \field{annotation}{%
   key paper, first to propose spring model P1. best model choice for animation
@@ -1401,8 +1402,8 @@
   \field{volume}{5}
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/Santos Souza, Wangenheim, Comunello - Unknown - Fast Simul
-  \verb ation of Cloth Tearing.pdf:pdf
+  \verb p/Downloaded/Santos Souza, Wangenheim, Comunello - 2014 - Fast Simulati
+  \verb on of Cloth Tearing.pdf:pdf
   \endverb
   \field{journaltitle}{SBC Journal on Interactive Systems}
   \field{annotation}{%
@@ -1445,7 +1446,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Schmitt et al. - 2013 - Multilevel Cloth Simulation using
-  \verb GPU Surface Sampling.pdf:pdf
+  \verb GPU Surface Sampling(2).pdf:pdf
   \endverb
   \field{journaltitle}{Workshop on Virtual Reality Interaction and Physical
   Simulation VRIPHYS}
@@ -1491,7 +1492,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Selle et al. - 2009 - Robust High-Resolution Cloth Using P
-  \verb arallelism, History-Based Collisions and Accurate Friction.pdf:pdf
+  \verb arallelism, History-Based Collisions and Accurate Friction(2).pdf:pdf
   \endverb
   \field{journaltitle}{IEEE Transactions on Visualization and Computer
   Graphics}
@@ -1539,7 +1540,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Tang et al. - 2013 - A GPU-based streaming algorithm for h
-  \verb igh-resolution cloth simulation.pdf:pdf
+  \verb igh-resolution cloth simulation(2).pdf:pdf
   \endverb
   \field{journaltitle}{Computer Graphics Forum}
   \field{annotation}{%
@@ -1579,7 +1580,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Vassilev, Spanlang, Chrysanthou - 2001 - Fast Cloth Animat
-  \verb ion on Walking Avatars.pdf:pdf
+  \verb ion on Walking Avatars(2).pdf:pdf
   \endverb
   \field{annotation}{%
   uses mass-spring model, proposes new approach for dealing with super
@@ -1611,8 +1612,8 @@
   \field{title}{{A Mass-Spring Model For Real Time Deformable Solids}}
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/Vassilev, Spanlang - 2002 - A MASS - SPRING MODEL FOR REAL
-  \verb  TIME DEFORMABLE SOLIDS.pdf:pdf
+  \verb p/Downloaded/Vassilev, Spanlang - 2002 - A Mass-Spring Model For Real T
+  \verb ime Deformable Solids.pdf:pdf
   \endverb
   \field{annotation}{%
   Not very useful P2. definition of mass-spring model%
@@ -1640,7 +1641,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Vassilev - 2010 - Comparison of Several Parallel API for C
-  \verb loth Modelling On Modern GPUs.pdf:pdf
+  \verb loth Modelling On Modern GPUs(2).pdf:pdf
   \endverb
   \field{annotation}{%
   May not be relevant, but shows that performance still a consideration P1. use
@@ -1670,7 +1671,8 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Vassilev - 2011 - Comparison of Parallel Algorithms for Mo
-  \verb delling Mass-springs Systems with Several APIs on Modern GPUs.pdf:pdf
+  \verb delling Mass-springs Systems with Several APIs on Modern GPUs(2).pdf:pd
+  \verb f
   \endverb
   \field{annotation}{%
   Brief overview of 2 GPU algorithms for mass-spring models P1. read reference
@@ -1711,7 +1713,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Volino, Cordier, Magnenat-Thalmann - 2005 - From early vir
-  \verb tual garment simulation to interactive fashion design.pdf:pdf
+  \verb tual garment simulation to interactive fashion design(2).pdf:pdf
   \endverb
   \field{journaltitle}{Computer-Aided Design}
   \field{annotation}{%
@@ -1753,7 +1755,7 @@
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Volino, Courchesne, Magnenat-Thalmann - 1995 - Versatile a
   \verb nd Efficient Techniques for Simulating Cloth and Other Deformable Objec
-  \verb ts.pdf:pdf
+  \verb ts(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Not useful%
@@ -1789,7 +1791,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Volino, Magnenat-Thalmann - 1997 - Developing Simulation T
-  \verb echniques for an Interactive Clothing System.pdf:pdf
+  \verb echniques for an Interactive Clothing System(2).pdf:pdf
   \endverb
   \field{annotation}{%
   not very useful, different use case; focus on more realistic modelling for
@@ -1825,7 +1827,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Volino, Magnenat-Thalmann - 1997 - Interactive Cloth Simul
-  \verb ation Problems and Solutions.pdf:pdf
+  \verb ation Problems and Solutions(2).pdf:pdf
   \endverb
   \field{annotation}{%
   interesting comparison and info about different model types P2. continuum
@@ -1858,7 +1860,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Volino, Magnenat-Thalmann - 2001 - Comparing Efficiency of
-  \verb  Integration Methods.pdf:pdf
+  \verb  Integration Methods(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Excellent, follow references P1. + of particle models (follow references),
@@ -1900,7 +1902,8 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Wacker, Thomaszewski, Keckeisen - 2005 - Physical Models,
-  \verb Numerical Solvers for Cloth Animation and Virtual Cloth Design.pdf:pdf
+  \verb Numerical Solvers for Cloth Animation and Virtual Cloth Design(2).pdf:p
+  \verb df
   \endverb
   \field{annotation}{%
   Lots of in depth detail into formal derivations. May be a bit dense and
@@ -1950,7 +1953,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Wang, Hu, Zhuang - 2009 - The dynamic cloth simulation per
-  \verb formance analysis based on the improved spring-mass model.pdf:pdf
+  \verb formance analysis based on the improved spring-mass model(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Good paper, more modern performance analysis P1. different fields of cloth
@@ -1987,7 +1990,7 @@
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Wang, Devarajan - 2004 - 2D Structured Mass-spring System
   \verb Parameter Optimization based on Axisymmetric Bending for Rigid Cloth Si
-  \verb mulatio.pdf:pdf
+  \verb mula(2).pdf:pdf
   \endverb
   \field{annotation}{%
   not super useful, maths is very dense and not relevant to project focus P1.
@@ -2034,7 +2037,8 @@
   \field{title}{{Review of cloth modeling}}
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/Xinrong et al. - 2009 - Review of cloth modeling.pdf:pdf
+  \verb p/Downloaded/Xinrong et al. - 2009 - Review of cloth modeling(2).pdf:pd
+  \verb f
   \endverb
   \field{annotation}{%
   Short but interesting summary P1-2. geometric models P2. -ve of geometric,
@@ -2068,7 +2072,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Yal{\c{c}}ın, Yıldız - Unknown - Techniques for Animati
-  \verb ng Cloth.pdf:pdf
+  \verb ng Cloth(2).pdf:pdf
   \endverb
   \field{annotation}{%
   brief overview of some techniques P1. warp {\&}amp; weft definitions, cloth
@@ -2099,7 +2103,7 @@
   \field{title}{{Cloth Simulation On The GPU}}
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
-  \verb p/Downloaded/Zeller - 2005 - Cloth Simulation On The GPU.pdf:pdf
+  \verb p/Downloaded/Zeller - 2005 - Cloth Simulation On The GPU(2).pdf:pdf
   \endverb
   \field{annotation}{%
   GPU based approach, shows performance still a concern (?) P4. cloth model P5.
@@ -2132,7 +2136,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Zhang, Yuen - 2001 - Cloth simulation using multilevel mes
-  \verb hes.pdf:pdf
+  \verb hes(2).pdf:pdf
   \endverb
   \field{journaltitle}{Computers and Graphics (Pergamon)}
   \field{annotation}{%
@@ -2171,7 +2175,7 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Zhenfang, Bing - 2012 - Research of Fast Cloth Simulation
-  \verb Based on Mass- Spring Model.pdf:pdf
+  \verb Based on Mass- Spring Model(2).pdf:pdf
   \endverb
   \field{annotation}{%
   Not very useful for dissertation topic, but has some interesting
@@ -2213,12 +2217,13 @@
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
   \verb p/Downloaded/Zink, Hardy - 2007 - Cloth Simulation and Collision Detect
-  \verb ion using Geometry Images.pdf:pdf
+  \verb ion using Geometry Images(2).pdf:pdf
   \endverb
   \field{annotation}{%
   uses mass spring system with geometry images P1. different usecases,
   simulation costs P2. geometry images, + of mass-spring P3. +/- explicit
-  {\&}amp; implicit P5. - of mass-spring%
+  {\&}amp; implicit P5. - of mass-spring, implicit integration, + of implicit
+  P5-6. - of implicit%
   }
   \field{year}{2007}
 \endentry
