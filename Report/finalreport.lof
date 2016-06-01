@@ -4,98 +4,76 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Mechanical properties of cloth}}{14}{figure.1.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Mechanical properties of cloth}}{12}{figure.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Visual Properties of cloth}}{15}{figure.1.2}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Visual Properties of cloth}}{13}{figure.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Cloth with structural springs only}}{18}{figure.1.3}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Cloth with structural springs only}}{16}{figure.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{18}{figure.1.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{16}{figure.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{18}{figure.1.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{16}{figure.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Cloth with structural and shear springs}}{18}{figure.1.4}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Cloth with structural and shear springs}}{16}{figure.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{18}{figure.1.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{16}{figure.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{18}{figure.1.4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{16}{figure.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Provot cloth model}}{19}{figure.1.5}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Provot cloth model}}{17}{figure.1.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Choi Ko cloth model}}{21}{figure.1.6}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Choi Ko cloth model}}{19}{figure.1.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Super-elasticity problems}}{22}{figure.1.7}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Super-elasticity problems}}{20}{figure.1.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Super-elasticity effect}}}{22}{figure.1.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Super-elasticity effect}}}{20}{figure.1.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of correcting super-elasticity}}}{22}{figure.1.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of correcting super-elasticity}}}{20}{figure.1.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Explicit integrator stability regions}}{24}{figure.1.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Fitness landscape for the 2D sphere function}}{27}{figure.1.9}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.10}{\ignorespaces A simple fitness landscape showing 2 local optima}}{27}{figure.1.10}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Diagram and pseudocode for the operation of a generic EA}}{30}{figure.1.11}
-\defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Generic EA diagram}}}{30}{figure.1.11}
-\defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Psuedocode for generic EAs}}}{30}{figure.1.11}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Representation of roulette wheel selection}}{34}{figure.1.12}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Summary showing the three sexual crossover operators \ref {sub@fig:operators_a} with bit masks \ref {sub@fig:operators_b}, \ref {sub@fig:operators_c}}}{37}{figure.1.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Crossover operators}}}{37}{figure.1.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Two-point crossover with bit mask}}}{37}{figure.1.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Uniform crossover with bit mask}}}{37}{figure.1.13}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.14}{\ignorespaces A search space, showing the feasible and infeasible regions}}{42}{figure.1.14}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Explicit integrator stability regions}}{22}{figure.1.8}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Class diagram for the optimisation library}}{55}{figure.A.1}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Class diagram for the optimisation library}}{27}{figure.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Class diagram showing the additional Arena classes}}{57}{figure.A.2}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Class diagram showing the additional Arena classes}}{29}{figure.A.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Optimisation results of a genetic algorithm using binary tournament selection and two-point crossover}}{59}{figure.B.1}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Optimisation results of a genetic algorithm using binary tournament selection and two-point crossover}}{31}{figure.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Optimisation results of a genetic algorithm using binary tournament selection and one-point crossover}}{60}{figure.B.2}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Optimisation results of a genetic algorithm using binary tournament selection and one-point crossover}}{32}{figure.B.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Optimisation results of a genetic algorithm using rank selection and two-point crossover}}{61}{figure.B.3}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Optimisation results of a genetic algorithm using rank selection and two-point crossover}}{33}{figure.B.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Optimisation results of a genetic algorithm using rank selection and one-point crossover}}{62}{figure.B.4}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Optimisation results of a genetic algorithm using rank selection and one-point crossover}}{34}{figure.B.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Optimisation results of a genetic algorithm using proportional selection and two-point crossover}}{63}{figure.B.5}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Optimisation results of a genetic algorithm using proportional selection and two-point crossover}}{35}{figure.B.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Optimisation results of a genetic algorithm using proportional selection and one-point crossover}}{64}{figure.B.6}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Optimisation results of a genetic algorithm using proportional selection and one-point crossover}}{36}{figure.B.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.7}{\ignorespaces Optimisation results of a genetic algorithm using proportional selection and two-point crossover. The number of parents has been adjusted to give better results.}}{65}{figure.B.7}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces Optimisation results of a genetic algorithm using proportional selection and two-point crossover. The number of parents has been adjusted to give better results.}}{37}{figure.B.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.8}{\ignorespaces Optimisation results of a genetic algorithm using binary tournament selection and two-point crossover implemented in Shark}}{66}{figure.B.8}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Optimisation results of a genetic algorithm using binary tournament selection and two-point crossover implemented in Shark}}{38}{figure.B.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.9}{\ignorespaces Optimisation results of evolution strategies using $(\mu ,\lambda )$ selection and discrete recombination}}{67}{figure.B.9}
+\contentsline {figure}{\numberline {B.9}{\ignorespaces Optimisation results of evolution strategies using $(\mu ,\lambda )$ selection and discrete recombination}}{39}{figure.B.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.10}{\ignorespaces Optimisation results of evolution strategies using $(\mu ,\lambda )$ selection and intermediate recombination}}{68}{figure.B.10}
+\contentsline {figure}{\numberline {B.10}{\ignorespaces Optimisation results of evolution strategies using $(\mu ,\lambda )$ selection and intermediate recombination}}{40}{figure.B.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.11}{\ignorespaces Optimisation results of evolution strategies using $(\mu ,\lambda )$ selection and global discrete recombination}}{69}{figure.B.11}
+\contentsline {figure}{\numberline {B.11}{\ignorespaces Optimisation results of evolution strategies using $(\mu ,\lambda )$ selection and global discrete recombination}}{41}{figure.B.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.12}{\ignorespaces Optimisation results of evolution strategies using $(\mu ,\lambda )$ selection and global intermediate recombination}}{70}{figure.B.12}
+\contentsline {figure}{\numberline {B.12}{\ignorespaces Optimisation results of evolution strategies using $(\mu ,\lambda )$ selection and global intermediate recombination}}{42}{figure.B.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.13}{\ignorespaces Optimisation results of evolution strategies using $(\mu +\lambda )$ selection and discrete recombination}}{71}{figure.B.13}
+\contentsline {figure}{\numberline {B.13}{\ignorespaces Optimisation results of evolution strategies using $(\mu +\lambda )$ selection and discrete recombination}}{43}{figure.B.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.14}{\ignorespaces Optimisation results of evolution strategies using $(\mu +\lambda )$ selection and intermediate recombination}}{72}{figure.B.14}
+\contentsline {figure}{\numberline {B.14}{\ignorespaces Optimisation results of evolution strategies using $(\mu +\lambda )$ selection and intermediate recombination}}{44}{figure.B.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.15}{\ignorespaces Optimisation results of evolution strategies using $(\mu +\lambda )$ selection and global discrete recombination}}{73}{figure.B.15}
+\contentsline {figure}{\numberline {B.15}{\ignorespaces Optimisation results of evolution strategies using $(\mu +\lambda )$ selection and global discrete recombination}}{45}{figure.B.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.16}{\ignorespaces Optimisation results of evolution strategies using $(\mu +\lambda )$ selection and global intermediate recombination}}{74}{figure.B.16}
+\contentsline {figure}{\numberline {B.16}{\ignorespaces Optimisation results of evolution strategies using $(\mu +\lambda )$ selection and global intermediate recombination}}{46}{figure.B.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.17}{\ignorespaces Optimisation results of evolution strategies using $(\mu +\lambda )$ selection and discrete recombination implemented in Shark}}{75}{figure.B.17}
+\contentsline {figure}{\numberline {B.17}{\ignorespaces Optimisation results of evolution strategies using $(\mu +\lambda )$ selection and discrete recombination implemented in Shark}}{47}{figure.B.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.18}{\ignorespaces Optimisation results of particle swarm optimisation}}{76}{figure.B.18}
+\contentsline {figure}{\numberline {B.18}{\ignorespaces Optimisation results of particle swarm optimisation}}{48}{figure.B.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.19}{\ignorespaces Optimisation results of particle swarm optimisation implemented in Shark}}{77}{figure.B.19}
+\contentsline {figure}{\numberline {B.19}{\ignorespaces Optimisation results of particle swarm optimisation implemented in Shark}}{49}{figure.B.19}
