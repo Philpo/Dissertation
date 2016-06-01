@@ -2,102 +2,50 @@
 \defcounter {refsection}{0}\relax 
 \select@language {american}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Figures}{8}{chapter*.4}
+\contentsline {chapter}{List of Figures}{7}{chapter*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Tables}{10}{chapter*.5}
+\contentsline {chapter}{List of Tables}{8}{chapter*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Literature Review}{11}{chapter.1}
+\contentsline {chapter}{\numberline {1}Literature Review}{9}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Cloth Simulation}{11}{section.1.1}
+\contentsline {section}{\numberline {1.1}Cloth Simulation}{9}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.1}Cloth Properties}{11}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Cloth Properties}{9}{subsection.1.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.1.1}Mechanical Properties}{12}{subsubsection.1.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1.1}Mechanical Properties}{10}{subsubsection.1.1.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.1.2}Visual Properties}{12}{subsubsection.1.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.1.2}Visual Properties}{10}{subsubsection.1.1.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.2}Cloth Models}{12}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.2}Cloth Models}{10}{subsection.1.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.2.1}Geometric Models}{13}{subsubsection.1.1.2.1}
+\contentsline {subsubsection}{\numberline {1.1.2.1}Geometric Models}{11}{subsubsection.1.1.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.2.2}Physically-based Models}{13}{subsubsection.1.1.2.2}
+\contentsline {subsubsection}{\numberline {1.1.2.2}Physically-based Models}{11}{subsubsection.1.1.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.1.2.2.1}Continuum Models}{14}{paragraph.1.1.2.2.1}
+\contentsline {paragraph}{\numberline {1.1.2.2.1}Continuum Models}{12}{paragraph.1.1.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.1.2.2.2}Discrete Models}{14}{paragraph.1.1.2.2.2}
+\contentsline {paragraph}{\numberline {1.1.2.2.2}Discrete Models}{12}{paragraph.1.1.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.3}Mass-Spring Models}{15}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.3}Mass-Spring Models}{13}{subsection.1.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.3.1}Provot Model}{15}{subsubsection.1.1.3.1}
+\contentsline {subsubsection}{\numberline {1.1.3.1}Provot Model}{13}{subsubsection.1.1.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.3.2}Choi Ko Model}{18}{subsubsection.1.1.3.2}
+\contentsline {subsubsection}{\numberline {1.1.3.2}Choi Ko Model}{16}{subsubsection.1.1.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.3.3}Justification of Choice}{19}{subsubsection.1.1.3.3}
+\contentsline {subsubsection}{\numberline {1.1.3.3}Justification of Choice}{17}{subsubsection.1.1.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.4}Numerical Integration for Mass-Spring Models}{20}{subsection.1.1.4}
+\contentsline {subsection}{\numberline {1.1.4}Numerical Integration for Mass-Spring Models}{18}{subsection.1.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.4.1}Explicit Integrators}{21}{subsubsection.1.1.4.1}
+\contentsline {subsubsection}{\numberline {1.1.4.1}Explicit Integrators}{19}{subsubsection.1.1.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.1.4.1.1}Euler}{21}{paragraph.1.1.4.1.1}
+\contentsline {paragraph}{\numberline {1.1.4.1.1}Euler}{19}{paragraph.1.1.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.1.4.1.2}Midpoint}{22}{paragraph.1.1.4.1.2}
+\contentsline {paragraph}{\numberline {1.1.4.1.2}Midpoint}{20}{paragraph.1.1.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.1.4.1.3}Fourth order Runge-Kutta}{23}{paragraph.1.1.4.1.3}
+\contentsline {paragraph}{\numberline {1.1.4.1.3}Fourth order Runge-Kutta}{21}{paragraph.1.1.4.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.1.4.1.4}Verlet}{23}{paragraph.1.1.4.1.4}
+\contentsline {paragraph}{\numberline {1.1.4.1.4}Verlet}{21}{paragraph.1.1.4.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.4.2}Implicit Integrators}{23}{subsubsection.1.1.4.2}
+\contentsline {subsubsection}{\numberline {1.1.4.2}Implicit Integrators}{21}{subsubsection.1.1.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {1.1.4.2.1}Euler}{24}{paragraph.1.1.4.2.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Class Diagrams}{26}{appendix.A}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Optimisation library Class Diagram}{26}{section.A.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}The Arena Class Diagram}{28}{section.A.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Phase One Test Results}{30}{appendix.B}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.1}Genetic Algorithm}{31}{section.B.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.1}Binary Tournament Selection With Two-point Crossover}{31}{subsection.B.1.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.2}Binary Tournament Selection With One-point Crossover}{32}{subsection.B.1.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.3}Rank Selection With Two-point Crossover}{33}{subsection.B.1.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.4}Rank Selection With One-point Crossover}{34}{subsection.B.1.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.5}Proportional Selection With Two-point Crossover}{35}{subsection.B.1.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.6}Proportional Selection With One-point Crossover}{36}{subsection.B.1.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.7}Proportional Selection With Adjusted Numbers of Parents}{37}{subsection.B.1.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.1.8}Binary Tournament Selection With Two-point Crossover in Shark}{38}{subsection.B.1.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.2}Evolution Strategies}{39}{section.B.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.1}$(\mu ,\lambda )$ Selection With Discrete Recombination}{39}{subsection.B.2.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.2}$(\mu ,\lambda )$ Selection With Intermediate Recombination}{40}{subsection.B.2.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.3}$(\mu ,\lambda )$ Selection With Global Discrete Recombination}{41}{subsection.B.2.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.4}$(\mu ,\lambda )$ Selection With Global Intermediate Recombination}{42}{subsection.B.2.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.5}$(\mu +\lambda )$ Selection With Discrete Recombination}{43}{subsection.B.2.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.6}$(\mu +\lambda )$ Selection With Intermediate Recombination}{44}{subsection.B.2.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.7}$(\mu +\lambda )$ Selection With Global Discrete Recombination}{45}{subsection.B.2.7}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.8}$(\mu +\lambda )$ Selection With Global Intermediate Recombination}{46}{subsection.B.2.8}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.2.9}$(\mu +\lambda )$ Selection With Discrete Recombination in Shark}{47}{subsection.B.2.9}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.3}Particle Swarm Optimisation}{48}{section.B.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.3.1}Optimisation Results}{48}{subsection.B.3.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {B.3.2}Optimisation Results in Shark}{49}{subsection.B.3.2}
+\contentsline {paragraph}{\numberline {1.1.4.2.1}Euler}{22}{paragraph.1.1.4.2.1}

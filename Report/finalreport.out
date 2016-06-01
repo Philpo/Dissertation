@@ -22,29 +22,3 @@
 \BOOKMARK [4][-]{paragraph.1.1.4.1.4}{Verlet}{subsubsection.1.1.4.1}% 22
 \BOOKMARK [3][-]{subsubsection.1.1.4.2}{Implicit Integrators}{subsection.1.1.4}% 23
 \BOOKMARK [4][-]{paragraph.1.1.4.2.1}{Euler}{subsubsection.1.1.4.2}% 24
-\BOOKMARK [0][-]{appendix.A}{Class Diagrams}{}% 25
-\BOOKMARK [1][-]{section.A.1}{Optimisation library Class Diagram}{appendix.A}% 26
-\BOOKMARK [1][-]{section.A.2}{The Arena Class Diagram}{appendix.A}% 27
-\BOOKMARK [0][-]{appendix.B}{Phase One Test Results}{}% 28
-\BOOKMARK [1][-]{section.B.1}{Genetic Algorithm}{appendix.B}% 29
-\BOOKMARK [2][-]{subsection.B.1.1}{Binary Tournament Selection With Two-point Crossover}{section.B.1}% 30
-\BOOKMARK [2][-]{subsection.B.1.2}{Binary Tournament Selection With One-point Crossover}{section.B.1}% 31
-\BOOKMARK [2][-]{subsection.B.1.3}{Rank Selection With Two-point Crossover}{section.B.1}% 32
-\BOOKMARK [2][-]{subsection.B.1.4}{Rank Selection With One-point Crossover}{section.B.1}% 33
-\BOOKMARK [2][-]{subsection.B.1.5}{Proportional Selection With Two-point Crossover}{section.B.1}% 34
-\BOOKMARK [2][-]{subsection.B.1.6}{Proportional Selection With One-point Crossover}{section.B.1}% 35
-\BOOKMARK [2][-]{subsection.B.1.7}{Proportional Selection With Adjusted Numbers of Parents}{section.B.1}% 36
-\BOOKMARK [2][-]{subsection.B.1.8}{Binary Tournament Selection With Two-point Crossover in Shark}{section.B.1}% 37
-\BOOKMARK [1][-]{section.B.2}{Evolution Strategies}{appendix.B}% 38
-\BOOKMARK [2][-]{subsection.B.2.1}{\(,\) Selection With Discrete Recombination}{section.B.2}% 39
-\BOOKMARK [2][-]{subsection.B.2.2}{\(,\) Selection With Intermediate Recombination}{section.B.2}% 40
-\BOOKMARK [2][-]{subsection.B.2.3}{\(,\) Selection With Global Discrete Recombination}{section.B.2}% 41
-\BOOKMARK [2][-]{subsection.B.2.4}{\(,\) Selection With Global Intermediate Recombination}{section.B.2}% 42
-\BOOKMARK [2][-]{subsection.B.2.5}{\(+\) Selection With Discrete Recombination}{section.B.2}% 43
-\BOOKMARK [2][-]{subsection.B.2.6}{\(+\) Selection With Intermediate Recombination}{section.B.2}% 44
-\BOOKMARK [2][-]{subsection.B.2.7}{\(+\) Selection With Global Discrete Recombination}{section.B.2}% 45
-\BOOKMARK [2][-]{subsection.B.2.8}{\(+\) Selection With Global Intermediate Recombination}{section.B.2}% 46
-\BOOKMARK [2][-]{subsection.B.2.9}{\(+\) Selection With Discrete Recombination in Shark}{section.B.2}% 47
-\BOOKMARK [1][-]{section.B.3}{Particle Swarm Optimisation}{appendix.B}% 48
-\BOOKMARK [2][-]{subsection.B.3.1}{Optimisation Results}{section.B.3}% 49
-\BOOKMARK [2][-]{subsection.B.3.2}{Optimisation Results in Shark}{section.B.3}% 50
