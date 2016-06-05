@@ -2,53 +2,10 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: finalreport.aux
 The style file: biblatex.bst
 A level-1 auxiliary file: abstract.aux
 A level-1 auxiliary file: acknowledgements.aux
+A level-1 auxiliary file: chapter1.aux
 A level-1 auxiliary file: chapter2.aux
-A level-1 auxiliary file: appendices.aux
 Database file #1: finalreport-blx.bib
 Database file #2: Bibliography/Dissertation.bib
-Warning--I didn't find a database entry for "mathprog"
-Warning--I didn't find a database entry for "stoch"
-Warning--I didn't find a database entry for "fitland"
-Warning--I didn't find a database entry for "localo"
-Warning--I didn't find a database entry for "mccarthy"
-Warning--I didn't find a database entry for "poole"
-Warning--I didn't find a database entry for "coello"
-Warning--I didn't find a database entry for "eadiag"
-Warning--I didn't find a database entry for "eapseudo"
-Warning--I didn't find a database entry for "4-ga"
-Warning--I didn't find a database entry for "gahist"
-Warning--I didn't find a database entry for "pga1"
-Warning--I didn't find a database entry for "4-en"
-Warning--I didn't find a database entry for "4-se"
-Warning--I didn't find a database entry for "eoselect"
-Warning--I didn't find a database entry for "gaselect"
-Warning--I didn't find a database entry for "gatsp"
-Warning--I didn't find a database entry for "rw"
-Warning--I didn't find a database entry for "l2"
-Warning--I didn't find a database entry for "gacross"
-Warning--I didn't find a database entry for "garates"
-Warning--I didn't find a database entry for "gap"
-Warning--I didn't find a database entry for "iga"
-Warning--I didn't find a database entry for "4-es"
-Warning--I didn't find a database entry for "es"
-Warning--I didn't find a database entry for "esc"
-Warning--I didn't find a database entry for "constraints"
-Warning--I didn't find a database entry for "gecco"
-Warning--I didn't find a database entry for "esrev"
-Warning--I didn't find a database entry for "4-IV"
-Warning--I didn't find a database entry for "4-pso"
-Warning--I didn't find a database entry for "mopso"
-Warning--I didn't find a database entry for "psot"
-Warning--I didn't find a database entry for "psoi"
-Warning--I didn't find a database entry for "vi"
-Warning--I didn't find a database entry for "psobh"
-Warning--I didn't find a database entry for "connect4"
-Warning--I didn't find a database entry for "ecj"
-Warning--I didn't find a database entry for "cilib"
-Warning--I didn't find a database entry for "jgal"
-Warning--I didn't find a database entry for "jgap"
-Warning--I didn't find a database entry for "jswarm"
-Warning--I didn't find a database entry for "shark"
-Warning--I didn't find a database entry for "sharksf"
+Warning--I didn't find a database entry for "Kiim2011"
 Biblatex version: 3.3
-(There were 44 warnings)
+(There was 1 warning)

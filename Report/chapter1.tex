@@ -1,34 +1,33 @@
 \chapter{Introduction}
 
-As computational power has increased, research into techniques which allow a computer to simulate intelligence has boomed. Investigating techniques for teaching computers to play games as good as, or better, than humans is a popular research area. This sort of research is interesting in an academic sense, but could also find applications in modern video games, where there is a demand for ever more realistic artificial intelligence to provide a challenging experience for players. Research in this area has had some successes, with computers now able to beat the best human grandmasters at chess and several other board games.
-\\Connect 4 was solved in 1988 by Victor Allis and he described a program, VICTOR, which plays Connect 4 according to nine strategic rules and is capable of always winning\cite{connect4}. This is a similar approach taken to other successful game playing programs; their 'intelligence' is based on a set of strongly defined rules for playing the game.
-\\This project aims to take a different approach to playing Connect 4; applying stochastic optimisation computational intelligence techniques to attempt to learn the best way of playing Connect 4, essentially learning the strategic rules.
+The visual fidelity of video games has increased dramatically in recent years largely due to developments in discrete graphics hardware, or graphics processing units (GPUs). As a result, there is a need for realistic cloth in order to sell the appearance of video game characters and scenes. It is essential that the cloth should react to dynamic behaviour, such as a character moving or the wind blowing, and it must be animated in real time, i.e. at a minimum of 30 frames per second (FPS). These requirements render many cloth simulation techniques inappropriate, as they are too computationally expensive to be run in real time. The Mass-Spring model is one technique that is appropriate for use in video games, and is the most popular method for handling cloth for games. Whilst not necessarily providing 100\% accuracy, Mass-Spring models result in visually pleasing animations, good enough for games, at, most importantly, real time frame rates.
+\\Mass-Spring models use forces, calculated using Newtonian mechanics, to animate the cloth. This results in a series of differential equations that must be approximated by a numerical integrator at discrete time intervals. There are many different integrators that can be used and the choice of integrator can directly affect the performance of the simulation. Some integrators must necessarily use small time intervals in order to maintain the stability of the cloth, and this increases the frequency of the integration calculations thus reducing performance.
+\\This project will investigate the effect different integration methods have on a real time cloth simulation using the Mass-Spring model.
 
 \section{Project Aims}
-The aim of this project is to investigate the application of population based optimisation techniques to playing Connect 4 in The Arena, a Java based framework that allows player modules to be automatically played against each other.
-Specifically, three algorithms will be investigated: 
+The aim of this project is to investigate the performance effects of different integration methods on real time cloth simulation using the Mass-Spring model.
+
+Based on this aim, the objectives of the proposed project are as follows:
 \begin{itemize}
-\item {Genetic Algorithms}
-\item {Evolution Strategies}
-\item {Particle Swarm Optimisation}
+\item {To research cloth simulation and numerical integration techniques }
+\item {To implement the Mass-Spring model for cloth simulation and several integrators, including explicit Euler}
+\item {To investigate the performance effects of the implemented integration methods on the simulation}
 \end{itemize}
 
-This aim was split into a number of objectives, which will be used in evaluating the success of the project (see chapter \ref{sec:eval}).
-These objectives are listed below.
-\begin{itemize}
-\item {Implement and test the chosen population based optimisation algorithms, producing a generic implementation}
-\item {Adapt the generic implementation to work with Connect 4 in The Arena}
-\item {Evaluate the effectiveness of the different algorithms in playing Connect 4}
-\item {Compare the effectiveness and efficiency of the different algorithms}
-\end{itemize}
+\section{Hypotheses}
+\textcite{Volino2001} were the first to investigate the performance impact of different integrators on cloth simulation. Their results, however, are extremely outdated, due to the vast increase in CPU power since 2001; from a 200MHz workstation CPU to the 3GHz+ CPUs available in modern desktops and laptops. Later work by \textcite{Wang2009a} also investigated the impact of different integrators, and found that integrator choice still has an impact on simulation performance. However they make no reference to the hardware their experiments were run on.
+\\As a result, two hypotheses are proposed for this project, a null and an alternative.
+
+\subsection{Null Hypothesis}
+The null hypothesis is that all integration methods result in a real time cloth simulation when running on modern hardware.
+\\This was chosen because \textcite{Wang2009a} make no reference to the hardware used, and the simulation developed will be run on an Intel I7 4770K at 4.2GHz, so it may be the case that there are no performance concerns with this modern hardware.
+
+\subsection{Alternative Hypothesis}
+The alternate hypothesis is that some integration methods are prohibitively expensive for real time cloth simulation and other methods provide better performance.
+\\Recently, some researchers, such as \textcite{Zeller2005} and \textcite{Tang2013}, have proposed GPU accelerated approaches to Mass-Spring models which suggests that performance is still a consideration. Third party physics engines, such as PhysX\textsuperscript{\textregistered} also use GPU accelerated models \parencite{Kim2011} again suggesting performance of Mass-Spring models are still a concern.
 
 \section{Report Structure}
-This report will detail the research, design and testing for the project and is structured as follows:
+This remainder of this report will be structured as follows:
 \begin{itemize}
-  \item{Chapter 1: introduction. A brief description of the project and a listing of the project's aims and objectives}
-  \item{Chapter 2: literature review. The research carried out for the project. Describes the structure and operation of the three chosen optimisation algorithms}
-  \item{Chapter 3: system specification. Lists the requirements of the system to be developed and gives details of the development methodology employed and the time plan for the development process}
-  \item{Chapter 4: system design. Details and discusses the design of the system and the testing processes. Gives details of any implementation problems and how they affected the design}
-  \item{Chapter 5: evaluation. Presents the results of testing the system and evaluates the success of the project against the objectives}
-  \item{Chapter 6: conclusion. A final discussion on the successes and limitations of the project and suggestions for future work}
+  \item{Chapter 2: literature review. An overview of cloth simulation techniques will be given and the Mass-Spring models and some numerical integrators described in detail}
 \end{itemize}
