@@ -2,8 +2,9 @@
 #include <windowsx.h>
 #define NOMINMAX
 
-double timeLastFrame, frameRate, freq;
+double timeLastFrame, freq, averageUpdateTime, averageRenderTime;
 __int64 counterStart;
+int frameCount;
 
 /*
 * Taken from https://stackoverflow.com/questions/1739259/how-to-use-queryperformancecounter
@@ -58,7 +59,23 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
   UNREFERENCED_PARAMETER(hPrevInstance);
   UNREFERENCED_PARAMETER(lpCmdLine);
 
+  // timer resolution code taken from https://msdn.microsoft.com/en-us/library/windows/desktop/dd743626%28v=vs.85%29.aspx
+  TIMECAPS tc;
+  UINT wTimerRes;
+
+  if (timeGetDevCaps(&tc, sizeof(TIMECAPS)) != TIMERR_NOERROR) {
+    std::cerr << "error getting timer capabilities" << std::endl;
+    return -1;
+  }
+
+  // set the timer resolution to the lowest possible, so that we can sleep the thread as accurately as possible
+  wTimerRes = min(max(tc.wPeriodMin, 1), tc.wPeriodMax);
+  timeBeginPeriod(wTimerRes);
+
   Application* theApp = new Application();
+  timeLastFrame = 0.0;
+  averageUpdateTime = averageRenderTime = 0.0;
+  frameCount = 0;
 
   if (FAILED(theApp->initialise(hInstance, nCmdShow))) {
     return -1;
@@ -92,13 +109,26 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
     }
     else {
       calculateFrameRateStats(theApp);
-      theApp->update();
+      double currentTime = getCounter();
+      double deltaT = currentTime - timeLastFrame;
+      double time = getCounter();
+      theApp->update(deltaT);
+      averageUpdateTime += getCounter() - time;
+      time = getCounter();
       theApp->draw();
+      averageRenderTime += getCounter() - time;
+      timeLastFrame = currentTime;
+      frameCount++;
     }
   }
 
   delete theApp;
   theApp = nullptr;
 
+  cout << "Average update time: " << (averageUpdateTime / (double) frameCount) << "ms" << endl;
+  cout << "Average render time: " << (averageRenderTime / (double) frameCount) << "ms" << endl;
+
+  timeEndPeriod(wTimerRes);
+  system("PAUSE");
   return (int) msg.wParam;
 }

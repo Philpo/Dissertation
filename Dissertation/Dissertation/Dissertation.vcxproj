@@ -13,12 +13,18 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Cloth.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Particle.cpp" />
+    <ClCompile Include="Spring.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Cloth.h" />
+    <ClInclude Include="Particle.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Spring.h" />
     <ClInclude Include="TypeDefs.h" />
   </ItemGroup>
   <ItemGroup>

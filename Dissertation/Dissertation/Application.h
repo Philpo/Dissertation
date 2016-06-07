@@ -17,6 +17,7 @@
 #include <io.h>
 #include <iostream>
 #include <fstream>
+#include "Cloth.h"
 
 using namespace DirectX;
 
@@ -31,7 +32,7 @@ public:
   void handleMouseMovement(WPARAM buttonStates, int x, int y);
   void handleMouseClick(WPARAM buttonStates, int x, int y);
 
-  void update();
+  void update(double deltaT);
   void draw();
   inline void setWindowCaption(const std::wostringstream& caption) const { SetWindowText(hWnd, caption.str().c_str()); }
 private:
@@ -60,6 +61,7 @@ private:
   SimpleVertex* vertices;
 
   Camera* camera;
+  Cloth* cloth;
   float cameraSpeed = 2.0f;
 
   UINT windowHeight;
@@ -68,9 +70,6 @@ private:
   // Render dimensions - Change here to alter screen resolution
   UINT renderHeight = 1080;
   UINT renderWidth = 1920;
-
-  int m = 100;
-  int n = 100;
 
   ID3D11RasterizerState* cwCullMode;
   int lastMousePosX, lastMousePosY;

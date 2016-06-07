@@ -110,6 +110,8 @@ HRESULT Application::initialise(HINSTANCE hInstance, int nCmdShow) {
   windowWidth = rc.right - rc.left;
   windowHeight = rc.bottom - rc.top;
 
+  cloth = new Cloth(XMVectorSet(-10.0f, 10.0f, 10.0f, 0.0f), 20.0f, 20.0f, 150, 150, 100.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f);
+
   if (FAILED(initDevice())) {
     cleanup();
 
@@ -187,17 +189,19 @@ HRESULT Application::initVertexBuffer() {
   HRESULT hr;
 
   // Create vertex buffer
-  vertices = new SimpleVertex[m * n];
-  for (int i = 0; i < m; i++) {
-    for (int j = 0; j < n; j++) {
-      vertices[(i * n) + j].posL = XMFLOAT3(-10.0f + (j * (20.0f / n)), -10.0f + (i * (20.0f / m)), 10.0f);
+  vertices = new SimpleVertex[cloth->getNumRows() * cloth->getNumColumns()];
+  const Particle* const particles = cloth->getParticles();
+
+  for (int i = 0; i < cloth->getNumRows(); i++) {
+    for (int j = 0; j < cloth->getNumColumns(); j++) {
+      vertices[(i * cloth->getNumColumns()) + j].posL = particles[(i * cloth->getNumColumns()) + j].getPosition();
     }
   }
 
   D3D11_BUFFER_DESC bd;
   ZeroMemory(&bd, sizeof(bd));
   bd.Usage = D3D11_USAGE_DYNAMIC;
-  bd.ByteWidth = sizeof(SimpleVertex) * m * n;
+  bd.ByteWidth = sizeof(SimpleVertex) * cloth->getNumRows() * cloth->getNumColumns();
   bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
   bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 
@@ -211,6 +215,10 @@ HRESULT Application::initVertexBuffer() {
     return hr;
   }
 
+  UINT stride = sizeof(SimpleVertex);
+  UINT offset = 0;
+  immediateContext->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);
+
   return S_OK;
 }
 
@@ -218,30 +226,30 @@ HRESULT Application::initIndexBuffer() {
   HRESULT hr;
 
   // Create index buffer
-  UINT* indices = new UINT[m * n * 4 * 2];
+  UINT* indices = new UINT[(cloth->getNumStructuralSprings() + cloth->getNumShearSprings()) * 2];
   int currentIndex = 0;
-  for (int i = 0; i < m; i++) {
-    for (int j = 0; j < n; j++) {
-      if (i < m - 1 && j < n - 1) {
-        indices[currentIndex++] = (i * n) + j;
-        indices[currentIndex++] = (i * n) + j + 1;
+  for (int i = 0; i < cloth->getNumRows(); i++) {
+    for (int j = 0; j < cloth->getNumColumns(); j++) {
+      if (i < cloth->getNumRows() - 1 && j < cloth->getNumColumns() - 1) {
+        indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
+        indices[currentIndex++] = (i * cloth->getNumColumns()) + j + 1;
 
-        indices[currentIndex++] = (i * n) + j;
-        indices[currentIndex++] = ((i + 1) * n) + j;
+        indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
+        indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j;
 
-        indices[currentIndex++] = (i * n) + j;
-        indices[currentIndex++] = ((i + 1) * n) + j + 1;
+        indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
+        indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j + 1;
 
-        indices[currentIndex++] = (i * n) + j + 1;
-        indices[currentIndex++] = ((i + 1) * n) + j;
+        indices[currentIndex++] = (i * cloth->getNumColumns()) + j + 1;
+        indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j;
       }
-      else if (i == m - 1 && j < n - 1) {
-        indices[currentIndex++] = (i * n) + j;
-        indices[currentIndex++] = (i * n) + j + 1;
+      else if (i == cloth->getNumRows() - 1 && j < cloth->getNumColumns() - 1) {
+        indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
+        indices[currentIndex++] = (i * cloth->getNumColumns()) + j + 1;
       }
-      else if (j == n - 1 && i < m - 1) {
-        indices[currentIndex++] = (i * n) + j;
-        indices[currentIndex++] = ((i + 1) * n) + j;
+      else if (j == cloth->getNumColumns() - 1 && i < cloth->getNumRows() - 1) {
+        indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
+        indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j;
       }
     }
   }
@@ -250,7 +258,7 @@ HRESULT Application::initIndexBuffer() {
   ZeroMemory(&bd, sizeof(bd));
 
   bd.Usage = D3D11_USAGE_DEFAULT;
-  bd.ByteWidth = sizeof(UINT) * m * n * 4 * 2;
+  bd.ByteWidth = sizeof(UINT) * (cloth->getNumStructuralSprings() + cloth->getNumShearSprings()) * 2;
   bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
   bd.CPUAccessFlags = 0;
 
@@ -259,11 +267,13 @@ HRESULT Application::initIndexBuffer() {
   InitData.pSysMem = indices;
   hr = d3dDevice->CreateBuffer(&bd, &InitData, &indexBuffer);
 
-  delete indices;
+  delete[] indices;
 
   if (FAILED(hr)) {
     return hr;
   }
+
+  immediateContext->IASetIndexBuffer(indexBuffer, DXGI_FORMAT_R32_UINT, 0);
 
   return S_OK;
 }
@@ -483,22 +493,25 @@ void Application::cleanup() {
   if (depthStencilBuffer) depthStencilBuffer->Release();
   if (cwCullMode) cwCullMode->Release();
   delete camera;
-  delete vertices;
+  delete[] vertices;
 }
 
-void Application::update() {
+void Application::update(double deltaT) {
   // Update camera
   camera->update();
+  cloth->update(deltaT);
 
   D3D11_MAPPED_SUBRESOURCE mappedData;
   immediateContext->Map(vertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedData);
+  const Particle* const particles = cloth->getParticles();
   //UINT* data = reinterpret_cast<UINT*>(mappedData.pData);
-  for (int i = 0; i < m; i++) {
-    for (int j = 0; j < n; j++) {
-      //vertices[(i * n) + j].posL.y -= 0.001f;
+  for (int i = 0; i < cloth->getNumRows(); i++) {
+    for (int j = 0; j < cloth->getNumColumns(); j++) {
+      vertices[(i * cloth->getNumColumns()) + j].posL = particles[(i * cloth->getNumColumns()) + j].getPosition();
+      vertices[(i * cloth->getNumColumns()) + j].posL.y -= 0.001f;
     }
   }
-  memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * m * n);
+  memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * cloth->getNumRows() * cloth->getNumColumns());
   immediateContext->Unmap(vertexBuffer, 0);
 }
 
@@ -529,12 +542,7 @@ void Application::draw() {
 
   immediateContext->UpdateSubresource(constantBuffer, 0, nullptr, &cb, 0, 0);
 
-  UINT stride = sizeof(SimpleVertex);
-  UINT offset = 0;
-  // Update constant buffer
-  immediateContext->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);
-  immediateContext->IASetIndexBuffer(indexBuffer, DXGI_FORMAT_R32_UINT, 0);
-  immediateContext->DrawIndexed(m * n * 4 * 2, 0, 0);
+  cloth->draw(immediateContext);
 
   swapChain->Present(0, 0);
 }
