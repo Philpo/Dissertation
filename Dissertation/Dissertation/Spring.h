@@ -7,7 +7,7 @@ public:
   Spring(float stiffness, float damping, Particle* const p1, Particle* const p2);
   ~Spring() {}
 
-  const XMVECTOR calcSpringForce();
+  void calcSpringForce();
 private:
   float restLength, stiffness, damping;
   Particle *p1, *p2;

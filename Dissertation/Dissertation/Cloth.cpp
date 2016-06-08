@@ -1,11 +1,11 @@
 #include "Cloth.h"
 #include <iostream>
 
-const XMVECTOR Cloth::GRAVITY = XMVectorSet(0.0f, -9.81, 0.0f, 0.0f);
+XMVECTOR Cloth::GRAVITY = XMVectorSet(0.0f, -.981, 0.0f, 0.0f);
 
-Cloth::Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping) :
+Cloth::Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping, float linearDamping) :
   rows(numRows), columns(numColumns) {
-  createParticles(topLeftPostition, height, width, totalMass);
+  createParticles(topLeftPostition, height, width, totalMass, linearDamping);
   createStructuralLinks(structuralStiffness, structuralDamping);
   createShearLinks(shearStiffness, shearDamping);
   createFlexionLinks(flexionStiffness, flexionDamping);
@@ -22,16 +22,16 @@ void Cloth::update(double deltaT) {
   for (int i = 0; i < numStructural; i++) {
     structuralSprings[i].calcSpringForce();
   }
-  for (int i = 0; i < numStructural; i++) {
+  for (int i = 0; i < numShear; i++) {
     shearSprings[i].calcSpringForce();
   }
-  for (int i = 0; i < numStructural; i++) {
+  for (int i = 0; i < numFlexion; i++) {
     flexionSprings[i].calcSpringForce();
   }
 
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < columns; j++) {
-      particles[(i * columns) + j].addForce(particles[(i * columns) + j].getMass() * GRAVITY);
+      particles[(i * columns) + j].addForce(XMVectorScale(GRAVITY, particles[(i * columns) + j].getMass()));
       particles[(i * columns) + j].update(deltaT);
     }
   }
@@ -41,7 +41,7 @@ void Cloth::draw(ID3D11DeviceContext* const immediateContext) const {
   immediateContext->DrawIndexed((numStructural + numShear) * 2, 0, 0);
 }
 
-void Cloth::createParticles(FXMVECTOR topLeftPostition, float height, float width, float totalMass) {
+void Cloth::createParticles(FXMVECTOR topLeftPostition, float height, float width, float totalMass, float linearDamping) {
   particles = new Particle[rows * columns];
 
   XMFLOAT3 topLeft;
@@ -54,7 +54,11 @@ void Cloth::createParticles(FXMVECTOR topLeftPostition, float height, float widt
     for (int j = 0; j < columns; j++) {
       x = topLeft.x + (j * (width / (float) columns));
       y = topLeft.y - (i * (height / (float) rows));
-      particles[(i * columns) + j] = Particle(particleMass, XMVectorSet(x, y, topLeft.z, 1.0f), XMVectorSet(0.0f, 0.0f, -1.0f, 0.0f));
+      particles[(i * columns) + j] = Particle(particleMass, linearDamping, XMVectorSet(x, y, topLeft.z, 1.0f), XMVectorSet(0.0f, 0.0f, -1.0f, 0.0f));
+
+      if (i == 0 && (j == 0 || j == columns - 1)) {
+        particles[(i * columns) + j].setPinned(true);
+      }
     }
   }
 }

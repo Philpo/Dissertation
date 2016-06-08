@@ -8,7 +8,7 @@ using namespace DirectX;
 
 class Cloth {
 public:
-  Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping);
+  Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping, float linearDamping);
   ~Cloth();
 
   const int getNumRows() const { return rows; }
@@ -23,9 +23,9 @@ private:
   int rows, columns, numStructural, numShear, numFlexion;
   Particle* particles;
   Spring *structuralSprings, *shearSprings, *flexionSprings;
-  static const XMVECTOR GRAVITY;
+  static XMVECTOR GRAVITY;
 
-  void createParticles(FXMVECTOR topLeftPostition, float height, float width, float totalMass);
+  void createParticles(FXMVECTOR topLeftPostition, float height, float width, float totalMass, float linearDamping);
   void createStructuralLinks(float structuralStiffness, float structuralDamping);
   void createShearLinks(float shearStiffness, float shearDamping);
   void createFlexionLinks(float flexionStiffness, float flexionDamping);

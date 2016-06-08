@@ -110,7 +110,7 @@ HRESULT Application::initialise(HINSTANCE hInstance, int nCmdShow) {
   windowWidth = rc.right - rc.left;
   windowHeight = rc.bottom - rc.top;
 
-  cloth = new Cloth(XMVectorSet(-10.0f, 10.0f, 10.0f, 0.0f), 20.0f, 20.0f, 150, 150, 100.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f);
+  cloth = new Cloth(XMVectorSet(-10.0f, 10.0f, 10.0f, 0.0f), 20.0f, 20.0f, 50, 50, 100.0f, 20.0f, .01f, 20.0f, .01f, 1.0f, .01f, .01f);
 
   if (FAILED(initDevice())) {
     cleanup();
