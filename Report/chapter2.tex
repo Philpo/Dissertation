@@ -201,7 +201,7 @@ Two types of interactions are defined, type 1 and type 2. Type 1 interactions mo
 \subsubsection{Justification of Choice}
 Mass-spring models are suitable for use in this project as they are efficient and simple to implement; "Mass-spring models are the most efficient as well as the simplest of the cloth models.  This method is one of the most popular techniques for simulating cloth, especially when interactive frame rates are required" \parencite[2]{Zink2007}. As this project is concerned with the real time animation of cloth, mass-spring models are therefore the obvious choice.
 \\Mass-spring models are also the most common method of modelling cloth in video games, used in games such as Alan Wake, \parencite[2]{Enqvist2010}, and Hitman: Codename 47, \parencite[1]{Jakobsen2005}, as well as commercial physics engines for games, such as Havok\textsuperscript{\textregistered} and PhysX\textsuperscript{\textregistered}. Again, since this project is concerned with the simulation of cloth for use in a video game, mass-spring models are the logical choice.
-\\In particular, the Provot model will be used for this project as the force-based approach requires the solving of a much simpler series of equations than the energy-based approach of the Choi Ko model, and is therefore likely to be more computationally efficient.
+\\In particular, the Provot model was used for this project as the force-based approach requires the solving of a much simpler series of equations than the energy-based approach of the Choi Ko model, and is therefore likely to be more computationally efficient.
 \\\\One disadvantage of the mass-spring model is that it does not achieve realistic animation of cloth as "mass-spring systems do not model any specific material and are not related to measured properties of real clothes" \parencite[3]{Wacker2005a}. However, by careful tuning of the spring stiffness coefficients pleasing results can be achieved; \textcite{Mongus2012} have shown that, with tuning, mass-spring models can reproduce the drape of a cloth with an accuracy of 97\%.
 \\Another disadvantage of mass-spring models is what Provot calls 'super-elasticity'; springs are allowed to deform too much, leading to unrealistic looking cloth. This is caused because "the springs are “ideal” and they have unlimited linear deformation rate" \parencite[3]{Vassilev2001}. To counter this effect, Provot suggests enforcing length constraints on structural and shear springs. First the position of the particles are updated, then the deformation of the springs are calculated. If this deformation value is greater than some threshold, $\tau_{c}$, then the position of the connected particles are adjusted so the deformation rate equals $\tau_{c}$. Fig \ref{fig:super-elasticity} shows the super-elasticity problem and the results of employing Provot's corrective method. As can be seen, correcting the super-elasticity results in a much more realistic model.
 
@@ -227,6 +227,7 @@ This can be converted into a coupled series of first order ODEs by separating th
 Equations \ref{eq:newtonian ODE} and \ref{eq:1st order ODE} cannot be solved analytically, and therefore it is necessary to use a numerical method, or integrator, to approximate them at discrete time intervals. There are many integration methods that could be chosen, typically classified as either explicit or implicit, and the most popular choices will be described now.
 
 \subsubsection{Explicit Integrators}
+\label{sec:explicit}
 Most of the early work on physically-based cloth simulation used explicit integrators as they are simple and easy to implement; they only require information about the state of the system at the previous interval to calculate the current state.
 \\The most commonly used explicit integrators are the Runge-Kutta family of integrators.
 
@@ -342,3 +343,12 @@ $\frac{\delta F}{\delta x}$ is the negated Hessian matrix, denoted as H, and can
 As a result, the implicit Euler method requires the computation of an n x n matrix each iteration, and thus increasing the size of the mesh greatly impacts the performance of this method.
 \\However, if the stiffness of the springs and mass of the particles are constant throughout the simulation then $\bigg(I - \frac{\Delta t^{2}}{m}H\bigg)^{-1}$ can be precomputed, giving performance gains.
 \\This method has been shown by \textcite{Volino2001} to be stable for any time step value, however as the time step increases, the accuracy decreases rapidly over a certain threshold. Using the method described above, it is also not possible to use an adaptive time step or to vary the mass or stiffness of the model as the cost of computing H every iteration is high. As such, many researchers, such as \textcite{Mesit2007} and \textcite{Kang2000}, have presented faster approximation methods for the implicit Euler integrator.
+
+\subsubsection{Chosen Integration Methods}
+Four integrations methods were chosen for investigation by this project.
+\begin{itemize}
+\item{Explicit Euler. This is the simplest integrator and one of the most popular in the literature but it is also most likely to impact simulation performance due to its reliance on small time steps}
+\item{Fourth order Runge-Kutta. Computationally more expensive than explicit Euler, but stable with larger time steps, therefore offering an interesting comparison between computational cost and simulation performance}
+\item{Verlet. Chosen as it is an explicit integrator that is not part of the Runge-Kutta family}
+\item{Implicit Euler. Unconditionally stable regardless of time step, Chosen to provide a contrast between explicit and implicit integrators}
+\end{itemize}

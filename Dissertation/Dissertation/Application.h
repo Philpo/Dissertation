@@ -62,6 +62,8 @@ private:
 
   Camera* camera;
   Cloth* cloth;
+  Particle a, b;
+  Spring spring;
   float cameraSpeed = 2.0f;
 
   UINT windowHeight;

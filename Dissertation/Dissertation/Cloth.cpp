@@ -18,6 +18,12 @@ Cloth::~Cloth() {
   delete[] flexionSprings;
 }
 
+void Cloth::setPinned(int row, int column, bool pinned) {
+  if (row < rows && column < columns && row >= 0 && column >= 0) {
+    particles[(row * columns) + column].setPinned(pinned);
+  }
+}
+
 void Cloth::update(double deltaT) {
   for (int i = 0; i < numStructural; i++) {
     structuralSprings[i].calcSpringForce();
@@ -25,9 +31,9 @@ void Cloth::update(double deltaT) {
   for (int i = 0; i < numShear; i++) {
     shearSprings[i].calcSpringForce();
   }
-  for (int i = 0; i < numFlexion; i++) {
-    flexionSprings[i].calcSpringForce();
-  }
+  //for (int i = 0; i < numFlexion; i++) {
+  //  flexionSprings[i].calcSpringForce();
+  //}
 
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < columns; j++) {
@@ -55,10 +61,6 @@ void Cloth::createParticles(FXMVECTOR topLeftPostition, float height, float widt
       x = topLeft.x + (j * (width / (float) columns));
       y = topLeft.y - (i * (height / (float) rows));
       particles[(i * columns) + j] = Particle(particleMass, linearDamping, XMVectorSet(x, y, topLeft.z, 1.0f), XMVectorSet(0.0f, 0.0f, -1.0f, 0.0f));
-
-      if (i == 0 && (j == 0 || j == columns - 1)) {
-        particles[(i * columns) + j].setPinned(true);
-      }
     }
   }
 }
@@ -92,7 +94,7 @@ void Cloth::createShearLinks(float shearStiffness, float shearDamping) {
   for (int i = 0; i < rows - 1; i++) {
     for (int j = 0; j < columns - 1; j++) {
       shearSprings[index++] = Spring(shearStiffness, shearDamping, &particles[(i * columns) + j], &particles[((i + 1) * columns) + j + 1]);
-      shearSprings[index++] = Spring(shearStiffness, shearDamping, &particles[((i + 1) * columns) + j], &particles[(i * columns) + j + 1]);
+      shearSprings[index++] = Spring(shearStiffness, shearDamping, &particles[(i * columns) + j + 1], &particles[((i + 1) * columns) + j]);
     }
   }
 }

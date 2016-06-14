@@ -17,6 +17,8 @@ public:
   const int getNumShearSprings() const { return numShear; }
   const Particle* const getParticles() const { return particles; }
 
+  void setPinned(int row, int column, bool pinned);
+
   void update(double deltaT);
   void draw(ID3D11DeviceContext* const immediateContext) const;
 private:

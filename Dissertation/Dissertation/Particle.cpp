@@ -1,21 +1,19 @@
 #include "Particle.h"
 
-Particle::Particle() : mass(0.0f), pinned(false), position(0.0f, 0.0f, 0.0f), normal(0.0f, 0.0f, 0.0f), acceleration(0.0f, 0.0f, 0.0f), velocity(0.0f, 0.0f, 0.0f) {
-  pos = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-  norm = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-  accel = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-  vel = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+Particle::Particle() : mass(0.0f), pinned(false) {
+  position = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+  normal = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+  acceleration = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+  velocity = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
 }
 
 Particle::Particle(float mass, float damingCoefficient, FXMVECTOR position, FXMVECTOR normal) :
-  mass(mass), dampingCoefficient(damingCoefficient), pinned(false), position(0.0f, 0.0f, 0.0f), normal(0.0f, 0.0f, 0.0f), acceleration(0.0f, 0.0f, 0.0f), velocity(0.0f, 0.0f, 0.0f) {
-  XMStoreFloat3(&this->position, position);
-  XMStoreFloat3(&this->normal, normal);
-  pos = position;
-  norm = normal;
-  accel = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-  vel = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+  mass(mass), dampingCoefficient(damingCoefficient), pinned(false) {
+  this->position = position;
+  this->normal = normal;
+  acceleration = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+  velocity = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
 }
 
@@ -29,18 +27,13 @@ void Particle::update(double deltaT) {
 void Particle::integrate(double deltaT) {
   float timeInSeconds = deltaT / 1000.0f;
   if (closeToZero()) {
-    totalForce.m128_f32[0] = 0.0f;
-    totalForce.m128_f32[1] = 0.0f;
-    totalForce.m128_f32[2] = 0.0f;
+    return;
   }
-  accel = XMVectorScale(totalForce, 1 / mass);
-  vel = XMVectorAdd(vel, XMVectorScale(accel, timeInSeconds));
-  vel = XMVectorAdd(vel, XMVectorScale(vel, -dampingCoefficient));
-  pos = XMVectorAdd(pos, XMVectorAdd(XMVectorScale(vel, timeInSeconds), XMVectorScale(XMVectorScale(accel, timeInSeconds * timeInSeconds), 0.5f)));
-  
-  XMStoreFloat3(&acceleration, accel);
-  XMStoreFloat3(&velocity, vel);
-  XMStoreFloat3(&position, pos);
+  acceleration = XMVectorScale(totalForce, 1 / mass);
+  velocity = XMVectorAdd(velocity, XMVectorScale(acceleration, timeInSeconds));
+  //velocity = XMVectorAdd(velocity, XMVectorScale(velocity, -dampingCoefficient));
+  //position = XMVectorAdd(position, XMVectorAdd(XMVectorScale(velocity, timeInSeconds), XMVectorScale(XMVectorScale(acceleration, timeInSeconds * timeInSeconds), 0.5f)));
+  position = XMVectorAdd(position, XMVectorScale(velocity, timeInSeconds));
 }
 
 bool Particle::closeToZero() {

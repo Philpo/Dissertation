@@ -6,30 +6,42 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Mechanical properties of cloth}}{13}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Mechanical properties of cloth}}{14}{figure.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Visual Properties of cloth}}{14}{figure.2.2}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Visual Properties of cloth}}{15}{figure.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Cloth with structural springs only}}{17}{figure.2.3}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Cloth with structural springs only}}{18}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{17}{figure.2.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{18}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{17}{figure.2.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{18}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Cloth with structural and shear springs}}{17}{figure.2.4}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Cloth with structural and shear springs}}{18}{figure.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{17}{figure.2.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{18}{figure.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{17}{figure.2.4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{18}{figure.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Provot cloth model}}{18}{figure.2.5}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Provot cloth model}}{19}{figure.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Choi Ko cloth model}}{20}{figure.2.6}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Choi Ko cloth model}}{21}{figure.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Super-elasticity problems}}{21}{figure.2.7}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Super-elasticity problems}}{22}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Super-elastic effect}}}{21}{figure.2.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Super-elastic effect}}}{22}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of correcting super-elasticity}}}{21}{figure.2.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of correcting super-elasticity}}}{22}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Explicit integrator stability regions}}{23}{figure.2.8}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Explicit integrator stability regions}}{24}{figure.2.8}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Phased development methodology}}{33}{figure.3.1}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Initial design for the first development cycle}}{34}{figure.A.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Final design for the first development cycle}}{35}{figure.A.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Class diagram showing the additional Arena classes}}{36}{figure.A.3}

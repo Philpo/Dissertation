@@ -110,7 +110,17 @@ HRESULT Application::initialise(HINSTANCE hInstance, int nCmdShow) {
   windowWidth = rc.right - rc.left;
   windowHeight = rc.bottom - rc.top;
 
-  cloth = new Cloth(XMVectorSet(-10.0f, 10.0f, 10.0f, 0.0f), 20.0f, 20.0f, 50, 50, 100.0f, 20.0f, .01f, 20.0f, .01f, 1.0f, .01f, .01f);
+  cloth = new Cloth(XMVectorSet(-10.0f, 10.0f, 10.0f, 0.0f), 10.0f, 10.0f, 10, 10, 100.0f, 20.0f, 20.0f, 20.0f, 20.0f, 1.0f, 1.0f, 0.01f);
+  cloth->setPinned(0, 0, true);
+  cloth->setPinned(0, 9, true);
+  //for (int i = 0; i < 50; i++) {
+  //  cloth->setPinned(i, 0, true);
+  //}
+
+  a = Particle(.04f, 0.0f, XMVectorSet(-10.0f, 10.0f, 10.0f, 0.0f), XMVectorSet(0.0f, 0.0f, 01.0f, 0.0f));
+  b = Particle(.04f, 0.0f, XMVectorSet(-9.0f, 10.0f, 10.0f, 0.0f), XMVectorSet(0.0f, 0.0f, 01.0f, 0.0f));
+  a.setPinned(true);
+  spring = Spring(20.0f, 2.0f, &a, &b);
 
   if (FAILED(initDevice())) {
     cleanup();
@@ -194,7 +204,11 @@ HRESULT Application::initVertexBuffer() {
 
   for (int i = 0; i < cloth->getNumRows(); i++) {
     for (int j = 0; j < cloth->getNumColumns(); j++) {
-      vertices[(i * cloth->getNumColumns()) + j].posL = particles[(i * cloth->getNumColumns()) + j].getPosition();
+      XMFLOAT3& posL = vertices[(i * cloth->getNumColumns()) + j].posL;
+      XMVECTOR pos = particles[(i * cloth->getNumColumns()) + j].getPosition();
+      posL.x = pos.m128_f32[0];
+      posL.y = pos.m128_f32[1];
+      posL.z = pos.m128_f32[2];
     }
   }
 
@@ -204,6 +218,21 @@ HRESULT Application::initVertexBuffer() {
   bd.ByteWidth = sizeof(SimpleVertex) * cloth->getNumRows() * cloth->getNumColumns();
   bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
   bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+
+  //vertices = new SimpleVertex[2];
+  //vertices[0].posL.x = a.getPosition().m128_f32[0];
+  //vertices[0].posL.y = a.getPosition().m128_f32[1];
+  //vertices[0].posL.z = a.getPosition().m128_f32[2];
+  //vertices[1].posL.x = b.getPosition().m128_f32[0];
+  //vertices[1].posL.y = b.getPosition().m128_f32[1];
+  //vertices[1].posL.z = b.getPosition().m128_f32[2];
+
+  //D3D11_BUFFER_DESC bd;
+  //ZeroMemory(&bd, sizeof(bd));
+  //bd.Usage = D3D11_USAGE_DYNAMIC;
+  //bd.ByteWidth = sizeof(SimpleVertex) * 2;
+  //bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
+  //bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 
   D3D11_SUBRESOURCE_DATA InitData;
   ZeroMemory(&InitData, sizeof(InitData));
@@ -261,6 +290,18 @@ HRESULT Application::initIndexBuffer() {
   bd.ByteWidth = sizeof(UINT) * (cloth->getNumStructuralSprings() + cloth->getNumShearSprings()) * 2;
   bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
   bd.CPUAccessFlags = 0;
+
+  //UINT* indices = new UINT[2];
+  //indices[0] = 0;
+  //indices[1] = 1;
+
+  //D3D11_BUFFER_DESC bd;
+  //ZeroMemory(&bd, sizeof(bd));
+
+  //bd.Usage = D3D11_USAGE_DEFAULT;
+  //bd.ByteWidth = sizeof(UINT) * (cloth->getNumStructuralSprings() + cloth->getNumShearSprings()) * 2;
+  //bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
+  //bd.CPUAccessFlags = 0;
 
   D3D11_SUBRESOURCE_DATA InitData;
   ZeroMemory(&InitData, sizeof(InitData));
@@ -500,18 +541,33 @@ void Application::update(double deltaT) {
   // Update camera
   camera->update();
   cloth->update(deltaT);
+  a.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), a.getMass()));
+  b.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), b.getMass()));
+  spring.calcSpringForce();
+  a.update(deltaT);
+  b.update(deltaT);
 
   D3D11_MAPPED_SUBRESOURCE mappedData;
   immediateContext->Map(vertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedData);
   const Particle* const particles = cloth->getParticles();
-  //UINT* data = reinterpret_cast<UINT*>(mappedData.pData);
+  UINT* data = reinterpret_cast<UINT*>(mappedData.pData);
   for (int i = 0; i < cloth->getNumRows(); i++) {
     for (int j = 0; j < cloth->getNumColumns(); j++) {
-      vertices[(i * cloth->getNumColumns()) + j].posL = particles[(i * cloth->getNumColumns()) + j].getPosition();
-      vertices[(i * cloth->getNumColumns()) + j].posL.y -= 0.001f;
+      XMFLOAT3& posL = vertices[(i * cloth->getNumColumns()) + j].posL;
+      XMVECTOR pos = particles[(i * cloth->getNumColumns()) + j].getPosition();
+      posL.x = pos.m128_f32[0];
+      posL.y = pos.m128_f32[1];
+      posL.z = pos.m128_f32[2];
     }
   }
-  memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * cloth->getNumRows() * cloth->getNumColumns());
+  //vertices[0].posL.x = a.getPosition().m128_f32[0];
+  //vertices[0].posL.y = a.getPosition().m128_f32[1];
+  //vertices[0].posL.z = a.getPosition().m128_f32[2];
+  //vertices[1].posL.x = b.getPosition().m128_f32[0];
+  //vertices[1].posL.y = b.getPosition().m128_f32[1];
+  //vertices[1].posL.z = b.getPosition().m128_f32[2];
+  //memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * 2);
+  memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * cloth->getNumColumns() * cloth->getNumRows());
   immediateContext->Unmap(vertexBuffer, 0);
 }
 
@@ -541,7 +597,7 @@ void Application::draw() {
   cb.projection = XMMatrixTranspose(projection);
 
   immediateContext->UpdateSubresource(constantBuffer, 0, nullptr, &cb, 0, 0);
-
+  //immediateContext->DrawIndexed(2, 0, 0);
   cloth->draw(immediateContext);
 
   swapChain->Present(0, 0);
