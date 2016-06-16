@@ -1129,6 +1129,28 @@
   \field{year}{2006}
 \endentry
 
+\entry{Naveen}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Naveen}{N.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{N1}
+  \strng{fullhash}{N1}
+  \field{sortinit}{N}
+  \field{title}{{What is Waterfall Model in software testing and what are
+  advantages and disadvantages of Waterfall Model}}
+  \verb{url}
+  \verb http://testingfreak.com/waterfall-model-software-testing-advantages-dis
+  \verb advantages-waterfall-model/
+  \endverb
+  \field{urlday}{15}
+  \field{urlmonth}{06}
+  \field{urlyear}{2016}
+\endentry
+
 \entry{Ng1996}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -1177,8 +1199,8 @@
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{N1}
-  \strng{fullhash}{N1}
+  \strng{namehash}{N2}
+  \strng{fullhash}{N2}
   \field{labelyear}{2007}
   \field{sortinit}{N}
   \field{title}{{Cloth Simulation}}

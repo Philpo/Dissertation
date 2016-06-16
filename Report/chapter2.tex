@@ -111,6 +111,17 @@ Fig \ref{fig:provot model} shows the arrangement of these springs for a small cl
    \caption[Provot cloth model]{Provot cloth model \parencite[2]{Lander2000}}
    \label{fig:provot model}
 \end{figure}
+\\The total number of each type of spring can be calculated with:
+\begin{equation}
+\begin{split}
+\label{eq:num springs}
+  &Num_{structural} = 2((m - 1)(n - 1)) + (m - 1) + (n - 1)
+  \\&Num_{shear} = 2((m - 1)(n - 1))
+  \\&Num_{flexion} = 2((m - 2)(n - 2)) + 2((m - 2) + (n - 2))
+  \\\text{where:}
+  \\&\text{m and n are the vertical and horizontal dimensions of the mesh respectively}
+  \end{split}
+\end{equation}
 
 To animate the mesh, forces are applied to the particles and are calculated using Newton's second law:
 \begin{equation}
