@@ -91,6 +91,12 @@ Application::Application() : lastMousePosX(0.0f), lastMousePosY(0.0f) {
 
 Application::~Application() {
   cleanup();
+
+  double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
+  double timeSpentIntegrating = cloth->getTimeSpentIntegrating();
+  testDataFile << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+
+  delete cloth;
 }
 
 HRESULT Application::initialise(HINSTANCE hInstance, int nCmdShow) {
@@ -110,9 +116,9 @@ HRESULT Application::initialise(HINSTANCE hInstance, int nCmdShow) {
   windowWidth = rc.right - rc.left;
   windowHeight = rc.bottom - rc.top;
 
-  cloth = new Cloth(XMVectorSet(-10.0f, 10.0f, 10.0f, 0.0f), 10.0f, 10.0f, 10, 10, 100.0f, 20.0f, 20.0f, 20.0f, 20.0f, 1.0f, 1.0f, 0.01f);
+  cloth = new Cloth(XMVectorSet(-10.0f, 10.0f, 10.0f, 0.0f), 10.0f, 10.0f, 50, 50, 100.0f, 200.0f, 200.0f, 200.0f, 200.0f, 1.0f, 1.0f, 0.01f);
   cloth->setPinned(0, 0, true);
-  cloth->setPinned(0, 9, true);
+  cloth->setPinned(0, 49, true);
   //for (int i = 0; i < 50; i++) {
   //  cloth->setPinned(i, 0, true);
   //}
@@ -601,4 +607,5 @@ void Application::draw() {
   cloth->draw(immediateContext);
 
   swapChain->Present(0, 0);
+  frameCount++;
 }

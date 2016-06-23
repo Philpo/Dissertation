@@ -1,4 +1,5 @@
 #pragma once
+#include "Utils.h"
 #include <directxmath.h>
 
 using namespace DirectX;
@@ -9,6 +10,7 @@ public:
   Particle(float mass, float dampingCoefficient, FXMVECTOR position, FXMVECTOR normal);
   ~Particle() {}
 
+  const double getTimeSpentIntegrating() const { return timeSpentIntegrating; }
   const float getMass() const { return mass; }
   const bool isPinned() const { return pinned; }
   const XMVECTOR& getPosition() const { return position; }
@@ -24,6 +26,7 @@ public:
   void addForce(const FXMVECTOR& force) { totalForce = XMVectorAdd(totalForce, force); }
   void update(double deltaT);
 private:
+  double timeSpentIntegrating;
   float mass, dampingCoefficient;
   bool pinned;
   XMVECTOR position, normal, acceleration, velocity, totalForce;

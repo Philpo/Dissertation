@@ -17,6 +17,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="Spring.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
@@ -26,6 +27,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Spring.h" />
     <ClInclude Include="TypeDefs.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Dissertation.rc" />

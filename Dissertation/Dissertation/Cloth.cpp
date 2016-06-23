@@ -4,7 +4,7 @@
 XMVECTOR Cloth::GRAVITY = XMVectorSet(0.0f, -.981, 0.0f, 0.0f);
 
 Cloth::Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping, float linearDamping) :
-  rows(numRows), columns(numColumns) {
+  timeSpentCalculatingInternalForce(0.0), timeSpentIntegrating(0.0), rows(numRows), columns(numColumns) {
   createParticles(topLeftPostition, height, width, totalMass, linearDamping);
   createStructuralLinks(structuralStiffness, structuralDamping);
   createShearLinks(shearStiffness, shearDamping);
@@ -25,20 +25,25 @@ void Cloth::setPinned(int row, int column, bool pinned) {
 }
 
 void Cloth::update(double deltaT) {
+  double currentTime = getCounter();
+
   for (int i = 0; i < numStructural; i++) {
     structuralSprings[i].calcSpringForce();
   }
   for (int i = 0; i < numShear; i++) {
     shearSprings[i].calcSpringForce();
   }
-  //for (int i = 0; i < numFlexion; i++) {
-  //  flexionSprings[i].calcSpringForce();
-  //}
+  for (int i = 0; i < numFlexion; i++) {
+    flexionSprings[i].calcSpringForce();
+  }
+
+  timeSpentCalculatingInternalForce += getCounter() - currentTime;
 
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < columns; j++) {
       particles[(i * columns) + j].addForce(XMVectorScale(GRAVITY, particles[(i * columns) + j].getMass()));
       particles[(i * columns) + j].update(deltaT);
+      timeSpentIntegrating += particles[(i * columns) + j].getTimeSpentIntegrating();
     }
   }
 }

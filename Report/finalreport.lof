@@ -32,16 +32,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of correcting super-elasticity}}}{22}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Explicit integrator stability regions}}{24}{figure.2.8}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Constraint relaxation}}{24}{figure.2.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Explicit integrator stability regions}}{27}{figure.2.9}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Waterfall development methodology}}{29}{figure.3.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Waterfall development methodology}}{32}{figure.3.1}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Initial design for the first development cycle}}{36}{figure.A.1}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Initial design for the first development cycle}}{39}{figure.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Final design for the first development cycle}}{37}{figure.A.2}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Final design for the first development cycle}}{40}{figure.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Class diagram showing the additional Arena classes}}{38}{figure.A.3}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Class diagram showing the additional Arena classes}}{41}{figure.A.3}

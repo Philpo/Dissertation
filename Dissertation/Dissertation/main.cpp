@@ -1,36 +1,10 @@
 #include "Application.h"
+#include "Utils.h"
 #include <windowsx.h>
 #define NOMINMAX
 
-double timeLastFrame, freq, averageUpdateTime, averageRenderTime;
-__int64 counterStart;
+double timeLastFrame, averageUpdateTime, averageRenderTime;
 int frameCount;
-
-/*
-* Taken from https://stackoverflow.com/questions/1739259/how-to-use-queryperformancecounter
-*/
-HRESULT startCounter() {
-  LARGE_INTEGER li;
-  if (!QueryPerformanceFrequency(&li)) {
-    return -1;
-  }
-
-  freq = double(li.QuadPart) / 1000.0;
-
-  QueryPerformanceCounter(&li);
-  counterStart = li.QuadPart;
-
-  return S_OK;
-}
-
-/*
-* Taken from https://stackoverflow.com/questions/1739259/how-to-use-queryperformancecounter
-*/
-double getCounter() {
-  LARGE_INTEGER li;
-  QueryPerformanceCounter(&li);
-  return double(li.QuadPart - counterStart) / freq;
-}
 
 /*
 * Taken from Frank Luna: 3D Game Programming with DirectX 11
@@ -81,6 +55,9 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
     return -1;
   }
 
+  testDataFile.open("test_data.csv");
+  testDataFile << "Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms)" << endl;
+
   // Main message loop
   MSG msg = { 0 };
 
@@ -127,6 +104,9 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
 
   cout << "Average update time: " << (averageUpdateTime / (double) frameCount) << "ms" << endl;
   cout << "Average render time: " << (averageRenderTime / (double) frameCount) << "ms" << endl;
+
+  testDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << endl;
+  testDataFile.close();
 
   timeEndPeriod(wTimerRes);
   system("PAUSE");

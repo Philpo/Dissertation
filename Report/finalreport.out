@@ -20,31 +20,32 @@
 \BOOKMARK [3][-]{subsubsection.2.1.3.1}{Provot Model}{subsection.2.1.3}% 20
 \BOOKMARK [3][-]{subsubsection.2.1.3.2}{Choi Ko Model}{subsection.2.1.3}% 21
 \BOOKMARK [3][-]{subsubsection.2.1.3.3}{Justification of Choice}{subsection.2.1.3}% 22
-\BOOKMARK [2][-]{subsection.2.1.4}{Numerical Integration for Mass-Spring Models}{section.2.1}% 23
-\BOOKMARK [3][-]{subsubsection.2.1.4.1}{Explicit Integrators}{subsection.2.1.4}% 24
-\BOOKMARK [4][-]{paragraph.2.1.4.1.1}{Euler}{subsubsection.2.1.4.1}% 25
-\BOOKMARK [4][-]{paragraph.2.1.4.1.2}{Midpoint}{subsubsection.2.1.4.1}% 26
-\BOOKMARK [4][-]{paragraph.2.1.4.1.3}{Fourth order Runge-Kutta}{subsubsection.2.1.4.1}% 27
-\BOOKMARK [4][-]{paragraph.2.1.4.1.4}{Verlet}{subsubsection.2.1.4.1}% 28
-\BOOKMARK [3][-]{subsubsection.2.1.4.2}{Implicit Integrators}{subsection.2.1.4}% 29
-\BOOKMARK [4][-]{paragraph.2.1.4.2.1}{Euler}{subsubsection.2.1.4.2}% 30
-\BOOKMARK [3][-]{subsubsection.2.1.4.3}{Chosen Integration Methods}{subsection.2.1.4}% 31
-\BOOKMARK [0][-]{chapter.3}{Design and Implementation}{}% 32
-\BOOKMARK [1][-]{section.3.1}{Development Methodology}{chapter.3}% 33
-\BOOKMARK [2][-]{subsection.3.1.1}{Sequential}{section.3.1}% 34
-\BOOKMARK [2][-]{subsection.3.1.2}{Cyclical}{section.3.1}% 35
-\BOOKMARK [2][-]{subsection.3.1.3}{Chosen Methodology}{section.3.1}% 36
-\BOOKMARK [1][-]{section.3.2}{Development}{chapter.3}% 37
-\BOOKMARK [2][-]{subsection.3.2.1}{First Cycle}{section.3.2}% 38
-\BOOKMARK [2][-]{subsection.3.2.2}{Second Cycle}{section.3.2}% 39
-\BOOKMARK [2][-]{subsection.3.2.3}{Third Cycle}{section.3.2}% 40
-\BOOKMARK [1][-]{section.3.3}{Testing}{chapter.3}% 41
-\BOOKMARK [2][-]{subsection.3.3.1}{Test Data}{section.3.3}% 42
-\BOOKMARK [2][-]{subsection.3.3.2}{Test Parameters}{section.3.3}% 43
-\BOOKMARK [3][-]{subsubsection.3.3.2.1}{Mesh Size}{subsection.3.3.2}% 44
-\BOOKMARK [3][-]{subsubsection.3.3.2.2}{Integrator Time Step}{subsection.3.3.2}% 45
-\BOOKMARK [3][-]{subsubsection.3.3.2.3}{Spring and Damping Coefficients}{subsection.3.3.2}% 46
-\BOOKMARK [3][-]{subsubsection.3.3.2.4}{Particle Mass}{subsection.3.3.2}% 47
-\BOOKMARK [0][-]{appendix.A}{Class Diagrams}{}% 48
-\BOOKMARK [1][-]{section.A.1}{First Cycle Design}{appendix.A}% 49
-\BOOKMARK [1][-]{section.A.2}{The Arena Class Diagram}{appendix.A}% 50
+\BOOKMARK [3][-]{subsubsection.2.1.3.4}{Mass-Spring Models for Video Games}{subsection.2.1.3}% 23
+\BOOKMARK [2][-]{subsection.2.1.4}{Numerical Integration for Mass-Spring Models}{section.2.1}% 24
+\BOOKMARK [3][-]{subsubsection.2.1.4.1}{Explicit Integrators}{subsection.2.1.4}% 25
+\BOOKMARK [4][-]{paragraph.2.1.4.1.1}{Euler}{subsubsection.2.1.4.1}% 26
+\BOOKMARK [4][-]{paragraph.2.1.4.1.2}{Midpoint}{subsubsection.2.1.4.1}% 27
+\BOOKMARK [4][-]{paragraph.2.1.4.1.3}{Fourth order Runge-Kutta}{subsubsection.2.1.4.1}% 28
+\BOOKMARK [4][-]{paragraph.2.1.4.1.4}{Verlet}{subsubsection.2.1.4.1}% 29
+\BOOKMARK [3][-]{subsubsection.2.1.4.2}{Implicit Integrators}{subsection.2.1.4}% 30
+\BOOKMARK [4][-]{paragraph.2.1.4.2.1}{Euler}{subsubsection.2.1.4.2}% 31
+\BOOKMARK [3][-]{subsubsection.2.1.4.3}{Chosen Integration Methods}{subsection.2.1.4}% 32
+\BOOKMARK [0][-]{chapter.3}{Design and Implementation}{}% 33
+\BOOKMARK [1][-]{section.3.1}{Development Methodology}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.1.1}{Sequential}{section.3.1}% 35
+\BOOKMARK [2][-]{subsection.3.1.2}{Cyclical}{section.3.1}% 36
+\BOOKMARK [2][-]{subsection.3.1.3}{Chosen Methodology}{section.3.1}% 37
+\BOOKMARK [1][-]{section.3.2}{Development}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.2.1}{First Cycle}{section.3.2}% 39
+\BOOKMARK [2][-]{subsection.3.2.2}{Second Cycle}{section.3.2}% 40
+\BOOKMARK [2][-]{subsection.3.2.3}{Third Cycle}{section.3.2}% 41
+\BOOKMARK [1][-]{section.3.3}{Testing}{chapter.3}% 42
+\BOOKMARK [2][-]{subsection.3.3.1}{Test Data}{section.3.3}% 43
+\BOOKMARK [2][-]{subsection.3.3.2}{Test Parameters}{section.3.3}% 44
+\BOOKMARK [3][-]{subsubsection.3.3.2.1}{Mesh Size}{subsection.3.3.2}% 45
+\BOOKMARK [3][-]{subsubsection.3.3.2.2}{Integrator Time Step}{subsection.3.3.2}% 46
+\BOOKMARK [3][-]{subsubsection.3.3.2.3}{Spring and Damping Coefficients}{subsection.3.3.2}% 47
+\BOOKMARK [3][-]{subsubsection.3.3.2.4}{Particle Mass}{subsection.3.3.2}% 48
+\BOOKMARK [0][-]{appendix.A}{Class Diagrams}{}% 49
+\BOOKMARK [1][-]{section.A.1}{First Cycle Design}{appendix.A}% 50
+\BOOKMARK [1][-]{section.A.2}{The Arena Class Diagram}{appendix.A}% 51

@@ -11,6 +11,8 @@ public:
   Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping, float linearDamping);
   ~Cloth();
 
+  const double getTimeSpentCalculatingInternalForce() const { return timeSpentCalculatingInternalForce; }
+  const double getTimeSpentIntegrating() const { return timeSpentIntegrating; }
   const int getNumRows() const { return rows; }
   const int getNumColumns() const { return columns; }
   const int getNumStructuralSprings() const { return numStructural; }
@@ -22,6 +24,7 @@ public:
   void update(double deltaT);
   void draw(ID3D11DeviceContext* const immediateContext) const;
 private:
+  double timeSpentCalculatingInternalForce, timeSpentIntegrating;
   int rows, columns, numStructural, numShear, numFlexion;
   Particle* particles;
   Spring *structuralSprings, *shearSprings, *flexionSprings;

@@ -15,7 +15,7 @@ Different use cases require different things from the cloth simulation. For exam
 Cloth has several properties that should be considered for modelling.
 
 \subsubsection{Mechanical Properties}
-Cloth has three mechanical properties that control its behaviour; stretching, shearing and bending, fig. \ref{fig:mechanical properties} shows how each property affects the cloth.
+Cloth has three mechanical properties that control its behaviour; stretching, shearing and bending, Fig \ref{fig:mechanical properties} shows how each property affects the cloth.
 \\Stretching is the displacement of the cloth in either the horizontal or vertical direction. Most cloth has a high resistance to stretching and can typically only be stretched by 10\% \parencites[1]{Yalcn}[4]{Provot2001}.
 \\Shearing is the displacement of the cloth in a diagonal direction. Again, most cloths have high shearing resistance and this, coupled with high stretch resistance, makes cloth incompressible.
 \\Finally, bending is the overall curvature of the cloth surface. Typically, cloth has low bending resistance and so is easily folded.
@@ -211,7 +211,7 @@ Two types of interactions are defined, type 1 and type 2. Type 1 interactions mo
 
 \subsubsection{Justification of Choice}
 Mass-spring models are suitable for use in this project as they are efficient and simple to implement; "Mass-spring models are the most efficient as well as the simplest of the cloth models.  This method is one of the most popular techniques for simulating cloth, especially when interactive frame rates are required" \parencite[2]{Zink2007}. As this project is concerned with the real time animation of cloth, mass-spring models are therefore the obvious choice.
-\\Mass-spring models are also the most common method of modelling cloth in video games, used in games such as Alan Wake, \parencite[2]{Enqvist2010}, and Hitman: Codename 47, \parencite[1]{Jakobsen2005}, as well as commercial physics engines for games, such as Havok\textsuperscript{\textregistered} and PhysX\textsuperscript{\textregistered}. Again, since this project is concerned with the simulation of cloth for use in a video game, mass-spring models are the logical choice.
+\\Mass-spring models are also the most common method of modelling cloth in video games, used in games such as Alan Wake, \parencite[2]{Enqvist2010}, and Hitman: Codename 47, \parencite[1]{Jakobsen2005}, as well as commercial physics engines for games, such as PhysX\textsuperscript{\textregistered}. Again, since this project is concerned with the simulation of cloth for use in a video game, mass-spring models are the logical choice.
 \\In particular, the Provot model was used for this project as the force-based approach requires the solving of a much simpler series of equations than the energy-based approach of the Choi Ko model, and is therefore likely to be more computationally efficient.
 \\\\One disadvantage of the mass-spring model is that it does not achieve realistic animation of cloth as "mass-spring systems do not model any specific material and are not related to measured properties of real clothes" \parencite[3]{Wacker2005a}. However, by careful tuning of the spring stiffness coefficients pleasing results can be achieved; \textcite{Mongus2012} have shown that, with tuning, mass-spring models can reproduce the drape of a cloth with an accuracy of 97\%.
 \\Another disadvantage of mass-spring models is what Provot calls 'super-elasticity'; springs are allowed to deform too much, leading to unrealistic looking cloth. This is caused because "the springs are “ideal” and they have unlimited linear deformation rate" \parencite[3]{Vassilev2001}. To counter this effect, Provot suggests enforcing length constraints on structural and shear springs. First the position of the particles are updated, then the deformation of the springs are calculated. If this deformation value is greater than some threshold, $\tau_{c}$, then the position of the connected particles are adjusted so the deformation rate equals $\tau_{c}$. Fig \ref{fig:super-elasticity} shows the super-elasticity problem and the results of employing Provot's corrective method. As can be seen, correcting the super-elasticity results in a much more realistic model.
@@ -224,8 +224,44 @@ Mass-spring models are suitable for use in this project as they are efficient an
 \label{fig:super-elasticity}
 \end{figure}
 
+\subsubsection{Mass-Spring Models for Video Games}
+Both the Provot and Choi Ko Mass-Spring models can be separated into two component, the modelling component and the animation component. The modelling component describes how the cloth will be represented internally, i.e. the disrectisation by point masses and the interconnectivity of the springs, and the animation component details how the cloth will be animated over time; for the Provot model, using the forces detailed in the previous sections. 
+\\For video games, where performance is a key factor, using the force based animation methods in the Provot and Choi Ko models may be prohibitively expensive over a certain mesh size. This results from the fact that the number of springs grows rapidly as the number of particles increases, leading to more internal force calculations per frame. For example, for a cloth represented by a 50 by 50 mesh of particles connected as in the Provot model, there are 14502 springs, and therefore Equations \ref{eq:hooke equation} and \ref{eq:spring damping} must be calculated 14502 times every frame. For the Choi Ko model, the internal force cost would only rise, as not only are there more springs in their model, but also their force calculations are more expensive. Thus, another approach to animating Mass-Spring models is usually taken for video games, called Position Based Dynamics (PBD).
+\\\\PBD were first used by \textcite{Jakobsen2005} to implement cloth in Hitman: Codename 47 and have since gone on to become the standard for cloth animation in games \parencite[2]{Enqvist2010} and commercial physics engines \parencite{Kim2011}.
+\\When using PBD, the cloth is modelled either using the Provot method \parencite[2]{Enqvist2010} or using a simplified version of the Provot model, where the flexion springs are omitted \parencites[7]{Zeller2005}[25]{Kim2011}. Instead of being modelled as Hooke springs, the spring connections are instead treated as distance constraints of the form
+\begin{equation}
+\begin{split}
+\label{eq:distance constraint}
+  &\parallel x2 - x1 \parallel = d
+\\  \text{where:}
+  \\&\text{x2 and x1 are the positions of the particles connected by the constraint}
+  \\&\text{d is the length of the constraint}
+\end{split}
+\end{equation}
+The work of \textcite{Jakobsen2005} was developed in \textcite{Muller2006} resulting in a more general PBD model that supports both equality and inequality constraints. For games however, modelling cloth as a mesh of particles connected by simple distance constraints is enough.
+\\To animate the cloth using PBD, external forces are first applied to the cloth, integrated using Verlet integration and the particle positions updated. Since the particles have moved, it is possible that one or more of the spring constraints are violated so they are checked and the positions of the particles corrected so none are violated; this is called constraint relaxation and is shown in Fig \ref{fig:constraint relaxation} . The constraints are correct using Equation \ref{eq:constraint relaxation}\parencite[4]{Muller2006}; stiffness and damping can also be added to control the appearance of the cloth.
+\begin{figure}[tp]
+   \begin{center}
+     \includegraphics{Figures/pbd}
+   \end{center}
+   \caption[Constraint relaxation]{Constraint relaxation \parencite[1]{Jakobsen2005}}
+   \label{fig:constraint relaxation}
+\end{figure}
+\begin{equation}
+\begin{split}
+\label{eq:constraint relaxation}
+  &\Delta x1 = - \frac{w1}{w1 + w2}(\parallel x2 - x1 \parallel - d)\frac{x2 - x1}{\parallel x2 - x1 \parallel}
+  \\&\Delta x2 = \frac{w2}{w1 + w2}(\parallel x2 - x1 \parallel - d)\frac{x2 - x1}{\parallel x2 - x1 \parallel}
+  \\\text{where:}
+  \\&\text{w1 and w2 are the weights of the respective particles}
+\end{split}
+\end{equation}
+This method of iteratively checking constraints and relaxing them immediately is called the Gauss-Seidel method and has one main problem; relaxing one constraint may violate other, already examined, constraints and therefore multiple relaxation passes may be needed. According to \textcite[1]{Jakobsen2005} however, for most cloth only one relaxation pass is necessary for visually pleasing animation, although this is contradicted by \parencite{Kim2011}, who suggests that multiple passes are needed when using a Gauss-Seidel approach.
+\\\\A PBD approach is unconditionally stable, as any instability will be corrected by the relaxation process, and can therefore use a large time step to reduce the performance cost of the simulation. Whilst implicit integrators, discussed below, offer unconditional stability for the traditional Mass-Spring models they are much more difficult to implement and understand, so the fact that PBD are stable and simple explains their popularity for use in video games. The need for multiple Gauss-Seidel passes can be used to control the performance hit of the cloth as well; the amount of frame time available for cloth simulation could be used to adjust the number of relaxation passes, so that if more time is available, more accurate cloth is produced.
+\\Despite its advantages, PBD was not chosen for this project as they are a closed problem for cloth simulation in video games. PBDs are the standard method of animating cloth for games, and have been implemented efficiently in commercial physics engines. By contrast, the Provot Mass-Spring model is not conventionally used, as it may be too expensive for certain mesh sizes. However, the research into the performance of the Provot model is either old, or makes no reference to the hardware used, and therefore there is scope for further work to investigate whether performance is still a concern with modern hardware.
+
 \subsection{Numerical Integration for Mass-Spring Models}
-As mentioned above, physically-based models for cloth simulation require solving a series of differential equations, discretised in space and time. According to \textcite[5]{Wacker2005a}, "since particle systems already represent a discretization in space, only a system of ordinary differential equations has to be solved". For the Mass-Spring model using Newtonian mechanics a series of second order ODEs, of the form \ref{eq:newtonian ODE}, must be solved \parencite[5]{Zink2007}.
+As mentioned above, physically-based models for cloth simulation require solving a series of differential equations, discretised in space and time. According to \textcite[5]{Wacker2005a}, "since particle systems already represent a disrectisation in space, only a system of ordinary differential equations has to be solved". For the Mass-Spring model using Newtonian mechanics a series of second order ODEs, of the form \ref{eq:newtonian ODE}, must be solved \parencite[5]{Zink2007}.
 \begin{equation}
 \label{eq:newtonian ODE}
   \frac{\delta^{2}x}{\delta t^{2}} = M^{-1}F(x, v)

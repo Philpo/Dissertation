@@ -1,6 +1,6 @@
 #include "Particle.h"
 
-Particle::Particle() : mass(0.0f), pinned(false) {
+Particle::Particle() : timeSpentIntegrating(0.0), mass(0.0f), pinned(false) {
   position = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   normal = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   acceleration = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
@@ -9,7 +9,7 @@ Particle::Particle() : mass(0.0f), pinned(false) {
 }
 
 Particle::Particle(float mass, float damingCoefficient, FXMVECTOR position, FXMVECTOR normal) :
-  mass(mass), dampingCoefficient(damingCoefficient), pinned(false) {
+  timeSpentIntegrating(0.0), mass(mass), dampingCoefficient(damingCoefficient), pinned(false) {
   this->position = position;
   this->normal = normal;
   acceleration = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
@@ -25,6 +25,8 @@ void Particle::update(double deltaT) {
 }
 
 void Particle::integrate(double deltaT) {
+  double currentTime = getCounter();
+
   float timeInSeconds = deltaT / 1000.0f;
   if (closeToZero()) {
     return;
@@ -34,6 +36,9 @@ void Particle::integrate(double deltaT) {
   //velocity = XMVectorAdd(velocity, XMVectorScale(velocity, -dampingCoefficient));
   //position = XMVectorAdd(position, XMVectorAdd(XMVectorScale(velocity, timeInSeconds), XMVectorScale(XMVectorScale(acceleration, timeInSeconds * timeInSeconds), 0.5f)));
   position = XMVectorAdd(position, XMVectorScale(velocity, timeInSeconds));
+
+  timeSpentIntegrating = getCounter() - currentTime;
+  int a = 1;
 }
 
 bool Particle::closeToZero() {

@@ -62,6 +62,7 @@ private:
 
   Camera* camera;
   Cloth* cloth;
+  int frameCount = 0;
   Particle a, b;
   Spring spring;
   float cameraSpeed = 2.0f;
