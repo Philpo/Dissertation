@@ -41,7 +41,15 @@
 \BOOKMARK [2][-]{subsection.3.2.3}{Third Cycle}{section.3.2}% 41
 \BOOKMARK [1][-]{section.3.3}{Profiling and Optimisation}{chapter.3}% 42
 \BOOKMARK [2][-]{subsection.3.3.1}{First Cycle}{section.3.3}% 43
-\BOOKMARK [0][-]{appendix.A}{Class Diagrams}{}% 44
-\BOOKMARK [1][-]{section.A.1}{First Cycle Design}{appendix.A}% 45
-\BOOKMARK [0][-]{appendix.B}{Profiling Results}{}% 46
-\BOOKMARK [1][-]{section.B.1}{First Cycle}{appendix.B}% 47
+\BOOKMARK [0][-]{chapter.4}{Test Plan}{}% 44
+\BOOKMARK [1][-]{section.4.1}{Test Data}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.2}{Test Parameters}{chapter.4}% 46
+\BOOKMARK [2][-]{subsection.4.2.1}{Mesh Size}{section.4.2}% 47
+\BOOKMARK [2][-]{subsection.4.2.2}{Integrator Time Step}{section.4.2}% 48
+\BOOKMARK [2][-]{subsection.4.2.3}{Spring and Damping Coefficients}{section.4.2}% 49
+\BOOKMARK [2][-]{subsection.4.2.4}{Particle Mass}{section.4.2}% 50
+\BOOKMARK [1][-]{section.4.3}{Test Process}{chapter.4}% 51
+\BOOKMARK [0][-]{appendix.A}{Class Diagrams}{}% 52
+\BOOKMARK [1][-]{section.A.1}{First Cycle Design}{appendix.A}% 53
+\BOOKMARK [0][-]{appendix.B}{Profiling Results}{}% 54
+\BOOKMARK [1][-]{section.B.1}{First Cycle}{appendix.B}% 55
