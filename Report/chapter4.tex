@@ -1,4 +1,39 @@
-\chapter{System Design}
+\chapter{Test Plan}
+
+\section{Test Data}
+To evaluate the hypotheses, a number of data fields will be captured from the simulation
+\begin{itemize}
+\item{Simulation frame rate. This will be affected by the cost and frequency of the integration calculations and is essential to capture to determine if the simulation is running in real time}
+\item{Average time spent on integration calculations. Extracting this allows investigations into the affect of more expensive, but less frequent, integrators}
+\item{Time taken to reach the equilibrium point. The equilibrium point is defined as the point at which there is close to zero total force for all particles, i.e. the external and internal forces are balanced. \textcite{Wang2009a} have shown that using higher order Runge-Kutta integrators reduces the time taken to reach equilibrium and thus, extracting this data will allow comparisons with their results}
+\end{itemize}
+In addition, the average time spent updating and rendering the cloth will also be extracted, in order to gain a better understanding of where the time each frame is spent.
+\\\\The data mentioned above will be extracted by simulating the cloth in two different scenarios.
+\\The first, or sheet, scenario will simulate a sheet hanging from a washing line. The top left and right particles of the cloth will be pinned, so as to be unaffected by any forces, and gravity applied as the sole external force. As a result, the simulation will evolve to an equilibrium, such as those show in Figures \ref{fig:structural and shear} and \ref{fig:super-elasticity}, so this scenarios can be used for measuring the time taken to reach the equilibrium point. 
+\\The second scenario will simulate a flag on a flag pole flapping in the wind. Particles on the left edge of the cloth will be pinned with gravity and a wind force, applied at random intervals, acting as external forces. Because of the wind, this scenario will not evolve to an equilibrium and so cannot be used to extract data about the time taken to reach equilibrium. However, the addition of wind will result in much more movement in the cloth so this scenario provides data on performance of a more active simulation.
+
+\section{Test Parameters}
+Mass-Spring models for cloth simulation have a number of different parameters which affect realism and performance, and are notoriously difficult to tune.
+
+\subsection{Mesh Size}
+This is the discretisation of the cloth, i.e. the number of particles used to represent the cloth, and is represented by two integers representing the number of rows and columns; the total number of particles in the cloth is therefore $rows \times columns$.
+\\Increasing mesh size will result in a more realistic simulation but there will be direct impacts on performance as a result. Adding more particles adds more springs, and therefore more calculations are needed every frame to calculate the internal forces. Adding more particles also increases the number of integration calculations needed every time step and both of these factors combined will result in a performance hit for the simulation.
+\\Several different mesh sizes will be used when evaluating the project hypotheses. Data will be extracted for each integrator at each mesh size. This will allow a comparison of the performance impact of the integrators when mesh size is varied.
+
+\subsection{Integrator Time Step}
+The time step will vary from integrator to integrator and must be set carefully in order to maintain the stability of the cloth.
+\\Varying the time step will affect the performance of the simulation as it will vary the frequency with which the integration calculations must be performed.
+\\For each integrator the maximum stable time step will be used along with a number of smaller time steps. This will allow a direct comparison of performance impact as time step decreases. For the explicit Euler method, the maximum stable time step is known; \textcite[2]{Vassilev2001} found that explicit Euler is stable for time steps less than $0.4\pi\sqrt{\frac{m}{K}}$, where K is the maximum spring stiffness. For the other explicit integrators, the maximum time step value will be found by investigating the point at which they become unstable. For implicit Euler it is more difficult to define a maximum stable time step, as it is unconditionally stable regardless of time step. However, \textcite{Volino2001} have shown that as the time step increases the accuracy decreases and so an investigation will be carried out the find the maximum time step at which the simulation is still, subjectively, accurate.
+
+\subsection{Spring and Damping Coefficients}
+Varying the spring and damping coefficients of the springs will affect the realism of the simulation. If the stiffness is set too low, then the particle displacement will increase and may result in unrealistic deformations of the cloth. On the other hand, if the stiffness is set too high then this can lead to no displacement in the cloth at all. For damping, if it is set too low then the cloth will oscillate too much and appear too elastic, if set too high then the cloth will appear as if moving through as viscous fluid, such as oil.
+\\Varying stiffness may also have an impact on the simulation's performance; increasing the stiffness may require the use of smaller time steps in order to maintain stability, depending on the chosen integrator.
+
+\subsection{Particle Mass}
+Since this project is not concerned with truly accurate cloth modelling, the particles' mass will be defined uniformly; that is, a total mass will be defined for the cloth and then divided by the number or particles to give the mass of an individual particle.
+\\Varyig the mass of the particles may have an impact on simulation performance. As a result of Equation \ref{eq:gravity}, increasing the mass of a particle will increase its displacement due to gravity and therefore, the stiffness of the springs may need to be increased in order to maintain the realism of the simulation. 
+\\For both particle mass and spring and damping coefficients, investigations will be carried out for each mesh size to determine what values result in a, subjectively, realistic looking cloth.
+
 Once the requirements of the system had been defined, and a development methodology chosen, the design process could begin. As a phased development methodology was chosen, with two phases, the design process was split into two sections.
 
 \section{Phase One: Generic Optimisation Library}

@@ -10,27 +10,24 @@ Spring::Spring(float stiffness, float damping, Particle* const p1, Particle* con
 
 void Spring::calcSpringForce() {
   XMVECTOR length = XMVectorSubtract(p1->getPosition(), p2->getPosition());
-  XMFLOAT3 currentLength;
-  XMStoreFloat3(&currentLength, XMVector3Length(length));
+  XMVECTOR currentLength = XMVector3Length(length);
 
-  float springForce = stiffness * (currentLength.x - restLength);
+  float springForce = stiffness * (currentLength.m128_f32[0] - restLength);
 
   XMVECTOR deltaV = XMVectorSubtract(p1->getVelocity(), p2->getVelocity());
-  XMVECTOR normLength = XMVectorDivide(length, XMLoadFloat3(&currentLength));
+  XMVECTOR normLength = XMVectorDivide(length, currentLength);
 
-  XMFLOAT3 dampingForce;
   XMVECTOR a, b, c, d;
   a = XMVector3Dot(deltaV, length);
   b = XMVectorScale(a, damping);
-  c = XMVectorScale(b, 1 / currentLength.x);
-  XMStoreFloat3(&dampingForce, c);
+  c = XMVectorScale(b, 1 / currentLength.m128_f32[0]);
   
-  if (abs(dampingForce.x) > springForce) {
-    dampingForce.x = springForce;
+  if (abs(c.m128_f32[0]) > springForce) {
+    c.m128_f32[0] = springForce;
   }
 
-  XMVECTOR force = XMVectorScale(normLength, -(springForce + dampingForce.x));
+  XMVECTOR force = XMVectorScale(normLength, -(springForce + c.m128_f32[0]));
 
   p1->addForce(force);
-  p2->addForce(-force);
+  p2->addForce(XMVectorNegate(force));
 }

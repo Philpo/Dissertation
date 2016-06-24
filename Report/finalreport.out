@@ -39,13 +39,9 @@
 \BOOKMARK [2][-]{subsection.3.2.1}{First Cycle}{section.3.2}% 39
 \BOOKMARK [2][-]{subsection.3.2.2}{Second Cycle}{section.3.2}% 40
 \BOOKMARK [2][-]{subsection.3.2.3}{Third Cycle}{section.3.2}% 41
-\BOOKMARK [1][-]{section.3.3}{Testing}{chapter.3}% 42
-\BOOKMARK [2][-]{subsection.3.3.1}{Test Data}{section.3.3}% 43
-\BOOKMARK [2][-]{subsection.3.3.2}{Test Parameters}{section.3.3}% 44
-\BOOKMARK [3][-]{subsubsection.3.3.2.1}{Mesh Size}{subsection.3.3.2}% 45
-\BOOKMARK [3][-]{subsubsection.3.3.2.2}{Integrator Time Step}{subsection.3.3.2}% 46
-\BOOKMARK [3][-]{subsubsection.3.3.2.3}{Spring and Damping Coefficients}{subsection.3.3.2}% 47
-\BOOKMARK [3][-]{subsubsection.3.3.2.4}{Particle Mass}{subsection.3.3.2}% 48
-\BOOKMARK [0][-]{appendix.A}{Class Diagrams}{}% 49
-\BOOKMARK [1][-]{section.A.1}{First Cycle Design}{appendix.A}% 50
-\BOOKMARK [1][-]{section.A.2}{The Arena Class Diagram}{appendix.A}% 51
+\BOOKMARK [1][-]{section.3.3}{Profiling and Optimisation}{chapter.3}% 42
+\BOOKMARK [2][-]{subsection.3.3.1}{First Cycle}{section.3.3}% 43
+\BOOKMARK [0][-]{appendix.A}{Class Diagrams}{}% 44
+\BOOKMARK [1][-]{section.A.1}{First Cycle Design}{appendix.A}% 45
+\BOOKMARK [0][-]{appendix.B}{Profiling Results}{}% 46
+\BOOKMARK [1][-]{section.B.1}{First Cycle}{appendix.B}% 47

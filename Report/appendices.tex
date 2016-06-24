@@ -18,12 +18,39 @@
     \label{fig:phase1}
   \end{figure}
 
-\section{The Arena Class Diagram}
-\label{sec:appendix2}
-  \begin{figure}[h]
+\begin{landscape}
+\chapter{Profiling Results}
+
+\section{First Cycle}
+  \begin{figure}
     \begin{center}
-      \includegraphics{Figures/cycle_1_initial_design}
+      \includegraphics[scale=0.75]{Figures/vector_profiling_before}
     \end{center}
-    \caption{Class diagram showing the additional Arena classes}
-    \label{fig:phase2}
+    \caption{Profiling results using an std::vector to store springs}
+    \label{fig:profiling1}
   \end{figure}
+  
+    \begin{figure}
+    \begin{center}
+      \includegraphics[scale=0.75]{Figures/vector_profiling_after}
+    \end{center}
+    \caption{Profiling results using dynamic arrays to store springs}
+    \label{fig:profiling2}
+  \end{figure}
+  
+    \begin{figure}[!htb]
+    \begin{center}
+      \includegraphics[scale=0.75]{Figures/calcspringforce_profiling_before}
+    \end{center}
+    \caption{Profiling results for unoptimised calcSpringForce}
+    \label{fig:profiling3}
+  \end{figure}
+  
+    \begin{figure}[!htb]
+    \begin{center}
+      \includegraphics[scale=0.75]{Figures/calcspringforce_profiling_after}
+    \end{center}
+    \caption{Profiling results for optimised calcSpringForce}
+    \label{fig:profiling4}
+  \end{figure}
+\end{landscape}

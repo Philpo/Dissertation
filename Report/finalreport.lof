@@ -42,8 +42,16 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Initial design for the first development cycle}}{39}{figure.A.1}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Initial design for the first development cycle}}{37}{figure.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Final design for the first development cycle}}{40}{figure.A.2}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Final design for the first development cycle}}{38}{figure.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Class diagram showing the additional Arena classes}}{41}{figure.A.3}
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Profiling results using an std::vector to store springs}}{39}{figure.B.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Profiling results using dynamic arrays to store springs}}{40}{figure.B.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Profiling results for unoptimised calcSpringForce}}{40}{figure.B.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Profiling results for optimised calcSpringForce}}{41}{figure.B.4}
