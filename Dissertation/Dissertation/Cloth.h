@@ -1,18 +1,22 @@
 #pragma once
 #include "Spring.h"
+#include <rapidxml.hpp>
 #include <vector>
 #include <d3d11_1.h>
 
 using namespace std;
 using namespace DirectX;
+using namespace rapidxml;
 
 class Cloth {
 public:
+  Cloth(xml_node<>* clothParams);
   Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping, float linearDamping);
   ~Cloth();
 
   const double getTimeSpentCalculatingInternalForce() const { return timeSpentCalculatingInternalForce; }
   const double getTimeSpentIntegrating() const { return timeSpentIntegrating; }
+  const bool reachedEquilibrium() const { return equilibrium; }
   const int getNumRows() const { return rows; }
   const int getNumColumns() const { return columns; }
   const int getNumStructuralSprings() const { return numStructural; }
@@ -26,6 +30,7 @@ public:
 private:
   double timeSpentCalculatingInternalForce, timeSpentIntegrating;
   int rows, columns, numStructural, numShear, numFlexion;
+  bool equilibrium;
   Particle* particles;
   Spring *structuralSprings, *shearSprings, *flexionSprings;
   static XMVECTOR GRAVITY;

@@ -73,7 +73,50 @@ void Application::handleMouseMovement(WPARAM buttonStates, int x, int y) {
   }
 }
 
-Application::Application() : lastMousePosX(0.0f), lastMousePosY(0.0f) {
+HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
+  if (cloth) {
+    double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
+    double timeSpentIntegrating = cloth->getTimeSpentIntegrating();
+    testDataFile << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+  }
+
+  delete cloth;
+  delete[] vertices;
+  vertices = nullptr;
+  if (vertexBuffer) vertexBuffer->Release();
+  if (indexBuffer) indexBuffer->Release();
+  frameCount = 0;
+
+  cloth = new Cloth(testNode->first_node("cloth_params"));
+
+  HRESULT hr = initVertexBuffer();
+
+  if (FAILED(hr)) {
+    return hr;
+  }
+
+  hr = initIndexBuffer();
+
+  if (FAILED(hr)) {
+    return hr;
+  }
+
+  switch (scenario) {
+    case SHEET:
+      cloth->setPinned(0, 0, true);
+      cloth->setPinned(0, cloth->getNumColumns() - 1, true);
+      break;
+    case FLAG:
+      for (int i = 0; i < cloth->getNumColumns(); i++) {
+        cloth->setPinned(i, 0, true);
+      }
+      break;
+  }
+
+  return S_OK;
+}
+
+Application::Application() : lastMousePosX(0.0f), lastMousePosY(0.0f), cloth(nullptr) {
   hInst = nullptr;
   hWnd = nullptr;
   driverType = D3D_DRIVER_TYPE_NULL;
@@ -116,9 +159,9 @@ HRESULT Application::initialise(HINSTANCE hInstance, int nCmdShow) {
   windowWidth = rc.right - rc.left;
   windowHeight = rc.bottom - rc.top;
 
-  cloth = new Cloth(XMVectorSet(-10.0f, 10.0f, 10.0f, 0.0f), 10.0f, 10.0f, 50, 50, 100.0f, 200.0f, 200.0f, 200.0f, 200.0f, 1.0f, 1.0f, 0.01f);
-  cloth->setPinned(0, 0, true);
-  cloth->setPinned(0, 49, true);
+  //cloth = new Cloth(XMVectorSet(-10.0f, 10.0f, 10.0f, 0.0f), 10.0f, 10.0f, 50, 50, 100.0f, 200.0f, 200.0f, 200.0f, 200.0f, 1.0f, 1.0f, 0.01f);
+  //cloth->setPinned(0, 0, true);
+  //cloth->setPinned(0, 49, true);
   //for (int i = 0; i < 50; i++) {
   //  cloth->setPinned(i, 0, true);
   //}
@@ -153,7 +196,7 @@ HRESULT Application::initShadersAndInputLayout() {
 
   if (FAILED(hr)) {
     MessageBox(nullptr,
-      L"The FX file cannot be compiled.  Please run this executable from the directory that contains the FX file.", L"Error", MB_OK);
+      "The FX file cannot be compiled.  Please run this executable from the directory that contains the FX file.", "Error", MB_OK);
     return hr;
   }
 
@@ -171,7 +214,7 @@ HRESULT Application::initShadersAndInputLayout() {
 
   if (FAILED(hr)) {
     MessageBox(nullptr,
-      L"The FX file cannot be compiled.  Please run this executable from the directory that contains the FX file.", L"Error", MB_OK);
+      "The FX file cannot be compiled.  Please run this executable from the directory that contains the FX file.", "Error", MB_OK);
     return hr;
   }
 
@@ -204,55 +247,57 @@ HRESULT Application::initShadersAndInputLayout() {
 HRESULT Application::initVertexBuffer() {
   HRESULT hr;
 
-  // Create vertex buffer
-  vertices = new SimpleVertex[cloth->getNumRows() * cloth->getNumColumns()];
-  const Particle* const particles = cloth->getParticles();
+  if (cloth) {
+    // Create vertex buffer
+    vertices = new SimpleVertex[cloth->getNumRows() * cloth->getNumColumns()];
+    const Particle* const particles = cloth->getParticles();
 
-  for (int i = 0; i < cloth->getNumRows(); i++) {
-    for (int j = 0; j < cloth->getNumColumns(); j++) {
-      XMFLOAT3& posL = vertices[(i * cloth->getNumColumns()) + j].posL;
-      XMVECTOR pos = particles[(i * cloth->getNumColumns()) + j].getPosition();
-      posL.x = pos.m128_f32[0];
-      posL.y = pos.m128_f32[1];
-      posL.z = pos.m128_f32[2];
+    for (int i = 0; i < cloth->getNumRows(); i++) {
+      for (int j = 0; j < cloth->getNumColumns(); j++) {
+        XMFLOAT3& posL = vertices[(i * cloth->getNumColumns()) + j].posL;
+        XMVECTOR pos = particles[(i * cloth->getNumColumns()) + j].getPosition();
+        posL.x = pos.m128_f32[0];
+        posL.y = pos.m128_f32[1];
+        posL.z = pos.m128_f32[2];
+      }
     }
+
+    D3D11_BUFFER_DESC bd;
+    ZeroMemory(&bd, sizeof(bd));
+    bd.Usage = D3D11_USAGE_DYNAMIC;
+    bd.ByteWidth = sizeof(SimpleVertex) * cloth->getNumRows() * cloth->getNumColumns();
+    bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
+    bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+
+    //vertices = new SimpleVertex[2];
+    //vertices[0].posL.x = a.getPosition().m128_f32[0];
+    //vertices[0].posL.y = a.getPosition().m128_f32[1];
+    //vertices[0].posL.z = a.getPosition().m128_f32[2];
+    //vertices[1].posL.x = b.getPosition().m128_f32[0];
+    //vertices[1].posL.y = b.getPosition().m128_f32[1];
+    //vertices[1].posL.z = b.getPosition().m128_f32[2];
+
+    //D3D11_BUFFER_DESC bd;
+    //ZeroMemory(&bd, sizeof(bd));
+    //bd.Usage = D3D11_USAGE_DYNAMIC;
+    //bd.ByteWidth = sizeof(SimpleVertex) * 2;
+    //bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
+    //bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+
+    D3D11_SUBRESOURCE_DATA InitData;
+    ZeroMemory(&InitData, sizeof(InitData));
+    InitData.pSysMem = vertices;
+
+    hr = d3dDevice->CreateBuffer(&bd, &InitData, &vertexBuffer);
+
+    if (FAILED(hr)) {
+      return hr;
+    }
+
+    UINT stride = sizeof(SimpleVertex);
+    UINT offset = 0;
+    immediateContext->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);
   }
-
-  D3D11_BUFFER_DESC bd;
-  ZeroMemory(&bd, sizeof(bd));
-  bd.Usage = D3D11_USAGE_DYNAMIC;
-  bd.ByteWidth = sizeof(SimpleVertex) * cloth->getNumRows() * cloth->getNumColumns();
-  bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-  bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
-
-  //vertices = new SimpleVertex[2];
-  //vertices[0].posL.x = a.getPosition().m128_f32[0];
-  //vertices[0].posL.y = a.getPosition().m128_f32[1];
-  //vertices[0].posL.z = a.getPosition().m128_f32[2];
-  //vertices[1].posL.x = b.getPosition().m128_f32[0];
-  //vertices[1].posL.y = b.getPosition().m128_f32[1];
-  //vertices[1].posL.z = b.getPosition().m128_f32[2];
-
-  //D3D11_BUFFER_DESC bd;
-  //ZeroMemory(&bd, sizeof(bd));
-  //bd.Usage = D3D11_USAGE_DYNAMIC;
-  //bd.ByteWidth = sizeof(SimpleVertex) * 2;
-  //bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-  //bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
-
-  D3D11_SUBRESOURCE_DATA InitData;
-  ZeroMemory(&InitData, sizeof(InitData));
-  InitData.pSysMem = vertices;
-
-  hr = d3dDevice->CreateBuffer(&bd, &InitData, &vertexBuffer);
-
-  if (FAILED(hr)) {
-    return hr;
-  }
-
-  UINT stride = sizeof(SimpleVertex);
-  UINT offset = 0;
-  immediateContext->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);
 
   return S_OK;
 }
@@ -260,67 +305,69 @@ HRESULT Application::initVertexBuffer() {
 HRESULT Application::initIndexBuffer() {
   HRESULT hr;
 
-  // Create index buffer
-  UINT* indices = new UINT[(cloth->getNumStructuralSprings() + cloth->getNumShearSprings()) * 2];
-  int currentIndex = 0;
-  for (int i = 0; i < cloth->getNumRows(); i++) {
-    for (int j = 0; j < cloth->getNumColumns(); j++) {
-      if (i < cloth->getNumRows() - 1 && j < cloth->getNumColumns() - 1) {
-        indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
-        indices[currentIndex++] = (i * cloth->getNumColumns()) + j + 1;
+  if (cloth) {
+    // Create index buffer
+    UINT* indices = new UINT[(cloth->getNumStructuralSprings() + cloth->getNumShearSprings()) * 2];
+    int currentIndex = 0;
+    for (int i = 0; i < cloth->getNumRows(); i++) {
+      for (int j = 0; j < cloth->getNumColumns(); j++) {
+        if (i < cloth->getNumRows() - 1 && j < cloth->getNumColumns() - 1) {
+          indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
+          indices[currentIndex++] = (i * cloth->getNumColumns()) + j + 1;
 
-        indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
-        indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j;
+          indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
+          indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j;
 
-        indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
-        indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j + 1;
+          indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
+          indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j + 1;
 
-        indices[currentIndex++] = (i * cloth->getNumColumns()) + j + 1;
-        indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j;
-      }
-      else if (i == cloth->getNumRows() - 1 && j < cloth->getNumColumns() - 1) {
-        indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
-        indices[currentIndex++] = (i * cloth->getNumColumns()) + j + 1;
-      }
-      else if (j == cloth->getNumColumns() - 1 && i < cloth->getNumRows() - 1) {
-        indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
-        indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j;
+          indices[currentIndex++] = (i * cloth->getNumColumns()) + j + 1;
+          indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j;
+        }
+        else if (i == cloth->getNumRows() - 1 && j < cloth->getNumColumns() - 1) {
+          indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
+          indices[currentIndex++] = (i * cloth->getNumColumns()) + j + 1;
+        }
+        else if (j == cloth->getNumColumns() - 1 && i < cloth->getNumRows() - 1) {
+          indices[currentIndex++] = (i * cloth->getNumColumns()) + j;
+          indices[currentIndex++] = ((i + 1) * cloth->getNumColumns()) + j;
+        }
       }
     }
+
+    D3D11_BUFFER_DESC bd;
+    ZeroMemory(&bd, sizeof(bd));
+
+    bd.Usage = D3D11_USAGE_DEFAULT;
+    bd.ByteWidth = sizeof(UINT) * (cloth->getNumStructuralSprings() + cloth->getNumShearSprings()) * 2;
+    bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
+    bd.CPUAccessFlags = 0;
+
+    //UINT* indices = new UINT[2];
+    //indices[0] = 0;
+    //indices[1] = 1;
+
+    //D3D11_BUFFER_DESC bd;
+    //ZeroMemory(&bd, sizeof(bd));
+
+    //bd.Usage = D3D11_USAGE_DEFAULT;
+    //bd.ByteWidth = sizeof(UINT) * (cloth->getNumStructuralSprings() + cloth->getNumShearSprings()) * 2;
+    //bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
+    //bd.CPUAccessFlags = 0;
+
+    D3D11_SUBRESOURCE_DATA InitData;
+    ZeroMemory(&InitData, sizeof(InitData));
+    InitData.pSysMem = indices;
+    hr = d3dDevice->CreateBuffer(&bd, &InitData, &indexBuffer);
+
+    delete[] indices;
+
+    if (FAILED(hr)) {
+      return hr;
+    }
+
+    immediateContext->IASetIndexBuffer(indexBuffer, DXGI_FORMAT_R32_UINT, 0);
   }
-
-  D3D11_BUFFER_DESC bd;
-  ZeroMemory(&bd, sizeof(bd));
-
-  bd.Usage = D3D11_USAGE_DEFAULT;
-  bd.ByteWidth = sizeof(UINT) * (cloth->getNumStructuralSprings() + cloth->getNumShearSprings()) * 2;
-  bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-  bd.CPUAccessFlags = 0;
-
-  //UINT* indices = new UINT[2];
-  //indices[0] = 0;
-  //indices[1] = 1;
-
-  //D3D11_BUFFER_DESC bd;
-  //ZeroMemory(&bd, sizeof(bd));
-
-  //bd.Usage = D3D11_USAGE_DEFAULT;
-  //bd.ByteWidth = sizeof(UINT) * (cloth->getNumStructuralSprings() + cloth->getNumShearSprings()) * 2;
-  //bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
-  //bd.CPUAccessFlags = 0;
-
-  D3D11_SUBRESOURCE_DATA InitData;
-  ZeroMemory(&InitData, sizeof(InitData));
-  InitData.pSysMem = indices;
-  hr = d3dDevice->CreateBuffer(&bd, &InitData, &indexBuffer);
-
-  delete[] indices;
-
-  if (FAILED(hr)) {
-    return hr;
-  }
-
-  immediateContext->IASetIndexBuffer(indexBuffer, DXGI_FORMAT_R32_UINT, 0);
 
   return S_OK;
 }
@@ -338,7 +385,7 @@ HRESULT Application::initWindow(HINSTANCE hInstance, int nCmdShow) {
   wcex.hCursor = LoadCursor(NULL, IDC_ARROW);
   wcex.hbrBackground = (HBRUSH) (COLOR_WINDOW + 1);
   wcex.lpszMenuName = nullptr;
-  wcex.lpszClassName = L"TutorialWindowClass";
+  wcex.lpszClassName = "TutorialWindowClass";
   wcex.hIconSm = LoadIcon(wcex.hInstance, (LPCTSTR) IDI_TUTORIAL1);
   if (!RegisterClassEx(&wcex))
     return E_FAIL;
@@ -347,7 +394,7 @@ HRESULT Application::initWindow(HINSTANCE hInstance, int nCmdShow) {
   hInst = hInstance;
   RECT rc = { 0, 0, 960, 540 };
   AdjustWindowRect(&rc, WS_OVERLAPPEDWINDOW, FALSE);
-  hWnd = CreateWindow(L"TutorialWindowClass", L"FGGC Semester 2 Framework", WS_OVERLAPPEDWINDOW,
+  hWnd = CreateWindow("TutorialWindowClass", "FGGC Semester 2 Framework", WS_OVERLAPPEDWINDOW,
     CW_USEDEFAULT, CW_USEDEFAULT, rc.right - rc.left, rc.bottom - rc.top, nullptr, nullptr, hInstance,
     nullptr);
   if (!hWnd) {
@@ -607,5 +654,4 @@ void Application::draw() {
   cloth->draw(immediateContext);
 
   swapChain->Present(0, 0);
-  frameCount++;
 }

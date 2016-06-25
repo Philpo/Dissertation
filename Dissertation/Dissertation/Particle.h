@@ -13,6 +13,7 @@ public:
   const double getTimeSpentIntegrating() const { return timeSpentIntegrating; }
   const float getMass() const { return mass; }
   const bool isPinned() const { return pinned; }
+  const bool reachedEquilibrium() const { return equilibrium; }
   const XMVECTOR& getPosition() const { return position; }
   const XMVECTOR& getNormal() const { return normal; }
   const XMVECTOR& getAcceleration() const { return acceleration; }
@@ -28,8 +29,10 @@ public:
 private:
   double timeSpentIntegrating;
   float mass, dampingCoefficient;
-  bool pinned;
+  bool pinned, equilibrium;
+  int numFramesAtEquilibrium;
   XMVECTOR position, normal, acceleration, velocity, totalForce;
+  static const int NUM_FRAMES_FOR_EQUILIBIRUM;
 
   void integrate(double deltaT);
   bool closeToZero();

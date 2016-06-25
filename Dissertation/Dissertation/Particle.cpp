@@ -1,6 +1,8 @@
 #include "Particle.h"
 
-Particle::Particle() : timeSpentIntegrating(0.0), mass(0.0f), pinned(false) {
+const int Particle::NUM_FRAMES_FOR_EQUILIBIRUM = 5;
+
+Particle::Particle() : timeSpentIntegrating(0.0), mass(0.0f), pinned(false), equilibrium(false), numFramesAtEquilibrium(0) {
   position = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   normal = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   acceleration = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
@@ -9,7 +11,7 @@ Particle::Particle() : timeSpentIntegrating(0.0), mass(0.0f), pinned(false) {
 }
 
 Particle::Particle(float mass, float damingCoefficient, FXMVECTOR position, FXMVECTOR normal) :
-  timeSpentIntegrating(0.0), mass(mass), dampingCoefficient(damingCoefficient), pinned(false) {
+  timeSpentIntegrating(0.0), mass(mass), dampingCoefficient(damingCoefficient), pinned(false), equilibrium(false), numFramesAtEquilibrium(0) {
   this->position = position;
   this->normal = normal;
   acceleration = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
@@ -28,9 +30,12 @@ void Particle::integrate(double deltaT) {
   double currentTime = getCounter();
 
   float timeInSeconds = deltaT / 1000.0f;
-  if (closeToZero()) {
+  if (frameCount > 10 && closeToZero()) {
+    equilibrium = numFramesAtEquilibrium >= NUM_FRAMES_FOR_EQUILIBIRUM;
+    numFramesAtEquilibrium++;
     return;
   }
+  numFramesAtEquilibrium = 0;
   acceleration = XMVectorScale(totalForce, 1 / mass);
   velocity = XMVectorAdd(velocity, XMVectorScale(acceleration, timeInSeconds));
   //velocity = XMVectorAdd(velocity, XMVectorScale(velocity, -dampingCoefficient));
@@ -42,5 +47,19 @@ void Particle::integrate(double deltaT) {
 }
 
 bool Particle::closeToZero() {
-  return (abs(totalForce.m128_f32[0]) > 0.0f && abs(totalForce.m128_f32[0]) < 0.0001f) || (abs(totalForce.m128_f32[1]) > 0.0f && abs(totalForce.m128_f32[1]) < 0.0001f) || (abs(totalForce.m128_f32[2]) > 0.0f && abs(totalForce.m128_f32[2]) < 0.0001f);
+  float absX = abs(totalForce.m128_f32[0]);
+  float absY = abs(totalForce.m128_f32[1]);
+  float absZ = abs(totalForce.m128_f32[2]);
+
+  if ((absX > 0.0f && absX < 0.001f) || (absY > 0.0f && absY < 0.001f) || (absZ > 0.0f && absZ < 0.001f)) {
+    return true;
+  }
+  else if (absX == 0.0f && absY == 0.0f && absZ == 0.0f) {
+    return true;
+  }
+  else {
+    return false;
+  }
+
+  //return ( > 0.0f && abs(totalForce.m128_f32[0]) < 0.0001f) || (abs(totalForce.m128_f32[1]) > 0.0f && abs(totalForce.m128_f32[1]) < 0.0001f) || (abs(totalForce.m128_f32[2]) > 0.0f && abs(totalForce.m128_f32[2]) < 0.0001f);
 }

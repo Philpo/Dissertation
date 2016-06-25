@@ -3,6 +3,7 @@
 double freq;
 __int64 counterStart;
 ofstream testDataFile;
+int frameCount = 0;
 
 /*
 * Taken from https://stackoverflow.com/questions/1739259/how-to-use-queryperformancecounter

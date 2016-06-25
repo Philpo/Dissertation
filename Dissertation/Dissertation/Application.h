@@ -21,6 +21,11 @@
 
 using namespace DirectX;
 
+enum Scenario {
+  SHEET = 0
+, FLAG = 1
+};
+
 class Application {
 public:
   Application();
@@ -31,10 +36,12 @@ public:
   bool handleKeyboard(MSG msg);
   void handleMouseMovement(WPARAM buttonStates, int x, int y);
   void handleMouseClick(WPARAM buttonStates, int x, int y);
+  bool reachedEquilibrium() const { return cloth ? cloth->reachedEquilibrium() : false; }
 
   void update(double deltaT);
   void draw();
-  inline void setWindowCaption(const std::wostringstream& caption) const { SetWindowText(hWnd, caption.str().c_str()); }
+  inline void setWindowCaption(const std::stringstream& caption) const { SetWindowText(hWnd, caption.str().c_str()); }
+  HRESULT loadTest(xml_node<>* testNode, Scenario scenario);
 private:
   HINSTANCE hInst;
   HWND hWnd;
@@ -62,7 +69,6 @@ private:
 
   Camera* camera;
   Cloth* cloth;
-  int frameCount = 0;
   Particle a, b;
   Spring spring;
   float cameraSpeed = 2.0f;

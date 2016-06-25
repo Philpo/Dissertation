@@ -47,7 +47,13 @@ As the previous section details, the first stage of the testing process will be 
 <test_list>
   <test>
     <integrator type=''...''  time_step=''...''/>
-    <cloth_params rows=''...'' columns=''...'' mass=''...'' spring_coefficient=''...'' damping_coefficient=''...''>
+    <cloth_params height=''...'' width=''...'' mass=''...''>
+      <top_left_position x=''...'' y=''...'' z=''...'' />
+      <mesh_size rows=''...'' columns=''...'' />
+      <structural spring_coefficient=''...'' damping_coefficient=''...'' />
+      <shear spring_coefficient=''...'' damping_coefficient=''...'' />
+      <flexion spring_coefficient=''...'' damping_coefficient=''...'' />
+    </cloth_params>
   </test>
 </test_list>
 \end{lstlisting}

@@ -3,8 +3,43 @@
 
 XMVECTOR Cloth::GRAVITY = XMVectorSet(0.0f, -.981, 0.0f, 0.0f);
 
+Cloth::Cloth(xml_node<>* clothParams) : timeSpentCalculatingInternalForce(0.0), timeSpentIntegrating(0.0), equilibrium(false) {
+  float x, y, z, height, width, mass, stiffness, damping;
+
+  height = convertStringToNumber<float>(clothParams->first_attribute("height")->value());
+  width = convertStringToNumber<float>(clothParams->first_attribute("width")->value());
+  mass = convertStringToNumber<float>(clothParams->first_attribute("mass")->value());
+
+  xml_node<>* currentNode = clothParams->first_node("top_left_position");
+  x = convertStringToNumber<float>(currentNode->first_attribute("x")->value());
+  y = convertStringToNumber<float>(currentNode->first_attribute("y")->value());
+  z = convertStringToNumber<float>(currentNode->first_attribute("z")->value());
+
+  currentNode = clothParams->first_node("mesh_size");
+  rows = convertStringToNumber<int>(currentNode->first_attribute("rows")->value());
+  columns = convertStringToNumber<int>(currentNode->first_attribute("columns")->value());
+
+  XMVECTOR topLeft = XMVectorSet(x, y, z, 0.0f);
+  createParticles(topLeft, height, width, mass, 0.01f);
+
+  currentNode = clothParams->first_node("structural");
+  stiffness = convertStringToNumber<float>(currentNode->first_attribute("spring_coefficient")->value());
+  damping = convertStringToNumber<float>(currentNode->first_attribute("damping_coefficient")->value());
+  createStructuralLinks(stiffness, damping);
+
+  currentNode = clothParams->first_node("shear");
+  stiffness = convertStringToNumber<float>(currentNode->first_attribute("spring_coefficient")->value());
+  damping = convertStringToNumber<float>(currentNode->first_attribute("damping_coefficient")->value());
+  createShearLinks(stiffness, damping);
+
+  currentNode = clothParams->first_node("flexion");
+  stiffness = convertStringToNumber<float>(currentNode->first_attribute("spring_coefficient")->value());
+  damping = convertStringToNumber<float>(currentNode->first_attribute("damping_coefficient")->value());
+  createFlexionLinks(stiffness, damping);
+}
+
 Cloth::Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping, float linearDamping) :
-  timeSpentCalculatingInternalForce(0.0), timeSpentIntegrating(0.0), rows(numRows), columns(numColumns) {
+  timeSpentCalculatingInternalForce(0.0), timeSpentIntegrating(0.0), rows(numRows), columns(numColumns), equilibrium(false) {
   createParticles(topLeftPostition, height, width, totalMass, linearDamping);
   createStructuralLinks(structuralStiffness, structuralDamping);
   createShearLinks(shearStiffness, shearDamping);
@@ -39,13 +74,20 @@ void Cloth::update(double deltaT) {
 
   timeSpentCalculatingInternalForce += getCounter() - currentTime;
 
+  bool notAtEquilibrium = false;
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < columns; j++) {
       particles[(i * columns) + j].addForce(XMVectorScale(GRAVITY, particles[(i * columns) + j].getMass()));
       particles[(i * columns) + j].update(deltaT);
       timeSpentIntegrating += particles[(i * columns) + j].getTimeSpentIntegrating();
+
+      if (!particles[(i * columns) + j].reachedEquilibrium() && !particles[(i * columns) + j].isPinned()) {
+        notAtEquilibrium = true;
+      }
     }
   }
+
+  equilibrium = !notAtEquilibrium;
 }
 
 void Cloth::draw(ID3D11DeviceContext* const immediateContext) const {

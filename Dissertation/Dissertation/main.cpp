@@ -1,10 +1,12 @@
 #include "Application.h"
 #include "Utils.h"
 #include <windowsx.h>
+#include <rapidxml_utils.hpp>
 #define NOMINMAX
 
-double timeLastFrame, averageUpdateTime, averageRenderTime;
-int frameCount;
+double timeLastFrame, averageUpdateTime, averageRenderTime, simulationRunningTime = 0.0;
+
+const double MAX_SIMULATION_TIME = 60000.0;
 
 /*
 * Taken from Frank Luna: 3D Game Programming with DirectX 11
@@ -19,9 +21,9 @@ void calculateFrameRateStats(Application* const app) {
     float fps = (float) frameCnt;
     float mspf = 1000.0f / fps;
 
-    std::wostringstream outs;
+    std::stringstream outs;
     outs.precision(6);
-    outs << L"Cork    " << L"FPS: " << fps << L"    " << L"Frame Time: " << mspf << L" (ms)";
+    outs << "Cork    " << "FPS: " << fps << "    " << "Frame Time: " << mspf << " (ms)";
     app->setWindowCaption(outs);
 
     frameCnt = 0;
@@ -29,9 +31,20 @@ void calculateFrameRateStats(Application* const app) {
   }
 }
 
-int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow) {
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
   UNREFERENCED_PARAMETER(hPrevInstance);
   UNREFERENCED_PARAMETER(lpCmdLine);
+
+  if (__argc != 3) {
+    return -1;
+  }
+
+  file<> file(__argv[2]);
+  xml_document<> doc;
+  doc.parse<0>(file.data());
+  xml_node<>* rootNode = doc.first_node();
+  xml_node<>* currentTest = rootNode->first_node();
+  Scenario currentScenario = SHEET;
 
   // timer resolution code taken from https://msdn.microsoft.com/en-us/library/windows/desktop/dd743626%28v=vs.85%29.aspx
   TIMECAPS tc;
@@ -52,6 +65,10 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
   frameCount = 0;
 
   if (FAILED(theApp->initialise(hInstance, nCmdShow))) {
+    return -1;
+  }
+
+  if (FAILED(theApp->loadTest(currentTest, currentScenario))) {
     return -1;
   }
 
@@ -94,8 +111,35 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
       time = getCounter();
       theApp->draw();
       averageRenderTime += getCounter() - time;
+      simulationRunningTime += getCounter() - currentTime;
       timeLastFrame = currentTime;
       frameCount++;
+
+      if ((theApp->reachedEquilibrium() && frameCount > 0) || simulationRunningTime >= MAX_SIMULATION_TIME)  {
+        switch (currentScenario) {
+          case SHEET:
+            currentScenario = FLAG;
+            break;
+          case FLAG:
+            currentScenario = SHEET;
+            currentTest = currentTest->next_sibling();
+            break;
+        }
+
+        if (currentTest) {
+          theApp->loadTest(currentTest, currentScenario);
+        }
+        else {
+          break;
+        }
+
+        testDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << endl;
+        averageUpdateTime = averageRenderTime = 0.0f;
+        frameCount = 0;
+        simulationRunningTime = 0.0;
+
+        timeLastFrame = getCounter();
+      }
     }
   }
 
