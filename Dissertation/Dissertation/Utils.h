@@ -6,8 +6,12 @@
 
 using namespace std;
 
-extern ofstream testDataFile;
-extern int frameCount;
+class Particle;
+typedef void (*IntegrationFunction)(Particle&, double);
+
+extern ofstream sheetDataFile, flagDataFile;
+extern int frameCount, averageFPS, numTimeFPSCalculated;
+extern double averageUpdateTime, averageRenderTime;
 
 /*
 * Taken from https://stackoverflow.com/questions/1739259/how-to-use-queryperformancecounter

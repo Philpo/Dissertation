@@ -77,7 +77,19 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
   if (cloth) {
     double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
     double timeSpentIntegrating = cloth->getTimeSpentIntegrating();
-    testDataFile << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+
+    switch (scenario) {
+      case SHEET:
+        // now loading a sheet simulation, therefore the previous sim was a flag, so save to the flag file
+        flagDataFile << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+        flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
+        break;
+      case FLAG:
+        // now loading a flag simulation, therefore the previous sim was a sheet, so save to the sheet file
+        sheetDataFile << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+        sheetDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
+        break;
+    }
   }
 
   delete cloth;
@@ -113,6 +125,27 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
       break;
   }
 
+  xml_node<>* integratorNode = testNode->first_node("integrator");
+  IIntegrator* integrator = nullptr;
+
+  switch (convertStringToNumber<int>(integratorNode->first_attribute("type")->value())) {
+    case EXPLICIT_EULER:
+      integrator = ExplicitEulerIntegrator::getInstance();
+      break;
+    case VERLET:
+      integrator = VerletIntegrator::getInstance();
+      break;
+    case FOURTH_ORDER_RUNGE_KUTTA:
+      break;
+    case IMPLICIT_EULER:
+      break;
+    default:
+      return -1;
+  }
+
+  integrator->setTimeStep(convertStringToNumber<double>(integratorNode->first_attribute("time_step")->value()));
+  cloth->setIntegrator(integrator);
+
   return S_OK;
 }
 
@@ -137,7 +170,8 @@ Application::~Application() {
 
   double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
   double timeSpentIntegrating = cloth->getTimeSpentIntegrating();
-  testDataFile << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+  flagDataFile << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+  flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
 
   delete cloth;
 }

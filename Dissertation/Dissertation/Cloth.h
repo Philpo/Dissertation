@@ -24,6 +24,8 @@ public:
   const Particle* const getParticles() const { return particles; }
 
   void setPinned(int row, int column, bool pinned);
+  void setIntegrator(IIntegrator* const integrator);
+  void setIntegrator(IntegrationFunction integrator);
 
   void update(double deltaT);
   void draw(ID3D11DeviceContext* const immediateContext) const;

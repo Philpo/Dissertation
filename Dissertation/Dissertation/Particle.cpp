@@ -2,8 +2,8 @@
 
 const int Particle::NUM_FRAMES_FOR_EQUILIBIRUM = 5;
 
-Particle::Particle() : timeSpentIntegrating(0.0), mass(0.0f), pinned(false), equilibrium(false), numFramesAtEquilibrium(0) {
-  position = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+Particle::Particle() : timeSpentIntegrating(0.0), mass(0.0f), pinned(false), equilibrium(false), numFramesAtEquilibrium(0), integratorInterface(nullptr), integratorFPointer(nullptr) {
+  position = previousPosition = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   normal = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   acceleration = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   velocity = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
@@ -11,8 +11,8 @@ Particle::Particle() : timeSpentIntegrating(0.0), mass(0.0f), pinned(false), equ
 }
 
 Particle::Particle(float mass, float damingCoefficient, FXMVECTOR position, FXMVECTOR normal) :
-  timeSpentIntegrating(0.0), mass(mass), dampingCoefficient(damingCoefficient), pinned(false), equilibrium(false), numFramesAtEquilibrium(0) {
-  this->position = position;
+  timeSpentIntegrating(0.0), mass(mass), dampingCoefficient(damingCoefficient), pinned(false), equilibrium(false), numFramesAtEquilibrium(0), integratorInterface(nullptr), integratorFPointer(nullptr) {
+  this->position = previousPosition = position;
   this->normal = normal;
   acceleration = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   velocity = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
@@ -29,21 +29,27 @@ void Particle::update(double deltaT) {
 void Particle::integrate(double deltaT) {
   double currentTime = getCounter();
 
-  float timeInSeconds = deltaT / 1000.0f;
+  //float timeInSeconds = deltaT / 1000.0f;
   if (frameCount > 10 && closeToZero()) {
     equilibrium = numFramesAtEquilibrium >= NUM_FRAMES_FOR_EQUILIBIRUM;
     numFramesAtEquilibrium++;
     return;
   }
-  numFramesAtEquilibrium = 0;
-  acceleration = XMVectorScale(totalForce, 1 / mass);
-  velocity = XMVectorAdd(velocity, XMVectorScale(acceleration, timeInSeconds));
-  //velocity = XMVectorAdd(velocity, XMVectorScale(velocity, -dampingCoefficient));
-  //position = XMVectorAdd(position, XMVectorAdd(XMVectorScale(velocity, timeInSeconds), XMVectorScale(XMVectorScale(acceleration, timeInSeconds * timeInSeconds), 0.5f)));
-  position = XMVectorAdd(position, XMVectorScale(velocity, timeInSeconds));
+  //numFramesAtEquilibrium = 0;
+  //acceleration = XMVectorScale(totalForce, 1 / mass);
+  //velocity = XMVectorAdd(velocity, XMVectorScale(acceleration, timeInSeconds));
+  ////velocity = XMVectorAdd(velocity, XMVectorScale(velocity, -dampingCoefficient));
+  ////position = XMVectorAdd(position, XMVectorAdd(XMVectorScale(velocity, timeInSeconds), XMVectorScale(XMVectorScale(acceleration, timeInSeconds * timeInSeconds), 0.5f)));
+  //position = XMVectorAdd(position, XMVectorScale(velocity, timeInSeconds));
+
+  if (integratorInterface) {
+    integratorInterface->integrate(*this, deltaT);
+  }
+  else if (integratorFPointer) {
+    integratorFPointer(*this, deltaT);
+  }
 
   timeSpentIntegrating = getCounter() - currentTime;
-  int a = 1;
 }
 
 bool Particle::closeToZero() {

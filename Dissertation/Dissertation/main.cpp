@@ -4,7 +4,7 @@
 #include <rapidxml_utils.hpp>
 #define NOMINMAX
 
-double timeLastFrame, averageUpdateTime, averageRenderTime, simulationRunningTime = 0.0;
+double timeLastFrame, simulationRunningTime = 0.0;
 
 const double MAX_SIMULATION_TIME = 60000.0;
 
@@ -26,6 +26,8 @@ void calculateFrameRateStats(Application* const app) {
     outs << "Cork    " << "FPS: " << fps << "    " << "Frame Time: " << mspf << " (ms)";
     app->setWindowCaption(outs);
 
+    averageFPS += frameCnt;
+    numTimeFPSCalculated++;
     frameCnt = 0;
     timeElapsed += 1000.0;
   }
@@ -62,7 +64,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
   Application* theApp = new Application();
   timeLastFrame = 0.0;
   averageUpdateTime = averageRenderTime = 0.0;
-  frameCount = 0;
+  frameCount = averageFPS = numTimeFPSCalculated = 0;
 
   if (FAILED(theApp->initialise(hInstance, nCmdShow))) {
     return -1;
@@ -72,8 +74,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     return -1;
   }
 
-  testDataFile.open("test_data.csv");
-  testDataFile << "Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms)" << endl;
+  sheetDataFile.open("sheet_test_data.csv");
+  flagDataFile.open("flag_test_data.csv");
+  sheetDataFile << "Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms), Average FPS" << endl;
+  flagDataFile << "Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms), Average FPS" << endl;
 
   // Main message loop
   MSG msg = { 0 };
@@ -119,10 +123,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         switch (currentScenario) {
           case SHEET:
             currentScenario = FLAG;
+            //sheetDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << endl;
             break;
           case FLAG:
             currentScenario = SHEET;
             currentTest = currentTest->next_sibling();
+            //flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << endl;
             break;
         }
 
@@ -133,7 +139,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
           break;
         }
 
-        testDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << endl;
         averageUpdateTime = averageRenderTime = 0.0f;
         frameCount = 0;
         simulationRunningTime = 0.0;
@@ -149,8 +154,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
   cout << "Average update time: " << (averageUpdateTime / (double) frameCount) << "ms" << endl;
   cout << "Average render time: " << (averageRenderTime / (double) frameCount) << "ms" << endl;
 
-  testDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << endl;
-  testDataFile.close();
+  //flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << endl;
+  sheetDataFile.close();
+  flagDataFile.close();
 
   timeEndPeriod(wTimerRes);
   system("PAUSE");

@@ -59,6 +59,22 @@ void Cloth::setPinned(int row, int column, bool pinned) {
   }
 }
 
+void Cloth::setIntegrator(IIntegrator* const integrator) {
+  for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < columns; j++) {
+      particles[(i * columns) + j].setIntegrator(integrator);
+    }
+  }
+}
+
+void Cloth::setIntegrator(IntegrationFunction integrator) {
+  for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < columns; j++) {
+      particles[(i * columns) + j].setIntegrator(integrator);
+    }
+  }
+}
+
 void Cloth::update(double deltaT) {
   double currentTime = getCounter();
 

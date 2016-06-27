@@ -18,6 +18,9 @@
 #include <iostream>
 #include <fstream>
 #include "Cloth.h"
+#include "ExplicitEuler.h"
+#include "VerletIntegrator.h"
+#include "ExplicitEulerIntegrator.h"
 
 using namespace DirectX;
 
