@@ -5,7 +5,12 @@
 
 using namespace DirectX;
 
+class VerletIntegrator;
+class ExplicitEulerIntegrator;
+
 class Particle {
+  friend class VerletIntegrator;
+  friend class ExplicitEulerIntegrator;
 public:
   Particle();
   Particle(float mass, float dampingCoefficient, FXMVECTOR position, FXMVECTOR normal);

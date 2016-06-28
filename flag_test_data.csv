@@ -1,0 +1,5 @@
+Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms), Average FPS
+6.51815, 0.757348, 8.05085, 0.230786, 119.488
+6.52257, 1.03124, 8.32893, 0.22035, 115.76
+6.56711, 0.771239, 8.10407, 0.230398, 118.686
+6.56563, 0.981905, 8.32368, 0.220394, 115.876

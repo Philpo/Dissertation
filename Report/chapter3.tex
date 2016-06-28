@@ -29,7 +29,7 @@ Since RAD was the chosen development methodology, the artefact was developed ove
 
 \subsection{First Cycle}
 In the first cycle the Mass-Spring model was implemented. Springs were implemented using the Hooke equation (Equation \ref{eq:hooke equation}) to calculate the internal spring force with linear damping as an additional internal force using Equation \ref{eq:spring damping}. Gravity, implemented as Equation \ref{eq:gravity}, was the only external force. Rendering of the cloth was also implemented.
-\\Table \ref{tab:cycle 1 require} shows the requirements of the first development cycle.
+\\Table \ref{tab:cycle 1 require} shows the initial requirements of the first development cycle.
 \begin{table}[tp]
    \begin{minipage}{\textwidth}
       \begin{center}
@@ -56,6 +56,26 @@ In the first cycle the Mass-Spring model was implemented. Springs were implement
 
 \subsection{Second Cycle}
 During the second development cycle the model developed in the first cycle was adapted to use different integration methods. The explicit Euler and Verlet integrators were implemented as described in \ref{sec:explicit}. Wind was also added as an additional external force.
+\\The requirement for this development cycle are shown in Table \ref{tab:cycle 2 require}.
+\begin{table}[tp]
+   \begin{minipage}{\textwidth}
+      \begin{center}
+         \begin{tabular}{c|c}
+           Requirement & Type\\
+           \hline
+           Must implement the Explicit Euler and Verlet integrators& Functional\\
+           Must be able to dynamically switch integrators & Functional\\
+         \end{tabular}
+      \end{center}
+   \end{minipage}
+   \caption{Second cycle requirements}
+   \label{tab:cycle 2 require}
+\end{table}
+\\\\The initial design of this development cycle can be seen in Fig \ref{fig:phase2 initial}. For brevity, only the changes introduced for this cycle are shown for the classes developed previously; it can be assumed that the Particle and Cloth classes are unchanged other than the documented additions.
+\\\\Two separate designs were initially proposed, one using static classes and storing a function pointer for the appropriate integrator, and the second using an interface and virtual functions. For the interface design, the inheriting classes were designed using the Singleton design pattern. Since particles are passed as parameters to the integrate function, there is no need for each particle to have their own instance of a particular integrator. Therefore it makes sense for integrators to be Singletons, and this helps to reduce the memory footprint of the application as well as the cost of dynamically switching integrators; as each integrator only needs to be dynamically allocated once, rather than for every particle.
+\\\\The two different designs were suggested as the aim was to use the most efficient implementation possible and it was unknown during the design process which would be more efficient. As such, both designs were implemented and then some tests run using the explicit Euler integrator to determine which was most efficient. Compared with implementing explicit Euler directly in Particle, both implementations increased total update time by approximately 0.4ms for a 50 by 50 mesh on a debug build. This translated to an approximate drop of 4-5 FPS, and was expected due to the fact that both designs must call accessors to access Particle's data.
+\\Compared with each other, the results were more variable. For some runs the static class design was more efficient and for others the interface design more so. Ultimately, the efficiency difference was small, at most a 0.1ms difference between them, so the conclusion was reached that both designs were equally efficient. However, the explicit Euler integrator is the cheapest integrator, so for more expensive integrators, such as fourth order Runge-Kutta, a wider performance gap may be found. Therefore these experiments will be run again during the third development cycle using fourth order Runge-Kutta and the design retroactively changed if a significant efficiency gulf is found.
+\\\\Since both design were equally efficient, the interface design was chosen as the author felt that it was, ostensibly, a better quality approach than using static classes. One minor optimisation was made to the initial design and is documented in the next section. As a result of this optimisation, the chosen design now performs almost as well as coding the integrator directly in Particle and means Particle conforms much more to the Open/Closed SOLID principle. Since Particle stores a pointer to the interface, and only calls virtual functions, new integrators can easily be added and used without any changes needed in Particle. The final design can be seen in Fig \ref{fig:phase2}.
 
 \subsection{Third Cycle}
 In the final development cycle the fourth order Runge-Kutta and implicit Euler integrators were implemented.
@@ -81,3 +101,8 @@ became
 Fig \ref{fig:profiling4} shows the the profiling results after these changes were added. The most expensive code paths now are all DirectXMath functions directly involved in calculating Equations \ref{eq:hooke equation} and \ref{eq:spring damping}.
 \\Implementing both of these changes awarded performance gains of 40FPS for a debug build with a 50 by 50 mesh.
 \\\\A final optimisation step was changing the accessors and mutators in Particle to return and pass by reference. This improved performance slightly, giving gains of roughly 5FPS.
+
+\subsubsection{Second Cycle}
+One optimisation was made to the initial design of cycle two.
+\\The VerletIntegrator and ExplicitEulerIntegrator classes were made friend classes of Particle. This allows the integrators to access Particle's private member variables directly, removing the overhead of having to call accessors. This change resulted in small performance increases for both integrators, reducing overall update time be approximately 0.3ms, for a 50 by 50 mesh on a debug build, which translated to an increase of 3-4FPS. This increase was also enough to move from unstable to stable cloth when using Verlet integration.
+

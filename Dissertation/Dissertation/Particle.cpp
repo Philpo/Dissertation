@@ -35,7 +35,7 @@ void Particle::integrate(double deltaT) {
     numFramesAtEquilibrium++;
     return;
   }
-  //numFramesAtEquilibrium = 0;
+  numFramesAtEquilibrium = 0;
   //acceleration = XMVectorScale(totalForce, 1 / mass);
   //velocity = XMVectorAdd(velocity, XMVectorScale(acceleration, timeInSeconds));
   ////velocity = XMVectorAdd(velocity, XMVectorScale(velocity, -dampingCoefficient));
