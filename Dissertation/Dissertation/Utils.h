@@ -10,7 +10,7 @@ class Particle;
 typedef void (*IntegrationFunction)(Particle&, double);
 
 extern ofstream sheetDataFile, flagDataFile;
-extern int frameCount, averageFPS, numTimeFPSCalculated;
+extern int testId, frameCount, averageFPS, numTimeFPSCalculated;
 extern double averageUpdateTime, averageRenderTime;
 
 /*

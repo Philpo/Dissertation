@@ -81,12 +81,12 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
     switch (scenario) {
       case SHEET:
         // now loading a sheet simulation, therefore the previous sim was a flag, so save to the flag file
-        flagDataFile << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+        flagDataFile << testId << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
         flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
         break;
       case FLAG:
         // now loading a flag simulation, therefore the previous sim was a sheet, so save to the sheet file
-        sheetDataFile << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+        sheetDataFile << testId << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
         sheetDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
         break;
     }
@@ -98,6 +98,8 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
   if (vertexBuffer) vertexBuffer->Release();
   if (indexBuffer) indexBuffer->Release();
   frameCount = 0;
+
+  testId = convertStringToNumber<int>(testNode->first_attribute("id")->value());
 
   cloth = new Cloth(testNode->first_node("cloth_params"));
 
@@ -170,7 +172,7 @@ Application::~Application() {
 
   double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
   double timeSpentIntegrating = cloth->getTimeSpentIntegrating();
-  flagDataFile << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+  flagDataFile << testId << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
   flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
 
   delete cloth;

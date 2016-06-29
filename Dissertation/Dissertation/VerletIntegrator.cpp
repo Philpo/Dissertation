@@ -20,10 +20,10 @@ void VerletIntegrator::integrate(Particle& particle, double deltaT) {
     float timeInSeconds = deltaT / 1000.0;
     timeSinceLastIntegration = 0.0;
 
-    XMVECTOR acceleration = XMVectorScale(particle.getTotalForce(), 1 / particle.getMass());
-    XMVECTOR currentPosition = particle.getPosition();
-    XMVECTOR velocity = XMVectorSubtract(currentPosition, particle.getPreviousPosition());
+    XMVECTOR acceleration = XMVectorScale(particle.totalForce, 1 / particle.mass);
+    particle.velocity = XMVectorSubtract(particle.position, particle.previousPosition);
     acceleration = XMVectorScale(acceleration, timeInSeconds * timeInSeconds);
-    particle.setPosition(XMVectorAdd(currentPosition, XMVectorAdd(velocity, acceleration)));
+    particle.previousPosition = particle.position;
+    particle.position = XMVectorAdd(particle.position, XMVectorAdd(particle.velocity, acceleration));
   }
 }

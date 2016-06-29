@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <test_list>
-  <test>
+  <test id="1">
     <integrator type="1"  time_step="0.0"/>
     <cloth_params height="10.0" width="10.0" mass="100.0">
       <top_left_position x="-10.0" y="10.0" z="10.0" />

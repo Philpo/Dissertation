@@ -3,7 +3,7 @@
 double freq;
 __int64 counterStart;
 ofstream sheetDataFile, flagDataFile;
-int frameCount, averageFPS, numTimeFPSCalculated;
+int testId, frameCount, averageFPS, numTimeFPSCalculated;
 double averageUpdateTime, averageRenderTime;
 
 /*
