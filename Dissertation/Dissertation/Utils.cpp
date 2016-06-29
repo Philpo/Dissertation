@@ -4,7 +4,8 @@ double freq;
 __int64 counterStart;
 ofstream sheetDataFile, flagDataFile;
 int testId, frameCount, averageFPS, numTimeFPSCalculated;
-double averageUpdateTime, averageRenderTime;
+double averageUpdateTime, averageRenderTime, timeStep;
+Integrator currentIntegrator;
 
 /*
 * Taken from https://stackoverflow.com/questions/1739259/how-to-use-queryperformancecounter

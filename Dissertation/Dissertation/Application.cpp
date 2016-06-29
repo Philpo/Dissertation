@@ -81,12 +81,14 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
     switch (scenario) {
       case SHEET:
         // now loading a sheet simulation, therefore the previous sim was a flag, so save to the flag file
-        flagDataFile << testId << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+        flagDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
+        flagDataFile << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
         flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
         break;
       case FLAG:
         // now loading a flag simulation, therefore the previous sim was a sheet, so save to the sheet file
-        sheetDataFile << testId << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+        sheetDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
+        sheetDataFile << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
         sheetDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
         break;
     }
@@ -129,8 +131,9 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
 
   xml_node<>* integratorNode = testNode->first_node("integrator");
   IIntegrator* integrator = nullptr;
+  currentIntegrator = (Integrator) convertStringToNumber<int>(integratorNode->first_attribute("type")->value());
 
-  switch (convertStringToNumber<int>(integratorNode->first_attribute("type")->value())) {
+  switch (currentIntegrator) {
     case EXPLICIT_EULER:
       integrator = ExplicitEulerIntegrator::getInstance();
       break;
@@ -145,7 +148,8 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
       return -1;
   }
 
-  integrator->setTimeStep(convertStringToNumber<double>(integratorNode->first_attribute("time_step")->value()));
+  timeStep = convertStringToNumber<double>(integratorNode->first_attribute("time_step")->value());
+  integrator->setTimeStep(timeStep);
   cloth->setIntegrator(integrator);
 
   return S_OK;
@@ -172,7 +176,8 @@ Application::~Application() {
 
   double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
   double timeSpentIntegrating = cloth->getTimeSpentIntegrating();
-  flagDataFile << testId << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
+  flagDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
+  flagDataFile << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
   flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
 
   delete cloth;

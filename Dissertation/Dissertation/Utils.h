@@ -8,10 +8,12 @@ using namespace std;
 
 class Particle;
 typedef void (*IntegrationFunction)(Particle&, double);
+enum Integrator;
 
 extern ofstream sheetDataFile, flagDataFile;
 extern int testId, frameCount, averageFPS, numTimeFPSCalculated;
-extern double averageUpdateTime, averageRenderTime;
+extern double averageUpdateTime, averageRenderTime, timeStep;
+extern Integrator currentIntegrator;
 
 /*
 * Taken from https://stackoverflow.com/questions/1739259/how-to-use-queryperformancecounter
