@@ -75,6 +75,7 @@ private:
   Particle a, b;
   Spring spring;
   float cameraSpeed = 2.0f;
+  double timeSinceLastUpdate = 0.0f;
 
   UINT windowHeight;
   UINT windowWidth;

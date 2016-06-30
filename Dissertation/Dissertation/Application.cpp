@@ -634,7 +634,13 @@ void Application::cleanup() {
 void Application::update(double deltaT) {
   // Update camera
   camera->update();
-  cloth->update(deltaT);
+
+  timeSinceLastUpdate += deltaT;
+
+  if (timeSinceLastUpdate >= timeStep) {
+    cloth->update(deltaT);
+    timeSinceLastUpdate = 0.0;
+  }
   a.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), a.getMass()));
   b.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), b.getMass()));
   spring.calcSpringForce();

@@ -22,7 +22,6 @@ Particle::Particle(float mass, float damingCoefficient, FXMVECTOR position, FXMV
 void Particle::update(double deltaT) {
   if (!pinned) {
     integrate(deltaT);
-    totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   }
 }
 
