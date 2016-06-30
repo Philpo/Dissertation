@@ -1,2 +1,2 @@
 Test ID, Integrator, Rows, Columns, Time Step, Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms), Average FPS
-1, Verlet, 50, 50, 0, 6.67845, 0.781775, 8.24714, 0.488508, 112.405
+1, Explicit Euler, 10, 10, 2.8, 0.236136, 0.0224266, 0.300035, 0.326052, 1435.6

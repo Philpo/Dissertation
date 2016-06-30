@@ -17,13 +17,11 @@ void ExplicitEulerIntegrator::integrate(Particle& particle, double deltaT) {
   timeSinceLastIntegration += deltaT;
 
   if (timeSinceLastIntegration >= timeStep) {
-    float timeInSeconds = deltaT / 1000.0f;
-
     XMVECTOR acceleration = XMVectorScale(particle.totalForce, 1 / particle.mass);
-    particle.velocity = XMVectorAdd(particle.velocity, XMVectorScale(acceleration, timeInSeconds));
+    particle.velocity = XMVectorAdd(particle.velocity, XMVectorScale(acceleration, timeStepInSeconds));
     ////velocity = XMVectorAdd(velocity, XMVectorScale(velocity, -dampingCoefficient));
     ////position = XMVectorAdd(position, XMVectorAdd(XMVectorScale(velocity, timeInSeconds), XMVectorScale(XMVectorScale(acceleration, timeInSeconds * timeInSeconds), 0.5f)));
-    particle.position = XMVectorAdd(particle.position, XMVectorScale(particle.velocity, timeInSeconds));
+    particle.position = XMVectorAdd(particle.position, XMVectorScale(particle.velocity, timeStepInSeconds));
     timeSinceLastIntegration = 0.0;
   }
 }

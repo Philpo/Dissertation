@@ -17,12 +17,11 @@ void VerletIntegrator::integrate(Particle& particle, double deltaT) {
   timeSinceLastIntegration += deltaT;
 
   if (timeSinceLastIntegration >= timeStep) {
-    float timeInSeconds = deltaT / 1000.0;
     timeSinceLastIntegration = 0.0;
 
     XMVECTOR acceleration = XMVectorScale(particle.totalForce, 1 / particle.mass);
     particle.velocity = XMVectorSubtract(particle.position, particle.previousPosition);
-    acceleration = XMVectorScale(acceleration, timeInSeconds * timeInSeconds);
+    acceleration = XMVectorScale(acceleration, timeStepInSeconds * timeStepInSeconds);
     particle.previousPosition = particle.position;
     particle.position = XMVectorAdd(particle.position, XMVectorAdd(particle.velocity, acceleration));
   }
