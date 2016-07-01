@@ -17,7 +17,7 @@ Mass-Spring models for cloth simulation have a number of different parameters wh
 
 \subsection{Mesh Size}
 This is the discretisation of the cloth, i.e. the number of particles used to represent the cloth, and is represented by two integers representing the number of rows and columns; the total number of particles in the cloth is therefore $rows \times columns$.
-\\Increasing mesh size will result in a more realistic simulation but there will be direct impacts on performance as a result. Adding more particles adds more springs, and therefore more calculations are needed every frame to calculate the internal forces. Adding more particles also increases the number of integration calculations needed every time step and both of these factors combined will result in a performance hit for the simulation.
+\\Increasing mesh size will result in a more realistic simulation but there will be direct impacts on performance as a result. Adding more particles adds more springs, and therefore more calculations are needed every time step to calculate the internal forces. Adding more particles also increases the number of integration calculations needed every time step and both of these factors combined will result in a performance hit for the simulation.
 \\Several different mesh sizes will be used when evaluating the project hypotheses. Data will be extracted for each integrator at each mesh size. This will allow a comparison of the performance impact of the integrators when mesh size is varied.
 
 \subsection{Integrator Time Step}
