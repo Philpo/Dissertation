@@ -80,23 +80,23 @@ During the second development cycle the model developed in the first cycle was a
 \begin{algorithm}[h]
   \SetAlgoLined
   \SetNoFillComment
-  \tcc{In Cloth.update}
-  \For{every spring} {
+  \tcc{In update}
+  timeSinceLastIntegration += deltaTime
+  \\\For{every spring} {
     calculateInternalForce
   }
   \For{every particle} {
     addGravity
-    \\integrator.integrate
   }
-  \tcc{In integrate}
-  timeSinceLastIntegration += deltaTime
-  \\\If{timeSinceLastIntegration >= timeStep} {
-    do integration calculations
-    \\timeSinceLastIntegration = 0
+  \If{timeSinceLastIntegration >= timeStep} {
+    \For{every particle} {
+      do integration calculations
+    }
+    timeSinceLastIntegration = 0.0
   }
   \caption{Original integration algorithm}
 \end{algorithm}
-\\Thus, forces were calculated and added every frame, resulting in a huge performance decrease as mesh size increased and high instability as soon as the time step was increased so the integration wasn't calculated every frame. By examining the integration equations again, it was realised that calculating the forces should be included as part of the integration step, and therefore only performed at every time step, rather than every frame. As such, the timeStep variable was moved from the integrators to a global variable, and the time step checking code moved to the global update function (not shown in the design diagrams). Now, Cloth's update function is called every time step, rather than every frame, and the cloth behaves as expected as the time step is varied.
+\\Thus, forces were calculated and added every frame, resulting in a huge performance decrease as mesh size increased and overly elastic cloth as the time step was increased so the integration wasn't calculated every frame. By examining the integration equations again, it was realised that calculating the forces should be included as part of the integration step, and therefore only performed at every time step, rather than every frame. As such, the timeStep variable was moved from the integrators to a global variable, and the time step checking code moved to the global update function (not shown in the design diagrams). Now, Cloth's update function is called every time step, rather than every frame, and the cloth behaves as expected as the time step is varied.
 
 \subsection{Third Cycle}
 In the final development cycle the fourth order Runge-Kutta and implicit Euler integrators were implemented.
