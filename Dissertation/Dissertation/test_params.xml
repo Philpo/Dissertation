@@ -2,11 +2,11 @@
 <test_list>
   <test id="1">
     <integrator type="0"  time_step="8.2"/>
-    <cloth_params height="10.0" width="10.0" mass="2500.0">
+    <cloth_params height="10.0" width="10.0" mass="100.0">
       <top_left_position x="-10.0" y="10.0" z="10.0" />
-      <mesh_size rows="50" columns="50" />
-      <structural spring_coefficient="200.0" damping_coefficient="200.0" />
-      <shear spring_coefficient="200.0" damping_coefficient="200.0" />
+      <mesh_size rows="10" columns="10" />
+      <structural spring_coefficient="20.0" damping_coefficient="20.0" />
+      <shear spring_coefficient="20.0" damping_coefficient="20.0" />
       <flexion spring_coefficient="1.0" damping_coefficient="1.0" />
     </cloth_params>
   </test>

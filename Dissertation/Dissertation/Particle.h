@@ -37,14 +37,13 @@ public:
   void addForce(const FXMVECTOR& force) { totalForce = XMVectorAdd(totalForce, force); }
   void update(double deltaT);
 private:
-  double timeSpentIntegrating;
+  double timeSpentIntegrating, timeAtEquilibrium;
   float mass, dampingCoefficient;
   bool pinned, equilibrium;
-  int numFramesAtEquilibrium;
   IIntegrator* integratorInterface;
   IntegrationFunction integratorFPointer;
-  XMVECTOR position, previousPosition, normal, acceleration, velocity, totalForce;
-  static const int NUM_FRAMES_FOR_EQUILIBIRUM;
+  XMVECTOR position, previousPosition, normal, acceleration, velocity, totalForce, temp;
+  static const double TIME_FOR_EQUILIBIRUM;
 
   void integrate(double deltaT);
   bool closeToZero();

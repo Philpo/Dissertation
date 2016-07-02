@@ -239,7 +239,7 @@ Both the Provot and Choi Ko Mass-Spring models can be separated into two compone
 \end{split}
 \end{equation}
 The work of \textcite{Jakobsen2005} was developed in \textcite{Muller2006} resulting in a more general PBD model that supports both equality and inequality constraints. For games however, modelling cloth as a mesh of particles connected by simple distance constraints is enough.
-\\To animate the cloth using PBD, external forces are first applied to the cloth, integrated using Verlet integration and the particle positions updated. Since the particles have moved, it is possible that one or more of the spring constraints are violated so they are checked and the positions of the particles corrected so none are violated; this is called constraint relaxation and is shown in Fig \ref{fig:constraint relaxation} . The constraints are correct using Equation \ref{eq:constraint relaxation}\parencite[4]{Muller2006}; stiffness and damping can also be added to control the appearance of the cloth.
+\\To animate the cloth using PBD, external forces are first applied to the cloth, integrated using Verlet integration and the particle positions updated. Since the particles have moved, it is possible that one or more of the spring constraints are violated so they are checked and the positions of the particles corrected so none are violated; this is called constraint relaxation and is shown in Fig \ref{fig:constraint relaxation} . The constraints are correct using Equation \ref{eq:constraint relaxation}\parencite[4]{Muller2006}; stiffness can also be added to control the appearance of the cloth.
 \begin{figure}[tp]
    \begin{center}
      \includegraphics{Figures/pbd}
@@ -340,6 +340,11 @@ Verlet integration is an alternative to the Runge-Kutta family of integrators. I
 \begin{equation}
 \label{eq:verlet}
   x_{i + \Delta t} = 2x_{i} - x_{i - \Delta t} + a_{i + \Delta t}\Delta t^{2}
+\end{equation}
+Since Verlet is a velocity less integrator, the linear damping shown in Equation \ref{eq:spring damping} will not provide any damping to the system. In order to prevent the system from oscillating infinitely, a damping factor is applied to the approximated velocity, thus Equation \ref{eq:verlet} becomes
+\begin{equation}
+\label{eq:dampened verlet}
+  x_{i + \Delta t} = x_{i} + dampingFactor(x_{i} - x_{i - \Delta t}) + a_{i + \Delta t}\Delta t^{2}
 \end{equation}
 This method is computationally fast and reasonably stable, as "velocity is implicitly given and consequently it is harder for velocity and position to come out of sync" \parencite[1]{Jakobsen2005}. However it does still suffer from time step issues; figures 11 and 13 in \textcite[14-15]{Wacker2005a} show that below a certain threshold Verlet integration is less stable than explicit Euler, but more stable over that threshold.
 

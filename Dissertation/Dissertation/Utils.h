@@ -11,7 +11,7 @@ typedef void (*IntegrationFunction)(Particle&, double);
 enum Integrator;
 
 extern ofstream sheetDataFile, flagDataFile;
-extern int testId, frameCount, averageFPS, numTimeFPSCalculated;
+extern int testId, frameCount, averageFPS, numTimeFPSCalculated, updateCount;
 extern double averageUpdateTime, averageRenderTime, timeStep;
 extern Integrator currentIntegrator;
 

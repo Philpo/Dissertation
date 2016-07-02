@@ -64,7 +64,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
   Application* theApp = new Application();
   timeLastFrame = 0.0;
   averageUpdateTime = averageRenderTime = 0.0;
-  frameCount = averageFPS = numTimeFPSCalculated = 0;
+  frameCount = averageFPS = numTimeFPSCalculated = updateCount = 0;
 
   if (FAILED(theApp->initialise(hInstance, nCmdShow))) {
     return -1;
@@ -119,7 +119,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
       timeLastFrame = currentTime;
       frameCount++;
 
-      if ((theApp->reachedEquilibrium() && frameCount > 0) || simulationRunningTime >= MAX_SIMULATION_TIME)  {
+      if ((theApp->reachedEquilibrium() && frameCount > 0))  {
         switch (currentScenario) {
           case SHEET:
             currentScenario = FLAG;

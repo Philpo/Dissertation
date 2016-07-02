@@ -64,7 +64,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{\numberline {2.1.4.2.1}Euler}{28}{paragraph.2.1.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.4.3}Chosen Integration Methods}{29}{subsubsection.2.1.4.3}
+\contentsline {subsubsection}{\numberline {2.1.4.3}Chosen Integration Methods}{30}{subsubsection.2.1.4.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Design and Implementation}{31}{chapter.3}
 \defcounter {refsection}{0}\relax 

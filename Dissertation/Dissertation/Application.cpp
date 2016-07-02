@@ -82,14 +82,14 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
       case SHEET:
         // now loading a sheet simulation, therefore the previous sim was a flag, so save to the flag file
         flagDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
-        flagDataFile << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
-        flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
+        flagDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
+        flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
         break;
       case FLAG:
         // now loading a flag simulation, therefore the previous sim was a sheet, so save to the sheet file
         sheetDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
-        sheetDataFile << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
-        sheetDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
+        sheetDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
+        sheetDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
         break;
     }
   }
@@ -99,7 +99,8 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
   vertices = nullptr;
   if (vertexBuffer) vertexBuffer->Release();
   if (indexBuffer) indexBuffer->Release();
-  frameCount = 0;
+  frameCount = updateCount = numTimeFPSCalculated = averageFPS = 0;
+  averageUpdateTime = averageRenderTime = 0.0;
 
   testId = convertStringToNumber<int>(testNode->first_attribute("id")->value());
 
@@ -177,8 +178,8 @@ Application::~Application() {
   double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
   double timeSpentIntegrating = cloth->getTimeSpentIntegrating();
   flagDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
-  flagDataFile << ", " << (timeSpentOnInternalForce / (double) frameCount) << ", " << (timeSpentIntegrating / (double) frameCount);
-  flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
+  flagDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
+  flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
 
   delete cloth;
 }
@@ -640,35 +641,36 @@ void Application::update(double deltaT) {
   if (timeSinceLastUpdate >= timeStep) {
     cloth->update(deltaT);
     timeSinceLastUpdate = 0.0;
+    updateCount++;
+
+    D3D11_MAPPED_SUBRESOURCE mappedData;
+    immediateContext->Map(vertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedData);
+    const Particle* const particles = cloth->getParticles();
+    UINT* data = reinterpret_cast<UINT*>(mappedData.pData);
+    for (int i = 0; i < cloth->getNumRows(); i++) {
+      for (int j = 0; j < cloth->getNumColumns(); j++) {
+        XMFLOAT3& posL = vertices[(i * cloth->getNumColumns()) + j].posL;
+        XMVECTOR pos = particles[(i * cloth->getNumColumns()) + j].getPosition();
+        posL.x = pos.m128_f32[0];
+        posL.y = pos.m128_f32[1];
+        posL.z = pos.m128_f32[2];
+      }
+    }
+    //vertices[0].posL.x = a.getPosition().m128_f32[0];
+    //vertices[0].posL.y = a.getPosition().m128_f32[1];
+    //vertices[0].posL.z = a.getPosition().m128_f32[2];
+    //vertices[1].posL.x = b.getPosition().m128_f32[0];
+    //vertices[1].posL.y = b.getPosition().m128_f32[1];
+    //vertices[1].posL.z = b.getPosition().m128_f32[2];
+    //memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * 2);
+    memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * cloth->getNumColumns() * cloth->getNumRows());
+    immediateContext->Unmap(vertexBuffer, 0);
   }
   a.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), a.getMass()));
   b.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), b.getMass()));
   spring.calcSpringForce();
   a.update(deltaT);
   b.update(deltaT);
-
-  D3D11_MAPPED_SUBRESOURCE mappedData;
-  immediateContext->Map(vertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedData);
-  const Particle* const particles = cloth->getParticles();
-  UINT* data = reinterpret_cast<UINT*>(mappedData.pData);
-  for (int i = 0; i < cloth->getNumRows(); i++) {
-    for (int j = 0; j < cloth->getNumColumns(); j++) {
-      XMFLOAT3& posL = vertices[(i * cloth->getNumColumns()) + j].posL;
-      XMVECTOR pos = particles[(i * cloth->getNumColumns()) + j].getPosition();
-      posL.x = pos.m128_f32[0];
-      posL.y = pos.m128_f32[1];
-      posL.z = pos.m128_f32[2];
-    }
-  }
-  //vertices[0].posL.x = a.getPosition().m128_f32[0];
-  //vertices[0].posL.y = a.getPosition().m128_f32[1];
-  //vertices[0].posL.z = a.getPosition().m128_f32[2];
-  //vertices[1].posL.x = b.getPosition().m128_f32[0];
-  //vertices[1].posL.y = b.getPosition().m128_f32[1];
-  //vertices[1].posL.z = b.getPosition().m128_f32[2];
-  //memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * 2);
-  memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * cloth->getNumColumns() * cloth->getNumRows());
-  immediateContext->Unmap(vertexBuffer, 0);
 }
 
 void Application::draw() {
