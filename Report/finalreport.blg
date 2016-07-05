@@ -6,13 +6,9 @@ A level-1 auxiliary file: chapter1.aux
 A level-1 auxiliary file: chapter2.aux
 A level-1 auxiliary file: chapter3.aux
 A level-1 auxiliary file: chapter4.aux
+A level-1 auxiliary file: appendices.aux
 Database file #1: finalreport-blx.bib
 Database file #2: Bibliography/Dissertation.bib
-Warning--I didn't find a database entry for "reflect"
-Warning--I didn't find a database entry for "jfree"
-Warning--I didn't find a database entry for "geatbx"
-Warning--I didn't find a database entry for "gap"
-Warning--I didn't find a database entry for "uci"
-Warning--I didn't find a database entry for "arena"
+Warning--I didn't find a database entry for "Moosegaard2009"
 Biblatex version: 3.3
-(There were 6 warnings)
+(There was 1 warning)

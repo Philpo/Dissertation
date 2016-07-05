@@ -173,6 +173,30 @@
   \field{year}{2013}
 \endentry
 
+\entry{Bhardwaj2013}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Bhardwaj}{B.}%
+     {Manas}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BM1}
+  \strng{fullhash}{BM1}
+  \field{labelyear}{2013}
+  \field{sortinit}{B}
+  \field{title}{{A beginner’s guide to various Software development
+  methodologies}}
+  \verb{url}
+  \verb http://manasbhardwaj.net/a-beginners-guide-to-various-software-developm
+  \verb ent-methodologies/
+  \endverb
+  \field{year}{2013}
+  \field{urlday}{15}
+  \field{urlmonth}{06}
+  \field{urlyear}{2016}
+\endentry
+
 \entry{Bourg2013}{book}{}
   \name{author}{2}{}{%
     {{}%
@@ -538,6 +562,26 @@
   \field{year}{2014}
   \field{urlday}{10}
   \field{urlmonth}{03}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Fielder}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Fielder}{F.}%
+     {Glenn}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{FG1}
+  \strng{fullhash}{FG1}
+  \field{sortinit}{F}
+  \field{title}{{Integration Basics}}
+  \verb{url}
+  \verb http://gafferongames.com/game-physics/integration-basics/
+  \endverb
+  \field{urlday}{30}
+  \field{urlmonth}{06}
   \field{urlyear}{2016}
 \endentry
 
@@ -1086,6 +1130,28 @@
   \field{year}{2012}
 \endentry
 
+\entry{Mosegaard2009}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Mosegaard}{M.}%
+     {Jesper}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MJ1}
+  \strng{fullhash}{MJ1}
+  \field{labelyear}{2009}
+  \field{sortinit}{M}
+  \field{title}{{Mosegaards Cloth Simulation Coding Tutorial}}
+  \verb{url}
+  \verb http://cg.alexandra.dk/?p=147
+  \endverb
+  \field{year}{2009}
+  \field{urlday}{05}
+  \field{urlmonth}{07}
+  \field{urlyear}{2016}
+\endentry
+
 \entry{Muller2006}{inproceedings}{}
   \name{author}{4}{}{%
     {{}%
@@ -1478,6 +1544,26 @@
   approaches P3. -ve of constraint solvers P6. constraint solvers%
   }
   \field{year}{2013}
+\endentry
+
+\entry{ScrumAlliance}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Scrum Alliance}}{S.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{S1}
+  \strng{fullhash}{S1}
+  \field{sortinit}{S}
+  \field{title}{{Learn About Scrum}}
+  \verb{url}
+  \verb https://www.scrumalliance.org/why-scrum
+  \endverb
+  \field{urlday}{15}
+  \field{urlmonth}{06}
+  \field{urlyear}{2016}
 \endentry
 
 \entry{Selle2009}{article}{}

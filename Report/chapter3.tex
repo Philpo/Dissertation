@@ -76,7 +76,20 @@ During the second development cycle the model developed in the first cycle was a
 \\\\The two different designs were suggested as the aim was to use the most efficient implementation possible and it was unknown during the design process which would be more efficient. As such, both designs were implemented and then some tests run using the explicit Euler integrator to determine which was most efficient. Compared with implementing explicit Euler directly in Particle, both implementations increased total update time by approximately 0.4ms for a 50 by 50 mesh on a debug build. This translated to an approximate drop of 4-5 FPS, and was expected due to the fact that both designs must call accessors to access Particle's data.
 \\Compared with each other, the results were more variable. For some runs the static class design was more efficient and for others the interface design more so. Ultimately, the efficiency difference was small, at most a 0.1ms difference between them, so the conclusion was reached that both designs were equally efficient. However, the explicit Euler integrator is the cheapest integrator, so for more expensive integrators, such as fourth order Runge-Kutta, a wider performance gap may be found. Therefore these experiments will be run again during the third development cycle using fourth order Runge-Kutta and the design retroactively changed if a significant efficiency gulf is found.
 \\\\Since both design were equally efficient, the interface design was chosen as the author felt that it was, ostensibly, a better quality approach than using static classes. One minor optimisation was made to the initial design and is documented in the next section. As a result of this optimisation, the chosen design now performs almost as well as coding the integrator directly in Particle and means Particle conforms much more to the Open/Closed SOLID principle. Since Particle stores a pointer to the interface, and only calls virtual functions, new integrators can easily be added and used without any changes needed in Particle. 
-\\The final design can be seen in Fig \ref{fig:phase2}. In addition to the optimisation changes, another change was made as a result of poor understanding of the integration equations. Initially the design was to store the time step in the integrator classes and have the time step checking code in the integrate function. The algorithm would then proceed as follows for every frame:
+\\\\Wind was originally intended to be calculated using a static normal assigned at Particle creation, however on reflection it was realised that this would not work; as the normal of the particles will change as they move over time. Therefore it was necessary to calculate the surface normal for the particles every time step. Using the code downloaded from \textcite{Mosegaard2009} as a reference, the particles are split into triangles and the normal calculated with the equation below.
+\begin{equation}
+\begin{split}
+  &\overrightarrow{P1ToP2} = p2 - p1
+  \\&\overrightarrow{P1ToP3} = p3 - p1
+  \\&\overrightarrow{normal} = \overrightarrow{P1ToP2} \times \overrightarrow{P1ToP3}
+\end{split}
+\end{equation}
+Equation \ref{eq:wind} had to be modified slightly as well in order to give a vector, rather than a scalar, force. Again, using \textcite{Mosegaard2009} as a reference, the equation was modified to:
+\begin{equation}
+F_{wind} = n_{ij}(w(\parallel n_{ij}\parallel\bullet\overrightarrow{W}))
+\end{equation}
+This change is support by \textcite[3]{Provot2001}, who arrives at a similar equation for calculating a wind force.
+\\\\The final design can be seen in Fig \ref{fig:phase2}. In addition to the optimisation changes, another change was made as a result of poor understanding of the integration equations. Initially the design was to store the time step in the integrator classes and have the time step checking code in the integrate function. The algorithm would then proceed as follows for every frame:
 \begin{algorithm}[h]
   \SetAlgoLined
   \SetNoFillComment
@@ -105,7 +118,7 @@ In the final development cycle the fourth order Runge-Kutta and implicit Euler i
 \label{sec:optimisation}
 
 \subsection{First Cycle}
-\doublespaced
+%\doublespaced
 Several optimisations were made to the design of the first development cycle as a result of profiling the application.
 \\\\Firstly the std::vector was replaced with dynamically allocated arrays in the Cloth class. Iterating though the vector to calculate the spring forces proved prohibitively expensive for meshes over a certain size, even when calcSpringForce was an empty function; a 100 by 100 mesh was the largest mesh that supported real time frame rates, running at 40FPS on a debug build. Profiling showed that std::vector iterator functions were the most expensive execution path, as a range-based for loop was used to iterate over every spring. This can be seen in Fig \ref{fig:profiling1} in the appendices. Hence, the vector was replaced with dynamically allocated arrays and the equations listed in \ref{eq:num springs} identified. Fig \ref{fig:profiling2} shows the profiling results using dynamic arrays. As can be seen, the high cost execution paths have moved away from iterating over the springs and into calculating the spring forces themselves.
 \\Switching to arrays gave a 4x FPS increase, for the same mesh size, and a 2x increase in the maximum real time mesh size.
