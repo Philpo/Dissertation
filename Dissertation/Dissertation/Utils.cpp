@@ -6,6 +6,7 @@ ofstream sheetDataFile, flagDataFile;
 int testId, frameCount, averageFPS, numTimeFPSCalculated, updateCount;
 double averageUpdateTime, averageRenderTime, timeStep;
 Integrator currentIntegrator;
+Scenario currentScenario;
 
 /*
 * Taken from https://stackoverflow.com/questions/1739259/how-to-use-queryperformancecounter

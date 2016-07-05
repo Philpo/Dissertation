@@ -24,11 +24,6 @@
 
 using namespace DirectX;
 
-enum Scenario {
-  SHEET = 0
-, FLAG = 1
-};
-
 class Application {
 public:
   Application();

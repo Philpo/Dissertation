@@ -35,10 +35,12 @@ private:
   bool equilibrium;
   Particle* particles;
   Spring *structuralSprings, *shearSprings, *flexionSprings;
-  static XMVECTOR GRAVITY;
+  static XMVECTOR GRAVITY, WIND_DIRECTION;
+  static const float WIND_CONSTANT;
 
   void createParticles(FXMVECTOR topLeftPostition, float height, float width, float totalMass, float linearDamping);
   void createStructuralLinks(float structuralStiffness, float structuralDamping);
   void createShearLinks(float shearStiffness, float shearDamping);
   void createFlexionLinks(float flexionStiffness, float flexionDamping);
+  void addWindForce(Particle& p1, Particle& p2, Particle& p3);
 };

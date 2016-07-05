@@ -1,4 +1,5 @@
 #include "Particle.h"
+#include <iostream>
 
 const double Particle::TIME_FOR_EQUILIBIRUM = 500.0;
 
@@ -29,17 +30,19 @@ void Particle::integrate(double deltaT) {
   double currentTime = getCounter();
 
   //float timeInSeconds = deltaT / 1000.0f;
-  bool zeroDisplacement = closeToZero();
-  if (updateCount > 500 && zeroDisplacement) {
-    equilibrium = timeAtEquilibrium >= TIME_FOR_EQUILIBIRUM;
-    if (equilibrium) {
-      return;
+  if (currentScenario == SHEET) {
+    bool zeroDisplacement = closeToZero();
+    if (updateCount > 500 && zeroDisplacement) {
+      equilibrium = timeAtEquilibrium >= TIME_FOR_EQUILIBIRUM;
+      if (equilibrium) {
+        return;
+      }
+      timeAtEquilibrium += deltaT;
     }
-    timeAtEquilibrium += deltaT;
-  }
 
-  if (!zeroDisplacement) {
-    timeAtEquilibrium = 0.0;
+    if (!zeroDisplacement) {
+      timeAtEquilibrium = 0.0;
+    }
   }
   //acceleration = XMVectorScale(totalForce, 1 / mass);
   //velocity = XMVectorAdd(velocity, XMVectorScale(acceleration, timeInSeconds));
@@ -49,9 +52,6 @@ void Particle::integrate(double deltaT) {
 
   if (integratorInterface) {
     integratorInterface->integrate(*this, deltaT);
-  }
-  else if (integratorFPointer) {
-    integratorFPointer(*this, deltaT);
   }
 
   timeSpentIntegrating = getCounter() - currentTime;

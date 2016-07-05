@@ -133,6 +133,7 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
   xml_node<>* integratorNode = testNode->first_node("integrator");
   IIntegrator* integrator = nullptr;
   currentIntegrator = (Integrator) convertStringToNumber<int>(integratorNode->first_attribute("type")->value());
+  currentScenario = scenario;
 
   switch (currentIntegrator) {
     case EXPLICIT_EULER:
@@ -666,11 +667,11 @@ void Application::update(double deltaT) {
     memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * cloth->getNumColumns() * cloth->getNumRows());
     immediateContext->Unmap(vertexBuffer, 0);
   }
-  a.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), a.getMass()));
-  b.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), b.getMass()));
-  spring.calcSpringForce();
-  a.update(deltaT);
-  b.update(deltaT);
+  //a.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), a.getMass()));
+  //b.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), b.getMass()));
+  //spring.calcSpringForce();
+  //a.update(deltaT);
+  //b.update(deltaT);
 }
 
 void Application::draw() {

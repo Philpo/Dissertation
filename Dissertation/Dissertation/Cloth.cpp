@@ -2,6 +2,8 @@
 #include <iostream>
 
 XMVECTOR Cloth::GRAVITY = XMVectorSet(0.0f, -.981, 0.0f, 0.0f);
+XMVECTOR Cloth::WIND_DIRECTION = XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+const float Cloth::WIND_CONSTANT = 0.25f;
 
 Cloth::Cloth(xml_node<>* clothParams) : timeSpentCalculatingInternalForce(0.0), timeSpentIntegrating(0.0), equilibrium(false) {
   float x, y, z, height, width, mass, stiffness, damping;
@@ -62,6 +64,9 @@ void Cloth::setPinned(int row, int column, bool pinned) {
 void Cloth::setIntegrator(IIntegrator* const integrator) {
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < columns; j++) {
+      if (particles[(i * columns) + j].getPosition().m128_f32[0] == -9 && particles[(i * columns) + j].getPosition().m128_f32[1] == 10 && particles[(i * columns) + j].getPosition().m128_f32[2] == 10) {
+        int a = 1;
+      }
       particles[(i * columns) + j].setIntegrator(integrator);
     }
   }
@@ -94,6 +99,14 @@ void Cloth::update(double deltaT) {
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < columns; j++) {
       particles[(i * columns) + j].addForce(XMVectorScale(GRAVITY, particles[(i * columns) + j].getMass()));
+
+      if (currentScenario == FLAG) {
+        if (i < rows - 1 && j < columns - 1) {
+          addWindForce(particles[(i * columns) + j], particles[(i * columns) + j + 1], particles[((i + 1) * columns) + j]);
+          addWindForce(particles[((i + 1) * columns) + j], particles[(i * columns) + j + 1], particles[((i + 1) * columns) + j + 1]);
+        }
+      }
+
       particles[(i * columns) + j].update(deltaT);
       timeSpentIntegrating += particles[(i * columns) + j].getTimeSpentIntegrating();
 
@@ -181,4 +194,24 @@ void Cloth::createFlexionLinks(float flexionStiffness, float flexionDamping) {
       }
     }
   }
+}
+
+void Cloth::addWindForce(Particle& p1, Particle& p2, Particle& p3) {
+  XMVECTOR pos1, pos2, pos3, temp1, temp2, normal, force;
+
+  pos1 = p1.getPosition();
+  pos2 = p2.getPosition();
+  pos3 = p3.getPosition();
+
+  temp1 = XMVectorSubtract(pos2, pos1);
+  temp2 = XMVectorSubtract(pos3, pos1);
+
+  normal = XMVector3Cross(temp1, temp2);
+  temp1 = XMVector3Normalize(normal);
+
+  force = XMVectorScale(normal, XMVectorScale(XMVector3Dot(temp1, WIND_DIRECTION), WIND_CONSTANT).m128_f32[0]);
+
+  p1.addForce(force);
+  p2.addForce(force);
+  p3.addForce(force);
 }
