@@ -45,14 +45,15 @@ As the previous section details, the first stage of the testing process will be 
 }
 \begin{lstlisting}
 <test_list>
-  <test id=''..'.'>
-    <integrator type=''...''  time_step=''...''/>
-    <cloth_params height=''...'' width=''...'' mass=''...''>
-      <top_left_position x=''...'' y=''...'' z=''...'' />
-      <mesh_size rows=''...'' columns=''...'' />
-      <structural spring_coefficient=''...'' damping_coefficient=''...'' />
-      <shear spring_coefficient=''...'' damping_coefficient=''...'' />
-      <flexion spring_coefficient=''...'' damping_coefficient=''...'' />
+  <test id=''''>
+    <integrator type=''''  time_step=''''/>
+    <cloth_params height='''' width='''' mass='''' wind_constant=''''>
+      <top_left_position x='''' y='''' z='''' />
+      <mesh_size rows='''' columns='''' />
+      <structural spring_coefficient='''' damping_coefficient='''' />
+      <shear spring_coefficient='''' damping_coefficient='''' />
+      <flexion spring_coefficient='''' damping_coefficient='''' />
+      <wind direction x='''' y='''' z='''' />
     </cloth_params>
   </test>
 </test_list>
