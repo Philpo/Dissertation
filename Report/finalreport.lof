@@ -54,10 +54,10 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Profiling results using an std::vector to store springs}}{48}{figure.B.1}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Profiling results using an std::vector to store springs}}{49}{figure.B.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {B.2}{\ignorespaces Profiling results using dynamic arrays to store springs}}{49}{figure.B.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Profiling results for unoptimised calcSpringForce}}{49}{figure.B.3}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Profiling results for unoptimised calcSpringForce}}{50}{figure.B.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Profiling results for optimised calcSpringForce}}{50}{figure.B.4}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Profiling results for optimised calcSpringForce}}{51}{figure.B.4}
