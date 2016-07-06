@@ -76,7 +76,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
   sheetDataFile.open("sheet_test_data.csv");
   flagDataFile.open("flag_test_data.csv");
-  sheetDataFile << "Test ID, Integrator, Rows, Columns, Time Step, Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms), Average FPS" << endl;
+  sheetDataFile << "Test ID, Integrator, Rows, Columns, Time Step, Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms), Average FPS, Time to Reach Equilibrium (ms)" << endl;
   flagDataFile << "Test ID, Integrator, Rows, Columns, Time Step, Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms), Average FPS" << endl;
 
   // Main message loop

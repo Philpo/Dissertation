@@ -2,15 +2,14 @@
 #include <iostream>
 
 XMVECTOR Cloth::GRAVITY = XMVectorSet(0.0f, -.981, 0.0f, 0.0f);
-XMVECTOR Cloth::WIND_DIRECTION = XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
-const float Cloth::WIND_CONSTANT = 0.25f;
 
-Cloth::Cloth(xml_node<>* clothParams) : timeSpentCalculatingInternalForce(0.0), timeSpentIntegrating(0.0), equilibrium(false) {
+Cloth::Cloth(xml_node<>* clothParams) : timeSpentCalculatingInternalForce(0.0), timeSpentIntegrating(0.0), timeAtStart(0.0), timeAtEquilibrium(0.0), equilibrium(false) {
   float x, y, z, height, width, mass, stiffness, damping;
 
   height = convertStringToNumber<float>(clothParams->first_attribute("height")->value());
   width = convertStringToNumber<float>(clothParams->first_attribute("width")->value());
   mass = convertStringToNumber<float>(clothParams->first_attribute("mass")->value());
+  windConstant = convertStringToNumber<float>(clothParams->first_attribute("wind_constant")->value());
 
   xml_node<>* currentNode = clothParams->first_node("top_left_position");
   x = convertStringToNumber<float>(currentNode->first_attribute("x")->value());
@@ -38,10 +37,16 @@ Cloth::Cloth(xml_node<>* clothParams) : timeSpentCalculatingInternalForce(0.0), 
   stiffness = convertStringToNumber<float>(currentNode->first_attribute("spring_coefficient")->value());
   damping = convertStringToNumber<float>(currentNode->first_attribute("damping_coefficient")->value());
   createFlexionLinks(stiffness, damping);
+
+  currentNode = clothParams->first_node("wind_direction");
+  x = convertStringToNumber<float>(currentNode->first_attribute("x")->value());
+  y = convertStringToNumber<float>(currentNode->first_attribute("y")->value());
+  z = convertStringToNumber<float>(currentNode->first_attribute("z")->value());
+  windDirection = XMVectorSet(x, y, z, 0.0f);
 }
 
 Cloth::Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping, float linearDamping) :
-  timeSpentCalculatingInternalForce(0.0), timeSpentIntegrating(0.0), rows(numRows), columns(numColumns), equilibrium(false) {
+ timeSpentCalculatingInternalForce(0.0), timeSpentIntegrating(0.0), timeAtStart(0.0), timeAtEquilibrium(0.0), rows(numRows), columns(numColumns), equilibrium(false) {
   createParticles(topLeftPostition, height, width, totalMass, linearDamping);
   createStructuralLinks(structuralStiffness, structuralDamping);
   createShearLinks(shearStiffness, shearDamping);
@@ -81,6 +86,10 @@ void Cloth::setIntegrator(IntegrationFunction integrator) {
 }
 
 void Cloth::update(double deltaT) {
+  if (timeAtStart == 0.0) {
+    timeAtStart = getCounter();
+  }
+
   double currentTime = getCounter();
 
   for (int i = 0; i < numStructural; i++) {
@@ -117,6 +126,10 @@ void Cloth::update(double deltaT) {
   }
 
   equilibrium = !notAtEquilibrium;
+
+  if (equilibrium) {
+    timeAtEquilibrium = getCounter();
+  }
 }
 
 void Cloth::draw(ID3D11DeviceContext* const immediateContext) const {
@@ -196,6 +209,9 @@ void Cloth::createFlexionLinks(float flexionStiffness, float flexionDamping) {
   }
 }
 
+/**
+ * Code available for download at http://cg.alexandra.dk/?p=147 used as reference for addWindForce
+ */
 void Cloth::addWindForce(Particle& p1, Particle& p2, Particle& p3) {
   XMVECTOR pos1, pos2, pos3, temp1, temp2, normal, force;
 
@@ -209,7 +225,7 @@ void Cloth::addWindForce(Particle& p1, Particle& p2, Particle& p3) {
   normal = XMVector3Cross(temp1, temp2);
   temp1 = XMVector3Normalize(normal);
 
-  force = XMVectorScale(normal, XMVectorScale(XMVector3Dot(temp1, WIND_DIRECTION), WIND_CONSTANT).m128_f32[0]);
+  force = XMVectorScale(normal, XMVectorScale(XMVector3Dot(temp1, windDirection), windConstant).m128_f32[0]);
 
   p1.addForce(force);
   p2.addForce(force);

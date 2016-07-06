@@ -89,7 +89,8 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
         // now loading a flag simulation, therefore the previous sim was a sheet, so save to the sheet file
         sheetDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
         sheetDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
-        sheetDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
+        sheetDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated);
+        sheetDataFile << ", " << (cloth->reachedEquilibrium() ? cloth->getTimeTakenToReachEquilibrium() : 0.0) << endl;
         break;
     }
   }

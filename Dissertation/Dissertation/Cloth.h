@@ -16,6 +16,7 @@ public:
 
   const double getTimeSpentCalculatingInternalForce() const { return timeSpentCalculatingInternalForce; }
   const double getTimeSpentIntegrating() const { return timeSpentIntegrating; }
+  const double getTimeTakenToReachEquilibrium() const { return timeAtEquilibrium - timeAtStart; }
   const bool reachedEquilibrium() const { return equilibrium; }
   const int getNumRows() const { return rows; }
   const int getNumColumns() const { return columns; }
@@ -30,13 +31,14 @@ public:
   void update(double deltaT);
   void draw(ID3D11DeviceContext* const immediateContext) const;
 private:
-  double timeSpentCalculatingInternalForce, timeSpentIntegrating;
+  double timeSpentCalculatingInternalForce, timeSpentIntegrating, timeAtStart, timeAtEquilibrium;
   int rows, columns, numStructural, numShear, numFlexion;
+  float windConstant;
+  XMVECTOR windDirection;
   bool equilibrium;
   Particle* particles;
   Spring *structuralSprings, *shearSprings, *flexionSprings;
-  static XMVECTOR GRAVITY, WIND_DIRECTION;
-  static const float WIND_CONSTANT;
+  static XMVECTOR GRAVITY;
 
   void createParticles(FXMVECTOR topLeftPostition, float height, float width, float totalMass, float linearDamping);
   void createStructuralLinks(float structuralStiffness, float structuralDamping);
