@@ -114,6 +114,27 @@ This change is support by \textcite[3]{Provot2001}, who arrives at a similar equ
 
 \subsection{Third Cycle}
 In the final development cycle the fourth order Runge-Kutta and implicit Euler integrators were implemented.
+\\\\The initial design is shown in Fig \ref{fig:phase3 initial}. As with the second phase, only those changes introduced in this phase are shown.
+\\In order to implement fourth order Runge-Kutta, it was necessary to make additional changes to the algorithm flow. Following the changes detailed in the previous section, the cloth animation algorithm would proceed as follows every time step:
+\begin{algorithm}[h]
+  \SetAlgoLined
+  \SetNoFillComment
+  \tcc{In Cloth.update}
+  \For{every spring} {
+    calculateInternalForce
+  }
+  \For{every particle} {
+    addGravity
+    \\\If{flag scenario} {
+      addWind
+    }
+    do integration calculations
+  }
+\end{algorithm}
+\\Since fourth order Runge-Kutta requires four derivations, i.e. four calculations of the total force, it was necessary to redesign the system.
+\\The integrate function in the interface is now passed a Cloth object rather than a Particle and Cloth has a new function, calcForces, which calculates the total force in the mesh. This allows an integrator to calculate the total force multiple times if necessary, but requires it to loop through every particle in order to apply the appropriate integration calculations. As such, the integrator classes are also friend classes of Cloth, allowing them access to the particles array directly. This breaks the Open/Closed principle slightly, so removing the friend relationship and requiring integrators to call accessors may be a better approach. The friend design was kept in order to give as much performance as possible, but it should be noted that caching the particle array in a local variable would lead to only one accessor call per time step, which would most likely result in near identical performance to the friend approach.
+\\Since integrate is now passed a Cloth object, the chosen integrator is stored outside of Cloth and Particle, in the global encapsulating class (not shown in the diagrams for brevity), and integrate is called every time step in place of Cloth's update method.
+\\\\As mentioned in the previous section, the performance of the static class and interface designs were compared again, in order to see if a larger performance delta appeared with a higher cost integrator. The results of this comparison were similar to those of the second cycle. The results were still very variable, but ultimately there was less than frame difference between both implementations. Therefore, the interface design was kept and the final design can be seen in \ref{fig:phase3}.
 
 \section{Profiling and Optimisation}
 \label{sec:optimisation}

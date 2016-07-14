@@ -4,6 +4,7 @@
 using namespace DirectX;
 
 class Particle;
+class Cloth;
 
 enum Integrator {
   EXPLICIT_EULER = 0
@@ -21,6 +22,12 @@ class IIntegrator {
 public:
   virtual ~IIntegrator() {}
 
+  virtual const double getTimeSpentIntegrating() const = 0;
+  virtual const double getTimeTakenToReachEquilibrium() const = 0;
+  virtual const bool reachedEquilibrium() const = 0;
+
   virtual void setTimeStep(double timeStep) = 0;
+  virtual void resetData() = 0;
   virtual void integrate(Particle& particle, double deltaT) = 0;
+  virtual void integrate(Cloth& cloth) = 0;
 };

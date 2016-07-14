@@ -6,58 +6,62 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Mechanical properties of cloth}}{14}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Mechanical properties of cloth}}{15}{figure.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Visual Properties of cloth}}{15}{figure.2.2}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Visual Properties of cloth}}{16}{figure.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Cloth with structural springs only}}{18}{figure.2.3}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Cloth with structural springs only}}{19}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{18}{figure.2.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{19}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{18}{figure.2.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{19}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Cloth with structural and shear springs}}{18}{figure.2.4}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Cloth with structural and shear springs}}{19}{figure.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{18}{figure.2.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{19}{figure.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{18}{figure.2.4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{19}{figure.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Provot cloth model}}{19}{figure.2.5}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Provot cloth model}}{20}{figure.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Choi Ko cloth model}}{21}{figure.2.6}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Choi Ko cloth model}}{22}{figure.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Super-elasticity problems}}{22}{figure.2.7}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Super-elasticity problems}}{23}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Super-elastic effect}}}{22}{figure.2.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Super-elastic effect}}}{23}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of correcting super-elasticity}}}{22}{figure.2.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of correcting super-elasticity}}}{23}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Constraint relaxation}}{24}{figure.2.8}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Constraint relaxation}}{25}{figure.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Explicit integrator stability regions}}{27}{figure.2.9}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Waterfall development methodology}}{32}{figure.3.1}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Explicit integrator stability regions}}{28}{figure.2.9}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Initial design for the first development cycle}}{44}{figure.A.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Final design for the first development cycle}}{45}{figure.A.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Initial design for the second development cycle}}{46}{figure.A.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Final design for the second development cycle}}{47}{figure.A.4}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Waterfall development methodology}}{33}{figure.3.1}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Profiling results using an std::vector to store springs}}{49}{figure.B.1}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Profiling results using dynamic arrays to store springs}}{49}{figure.B.2}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Initial design for the first development cycle}}{46}{figure.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Profiling results for unoptimised calcSpringForce}}{50}{figure.B.3}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Final design for the first development cycle}}{47}{figure.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Profiling results for optimised calcSpringForce}}{51}{figure.B.4}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Initial design for the second development cycle}}{48}{figure.A.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Final design for the second development cycle}}{49}{figure.A.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Initial design for the third development cycle}}{50}{figure.A.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Final design for the third development cycle}}{51}{figure.A.6}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Profiling results using an std::vector to store springs}}{53}{figure.B.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Profiling results using dynamic arrays to store springs}}{53}{figure.B.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Profiling results for unoptimised calcSpringForce}}{54}{figure.B.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Profiling results for optimised calcSpringForce}}{55}{figure.B.4}

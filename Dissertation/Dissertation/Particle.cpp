@@ -1,7 +1,7 @@
 #include "Particle.h"
 #include <iostream>
 
-const double Particle::TIME_FOR_EQUILIBIRUM = 500.0;
+const double Particle::TIME_FOR_EQUILIBIRUM = 10000.0;
 
 Particle::Particle() : timeSpentIntegrating(0.0), mass(0.0f), pinned(false), equilibrium(false), timeAtEquilibrium(0.0), integratorInterface(nullptr), integratorFPointer(nullptr) {
   position = previousPosition = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);

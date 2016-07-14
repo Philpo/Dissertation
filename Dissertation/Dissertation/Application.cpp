@@ -76,7 +76,7 @@ void Application::handleMouseMovement(WPARAM buttonStates, int x, int y) {
 HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
   if (cloth) {
     double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
-    double timeSpentIntegrating = cloth->getTimeSpentIntegrating();
+    double timeSpentIntegrating = integrator->getTimeSpentIntegrating();
 
     switch (scenario) {
       case SHEET:
@@ -90,7 +90,7 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
         sheetDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
         sheetDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
         sheetDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated);
-        sheetDataFile << ", " << (cloth->reachedEquilibrium() ? cloth->getTimeTakenToReachEquilibrium() : 0.0) << endl;
+        sheetDataFile << ", " << (integrator->reachedEquilibrium() ? integrator->getTimeTakenToReachEquilibrium() : 0.0) << endl;
         break;
     }
   }
@@ -132,7 +132,6 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
   }
 
   xml_node<>* integratorNode = testNode->first_node("integrator");
-  IIntegrator* integrator = nullptr;
   currentIntegrator = (Integrator) convertStringToNumber<int>(integratorNode->first_attribute("type")->value());
   currentScenario = scenario;
 
@@ -144,6 +143,7 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
       integrator = VerletIntegrator::getInstance();
       break;
     case FOURTH_ORDER_RUNGE_KUTTA:
+      integrator = FourthOrderRungeKuttaIntegrator::getInstance();
       break;
     case IMPLICIT_EULER:
       break;
@@ -153,6 +153,7 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
 
   timeStep = convertStringToNumber<double>(integratorNode->first_attribute("time_step")->value());
   integrator->setTimeStep(timeStep);
+  integrator->resetData();
   cloth->setIntegrator(integrator);
 
   return S_OK;
@@ -178,7 +179,7 @@ Application::~Application() {
   cleanup();
 
   double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
-  double timeSpentIntegrating = cloth->getTimeSpentIntegrating();
+  double timeSpentIntegrating = integrator->getTimeSpentIntegrating();
   flagDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
   flagDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
   flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
@@ -641,7 +642,8 @@ void Application::update(double deltaT) {
   timeSinceLastUpdate += deltaT;
 
   if (timeSinceLastUpdate >= timeStep) {
-    cloth->update(deltaT);
+    integrator->integrate(*cloth);
+    //cloth->update(deltaT);
     timeSinceLastUpdate = 0.0;
     updateCount++;
 

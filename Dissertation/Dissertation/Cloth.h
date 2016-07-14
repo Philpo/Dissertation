@@ -4,11 +4,20 @@
 #include <vector>
 #include <d3d11_1.h>
 
+class VerletIntegrator;
+class ExplicitEulerIntegrator;
+class FourthOrderRungeKuttaIntegrator;
+class FourthOrderRungeKutta;
+
 using namespace std;
 using namespace DirectX;
 using namespace rapidxml;
 
 class Cloth {
+  friend class VerletIntegrator;
+  friend class ExplicitEulerIntegrator;
+  friend class FourthOrderRungeKuttaIntegrator;
+  friend class FourthOrderRungeKutta;
 public:
   Cloth(xml_node<>* clothParams);
   Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping, float linearDamping);
@@ -28,6 +37,7 @@ public:
   void setIntegrator(IIntegrator* const integrator);
   void setIntegrator(IntegrationFunction integrator);
 
+  void calcForces();
   void update(double deltaT);
   void draw(ID3D11DeviceContext* const immediateContext) const;
 private:

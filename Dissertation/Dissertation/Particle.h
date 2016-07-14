@@ -7,10 +7,14 @@ using namespace DirectX;
 
 class VerletIntegrator;
 class ExplicitEulerIntegrator;
+class FourthOrderRungeKuttaIntegrator;
+class FourthOrderRungeKutta;
 
 class Particle {
   friend class VerletIntegrator;
   friend class ExplicitEulerIntegrator;
+  friend class FourthOrderRungeKuttaIntegrator;
+  friend class FourthOrderRungeKutta;
 public:
   Particle();
   Particle(float mass, float dampingCoefficient, FXMVECTOR position, FXMVECTOR normal);

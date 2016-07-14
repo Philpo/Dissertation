@@ -85,6 +85,35 @@ void Cloth::setIntegrator(IntegrationFunction integrator) {
   }
 }
 
+void Cloth::calcForces() {
+  double currentTime = getCounter();
+
+  for (int i = 0; i < numStructural; i++) {
+    structuralSprings[i].calcSpringForce();
+  }
+  for (int i = 0; i < numShear; i++) {
+    shearSprings[i].calcSpringForce();
+  }
+  for (int i = 0; i < numFlexion; i++) {
+    flexionSprings[i].calcSpringForce();
+  }
+
+  timeSpentCalculatingInternalForce += getCounter() - currentTime;
+
+  for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < columns; j++) {
+      particles[(i * columns) + j].addForce(XMVectorScale(GRAVITY, particles[(i * columns) + j].getMass()));
+
+      if (currentScenario == FLAG) {
+        if (i < rows - 1 && j < columns - 1) {
+          addWindForce(particles[(i * columns) + j], particles[(i * columns) + j + 1], particles[((i + 1) * columns) + j]);
+          addWindForce(particles[((i + 1) * columns) + j], particles[(i * columns) + j + 1], particles[((i + 1) * columns) + j + 1]);
+        }
+      }
+    }
+  }
+}
+
 void Cloth::update(double deltaT) {
   if (timeAtStart == 0.0) {
     timeAtStart = getCounter();

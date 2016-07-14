@@ -21,6 +21,8 @@
 #include "ExplicitEuler.h"
 #include "VerletIntegrator.h"
 #include "ExplicitEulerIntegrator.h"
+#include "FourthOrderRungeKuttaIntegrator.h"
+#include "FourthOrderRungeKutta.h"
 
 using namespace DirectX;
 
@@ -34,7 +36,7 @@ public:
   bool handleKeyboard(MSG msg);
   void handleMouseMovement(WPARAM buttonStates, int x, int y);
   void handleMouseClick(WPARAM buttonStates, int x, int y);
-  bool reachedEquilibrium() const { return cloth ? cloth->reachedEquilibrium() : false; }
+  bool reachedEquilibrium() const { return cloth ? integrator->reachedEquilibrium() : false; }
 
   void update(double deltaT);
   void draw();
@@ -67,6 +69,7 @@ private:
 
   Camera* camera;
   Cloth* cloth;
+  IIntegrator* integrator;
   Particle a, b;
   Spring spring;
   float cameraSpeed = 2.0f;
