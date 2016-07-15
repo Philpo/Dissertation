@@ -18,6 +18,7 @@
     <ClCompile Include="ExplicitEulerIntegrator.cpp" />
     <ClCompile Include="FourthOrderRungeKutta.cpp" />
     <ClCompile Include="FourthOrderRungeKuttaIntegrator.cpp" />
+    <ClCompile Include="ImplicitEuler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="Spring.cpp" />
@@ -33,6 +34,7 @@
     <ClInclude Include="FourthOrderRungeKutta.h" />
     <ClInclude Include="FourthOrderRungeKuttaIntegrator.h" />
     <ClInclude Include="IIntegrator.h" />
+    <ClInclude Include="ImplicitEuler.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Spring.h" />

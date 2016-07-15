@@ -20,6 +20,14 @@ Cloth::Cloth(xml_node<>* clothParams) : timeSpentCalculatingInternalForce(0.0), 
   rows = convertStringToNumber<int>(currentNode->first_attribute("rows")->value());
   columns = convertStringToNumber<int>(currentNode->first_attribute("columns")->value());
 
+  connections = new int*[16];
+  for (int i = 0; i < 16; i++) {
+    connections[i] = new int[16];
+    for (int j = 0; j < 16; j++) {
+      connections[i][j] = 0;
+    }
+  }
+
   XMVECTOR topLeft = XMVectorSet(x, y, z, 0.0f);
   createParticles(topLeft, height, width, mass, 0.01f);
 
@@ -193,12 +201,26 @@ void Cloth::createStructuralLinks(float structuralStiffness, float structuralDam
       if (i < rows - 1 && j < columns - 1) {
         structuralSprings[index++] = Spring(structuralStiffness, structuralDamping, &particles[(i * columns) + j], &particles[(i * columns) + j + 1]);
         structuralSprings[index++] = Spring(structuralStiffness, structuralDamping, &particles[(i * columns) + j], &particles[((i + 1) * columns) + j]);
+
+        int a = (i * 4) + j + 1;
+        connections[(i * 4) + j][(i * 4) + j + 1] = 1;
+        connections[(i * 4) + j + 1][(i * 4) + j] = 1;
+
+        connections[(i * 4) + j][((i + 1) * 4) + j] = 1;
+        connections[((i + 1) * 4) + j][(i * 4) + j] = 1;
       }
       else if (i == rows - 1 && j < columns - 1) {
         structuralSprings[index++] = Spring(structuralStiffness, structuralDamping, &particles[(i * columns) + j], &particles[(i * columns) + j + 1]);
+
+        int a = (i * 4) + j + 1;
+        connections[(i * 4) + j][(i * 4) + j + 1] = 1;
+        connections[(i * 4) + j + 1][(i * 4) + j] = 1;
       }
       else if (j == columns - 1 && i < rows - 1) {
         structuralSprings[index++] = Spring(structuralStiffness, structuralDamping, &particles[(i * columns) + j], &particles[((i + 1) * columns) + j]);
+
+        connections[(i * 4) + j][((i + 1) * 4) + j] = 1;
+        connections[((i + 1) * 4) + j][(i * 4) + j] = 1;
       }
     }
   }
@@ -213,6 +235,12 @@ void Cloth::createShearLinks(float shearStiffness, float shearDamping) {
     for (int j = 0; j < columns - 1; j++) {
       shearSprings[index++] = Spring(shearStiffness, shearDamping, &particles[(i * columns) + j], &particles[((i + 1) * columns) + j + 1]);
       shearSprings[index++] = Spring(shearStiffness, shearDamping, &particles[(i * columns) + j + 1], &particles[((i + 1) * columns) + j]);
+
+      connections[(i * 4) + j][((i + 1) * 4) + j + 1] = 2;
+      connections[((i + 1) * 4) + j + 1][(i * 4) + j] = 2;
+
+      connections[(i * 4) + j + 1][((i + 1) * 4) + j] = 2;
+      connections[((i + 1) * 4) + j][(i * 4) + j + 1] = 2;
     }
   }
 }
@@ -227,12 +255,24 @@ void Cloth::createFlexionLinks(float flexionStiffness, float flexionDamping) {
       if (i < rows - 2 && j < columns - 2) {
         flexionSprings[index++] = Spring(flexionStiffness, flexionDamping, &particles[(i * columns) + j], &particles[(i * columns) + j + 2]);
         flexionSprings[index++] = Spring(flexionStiffness, flexionDamping, &particles[(i * columns) + j], &particles[((i + 2) * columns) + j]);
+
+        connections[(i * 4) + j][(i * 4) + j + 2] = 3;
+        connections[(i * 4) + j + 2][(i * 4) + j] = 3;
+
+        connections[(i * 4) + j][((i + 2) * 4) + j] = 3;
+        connections[((i + 2) * 4) + j][(i * 4) + j] = 3;
       }
       else if (i < rows && j < columns - 2) {
         flexionSprings[index++] = Spring(flexionStiffness, flexionDamping, &particles[(i * columns) + j], &particles[(i * columns) + j + 2]);
+
+        connections[(i * 4) + j][(i * 4) + j + 2] = 3;
+        connections[(i * 4) + j + 2][(i * 4) + j] = 3;
       }
       else if (j < columns && i < rows - 2) {
         flexionSprings[index++] = Spring(flexionStiffness, flexionDamping, &particles[(i * columns) + j], &particles[((i + 2) * columns) + j]);
+
+        connections[(i * 4) + j][((i + 2) * 4) + j] = 3;
+        connections[((i + 2) * 4) + j][(i * 4) + j] = 3;
       }
     }
   }

@@ -1,11 +1,2 @@
 Test ID, Integrator, Rows, Columns, Time Step, Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms), Average FPS
-1, Fourth Order Runge-Kutta, 50, 50, 15, 26.7777, 38.4036, 38.6248, 0.289992, 26.8033
-1, Fourth Order Runge-Kutta, 50, 50, 15, 26.9887, 38.6206, 38.8534, 0.304608, 26.0833
-1, Fourth Order Runge-Kutta, 50, 50, 15, 26.7742, 38.3868, 38.6086, 0.293001, 26.4918
-1, Fourth Order Runge-Kutta, 50, 50, 15, 27.2339, 38.8647, 39.1001, 0.294541, 26.0167
-1, Fourth Order Runge-Kutta, 50, 50, 15, 26.8157, 38.2854, 38.5091, 0.293457, 26.6667
-1, Fourth Order Runge-Kutta, 50, 50, 15, 26.9472, 0, 38.7853, 0.295658, 26.2333
-1, Fourth Order Runge-Kutta, 50, 50, 15, 26.4306, 0, 38.1182, 0.288046, 27.0984
-1, Fourth Order Runge-Kutta, 50, 50, 15, 26.8305, 0, 38.5451, 0.303192, 26.1639
-1, Fourth Order Runge-Kutta, 50, 50, 15, 26.4728, 0, 38.1212, 0.287962, 27.0167
-1, Fourth Order Runge-Kutta, 50, 50, 15, 26.3654, 0, 38.0469, 0.297826, 26.4426
+1, Fourth Order Runge-Kutta, 4, 4, 15, 0.110968, 0.130756, 0.515001, 0.172698, 2731.5

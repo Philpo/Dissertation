@@ -23,6 +23,7 @@
 #include "ExplicitEulerIntegrator.h"
 #include "FourthOrderRungeKuttaIntegrator.h"
 #include "FourthOrderRungeKutta.h"
+#include "ImplicitEuler.h"
 
 using namespace DirectX;
 

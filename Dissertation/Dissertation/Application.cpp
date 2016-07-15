@@ -156,6 +156,10 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
   integrator->resetData();
   cloth->setIntegrator(integrator);
 
+  ImplicitEuler a;
+  a.preCalculateHessian(4, 16, 20, 20, 1);
+  a.printHessian();
+
   return S_OK;
 }
 

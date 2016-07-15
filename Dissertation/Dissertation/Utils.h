@@ -19,6 +19,7 @@ extern int testId, frameCount, averageFPS, numTimeFPSCalculated, updateCount;
 extern double averageUpdateTime, averageRenderTime, timeStep;
 extern Integrator currentIntegrator;
 extern Scenario currentScenario;
+extern int** connections;
 
 /*
 * Taken from https://stackoverflow.com/questions/1739259/how-to-use-queryperformancecounter
