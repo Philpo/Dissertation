@@ -203,24 +203,24 @@ void Cloth::createStructuralLinks(float structuralStiffness, float structuralDam
         structuralSprings[index++] = Spring(structuralStiffness, structuralDamping, &particles[(i * columns) + j], &particles[((i + 1) * columns) + j]);
 
         int a = (i * 4) + j + 1;
-        connections[(i * 4) + j][(i * 4) + j + 1] = 1;
-        connections[(i * 4) + j + 1][(i * 4) + j] = 1;
+        //connections[(i * 4) + j][(i * 4) + j + 1] = 1;
+        //connections[(i * 4) + j + 1][(i * 4) + j] = 1;
 
-        connections[(i * 4) + j][((i + 1) * 4) + j] = 1;
-        connections[((i + 1) * 4) + j][(i * 4) + j] = 1;
+        //connections[(i * 4) + j][((i + 1) * 4) + j] = 1;
+        //connections[((i + 1) * 4) + j][(i * 4) + j] = 1;
       }
       else if (i == rows - 1 && j < columns - 1) {
         structuralSprings[index++] = Spring(structuralStiffness, structuralDamping, &particles[(i * columns) + j], &particles[(i * columns) + j + 1]);
 
         int a = (i * 4) + j + 1;
-        connections[(i * 4) + j][(i * 4) + j + 1] = 1;
-        connections[(i * 4) + j + 1][(i * 4) + j] = 1;
+        //connections[(i * 4) + j][(i * 4) + j + 1] = 1;
+        //connections[(i * 4) + j + 1][(i * 4) + j] = 1;
       }
       else if (j == columns - 1 && i < rows - 1) {
         structuralSprings[index++] = Spring(structuralStiffness, structuralDamping, &particles[(i * columns) + j], &particles[((i + 1) * columns) + j]);
 
-        connections[(i * 4) + j][((i + 1) * 4) + j] = 1;
-        connections[((i + 1) * 4) + j][(i * 4) + j] = 1;
+        //connections[(i * 4) + j][((i + 1) * 4) + j] = 1;
+        //connections[((i + 1) * 4) + j][(i * 4) + j] = 1;
       }
     }
   }
@@ -236,11 +236,11 @@ void Cloth::createShearLinks(float shearStiffness, float shearDamping) {
       shearSprings[index++] = Spring(shearStiffness, shearDamping, &particles[(i * columns) + j], &particles[((i + 1) * columns) + j + 1]);
       shearSprings[index++] = Spring(shearStiffness, shearDamping, &particles[(i * columns) + j + 1], &particles[((i + 1) * columns) + j]);
 
-      connections[(i * 4) + j][((i + 1) * 4) + j + 1] = 2;
-      connections[((i + 1) * 4) + j + 1][(i * 4) + j] = 2;
+      //connections[(i * 4) + j][((i + 1) * 4) + j + 1] = 2;
+      //connections[((i + 1) * 4) + j + 1][(i * 4) + j] = 2;
 
-      connections[(i * 4) + j + 1][((i + 1) * 4) + j] = 2;
-      connections[((i + 1) * 4) + j][(i * 4) + j + 1] = 2;
+      //connections[(i * 4) + j + 1][((i + 1) * 4) + j] = 2;
+      //connections[((i + 1) * 4) + j][(i * 4) + j + 1] = 2;
     }
   }
 }
@@ -256,23 +256,23 @@ void Cloth::createFlexionLinks(float flexionStiffness, float flexionDamping) {
         flexionSprings[index++] = Spring(flexionStiffness, flexionDamping, &particles[(i * columns) + j], &particles[(i * columns) + j + 2]);
         flexionSprings[index++] = Spring(flexionStiffness, flexionDamping, &particles[(i * columns) + j], &particles[((i + 2) * columns) + j]);
 
-        connections[(i * 4) + j][(i * 4) + j + 2] = 3;
-        connections[(i * 4) + j + 2][(i * 4) + j] = 3;
+        //connections[(i * 4) + j][(i * 4) + j + 2] = 3;
+        //connections[(i * 4) + j + 2][(i * 4) + j] = 3;
 
-        connections[(i * 4) + j][((i + 2) * 4) + j] = 3;
-        connections[((i + 2) * 4) + j][(i * 4) + j] = 3;
+        //connections[(i * 4) + j][((i + 2) * 4) + j] = 3;
+        //connections[((i + 2) * 4) + j][(i * 4) + j] = 3;
       }
       else if (i < rows && j < columns - 2) {
         flexionSprings[index++] = Spring(flexionStiffness, flexionDamping, &particles[(i * columns) + j], &particles[(i * columns) + j + 2]);
 
-        connections[(i * 4) + j][(i * 4) + j + 2] = 3;
-        connections[(i * 4) + j + 2][(i * 4) + j] = 3;
+        //connections[(i * 4) + j][(i * 4) + j + 2] = 3;
+        //connections[(i * 4) + j + 2][(i * 4) + j] = 3;
       }
       else if (j < columns && i < rows - 2) {
         flexionSprings[index++] = Spring(flexionStiffness, flexionDamping, &particles[(i * columns) + j], &particles[((i + 2) * columns) + j]);
 
-        connections[(i * 4) + j][((i + 2) * 4) + j] = 3;
-        connections[((i + 2) * 4) + j][(i * 4) + j] = 3;
+        //connections[(i * 4) + j][((i + 2) * 4) + j] = 3;
+        //connections[((i + 2) * 4) + j][(i * 4) + j] = 3;
       }
     }
   }

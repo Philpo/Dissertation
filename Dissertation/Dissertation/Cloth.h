@@ -8,6 +8,7 @@ class VerletIntegrator;
 class ExplicitEulerIntegrator;
 class FourthOrderRungeKuttaIntegrator;
 class FourthOrderRungeKutta;
+class MidpointIntegrator;
 
 using namespace std;
 using namespace DirectX;
@@ -18,6 +19,7 @@ class Cloth {
   friend class ExplicitEulerIntegrator;
   friend class FourthOrderRungeKuttaIntegrator;
   friend class FourthOrderRungeKutta;
+  friend class MidpointIntegrator;
 public:
   Cloth(xml_node<>* clothParams);
   Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping, float linearDamping);

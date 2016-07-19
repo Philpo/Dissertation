@@ -9,12 +9,14 @@ class VerletIntegrator;
 class ExplicitEulerIntegrator;
 class FourthOrderRungeKuttaIntegrator;
 class FourthOrderRungeKutta;
+class MidpointIntegrator;
 
 class Particle {
   friend class VerletIntegrator;
   friend class ExplicitEulerIntegrator;
   friend class FourthOrderRungeKuttaIntegrator;
   friend class FourthOrderRungeKutta;
+  friend class MidpointIntegrator;
 public:
   Particle();
   Particle(float mass, float dampingCoefficient, FXMVECTOR position, FXMVECTOR normal);

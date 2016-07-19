@@ -93,6 +93,8 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
         sheetDataFile << ", " << (integrator->reachedEquilibrium() ? integrator->getTimeTakenToReachEquilibrium() : 0.0) << endl;
         break;
     }
+
+    integrator->resetData();
   }
 
   delete cloth;
@@ -145,7 +147,8 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
     case FOURTH_ORDER_RUNGE_KUTTA:
       integrator = FourthOrderRungeKuttaIntegrator::getInstance();
       break;
-    case IMPLICIT_EULER:
+    case MIDPOINT:
+      integrator = MidpointIntegrator::getInstance();
       break;
     default:
       return -1;
@@ -156,13 +159,12 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
   integrator->resetData();
   cloth->setIntegrator(integrator);
 
-  ImplicitEuler a;
-  a.preCalculateHessian(4, 16, 20, 20, 1);
-  a.printHessian();
+  //ImplicitEuler a;
+  //a.preCalculateHessian(4, 16, 20, 20, 1);
+  //a.printHessian();
 
   return S_OK;
 }
-
 Application::Application() : lastMousePosX(0.0f), lastMousePosY(0.0f), cloth(nullptr) {
   hInst = nullptr;
   hWnd = nullptr;
@@ -189,6 +191,7 @@ Application::~Application() {
   flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
 
   delete cloth;
+  integrator->resetData();
 }
 
 HRESULT Application::initialise(HINSTANCE hInstance, int nCmdShow) {

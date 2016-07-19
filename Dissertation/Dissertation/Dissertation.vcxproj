@@ -20,6 +20,7 @@
     <ClCompile Include="FourthOrderRungeKuttaIntegrator.cpp" />
     <ClCompile Include="ImplicitEuler.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MidpointIntegrator.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="Spring.cpp" />
     <ClCompile Include="Utils.cpp" />
@@ -35,6 +36,7 @@
     <ClInclude Include="FourthOrderRungeKuttaIntegrator.h" />
     <ClInclude Include="IIntegrator.h" />
     <ClInclude Include="ImplicitEuler.h" />
+    <ClInclude Include="MidpointIntegrator.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Spring.h" />

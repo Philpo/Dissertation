@@ -1,1 +1,2 @@
 Test ID, Integrator, Rows, Columns, Time Step, Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms), Average FPS, Time to Reach Equilibrium (ms)
+1, Midpoint, 50, 50, 15, 12.9819, 0, 15.084, 0.208315, 65.1148, 0

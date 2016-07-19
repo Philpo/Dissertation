@@ -57,6 +57,9 @@
     <ClCompile Include="ImplicitEuler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MidpointIntegrator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
@@ -102,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ImplicitEuler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MidpointIntegrator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

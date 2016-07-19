@@ -402,7 +402,8 @@ As a result, the implicit Euler method requires the computation of an n x n matr
 Four integrations methods were chosen for investigation by this project.
 \begin{itemize}
 \item{Explicit Euler. This is the simplest integrator and one of the most popular in the literature but it is also most likely to impact simulation performance due to its reliance on small time steps}
-\item{Fourth order Runge-Kutta. Computationally more expensive than explicit Euler, but stable with larger time steps, therefore offering an interesting comparison between computational cost and simulation performance}
+\item{Midpoint. Computationally more expensive than explicit Euler, but stable with larger time steps, therefore offering an interesting comparison between computational cost and simulation performance}
+\item{Fourth order Runge-Kutta}
 \item{Verlet. Chosen as it is an explicit integrator that is not part of the Runge-Kutta family}
-\item{Implicit Euler. Unconditionally stable regardless of time step, Chosen to provide a contrast between explicit and implicit integrators}
 \end{itemize}
+Only explicit integrators have been selected as they are considered to be less performant when solving stiff differential equations, such as those in cloth, due to the necessity of small time steps.

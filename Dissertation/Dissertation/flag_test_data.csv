@@ -1,2 +1,2 @@
 Test ID, Integrator, Rows, Columns, Time Step, Average time calcSpringForce (ms), Average time integrate (ms), Average time updating (ms), Average rendering time (ms), Average FPS
-1, Fourth Order Runge-Kutta, 4, 4, 15, 0.110968, 0.130756, 0.515001, 0.172698, 2731.5
+1, Midpoint, 50, 50, 15, 12.9623, 0, 18.5482, 0.221079, 58.5833

@@ -24,6 +24,7 @@
 #include "FourthOrderRungeKuttaIntegrator.h"
 #include "FourthOrderRungeKutta.h"
 #include "ImplicitEuler.h"
+#include "MidpointIntegrator.h"
 
 using namespace DirectX;
 
