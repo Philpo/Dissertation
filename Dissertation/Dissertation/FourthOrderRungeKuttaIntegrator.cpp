@@ -148,8 +148,9 @@ void FourthOrderRungeKuttaIntegrator::intermediateIntegration(Cloth& cloth, XMVE
         //particle.temp = particle.previousPosition;
         //particle.previousPosition = particle.position;
         particle.position = XMVectorAdd(particle.position, XMVectorScale(particle.velocity, timeStep));
-        particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
       }
+
+      particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
     }
   }
 }

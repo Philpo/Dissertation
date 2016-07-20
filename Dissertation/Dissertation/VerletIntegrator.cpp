@@ -69,12 +69,13 @@ void VerletIntegrator::integrate(Cloth& cloth) {
         acceleration = XMVectorScale(acceleration, timeStepInSeconds * timeStepInSeconds);
         particle.previousPosition = particle.position;
         particle.position = XMVectorAdd(particle.position, XMVectorAdd(XMVectorScale(particle.velocity, dampFactor), acceleration));
-        particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
 
         if (!particle.equilibrium) {
           notAtEquilibrium = true;
         }
       }
+
+      particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
     }
   }
 

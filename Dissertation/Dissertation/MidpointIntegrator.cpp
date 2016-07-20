@@ -76,12 +76,13 @@ void MidpointIntegrator::intermediateIntegration(Cloth& cloth) {
         particle.temp = particle.previousPosition;
         particle.previousPosition = particle.position;
         particle.position = XMVectorAdd(particle.position, XMVectorScale(particle.velocity, halfTimeStepInSeconds));
-        particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
 
         if (!particle.equilibrium) {
           notAtEquilibrium = true;
         }
       }
+
+      particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
     }
   }
 
