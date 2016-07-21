@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <test_list>
   <test id="1">
-    <integrator type="0"  time_step="1000.0"/>
+    <integrator type="2"  time_step="1000.0"/>
     <cloth_params height="12.0" width="12.0" mass="90.0" wind_constant="5.0">
       <top_left_position x="-10.0" y="10.0" z="10.0" />
       <mesh_size rows="3" columns="3" />
