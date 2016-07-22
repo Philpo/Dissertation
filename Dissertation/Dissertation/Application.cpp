@@ -109,16 +109,18 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
 
   cloth = new Cloth(testNode->first_node("cloth_params"));
 
-  HRESULT hr = initVertexBuffer();
+  if (!unitTests) {
+    HRESULT hr = initVertexBuffer();
 
-  if (FAILED(hr)) {
-    return hr;
-  }
+    if (FAILED(hr)) {
+      return hr;
+    }
 
-  hr = initIndexBuffer();
+    hr = initIndexBuffer();
 
-  if (FAILED(hr)) {
-    return hr;
+    if (FAILED(hr)) {
+      return hr;
+    }
   }
 
   switch (scenario) {
@@ -654,28 +656,30 @@ void Application::update(double deltaT) {
     timeSinceLastUpdate = 0.0;
     updateCount++;
 
-    D3D11_MAPPED_SUBRESOURCE mappedData;
-    immediateContext->Map(vertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedData);
-    const Particle* const particles = cloth->getParticles();
-    UINT* data = reinterpret_cast<UINT*>(mappedData.pData);
-    for (int i = 0; i < cloth->getNumRows(); i++) {
-      for (int j = 0; j < cloth->getNumColumns(); j++) {
-        XMFLOAT3& posL = vertices[(i * cloth->getNumColumns()) + j].posL;
-        XMVECTOR pos = particles[(i * cloth->getNumColumns()) + j].getPosition();
-        posL.x = pos.m128_f32[0];
-        posL.y = pos.m128_f32[1];
-        posL.z = pos.m128_f32[2];
+    if (!unitTests) {
+      D3D11_MAPPED_SUBRESOURCE mappedData;
+      immediateContext->Map(vertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &mappedData);
+      const Particle* const particles = cloth->getParticles();
+      UINT* data = reinterpret_cast<UINT*>(mappedData.pData);
+      for (int i = 0; i < cloth->getNumRows(); i++) {
+        for (int j = 0; j < cloth->getNumColumns(); j++) {
+          XMFLOAT3& posL = vertices[(i * cloth->getNumColumns()) + j].posL;
+          XMVECTOR pos = particles[(i * cloth->getNumColumns()) + j].getPosition();
+          posL.x = pos.m128_f32[0];
+          posL.y = pos.m128_f32[1];
+          posL.z = pos.m128_f32[2];
+        }
       }
+      //vertices[0].posL.x = a.getPosition().m128_f32[0];
+      //vertices[0].posL.y = a.getPosition().m128_f32[1];
+      //vertices[0].posL.z = a.getPosition().m128_f32[2];
+      //vertices[1].posL.x = b.getPosition().m128_f32[0];
+      //vertices[1].posL.y = b.getPosition().m128_f32[1];
+      //vertices[1].posL.z = b.getPosition().m128_f32[2];
+      //memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * 2);
+      memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * cloth->getNumColumns() * cloth->getNumRows());
+      immediateContext->Unmap(vertexBuffer, 0);
     }
-    //vertices[0].posL.x = a.getPosition().m128_f32[0];
-    //vertices[0].posL.y = a.getPosition().m128_f32[1];
-    //vertices[0].posL.z = a.getPosition().m128_f32[2];
-    //vertices[1].posL.x = b.getPosition().m128_f32[0];
-    //vertices[1].posL.y = b.getPosition().m128_f32[1];
-    //vertices[1].posL.z = b.getPosition().m128_f32[2];
-    //memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * 2);
-    memcpy(mappedData.pData, &vertices[0], sizeof(SimpleVertex) * cloth->getNumColumns() * cloth->getNumRows());
-    immediateContext->Unmap(vertexBuffer, 0);
   }
   //a.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), a.getMass()));
   //b.addForce(XMVectorScale(XMVectorSet(0.0f, -.981, 0.0f, 0.0f), b.getMass()));

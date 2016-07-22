@@ -4,8 +4,8 @@
 #include <rapidxml_utils.hpp>
 #define NOMINMAX
 
+bool unitTests = false;
 double timeLastFrame, simulationRunningTime = 0.0;
-
 const double MAX_SIMULATION_TIME = 60000.0;
 
 /*
@@ -56,6 +56,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     std::cerr << "error getting timer capabilities" << std::endl;
     return -1;
   }
+
+  loadUnitTestData("unit_test_load_test.txt");
 
   // set the timer resolution to the lowest possible, so that we can sleep the thread as accurately as possible
   wTimerRes = min(max(tc.wPeriodMin, 1), tc.wPeriodMax);
