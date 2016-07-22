@@ -33,7 +33,7 @@ public:
   const int getNumColumns() const { return columns; }
   const int getNumStructuralSprings() const { return numStructural; }
   const int getNumShearSprings() const { return numShear; }
-  const Particle* const getParticles() const { return particles; }
+  Particle* const getParticles() const { return particles; }
 
   void setPinned(int row, int column, bool pinned);
   void setIntegrator(IIntegrator* const integrator);

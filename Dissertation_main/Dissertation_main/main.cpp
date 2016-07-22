@@ -6,7 +6,7 @@
 
 bool unitTests = false;
 double timeLastFrame, simulationRunningTime = 0.0;
-const double MAX_SIMULATION_TIME = 60000.0;
+const double MAX_SIMULATION_TIME = 10000.0;
 
 /*
 * Taken from Frank Luna: 3D Game Programming with DirectX 11
@@ -58,6 +58,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
   }
 
   loadUnitTestData("unit_test_load_test.txt");
+  float test = convertStringToNumber<float>("-2.1e-7");
 
   // set the timer resolution to the lowest possible, so that we can sleep the thread as accurately as possible
   wTimerRes = min(max(tc.wPeriodMin, 1), tc.wPeriodMax);

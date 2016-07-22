@@ -1,0 +1,35 @@
+*.build
+*.pbxuser
+*.mode1v3
+*.ncb
+*.sdf
+*.opensdf
+*.suo
+*.lnt
+Debug
+Release
+ipch
+TestResults
+projects/VS2010/TestCatch/Visual Lint
+projects/VS2010/ManagedTestCatch/Visual Lint
+projects/VS2012/ManagedTestCatch/Visual Lint
+projects/VS2012/NativeTestCatch/Visual Lint
+DebugMbcs
+ReleaseMbcs
+*.user
+*.xcuserstate
+*.o
+.DS_Store
+xcuserdata
+CatchSelfTest.xcscheme
+Breakpoints.xcbkptlist
+projects/VS2010/TestCatch/_UpgradeReport_Files/
+projects/VisualStudio/TestCatch/UpgradeLog.XML
+UpgradeLog.XML
+projects/XCode4/iOSTest/Build/Intermediates/PrecompiledHeaders
+projects/XCode4/iOSTest/Build/Products/Debug-iphonesimulator/iOSTest.app.dSYM/Contents/Resources/DWARF
+projects/XCode4/iOSTest/Build
+projects/XCode4/CatchSelfTest/DerivedData
+projects/XCode4/OCTest/DerivedData
+*.pyc
+projects/XCode4/iOSTest/DerivedData

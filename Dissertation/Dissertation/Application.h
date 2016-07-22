@@ -40,6 +40,10 @@ public:
   void handleMouseClick(WPARAM buttonStates, int x, int y);
   bool reachedEquilibrium() const { return cloth ? integrator->reachedEquilibrium() : false; }
 
+#ifdef _DEBUG
+  Cloth* const getCloth() { return cloth; }
+#endif
+
   void update(double deltaT);
   void draw();
   inline void setWindowCaption(const std::stringstream& caption) const { SetWindowText(hWnd, caption.str().c_str()); }

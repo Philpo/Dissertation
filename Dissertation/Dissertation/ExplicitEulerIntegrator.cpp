@@ -79,7 +79,9 @@ void ExplicitEulerIntegrator::integrate(Cloth& cloth) {
         }
       }
 
-      particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+      if (!unitTests) {
+        particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+      }
     }
   }
 

@@ -20,10 +20,10 @@ void VerletIntegrator::integrate(Particle& particle, double deltaT) {
   float dampFactor = 0.995f;
 
     XMVECTOR acceleration = XMVectorScale(particle.totalForce, 1 / particle.mass);
-    particle.velocity = XMVectorSubtract(particle.position, particle.previousPosition);
+    XMVECTOR velocity = XMVectorSubtract(particle.position, particle.previousPosition);
     acceleration = XMVectorScale(acceleration, timeStepInSeconds * timeStepInSeconds);
     particle.previousPosition = particle.position;
-    particle.position = XMVectorAdd(particle.position, XMVectorAdd(XMVectorScale(particle.velocity, dampFactor), acceleration));
+    particle.position = XMVectorAdd(particle.position, XMVectorAdd(XMVectorScale(velocity, dampFactor), acceleration));
     particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
   //}
 }
@@ -37,7 +37,7 @@ void VerletIntegrator::integrate(Cloth& cloth) {
 
   float dampFactor = 0.995f;
 
-  XMVECTOR acceleration;
+  XMVECTOR acceleration, velocity;
   bool notAtEquilibrium = false;
   double currentTime = getCounter();
 
@@ -65,17 +65,19 @@ void VerletIntegrator::integrate(Cloth& cloth) {
         }
 
         acceleration = XMVectorScale(particle.totalForce, 1 / particle.mass);
-        particle.velocity = XMVectorSubtract(particle.position, particle.previousPosition);
+        velocity = XMVectorSubtract(particle.position, particle.previousPosition);
         acceleration = XMVectorScale(acceleration, timeStepInSeconds * timeStepInSeconds);
         particle.previousPosition = particle.position;
-        particle.position = XMVectorAdd(particle.position, XMVectorAdd(XMVectorScale(particle.velocity, dampFactor), acceleration));
+        particle.position = XMVectorAdd(particle.position, XMVectorAdd(XMVectorScale(velocity, dampFactor), acceleration));
 
         if (!particle.equilibrium) {
           notAtEquilibrium = true;
         }
       }
 
-      particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+      if (!unitTests) {
+        particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+      }
     }
   }
 

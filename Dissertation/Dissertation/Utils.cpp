@@ -89,6 +89,6 @@ void loadUnitTestData(string filePath) {
 
     unitTestData.insert(pair<int, UnitTestData>(particleNumber, data));
 
-    particleNumber = particleNumber == 1 ? 4 : particleNumber + 1;
+    particleNumber = particleNumber == 1 ? 3 : particleNumber + 1;
   }
 }

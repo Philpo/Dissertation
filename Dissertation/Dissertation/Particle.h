@@ -41,6 +41,7 @@ public:
   void setVelocity(const FXMVECTOR& velocity) { this->velocity = velocity; }
 
   void addForce(const FXMVECTOR& force) { totalForce = XMVectorAdd(totalForce, force); }
+  void zeroForce() { totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f); }
   void update(double deltaT);
 private:
   double timeSpentIntegrating, timeAtEquilibrium;

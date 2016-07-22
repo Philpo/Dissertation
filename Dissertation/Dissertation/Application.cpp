@@ -95,13 +95,15 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
     }
 
     integrator->resetData();
+    delete cloth;
+    if (!unitTests) {
+      delete[] vertices;
+      vertices = nullptr;
+      if (vertexBuffer) vertexBuffer->Release();
+      if (indexBuffer) indexBuffer->Release();
+    }
   }
 
-  delete cloth;
-  delete[] vertices;
-  vertices = nullptr;
-  if (vertexBuffer) vertexBuffer->Release();
-  if (indexBuffer) indexBuffer->Release();
   frameCount = updateCount = numTimeFPSCalculated = averageFPS = 0;
   averageUpdateTime = averageRenderTime = 0.0;
 
@@ -184,7 +186,9 @@ Application::Application() : lastMousePosX(0.0f), lastMousePosY(0.0f), cloth(nul
 }
 
 Application::~Application() {
-  cleanup();
+  if (!unitTests) {
+    cleanup();
+  }
 
   double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
   double timeSpentIntegrating = integrator->getTimeSpentIntegrating();
@@ -646,7 +650,9 @@ void Application::cleanup() {
 
 void Application::update(double deltaT) {
   // Update camera
-  camera->update();
+  if (!unitTests) {
+    camera->update();
+  }
 
   timeSinceLastUpdate += deltaT;
 
