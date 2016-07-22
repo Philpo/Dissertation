@@ -10,55 +10,13 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="Cloth.cpp" />
-    <ClCompile Include="ExplicitEuler.cpp" />
-    <ClCompile Include="ExplicitEulerIntegrator.cpp" />
-    <ClCompile Include="FourthOrderRungeKutta.cpp" />
-    <ClCompile Include="FourthOrderRungeKuttaIntegrator.cpp" />
-    <ClCompile Include="ImplicitEuler.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MidpointIntegrator.cpp" />
-    <ClCompile Include="Particle.cpp" />
-    <ClCompile Include="Spring.cpp" />
-    <ClCompile Include="Utils.cpp" />
-    <ClCompile Include="VerletIntegrator.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Application.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Cloth.h" />
-    <ClInclude Include="ExplicitEuler.h" />
-    <ClInclude Include="ExplicitEulerIntegrator.h" />
-    <ClInclude Include="FourthOrderRungeKutta.h" />
-    <ClInclude Include="FourthOrderRungeKuttaIntegrator.h" />
-    <ClInclude Include="IIntegrator.h" />
-    <ClInclude Include="ImplicitEuler.h" />
-    <ClInclude Include="MidpointIntegrator.h" />
-    <ClInclude Include="Particle.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Spring.h" />
-    <ClInclude Include="TypeDefs.h" />
-    <ClInclude Include="Utils.h" />
-    <ClInclude Include="VerletIntegrator.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Dissertation.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Shaders.fx">
-      <FileType>Document</FileType>
-    </None>
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{96264C7D-2280-4614-85E9-8671F2511796}</ProjectGuid>
-    <RootNamespace>Dissertation</RootNamespace>
+    <ProjectGuid>{3276CD06-4507-4D89-AE09-719D78978585}</ProjectGuid>
+    <RootNamespace>Dissertation_main</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -81,7 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>RapidXML;$(IncludePath)</IncludePath>
+    <IncludePath>RapidXML;../../Dissertation/Dissertation;$(IncludePath)</IncludePath>
+    <LibraryPath>..\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -94,7 +53,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>d2d1.lib;d3d11.lib;d3dcompiler.lib;dxguid.lib;winmm.lib;comctl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Dissertation.lib;d2d1.lib;d3d11.lib;d3dcompiler.lib;dxguid.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Windows</SubSystem>
       <LargeAddressAware>true</LargeAddressAware>
     </Link>
@@ -113,6 +72,9 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
