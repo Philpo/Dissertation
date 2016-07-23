@@ -148,6 +148,60 @@ namespace DissertationUnitTests {
         }
       }
     }
+
+    SECTION("Test Midpoint") {
+      Application a;
+
+      file<> file("..\\DissertationUnitTests\\midpoint_test_params.xml");
+      xml_document<> doc;
+      doc.parse<0>(file.data());
+      xml_node<>* rootNode = doc.first_node();
+      xml_node<>* currentTest = rootNode->first_node();
+
+      INFO("Midpoint");
+      unitTestData.clear();
+      loadUnitTestData("..\\DissertationUnitTests\\midpoint_unit_test_data.txt");
+      a.loadTest(currentTest, SHEET);
+      a.update(1001.0);
+
+      Particle* particles = a.getCloth()->getParticles();
+
+      for (int i = 0; i < a.getCloth()->getNumRows(); i++) {
+        for (int j = 0; j < a.getCloth()->getNumColumns(); j++) {
+          if (!particles[(i * a.getCloth()->getNumColumns()) + j].isPinned()) {
+            integrationUnitTests((i * a.getCloth()->getNumColumns()) + j, particles[(i * a.getCloth()->getNumColumns()) + j]);
+            particles[(i * a.getCloth()->getNumColumns()) + j].zeroForce();
+          }
+        }
+      }
+    }
+
+    SECTION("Test RK4") {
+      Application a;
+
+      file<> file("..\\DissertationUnitTests\\rk4_test_params.xml");
+      xml_document<> doc;
+      doc.parse<0>(file.data());
+      xml_node<>* rootNode = doc.first_node();
+      xml_node<>* currentTest = rootNode->first_node();
+
+      INFO("RK4");
+      unitTestData.clear();
+      loadUnitTestData("..\\DissertationUnitTests\\rk4_unit_test_data.txt");
+      a.loadTest(currentTest, SHEET);
+      a.update(1001.0);
+
+      Particle* particles = a.getCloth()->getParticles();
+
+      for (int i = 0; i < a.getCloth()->getNumRows(); i++) {
+        for (int j = 0; j < a.getCloth()->getNumColumns(); j++) {
+          if (!particles[(i * a.getCloth()->getNumColumns()) + j].isPinned()) {
+            integrationUnitTests((i * a.getCloth()->getNumColumns()) + j, particles[(i * a.getCloth()->getNumColumns()) + j]);
+            particles[(i * a.getCloth()->getNumColumns()) + j].zeroForce();
+          }
+        }
+      }
+    }
   }
 
   void integrationUnitTests(int particleNumber, const Particle& particle) {

@@ -38,11 +38,11 @@ void MidpointIntegrator::integrate(Cloth& cloth) {
   cloth.calcForces();
   intermediateIntegration(cloth);
   cloth.calcForces();
-  intermediateIntegration(cloth);
+  intermediateIntegration(cloth, !unitTests);
   //}
 }
 
-void MidpointIntegrator::intermediateIntegration(Cloth& cloth) {
+void MidpointIntegrator::intermediateIntegration(Cloth& cloth, bool resetForce) {
   XMVECTOR acceleration;
   bool notAtEquilibrium = false;
 
@@ -82,7 +82,9 @@ void MidpointIntegrator::intermediateIntegration(Cloth& cloth) {
         }
       }
 
-      particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+      if (resetForce) {
+        particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
+      }
     }
   }
 
