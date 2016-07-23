@@ -2,12 +2,22 @@
 #include "catch.hpp"
 #include "Application.h"
 #include <rapidxml_utils.hpp>
+#include <map>
+#include <directxmath.h>
 
-using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+using namespace Microsoft::VisualStudio::CppUnitTestFramework; 
+using namespace std;
+using namespace DirectX;
 
+struct UnitTestData {
+  XMVECTOR totalForce, velocity, position;
+};
+
+map<int, UnitTestData> unitTestData;
 bool unitTests = true;
 
 namespace DissertationUnitTests {
+  void loadUnitTestData(string filePath);
   void integrationUnitTests(int particleNumber, const Particle& particle);
 
   TEST_CASE("Test cloth XML loading") {
@@ -229,5 +239,62 @@ namespace DissertationUnitTests {
     REQUIRE(abs(abs(particle.getPosition().m128_f32[0]) - abs(data.position.m128_f32[0])) <= 0.001f);
     REQUIRE(abs(abs(particle.getPosition().m128_f32[1]) - abs(data.position.m128_f32[1])) <= 0.001f);
     REQUIRE(abs(abs(particle.getPosition().m128_f32[2]) - abs(data.position.m128_f32[2])) <= 0.001f);
+  }
+
+  void loadUnitTestData(string filePath) {
+    ifstream file(filePath);
+
+    int counter, particleNumber = 1;
+    string readLine, value;
+    stringstream currentLine;
+
+    while (!file.eof()) {
+      UnitTestData data;
+      counter = 0;
+      file >> ws >> readLine >> ws;
+
+      currentLine.clear();
+      currentLine << readLine;
+
+      while (currentLine.good()) {
+        getline(currentLine, value, ',');
+
+        switch (counter) {
+          case 0:
+            data.totalForce.m128_f32[0] = convertStringToNumber<float>(value);
+            break;
+          case 1:
+            data.totalForce.m128_f32[1] = convertStringToNumber<float>(value);
+            break;
+          case 2:
+            data.totalForce.m128_f32[2] = convertStringToNumber<float>(value);
+            break;
+          case 3:
+            data.velocity.m128_f32[0] = convertStringToNumber<float>(value);
+            break;
+          case 4:
+            data.velocity.m128_f32[1] = convertStringToNumber<float>(value);
+            break;
+          case 5:
+            data.velocity.m128_f32[2] = convertStringToNumber<float>(value);
+            break;
+          case 6:
+            data.position.m128_f32[0] = convertStringToNumber<float>(value);
+            break;
+          case 7:
+            data.position.m128_f32[1] = convertStringToNumber<float>(value);
+            break;
+          case 8:
+            data.position.m128_f32[2] = convertStringToNumber<float>(value);
+            break;
+        }
+
+        counter++;
+      }
+
+      unitTestData.insert(pair<int, UnitTestData>(particleNumber, data));
+
+      particleNumber = particleNumber == 1 ? 3 : particleNumber + 1;
+    }
   }
 }
