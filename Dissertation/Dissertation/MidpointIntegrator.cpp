@@ -38,11 +38,11 @@ void MidpointIntegrator::integrate(Cloth& cloth) {
   cloth.calcForces();
   intermediateIntegration(cloth);
   cloth.calcForces();
-  intermediateIntegration(cloth, !unitTests);
+  intermediateIntegration(cloth, !unitTests, true);
   //}
 }
 
-void MidpointIntegrator::intermediateIntegration(Cloth& cloth, bool resetForce) {
+void MidpointIntegrator::intermediateIntegration(Cloth& cloth, bool resetForce, bool checkEquilibrium) {
   XMVECTOR acceleration;
   bool notAtEquilibrium = false;
 
@@ -51,7 +51,7 @@ void MidpointIntegrator::intermediateIntegration(Cloth& cloth, bool resetForce) 
       Particle& particle = cloth.particles[(i * cloth.columns) + j];
 
       if (!particle.pinned) {
-        if (currentScenario == SHEET) {
+        if (currentScenario == SHEET && checkEquilibrium) {
           bool zeroDisplacement = particle.closeToZero();
           if (updateCount > 500 && zeroDisplacement) {
             if (particle.timeAtEquilibrium == 0.0) {

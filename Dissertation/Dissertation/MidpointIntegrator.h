@@ -22,5 +22,5 @@ private:
   bool equilibrium;
 
   MidpointIntegrator();
-  void intermediateIntegration(Cloth& cloth, bool resetForce = true);
+  void intermediateIntegration(Cloth& cloth, bool resetForce = true, bool checkEquilibrium = false);
 };

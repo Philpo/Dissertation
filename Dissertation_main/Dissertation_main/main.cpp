@@ -6,7 +6,7 @@
 
 bool unitTests = false;
 double timeLastFrame, simulationRunningTime = 0.0;
-const double MAX_SIMULATION_TIME = 10000.0;
+const double MAX_SIMULATION_TIME = 60000.0;
 
 /*
 * Taken from Frank Luna: 3D Game Programming with DirectX 11
