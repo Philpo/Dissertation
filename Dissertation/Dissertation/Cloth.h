@@ -1,13 +1,11 @@
 #pragma once
 #include "Spring.h"
 #include <rapidxml.hpp>
-#include <vector>
 #include <d3d11_1.h>
 
 class VerletIntegrator;
 class ExplicitEulerIntegrator;
 class FourthOrderRungeKuttaIntegrator;
-class FourthOrderRungeKutta;
 class MidpointIntegrator;
 
 using namespace std;
@@ -18,17 +16,13 @@ class Cloth {
   friend class VerletIntegrator;
   friend class ExplicitEulerIntegrator;
   friend class FourthOrderRungeKuttaIntegrator;
-  friend class FourthOrderRungeKutta;
   friend class MidpointIntegrator;
 public:
   Cloth(xml_node<>* clothParams);
-  Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping, float linearDamping);
+  Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping);
   ~Cloth();
 
   const double getTimeSpentCalculatingInternalForce() const { return timeSpentCalculatingInternalForce; }
-  const double getTimeSpentIntegrating() const { return timeSpentIntegrating; }
-  const double getTimeTakenToReachEquilibrium() const { return timeAtEquilibrium - timeAtStart; }
-  const bool reachedEquilibrium() const { return equilibrium; }
   const int getNumRows() const { return rows; }
   const int getNumColumns() const { return columns; }
   const int getNumStructuralSprings() const { return numStructural; }
@@ -36,23 +30,19 @@ public:
   Particle* const getParticles() const { return particles; }
 
   void setPinned(int row, int column, bool pinned);
-  void setIntegrator(IIntegrator* const integrator);
-  void setIntegrator(IntegrationFunction integrator);
 
   void calcForces();
-  void update(double deltaT);
-  void draw(ID3D11DeviceContext* const immediateContext) const;
+  void draw(ID3D11DeviceContext* const immediateContext) const; 
 private:
-  double timeSpentCalculatingInternalForce, timeSpentIntegrating, timeAtStart, timeAtEquilibrium;
+  double timeSpentCalculatingInternalForce;
   int rows, columns, numStructural, numShear, numFlexion;
   float windConstant;
   XMVECTOR windDirection;
-  bool equilibrium;
   Particle* particles;
   Spring *structuralSprings, *shearSprings, *flexionSprings;
   static XMVECTOR GRAVITY;
 
-  void createParticles(FXMVECTOR topLeftPostition, float height, float width, float totalMass, float linearDamping);
+  void createParticles(FXMVECTOR topLeftPostition, float height, float width, float totalMass);
   void createStructuralLinks(float structuralStiffness, float structuralDamping);
   void createShearLinks(float shearStiffness, float shearDamping);
   void createFlexionLinks(float flexionStiffness, float flexionDamping);

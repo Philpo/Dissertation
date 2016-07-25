@@ -1,10 +1,6 @@
 #pragma once
 #include <DirectXMath.h>
-
-using namespace DirectX;
-
-class Particle;
-class Cloth;
+#include "Cloth.h"
 
 enum Integrator {
   EXPLICIT_EULER = 0
@@ -28,6 +24,5 @@ public:
 
   virtual void setTimeStep(double timeStep) = 0;
   virtual void resetData() = 0;
-  virtual void integrate(Particle& particle, double deltaT) = 0;
   virtual void integrate(Cloth& cloth) = 0;
 };

@@ -18,12 +18,9 @@
 #include <iostream>
 #include <fstream>
 #include "Cloth.h"
-#include "ExplicitEuler.h"
 #include "VerletIntegrator.h"
 #include "ExplicitEulerIntegrator.h"
 #include "FourthOrderRungeKuttaIntegrator.h"
-#include "FourthOrderRungeKutta.h"
-#include "ImplicitEuler.h"
 #include "MidpointIntegrator.h"
 
 using namespace DirectX;
@@ -76,8 +73,6 @@ private:
   Camera* camera;
   Cloth* cloth;
   IIntegrator* integrator;
-  Particle a, b;
-  Spring spring;
   float cameraSpeed = 2.0f;
   double timeSinceLastUpdate = 0.0f;
 

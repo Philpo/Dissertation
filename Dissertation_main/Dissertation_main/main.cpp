@@ -57,10 +57,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     return -1;
   }
 
-  loadUnitTestData("unit_test_load_test.txt");
-  float test = convertStringToNumber<float>("-2.1e-7");
-
-  // set the timer resolution to the lowest possible, so that we can sleep the thread as accurately as possible
+  // set the timer resolution to the lowest possible as accurate as possible timings
   wTimerRes = min(max(tc.wPeriodMin, 1), tc.wPeriodMax);
   timeBeginPeriod(wTimerRes);
 
@@ -110,14 +107,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     }
     else {
       calculateFrameRateStats(theApp);
+
       double currentTime = getCounter();
       double deltaT = currentTime - timeLastFrame;
+
       double time = getCounter();
       theApp->update(deltaT);
       averageUpdateTime += getCounter() - time;
+
       time = getCounter();
       theApp->draw();
       averageRenderTime += getCounter() - time;
+
       simulationRunningTime += getCounter() - currentTime;
       timeLastFrame = currentTime;
       frameCount++;
@@ -126,12 +127,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
         switch (currentScenario) {
           case SHEET:
             currentScenario = FLAG;
-            //sheetDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << endl;
             break;
           case FLAG:
             currentScenario = SHEET;
             currentTest = currentTest->next_sibling();
-            //flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << endl;
             break;
         }
 
@@ -157,7 +156,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
   cout << "Average update time: " << (averageUpdateTime / (double) frameCount) << "ms" << endl;
   cout << "Average render time: " << (averageRenderTime / (double) frameCount) << "ms" << endl;
 
-  //flagDataFile << ", " << (averageUpdateTime / (double) frameCount) << ", " << (averageRenderTime / (double) frameCount) << endl;
   sheetDataFile.close();
   flagDataFile.close();
 

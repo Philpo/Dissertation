@@ -6,8 +6,6 @@
 
 using namespace std;
 
-class Particle;
-typedef void (*IntegrationFunction)(Particle&, double);
 enum Integrator;
 enum Scenario {
   SHEET = 0
@@ -19,7 +17,6 @@ extern int testId, frameCount, averageFPS, numTimeFPSCalculated, updateCount;
 extern double averageUpdateTime, averageRenderTime, timeStep;
 extern Integrator currentIntegrator;
 extern Scenario currentScenario;
-extern int** connections;
 extern bool unitTests;
 
 /*
@@ -38,3 +35,11 @@ T convertStringToNumber(const string& toConvert) {
   stringstream(toConvert) >> r;
   return r;
 }
+
+// globally overload new and delete to ensure heap allocated memory is 16-byte alligned
+// this is necessary to prevent crashes in release builds where SSE instructions will be used
+// see https://stackoverflow.com/questions/20104815/warning-c4316-object-allocated-on-the-heap-may-not-be-aligned-16 for more information. Code taken from the same link
+void* operator new(size_t i);
+void* operator new[](size_t i);
+void operator delete(void* p);
+void operator delete[](void* p);

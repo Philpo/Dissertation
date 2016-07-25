@@ -13,7 +13,6 @@ public:
 
   void resetData() override { timeSpentIntegrating = timeAtStart = timeAtEquilibrium = 0.0; equilibrium = false; }
   void setTimeStep(double timeStep) override { this->timeStep = timeStep; timeStepInSeconds = timeStep / 1000.0f; }
-  void integrate(Particle& particle, double deltaT) override;
   void integrate(Cloth& cloth) override;
 private:
   static std::unique_ptr<IIntegrator> instance;

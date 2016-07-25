@@ -1,6 +1,4 @@
 #include "VerletIntegrator.h"
-#include "Particle.h"
-#include "Cloth.h"
 
 std::unique_ptr<IIntegrator> VerletIntegrator::instance = nullptr;
 
@@ -12,20 +10,6 @@ IIntegrator* const VerletIntegrator::getInstance() {
   }
 
   return instance.get();
-}
-
-void VerletIntegrator::integrate(Particle& particle, double deltaT) {
-
-  //if (timeSinceLastIntegration >= timeStep) {
-  float dampFactor = 0.995f;
-
-    XMVECTOR acceleration = XMVectorScale(particle.totalForce, 1 / particle.mass);
-    XMVECTOR velocity = XMVectorSubtract(particle.position, particle.previousPosition);
-    acceleration = XMVectorScale(acceleration, timeStepInSeconds * timeStepInSeconds);
-    particle.previousPosition = particle.position;
-    particle.position = XMVectorAdd(particle.position, XMVectorAdd(XMVectorScale(velocity, dampFactor), acceleration));
-    particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-  //}
 }
 
 void VerletIntegrator::integrate(Cloth& cloth) {
@@ -46,8 +30,10 @@ void VerletIntegrator::integrate(Cloth& cloth) {
       Particle& particle = cloth.particles[(i * cloth.columns) + j];
 
       if (!particle.pinned) {
+        // only check for equilibrium for the sheet scenario, since the flag scenario will never evolve to an equilibrium
         if (currentScenario == SHEET) {
           bool zeroDisplacement = particle.closeToZero();
+
           if (updateCount > 500 && zeroDisplacement) {
             if (particle.timeAtEquilibrium == 0.0) {
               particle.timeAtEquilibrium = getCounter();
@@ -88,5 +74,4 @@ void VerletIntegrator::integrate(Cloth& cloth) {
   if (equilibrium) {
     timeAtEquilibrium = getCounter();
   }
-  //}
 }

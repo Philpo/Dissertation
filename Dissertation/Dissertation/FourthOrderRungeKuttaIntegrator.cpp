@@ -1,6 +1,4 @@
 #include "FourthOrderRungeKuttaIntegrator.h"
-#include "Particle.h"
-#include "Cloth.h"
 
 std::unique_ptr<IIntegrator> FourthOrderRungeKuttaIntegrator::instance = nullptr;
 
@@ -34,20 +32,6 @@ void FourthOrderRungeKuttaIntegrator::resetData() {
   k4Force = nullptr;
 }
 
-void FourthOrderRungeKuttaIntegrator::integrate(Particle& particle, double deltaT) {
-
-  //if (timeSinceLastIntegration >= timeStep) {
-  float dampFactor = 0.995f;
-
-  XMVECTOR acceleration = XMVectorScale(particle.totalForce, 1 / particle.mass);
-  particle.velocity = XMVectorSubtract(particle.position, particle.previousPosition);
-  acceleration = XMVectorScale(acceleration, timeStepInSeconds * timeStepInSeconds);
-  particle.previousPosition = particle.position;
-  particle.position = XMVectorAdd(particle.position, XMVectorAdd(XMVectorScale(particle.velocity, dampFactor), acceleration));
-  particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);
-  //}
-}
-
 void FourthOrderRungeKuttaIntegrator::integrate(Cloth& cloth) {
   if (timeAtStart == 0.0) {
     timeAtStart = getCounter();
@@ -70,13 +54,13 @@ void FourthOrderRungeKuttaIntegrator::integrate(Cloth& cloth) {
   double currentTime = getCounter();
 
   cloth.calcForces();
-  intermediateIntegration(cloth, k1Force, true);
+  intermediateIntegration(cloth, k1Force);
   cloth.calcForces();
-  intermediateIntegration(cloth, k2Force, true);
+  intermediateIntegration(cloth, k2Force);
   cloth.calcForces();
-  intermediateIntegration(cloth, k3Force, true);
+  intermediateIntegration(cloth, k3Force);
   cloth.calcForces();
-  intermediateIntegration(cloth, k4Force, true);
+  intermediateIntegration(cloth, k4Force);
 
   bool notAtEquilibrium = false;
   XMVECTOR k1PlusK2, k3PlusK4;
@@ -86,8 +70,10 @@ void FourthOrderRungeKuttaIntegrator::integrate(Cloth& cloth) {
       Particle& particle = cloth.particles[(i * cloth.columns) + j];
 
       if (!particle.pinned) {
+        // only check for equilibrium for the sheet scenario, since the flag scenario will never evolve to an equilibrium
         if (currentScenario == SHEET) {
           bool zeroDisplacement = particle.closeToZero();
+
           if (updateCount > 500 && zeroDisplacement) {
             if (particle.timeAtEquilibrium == 0.0) {
               particle.timeAtEquilibrium = getCounter();
@@ -109,8 +95,8 @@ void FourthOrderRungeKuttaIntegrator::integrate(Cloth& cloth) {
 
         k1PlusK2 = XMVectorAdd(k1Force[(i * cloth.columns) + j], k2Force[(i * cloth.columns) + j]);
         k3PlusK4 = XMVectorAdd(k3Force[(i * cloth.columns) + j], k4Force[(i * cloth.columns) + j]);
-        particle.velocity = XMVectorAdd(originalVelocity[(i * cloth.columns) + j], XMVectorScale(XMVectorAdd(k1PlusK2, k3PlusK4), timeStepBy6 / particle.mass));
 
+        particle.velocity = XMVectorAdd(originalVelocity[(i * cloth.columns) + j], XMVectorScale(XMVectorAdd(k1PlusK2, k3PlusK4), timeStepBy6 / particle.mass));
         particle.previousPosition = originalPosition[(i * cloth.columns) + j];
         particle.position = XMVectorAdd(originalPosition[(i * cloth.columns) + j], XMVectorScale(particle.velocity, timeStepInSeconds));
 
@@ -128,26 +114,20 @@ void FourthOrderRungeKuttaIntegrator::integrate(Cloth& cloth) {
   if (equilibrium) {
     timeAtEquilibrium = getCounter();
   }
-  //}
 }
 
-void FourthOrderRungeKuttaIntegrator::intermediateIntegration(Cloth& cloth, XMVECTOR*& forceArray, bool halfTimeStep) {
+void FourthOrderRungeKuttaIntegrator::intermediateIntegration(Cloth& cloth, XMVECTOR*& forceArray) {
   XMVECTOR acceleration;
-  float timeStep = halfTimeStep ? timeStepInSeconds * 0.5f : timeStepInSeconds;
 
   for (int i = 0; i < cloth.rows; i++) {
     for (int j = 0; j < cloth.columns; j++) {
       Particle& particle = cloth.particles[(i * cloth.columns) + j];
 
       if (!particle.pinned) {
-        acceleration = XMVectorScale(particle.totalForce, timeStep / particle.mass);
+        acceleration = XMVectorScale(particle.totalForce, halfTimeStep / particle.mass);
         particle.velocity = XMVectorAdd(particle.velocity, acceleration);
         forceArray[(i * cloth.columns) + j] = particle.totalForce;
-        ////velocity = XMVectorAdd(velocity, XMVectorScale(velocity, -dampingCoefficient));
-        ////position = XMVectorAdd(position, XMVectorAdd(XMVectorScale(velocity, timeInSeconds), XMVectorScale(XMVectorScale(acceleration, timeInSeconds * timeInSeconds), 0.5f)));
-        //particle.temp = particle.previousPosition;
-        //particle.previousPosition = particle.position;
-        particle.position = XMVectorAdd(particle.position, XMVectorScale(particle.velocity, timeStep));
+        particle.position = XMVectorAdd(particle.position, XMVectorScale(particle.velocity, halfTimeStep));
       }
 
       particle.totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f);

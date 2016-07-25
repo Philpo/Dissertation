@@ -17,16 +17,16 @@ void Spring::calcSpringForce() {
   XMVECTOR deltaV = XMVectorSubtract(p1->getVelocity(), p2->getVelocity());
   XMVECTOR normLength = XMVectorDivide(length, currentLength);
 
-  XMVECTOR a, b, c, d;
-  a = XMVector3Dot(deltaV, length);
-  b = XMVectorScale(a, damping);
-  c = XMVectorScale(b, 1 / currentLength.m128_f32[0]);
+  XMVECTOR dotProduct, dampenedDotProduct, normalizedDotProduct;
+  dotProduct = XMVector3Dot(deltaV, length);
+  dampenedDotProduct = XMVectorScale(dotProduct, damping);
+  normalizedDotProduct = XMVectorScale(dampenedDotProduct, 1 / currentLength.m128_f32[0]);
   
-  if (abs(c.m128_f32[0]) > springForce) {
-    c.m128_f32[0] = springForce;
+  if (abs(normalizedDotProduct.m128_f32[0]) > springForce) {
+    normalizedDotProduct.m128_f32[0] = springForce;
   }
 
-  XMVECTOR force = XMVectorScale(normLength, -(springForce + c.m128_f32[0]));
+  XMVECTOR force = XMVectorScale(normLength, -(springForce + normalizedDotProduct.m128_f32[0]));
 
   p1->addForce(force);
   p2->addForce(XMVectorNegate(force));

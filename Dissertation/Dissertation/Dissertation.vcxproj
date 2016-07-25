@@ -14,12 +14,8 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Cloth.cpp" />
-    <ClCompile Include="ExplicitEuler.cpp" />
     <ClCompile Include="ExplicitEulerIntegrator.cpp" />
-    <ClCompile Include="FourthOrderRungeKutta.cpp" />
     <ClCompile Include="FourthOrderRungeKuttaIntegrator.cpp" />
-    <ClCompile Include="ImplicitEuler.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="MidpointIntegrator.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="Spring.cpp" />
@@ -30,12 +26,9 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Cloth.h" />
-    <ClInclude Include="ExplicitEuler.h" />
     <ClInclude Include="ExplicitEulerIntegrator.h" />
-    <ClInclude Include="FourthOrderRungeKutta.h" />
     <ClInclude Include="FourthOrderRungeKuttaIntegrator.h" />
     <ClInclude Include="IIntegrator.h" />
-    <ClInclude Include="ImplicitEuler.h" />
     <ClInclude Include="MidpointIntegrator.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="resource.h" />
@@ -64,7 +57,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -81,6 +74,9 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>RapidXML;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>RapidXML;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -106,6 +102,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

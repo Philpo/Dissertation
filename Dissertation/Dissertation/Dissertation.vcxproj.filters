@@ -18,9 +18,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -42,19 +39,10 @@
     <ClCompile Include="ExplicitEulerIntegrator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ExplicitEuler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="VerletIntegrator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FourthOrderRungeKuttaIntegrator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FourthOrderRungeKutta.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ImplicitEuler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MidpointIntegrator.cpp">
@@ -92,19 +80,10 @@
     <ClInclude Include="ExplicitEulerIntegrator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ExplicitEuler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="VerletIntegrator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FourthOrderRungeKuttaIntegrator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FourthOrderRungeKutta.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ImplicitEuler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MidpointIntegrator.h">
