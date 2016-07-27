@@ -7,19 +7,16 @@ public:
   ~MidpointIntegrator() {}
   
   static IIntegrator* const getInstance();
-  const double getTimeSpentIntegrating() const { return timeSpentIntegrating; }
-  const double getTimeTakenToReachEquilibrium() const { return timeAtEquilibrium - timeAtStart; }
-  const bool reachedEquilibrium() const { return equilibrium; }
+  const double getTimeSpentIntegrating() const override { return timeSpentIntegrating; }
 
-  void resetData() override { timeSpentIntegrating = timeAtStart = timeAtEquilibrium = 0.0; equilibrium = false; }
+  void resetData() override { timeSpentIntegrating = timeAtStart = 0.0; }
   void setTimeStep(double timeStep) override { this->timeStep = timeStep; halfTimeStepInSeconds = (timeStep / 1000.0f) / 2.0f; }
   void integrate(Cloth& cloth) override;
 private:
   static std::unique_ptr<IIntegrator> instance;
-  double timeStep, timeSinceLastIntegration, timeSpentIntegrating, timeAtStart, timeAtEquilibrium;
+  double timeStep, timeSpentIntegrating, timeAtStart;
   float halfTimeStepInSeconds;
-  bool equilibrium;
 
   MidpointIntegrator();
-  void intermediateIntegration(Cloth& cloth, bool resetForce = true, bool checkEquilibrium = false);
+  void intermediateIntegration(Cloth& cloth, bool resetForce = true);
 };

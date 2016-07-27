@@ -7,18 +7,15 @@ public:
   ~ExplicitEulerIntegrator() {}
 
   static IIntegrator* const getInstance();
-  const double getTimeSpentIntegrating() const { return timeSpentIntegrating; }
-  const double getTimeTakenToReachEquilibrium() const { return timeAtEquilibrium - timeAtStart; }
-  const bool reachedEquilibrium() const { return equilibrium; }
+  const double getTimeSpentIntegrating() const override { return timeSpentIntegrating; }
 
-  void resetData() override { timeSpentIntegrating = timeAtStart = timeAtEquilibrium = 0.0; equilibrium = false; }
+  void resetData() override { timeSpentIntegrating = timeAtStart = 0.0; }
   void setTimeStep(double timeStep) override { this->timeStep = timeStep; timeStepInSeconds = timeStep / 1000.0f; }
   void integrate(Cloth& cloth) override;
 private:
   static std::unique_ptr<IIntegrator> instance;
-  double timeStep, timeSinceLastIntegration, timeSpentIntegrating, timeAtStart, timeAtEquilibrium;
+  double timeStep, timeSpentIntegrating, timeAtStart;
   float timeStepInSeconds;
-  bool equilibrium;
 
   ExplicitEulerIntegrator();
 };

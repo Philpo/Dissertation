@@ -19,8 +19,6 @@ public:
   virtual ~IIntegrator() {}
 
   virtual const double getTimeSpentIntegrating() const = 0;
-  virtual const double getTimeTakenToReachEquilibrium() const = 0;
-  virtual const bool reachedEquilibrium() const = 0;
 
   virtual void setTimeStep(double timeStep) = 0;
   virtual void resetData() = 0;

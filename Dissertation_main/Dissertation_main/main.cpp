@@ -123,7 +123,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
       timeLastFrame = currentTime;
       frameCount++;
 
-      if ((theApp->reachedEquilibrium() && frameCount > 0) || simulationRunningTime >= MAX_SIMULATION_TIME) {
+      if (simulationRunningTime >= MAX_SIMULATION_TIME) {
         switch (currentScenario) {
           case SHEET:
             currentScenario = FLAG;

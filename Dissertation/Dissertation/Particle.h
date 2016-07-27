@@ -35,11 +35,7 @@ public:
   void addForce(const FXMVECTOR& force) { totalForce = XMVectorAdd(totalForce, force); }
   void zeroForce() { totalForce = XMVectorSet(0.0f, 0.0f, 0.0f, 0.0f); }
 private:
-  double timeAtEquilibrium;
   float mass;
-  bool pinned, equilibrium;
+  bool pinned;
   XMVECTOR position, previousPosition, acceleration, velocity, totalForce;
-  static const double TIME_FOR_EQUILIBIRUM;
-
-  bool closeToZero();
 };

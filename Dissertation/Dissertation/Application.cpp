@@ -76,13 +76,14 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
         flagDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
         flagDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
         flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
+        flagDataFile << ", " << (updateCount) << endl;
         break;
       case FLAG:
         // now loading a flag simulation, therefore the previous sim was a sheet, so save to the sheet file
         sheetDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
         sheetDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
         sheetDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated);
-        sheetDataFile << ", " << (integrator->reachedEquilibrium() ? integrator->getTimeTakenToReachEquilibrium() : 0.0) << endl;
+        sheetDataFile << ", " << (updateCount) << endl;
         break;
     }
 
@@ -182,6 +183,7 @@ Application::~Application() {
   flagDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
   flagDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
   flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
+  flagDataFile << ", " << (updateCount) << endl;
 
   delete cloth;
   integrator->resetData();

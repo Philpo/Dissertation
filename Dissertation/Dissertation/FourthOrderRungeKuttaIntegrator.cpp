@@ -3,8 +3,7 @@
 std::unique_ptr<IIntegrator> FourthOrderRungeKuttaIntegrator::instance = nullptr;
 
 FourthOrderRungeKuttaIntegrator::FourthOrderRungeKuttaIntegrator() : 
-timeStep(0.0), timeSinceLastIntegration(0.0), timeSpentIntegrating(0.0), timeAtStart(0.0), timeAtEquilibrium(0.0), equilibrium(false), originalPosition(nullptr), originalVelocity(nullptr)
-, k1Force(nullptr), k2Force(nullptr), k3Force(nullptr), k4Force(nullptr) {}
+timeStep(0.0), timeSpentIntegrating(0.0), timeAtStart(0.0), originalPosition(nullptr), originalVelocity(nullptr), k1Force(nullptr), k2Force(nullptr), k3Force(nullptr), k4Force(nullptr) {}
 
 IIntegrator* const FourthOrderRungeKuttaIntegrator::getInstance() {
   if (!instance) {
@@ -15,8 +14,7 @@ IIntegrator* const FourthOrderRungeKuttaIntegrator::getInstance() {
 }
 
 void FourthOrderRungeKuttaIntegrator::resetData() {
-  timeSpentIntegrating = timeAtStart = timeAtEquilibrium = 0.0;
-  equilibrium = false;
+  timeSpentIntegrating = timeAtStart = 0.0;
 
   delete[] originalPosition;
   originalPosition = nullptr;
@@ -62,7 +60,6 @@ void FourthOrderRungeKuttaIntegrator::integrate(Cloth& cloth) {
   cloth.calcForces();
   intermediateIntegration(cloth, k4Force);
 
-  bool notAtEquilibrium = false;
   XMVECTOR k1PlusK2, k3PlusK4;
   
   for (int i = 0; i < cloth.rows; i++) {
@@ -70,26 +67,6 @@ void FourthOrderRungeKuttaIntegrator::integrate(Cloth& cloth) {
       Particle& particle = cloth.particles[(i * cloth.columns) + j];
 
       if (!particle.pinned) {
-        // only check for equilibrium for the sheet scenario, since the flag scenario will never evolve to an equilibrium
-        if (currentScenario == SHEET) {
-          bool zeroDisplacement = particle.closeToZero();
-
-          if (updateCount > 500 && zeroDisplacement) {
-            if (particle.timeAtEquilibrium == 0.0) {
-              particle.timeAtEquilibrium = getCounter();
-            }
-
-            particle.equilibrium = getCounter() - particle.timeAtEquilibrium >= particle.TIME_FOR_EQUILIBIRUM;
-            if (particle.equilibrium) {
-              continue;
-            }
-          }
-
-          if (!zeroDisplacement) {
-            particle.timeAtEquilibrium = 0.0;
-          }
-        }
-
         k2Force[(i * cloth.columns) + j] = XMVectorScale(k2Force[(i * cloth.columns) + j], 2.0f);
         k3Force[(i * cloth.columns) + j] = XMVectorScale(k3Force[(i * cloth.columns) + j], 2.0f);
 
@@ -99,21 +76,11 @@ void FourthOrderRungeKuttaIntegrator::integrate(Cloth& cloth) {
         particle.velocity = XMVectorAdd(originalVelocity[(i * cloth.columns) + j], XMVectorScale(XMVectorAdd(k1PlusK2, k3PlusK4), timeStepBy6 / particle.mass));
         particle.previousPosition = originalPosition[(i * cloth.columns) + j];
         particle.position = XMVectorAdd(originalPosition[(i * cloth.columns) + j], XMVectorScale(particle.velocity, timeStepInSeconds));
-
-        if (!particle.equilibrium) {
-          notAtEquilibrium = true;
-        }
       }
     }
   }
 
   timeSpentIntegrating += getCounter() - currentTime;
-
-  equilibrium = !notAtEquilibrium;
-
-  if (equilibrium) {
-    timeAtEquilibrium = getCounter();
-  }
 }
 
 void FourthOrderRungeKuttaIntegrator::intermediateIntegration(Cloth& cloth, XMVECTOR*& forceArray) {

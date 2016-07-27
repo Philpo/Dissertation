@@ -35,7 +35,6 @@ public:
   bool handleKeyboard(MSG msg);
   void handleMouseMovement(WPARAM buttonStates, int x, int y);
   void handleMouseClick(WPARAM buttonStates, int x, int y);
-  bool reachedEquilibrium() const { return cloth ? integrator->reachedEquilibrium() : false; }
 
 #ifdef _DEBUG
   Cloth* const getCloth() { return cloth; }

@@ -2,7 +2,7 @@
 
 std::unique_ptr<IIntegrator> VerletIntegrator::instance = nullptr;
 
-VerletIntegrator::VerletIntegrator() : timeStep(0.0), timeSinceLastIntegration(0.0), timeSpentIntegrating(0.0), timeAtStart(0.0), timeAtEquilibrium(0.0), equilibrium(false) {}
+VerletIntegrator::VerletIntegrator() : timeStep(0.0), timeSpentIntegrating(0.0), timeAtStart(0.0) {}
 
 IIntegrator* const VerletIntegrator::getInstance() {
   if (!instance) {
@@ -22,7 +22,6 @@ void VerletIntegrator::integrate(Cloth& cloth) {
   float dampFactor = 0.995f;
 
   XMVECTOR acceleration, velocity;
-  bool notAtEquilibrium = false;
   double currentTime = getCounter();
 
   for (int i = 0; i < cloth.rows; i++) {
@@ -30,35 +29,11 @@ void VerletIntegrator::integrate(Cloth& cloth) {
       Particle& particle = cloth.particles[(i * cloth.columns) + j];
 
       if (!particle.pinned) {
-        // only check for equilibrium for the sheet scenario, since the flag scenario will never evolve to an equilibrium
-        if (currentScenario == SHEET) {
-          bool zeroDisplacement = particle.closeToZero();
-
-          if (updateCount > 500 && zeroDisplacement) {
-            if (particle.timeAtEquilibrium == 0.0) {
-              particle.timeAtEquilibrium = getCounter();
-            }
-
-            particle.equilibrium = getCounter() - particle.timeAtEquilibrium >= particle.TIME_FOR_EQUILIBIRUM;
-            if (particle.equilibrium) {
-              continue;
-            }
-          }
-
-          if (!zeroDisplacement) {
-            particle.timeAtEquilibrium = 0.0;
-          }
-        }
-
         acceleration = XMVectorScale(particle.totalForce, 1 / particle.mass);
         velocity = XMVectorSubtract(particle.position, particle.previousPosition);
         acceleration = XMVectorScale(acceleration, timeStepInSeconds * timeStepInSeconds);
         particle.previousPosition = particle.position;
         particle.position = XMVectorAdd(particle.position, XMVectorAdd(XMVectorScale(velocity, dampFactor), acceleration));
-
-        if (!particle.equilibrium) {
-          notAtEquilibrium = true;
-        }
       }
 
       if (!unitTests) {
@@ -68,10 +43,4 @@ void VerletIntegrator::integrate(Cloth& cloth) {
   }
 
   timeSpentIntegrating += getCounter() - currentTime;
-
-  equilibrium = !notAtEquilibrium;
-
-  if (equilibrium) {
-    timeAtEquilibrium = getCounter();
-  }
 }
