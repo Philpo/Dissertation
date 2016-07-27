@@ -75,7 +75,7 @@ HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
         // now loading a sheet simulation, therefore the previous sim was a flag, so save to the flag file
         flagDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
         flagDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
-        flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
+        flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated);
         flagDataFile << ", " << (updateCount) << endl;
         break;
       case FLAG:
@@ -182,7 +182,7 @@ Application::~Application() {
   double timeSpentIntegrating = integrator->getTimeSpentIntegrating();
   flagDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
   flagDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
-  flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated) << endl;
+  flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated);
   flagDataFile << ", " << (updateCount) << endl;
 
   delete cloth;

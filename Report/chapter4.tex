@@ -4,13 +4,12 @@
 To evaluate the hypotheses, a number of data fields will be captured from the simulation
 \begin{itemize}
 \item{Simulation frame rate. This will be affected by the cost and frequency of the integration calculations and is essential to capture to determine if the simulation is running in real time}
-\item{Average time spent on integration calculations. Extracting this allows investigations into the effect of more expensive, but less frequent, integrators}
-\item{Time taken to reach the equilibrium point. The equilibrium point is defined as the point at which there is close to zero displacement in all particles, i.e. the external and internal forces are balanced. \textcite{Wang2009a} have shown that using higher order Runge-Kutta integrators reduces the time taken to reach equilibrium and thus, extracting this data will allow comparisons with their results}
+\item{Average time spent in the various functions such as calcSpringForce and update. Extracting these timing will give a better understanding of where the time each frame is spent}
+\item{Update Count. By comparing this with the average update time it will be possible to evaluate the effectiveness of higher cost integrators}
 \end{itemize}
-In addition, the average time spent in various functions, such as calcSpringForce and update, will also be extracted, in order to gain a better understanding of where the time each frame is spent.
-\\\\The data mentioned above will be extracted by simulating the cloth in two different scenarios.
-\\The first, or sheet, scenario will simulate a sheet hanging from a washing line. The top left and right particles of the cloth will be pinned, so as to be unaffected by any forces, and gravity applied as the sole external force. As a result, the simulation will evolve to an equilibrium, such as those show in Figures \ref{fig:structural and shear} and \ref{fig:super-elasticity}, so this scenarios can be used for measuring the time taken to reach the equilibrium point. 
-\\The second scenario will simulate a flag on a flag pole flapping in the wind. Particles on the left edge of the cloth will be pinned with gravity and a wind force acting as external forces. Because of the wind, this scenario will not evolve to an equilibrium and so cannot be used to extract data about the time taken to reach equilibrium. However, the addition of wind will result in much more movement in the cloth so this scenario provides data on performance of a more active simulation.
+The data mentioned above will be extracted by simulating the cloth in two different scenarios.
+\\The first, or sheet, scenario will simulate a sheet hanging from a washing line. The top left and right particles of the cloth will be pinned, so as to be unaffected by any forces, and gravity applied as the sole external force.
+\\The second scenario will simulate a flag on a flag pole flapping in the wind. Particles on the left edge of the cloth will be pinned with gravity and a wind force acting as external forces. The addition of wind will result in much more movement in the cloth so this scenario provides data on performance of a more active simulation.
 
 \section{Test Parameters}
 Mass-Spring models for cloth simulation have a number of different parameters which affect realism and performance, and are notoriously difficult to tune.
@@ -59,5 +58,4 @@ As the previous section details, the first stage of the testing process will be 
 </test_list>
 \end{lstlisting}
 Each test element extracted from the test\_list will be run in both the flag and sheet scenario.
-\\Scenarios will be run for a maximum of one minute, and when the run is completed, the appropriate test data will be extracted and stored in a CSV file. 
-\\For the sheet scenario, a test run will end as soon as the equilibrium is reached, or after one minute, whichever occurs first. Whether or not the equilibrium was reached will be stored in the CSV. Some integrators, particularly lower order Runge-Kutta, may be unstable for certain mesh sizes and therefore will never arrive at an equilibrium. Extracting whether or not an integrator is stable with a particular time step and mesh size is essential as it can be used to contradict any performance justification for that integrator with those parameters.
+\\Scenarios will be run for a maximum of one minute, and when the run is completed, the appropriate test data will be extracted and stored in a CSV file.
