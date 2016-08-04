@@ -100,7 +100,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.2}Integrator Time Step}{43}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Spring and Damping Coefficients}{44}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}Spring and Damping Coefficients}{43}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2.4}Particle Mass}{44}{subsection.4.2.4}
 \defcounter {refsection}{0}\relax 

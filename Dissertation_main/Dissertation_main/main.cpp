@@ -23,7 +23,7 @@ void calculateFrameRateStats(Application* const app) {
 
     std::stringstream outs;
     outs.precision(6);
-    outs << "Cork    " << "FPS: " << fps << "    " << "Frame Time: " << mspf << " (ms)";
+    outs << "Cork    test id: " << testId << "    FPS: " << fps << "    Frame Time: " << mspf << " (ms)";
     app->setWindowCaption(outs);
 
     averageFPS += frameCnt;
@@ -160,6 +160,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
   flagDataFile.close();
 
   timeEndPeriod(wTimerRes);
-  system("PAUSE");
+  //system("PAUSE");
   return (int) msg.wParam;
 }
