@@ -68,20 +68,21 @@ void Application::handleMouseMovement(WPARAM buttonStates, int x, int y) {
 HRESULT Application::loadTest(xml_node<>* testNode, Scenario scenario) {
   if (cloth) {
     double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
+    double timeSpentOnExternalForce = cloth->getTimeSpentCalculatingExternalForce();
     double timeSpentIntegrating = integrator->getTimeSpentIntegrating();
 
     switch (scenario) {
       case SHEET:
         // now loading a sheet simulation, therefore the previous sim was a flag, so save to the flag file
         flagDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
-        flagDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
+        flagDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentOnExternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
         flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated);
         flagDataFile << ", " << (updateCount) << endl;
         break;
       case FLAG:
         // now loading a flag simulation, therefore the previous sim was a sheet, so save to the sheet file
         sheetDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
-        sheetDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
+        sheetDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentOnExternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
         sheetDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated);
         sheetDataFile << ", " << (updateCount) << endl;
         break;
@@ -179,9 +180,10 @@ Application::~Application() {
   }
 
   double timeSpentOnInternalForce = cloth->getTimeSpentCalculatingInternalForce();
+  double timeSpentOnExternalForce = cloth->getTimeSpentCalculatingExternalForce();
   double timeSpentIntegrating = integrator->getTimeSpentIntegrating();
   flagDataFile << testId << ", " << INTEGRATOR_NAMES[currentIntegrator] << ", " << cloth->getNumRows() << ", " << cloth->getNumColumns() << ", " << timeStep;
-  flagDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
+  flagDataFile << ", " << (timeSpentOnInternalForce / (double) updateCount) << ", " << (timeSpentOnExternalForce / (double) updateCount) << ", " << (timeSpentIntegrating / (double) updateCount);
   flagDataFile << ", " << (averageUpdateTime / (double) updateCount) << ", " << (averageRenderTime / (double) frameCount) << ", " << (averageFPS / (double) numTimeFPSCalculated);
   flagDataFile << ", " << (updateCount) << endl;
 

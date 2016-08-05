@@ -23,6 +23,7 @@ public:
   ~Cloth();
 
   const double getTimeSpentCalculatingInternalForce() const { return timeSpentCalculatingInternalForce; }
+  const double getTimeSpentCalculatingExternalForce() const { return timeSpentCalculatingExternalForce; }
   const int getNumRows() const { return rows; }
   const int getNumColumns() const { return columns; }
   const int getNumStructuralSprings() const { return numStructural; }
@@ -34,7 +35,7 @@ public:
   void calcForces();
   void draw(ID3D11DeviceContext* const immediateContext) const; 
 private:
-  double timeSpentCalculatingInternalForce;
+  double timeSpentCalculatingInternalForce, timeSpentCalculatingExternalForce;
   int rows, columns, numStructural, numShear, numFlexion;
   float windConstant;
   XMVECTOR windDirection;

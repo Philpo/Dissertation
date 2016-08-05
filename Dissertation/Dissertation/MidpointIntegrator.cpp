@@ -17,10 +17,14 @@ void MidpointIntegrator::integrate(Cloth& cloth) {
     timeAtStart = getCounter();
   }
 
+  double currentTime = getCounter();
+
   cloth.calcForces();
   intermediateIntegration(cloth);
   cloth.calcForces();
   intermediateIntegration(cloth, !unitTests);
+
+  timeSpentIntegrating += getCounter() - currentTime;
 }
 
 void MidpointIntegrator::intermediateIntegration(Cloth& cloth, bool resetForce) {

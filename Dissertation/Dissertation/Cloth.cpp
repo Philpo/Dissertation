@@ -3,7 +3,7 @@
 
 XMVECTOR Cloth::GRAVITY = XMVectorSet(0.0f, -.981, 0.0f, 0.0f);
 
-Cloth::Cloth(xml_node<>* clothParams) : timeSpentCalculatingInternalForce(0.0) {
+Cloth::Cloth(xml_node<>* clothParams) : timeSpentCalculatingInternalForce(0.0), timeSpentCalculatingExternalForce(0.0) {
   float x, y, z, height, width, mass, stiffness, damping;
 
   height = convertStringToNumber<float>(clothParams->first_attribute("height")->value());
@@ -46,7 +46,7 @@ Cloth::Cloth(xml_node<>* clothParams) : timeSpentCalculatingInternalForce(0.0) {
 }
 
 Cloth::Cloth(FXMVECTOR topLeftPostition, float height, float width, int numRows, int numColumns, float totalMass, float structuralStiffness, float structuralDamping, float shearStiffness, float shearDamping, float flexionStiffness, float flexionDamping) :
- timeSpentCalculatingInternalForce(0.0) {
+ timeSpentCalculatingInternalForce(0.0), timeSpentCalculatingExternalForce(0.0) {
   createParticles(topLeftPostition, height, width, totalMass);
   createStructuralLinks(structuralStiffness, structuralDamping);
   createShearLinks(shearStiffness, shearDamping);
@@ -81,6 +81,8 @@ void Cloth::calcForces() {
 
   timeSpentCalculatingInternalForce += getCounter() - currentTime;
 
+  currentTime = getCounter();
+
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < columns; j++) {
       particles[(i * columns) + j].addForce(XMVectorScale(GRAVITY, particles[(i * columns) + j].getMass()));
@@ -93,6 +95,8 @@ void Cloth::calcForces() {
       }
     }
   }
+
+  timeSpentCalculatingExternalForce += getCounter() - currentTime;
 }
 
 void Cloth::draw(ID3D11DeviceContext* const immediateContext) const {
