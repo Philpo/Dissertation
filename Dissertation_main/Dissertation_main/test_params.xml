@@ -1,5 +1,1342 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <test_list>
+	<!-- Explict Euler block -->
+	<!-- 50 x 50 -->
+	<test id="1">
+		<integrator type="0" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="2">
+		<integrator type="0" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="3">
+		<integrator type="0" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="4">
+		<integrator type="0" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="5">
+		<integrator type="0" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 100 x 100 -->
+	<test id="6">
+		<integrator type="0" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="7">
+		<integrator type="0" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="8">
+		<integrator type="0" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="9">
+		<integrator type="0" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="10">
+		<integrator type="0" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 150 x 150 -->
+	<test id="11">
+		<integrator type="0" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="12">
+		<integrator type="0" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="13">
+		<integrator type="0" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="14">
+		<integrator type="0" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="15">
+		<integrator type="0" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 200 x 200 -->
+	<test id="16">
+		<integrator type="0" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="17">
+		<integrator type="0" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="18">
+		<integrator type="0" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="19">
+		<integrator type="0" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="20">
+		<integrator type="0" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 250 x 250 -->
+	<test id="21">
+		<integrator type="0" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="22">
+		<integrator type="0" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="23">
+		<integrator type="0" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="24">
+		<integrator type="0" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="25">
+		<integrator type="0" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 300 x 300 -->
+	<test id="26">
+		<integrator type="0" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="27">
+		<integrator type="0" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="28">
+		<integrator type="0" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="29">
+		<integrator type="0" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="30">
+		<integrator type="0" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- Verlet block -->
+	<!-- 50 x 50 -->
+	<test id="31">
+		<integrator type="1" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="32">
+		<integrator type="1" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="33">
+		<integrator type="1" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="34">
+		<integrator type="1" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="35">
+		<integrator type="1" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 100 x 100 -->
+	<test id="36">
+		<integrator type="1" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="37">
+		<integrator type="1" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="38">
+		<integrator type="1" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="39">
+		<integrator type="1" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="40">
+		<integrator type="1" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 150 x 150 -->
+	<test id="41">
+		<integrator type="1" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="42">
+		<integrator type="1" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="43">
+		<integrator type="1" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="44">
+		<integrator type="1" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="45">
+		<integrator type="1" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 200 x 200 -->
+	<test id="46">
+		<integrator type="1" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="47">
+		<integrator type="1" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="48">
+		<integrator type="1" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="49">
+		<integrator type="1" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="50">
+		<integrator type="1" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 250 x 250 -->
+	<test id="51">
+		<integrator type="1" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="52">
+		<integrator type="1" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="53">
+		<integrator type="1" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="54">
+		<integrator type="1" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="55">
+		<integrator type="1" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 300 x 300 -->
+	<test id="56">
+		<integrator type="1" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="57">
+		<integrator type="1" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="58">
+		<integrator type="1" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="59">
+		<integrator type="1" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="60">
+		<integrator type="1" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- RK4 block -->
+	<!-- 50 x 50 -->
+	<test id="61">
+		<integrator type="2" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="62">
+		<integrator type="2" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="63">
+		<integrator type="2" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="64">
+		<integrator type="2" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="65">
+		<integrator type="2" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 100 x 100 -->
+	<test id="66">
+		<integrator type="2" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="67">
+		<integrator type="2" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="68">
+		<integrator type="2" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="69">
+		<integrator type="2" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="70">
+		<integrator type="2" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 150 x 150 -->
+	<test id="71">
+		<integrator type="2" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="72">
+		<integrator type="2" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="73">
+		<integrator type="2" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="74">
+		<integrator type="2" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="75">
+		<integrator type="2" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 200 x 200 -->
+	<test id="76">
+		<integrator type="2" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="77">
+		<integrator type="2" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="78">
+		<integrator type="2" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="79">
+		<integrator type="2" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="80">
+		<integrator type="2" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 250 x 250 -->
+	<test id="81">
+		<integrator type="2" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="82">
+		<integrator type="2" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="83">
+		<integrator type="2" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="84">
+		<integrator type="2" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="85">
+		<integrator type="2" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 300 x 300 -->
+	<test id="86">
+		<integrator type="2" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="87">
+		<integrator type="2" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="88">
+		<integrator type="2" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="89">
+		<integrator type="2" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="90">
+		<integrator type="2" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- Midpoint block -->
+	<!-- 50 x 50 -->
+	<test id="91">
+		<integrator type="3" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="92">
+		<integrator type="3" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="93">
+		<integrator type="3" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="94">
+		<integrator type="3" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="95">
+		<integrator type="3" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="50" columns="50" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 100 x 100 -->
+	<test id="96">
+		<integrator type="3" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="97">
+		<integrator type="3" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="98">
+		<integrator type="3" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="99">
+		<integrator type="3" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="100">
+		<integrator type="3" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="100" columns="100" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 150 x 150 -->
+	<test id="101">
+		<integrator type="3" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="102">
+		<integrator type="3" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="103">
+		<integrator type="3" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="104">
+		<integrator type="3" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="105">
+		<integrator type="3" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="150" columns="150" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 200 x 200 -->
+	<test id="106">
+		<integrator type="3" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="107">
+		<integrator type="3" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="108">
+		<integrator type="3" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="109">
+		<integrator type="3" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="110">
+		<integrator type="3" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="200" columns="200" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 250 x 250 -->
+	<test id="111">
+		<integrator type="3" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="112">
+		<integrator type="3" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="113">
+		<integrator type="3" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="114">
+		<integrator type="3" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="115">
+		<integrator type="3" time_step="20" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="250" columns="250" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<!-- 300 x 300 -->
+	<test id="116">
+		<integrator type="3" time_step="1" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="117">
+		<integrator type="3" time_step="5" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="118">
+		<integrator type="3" time_step="10" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
+	<test id="119">
+		<integrator type="3" time_step="15" />
+		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
+			<top_left_position x="-10.0" y="10.0" z="10.0" />
+			<mesh_size rows="300" columns="300" />
+			<structural spring_coefficient="20.0" damping_coefficient="7.5" />
+			<shear spring_coefficient="20.0" damping_coefficient="7.5" />
+			<flexion spring_coefficient="1.0" damping_coefficient="1.0" />
+			<wind_direction x="0.0" y="0.0" z="1.0" />
+		</cloth_params>
+	</test>
 	<test id="120">
 		<integrator type="3" time_step="20" />
 		<cloth_params height="10.0" width="10.0" mass="100.0" wind_constant="5.0">
