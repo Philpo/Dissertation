@@ -52,7 +52,7 @@ namespace TestScriptGenerator {
             writer.WriteAttributeString("height", "10.0");
             writer.WriteAttributeString("width", "10.0");
             writer.WriteAttributeString("mass", "100.0");
-            writer.WriteAttributeString("wind_constant", "5.0");
+            writer.WriteAttributeString("wind_constant", "0.5");
 
             writer.WriteStartElement("top_left_position"); // <top_left_position>
             writer.WriteAttributeString("x", "-10.0");
