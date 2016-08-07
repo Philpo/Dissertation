@@ -76,8 +76,8 @@ namespace TestScriptGenerator {
             writer.WriteEndElement(); // </shear>
 
             writer.WriteStartElement("flexion"); // <flexion>
-            writer.WriteAttributeString("spring_coefficient", "1.0");
-            writer.WriteAttributeString("damping_coefficient", "1.0");
+            writer.WriteAttributeString("spring_coefficient", "5.0");
+            writer.WriteAttributeString("damping_coefficient", "2.5");
             writer.WriteEndElement(); // </flexion>
 
             writer.WriteStartElement("wind_direction"); // <wind_direction>

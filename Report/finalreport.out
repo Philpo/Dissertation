@@ -50,9 +50,38 @@
 \BOOKMARK [2][-]{subsection.4.2.3}{Spring and Damping Coefficients}{section.4.2}% 50
 \BOOKMARK [2][-]{subsection.4.2.4}{Particle Mass}{section.4.2}% 51
 \BOOKMARK [1][-]{section.4.3}{Test Process}{chapter.4}% 52
-\BOOKMARK [0][-]{appendix.A}{Class Diagrams}{}% 53
-\BOOKMARK [1][-]{section.A.1}{First Cycle Design}{appendix.A}% 54
-\BOOKMARK [1][-]{section.A.2}{Second Cycle Design}{appendix.A}% 55
-\BOOKMARK [1][-]{section.A.3}{Third Cycle Design}{appendix.A}% 56
-\BOOKMARK [0][-]{appendix.B}{Profiling Results}{}% 57
-\BOOKMARK [1][-]{section.B.1}{First Cycle}{appendix.B}% 58
+\BOOKMARK [0][-]{chapter.5}{Data Analysis and Evaluation}{}% 53
+\BOOKMARK [1][-]{section.5.1}{Chosen Parameters}{chapter.5}% 54
+\BOOKMARK [2][-]{subsection.5.1.1}{Mesh Size}{section.5.1}% 55
+\BOOKMARK [2][-]{subsection.5.1.2}{Time Step}{section.5.1}% 56
+\BOOKMARK [2][-]{subsection.5.1.3}{Mass and Spring and Damping Coefficients}{section.5.1}% 57
+\BOOKMARK [1][-]{section.5.2}{Results}{chapter.5}% 58
+\BOOKMARK [2][-]{subsection.5.2.1}{Explicit Euler}{section.5.2}% 59
+\BOOKMARK [2][-]{subsection.5.2.2}{Verlet}{section.5.2}% 60
+\BOOKMARK [2][-]{subsection.5.2.3}{Midpoint}{section.5.2}% 61
+\BOOKMARK [2][-]{subsection.5.2.4}{Fourth Order Runge-Kutta}{section.5.2}% 62
+\BOOKMARK [1][-]{section.5.3}{Evaluation}{chapter.5}% 63
+\BOOKMARK [2][-]{subsection.5.3.1}{Null Hypothesis}{section.5.3}% 64
+\BOOKMARK [2][-]{subsection.5.3.2}{Alternative Hypothesis}{section.5.3}% 65
+\BOOKMARK [0][-]{appendix.A}{Class Diagrams}{}% 66
+\BOOKMARK [1][-]{section.A.1}{First Cycle Design}{appendix.A}% 67
+\BOOKMARK [1][-]{section.A.2}{Second Cycle Design}{appendix.A}% 68
+\BOOKMARK [1][-]{section.A.3}{Third Cycle Design}{appendix.A}% 69
+\BOOKMARK [0][-]{appendix.B}{Profiling Results}{}% 70
+\BOOKMARK [1][-]{section.B.1}{First Cycle}{appendix.B}% 71
+\BOOKMARK [0][-]{appendix.C}{Test Results}{}% 72
+\BOOKMARK [1][-]{section.C.1}{Explicit Euler}{appendix.C}% 73
+\BOOKMARK [2][-]{subsection.C.1.1}{Sheet Data}{section.C.1}% 74
+\BOOKMARK [2][-]{subsection.C.1.2}{Flag Data}{section.C.1}% 75
+\BOOKMARK [1][-]{section.C.2}{Verlet}{appendix.C}% 76
+\BOOKMARK [2][-]{subsection.C.2.1}{Sheet Data}{section.C.2}% 77
+\BOOKMARK [2][-]{subsection.C.2.2}{Flag Data}{section.C.2}% 78
+\BOOKMARK [1][-]{section.C.3}{Midpoint}{appendix.C}% 79
+\BOOKMARK [2][-]{subsection.C.3.1}{Sheet Data}{section.C.3}% 80
+\BOOKMARK [2][-]{subsection.C.3.2}{Flag Data}{section.C.3}% 81
+\BOOKMARK [1][-]{section.C.4}{Fourth Order Runge-Kutta}{appendix.C}% 82
+\BOOKMARK [2][-]{subsection.C.4.1}{Sheet Data}{section.C.4}% 83
+\BOOKMARK [2][-]{subsection.C.4.2}{Flag Data}{section.C.4}% 84
+\BOOKMARK [1][-]{section.C.5}{All Integrators}{appendix.C}% 85
+\BOOKMARK [2][-]{subsection.C.5.1}{Sheet Data}{section.C.5}% 86
+\BOOKMARK [2][-]{subsection.C.5.2}{Flag Data}{section.C.5}% 87

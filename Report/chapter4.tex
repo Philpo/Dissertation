@@ -4,8 +4,8 @@
 To evaluate the hypotheses, a number of data fields will be captured from the simulation
 \begin{itemize}
 \item{Simulation frame rate. This will be affected by the cost and frequency of the integration calculations and is essential to capture to determine if the simulation is running in real time}
-\item{Average time spent in the various functions such as calcSpringForce and update. Extracting these timing will give a better understanding of where the time each frame is spent}
-\item{Update Count. By comparing this with the average update time it will be possible to evaluate the effectiveness of higher cost integrators}
+\item{Average time spent in the various functions such as calcSpringForce and update. Extracting these timings will give a better understanding of where the time each frame is spent}
+%\item{Update Count. By comparing this with the average update time it will be possible to evaluate the effectiveness of higher cost integrators}
 \end{itemize}
 The data mentioned above will be extracted by simulating the cloth in two different scenarios.
 \\The first, or sheet, scenario will simulate a sheet hanging from a washing line. The top left and right particles of the cloth will be pinned, so as to be unaffected by any forces, and gravity applied as the sole external force.

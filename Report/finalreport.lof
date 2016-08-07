@@ -6,64 +6,202 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Mechanical properties of cloth}}{15}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Mechanical properties of cloth}}{18}{figure.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Visual Properties of cloth}}{16}{figure.2.2}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Visual Properties of cloth}}{19}{figure.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Cloth with structural springs only}}{19}{figure.2.3}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Cloth with structural springs only}}{22}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{19}{figure.2.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{22}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{19}{figure.2.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{22}{figure.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Cloth with structural and shear springs}}{19}{figure.2.4}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Cloth with structural and shear springs}}{22}{figure.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{19}{figure.2.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Initial configuration}}}{22}{figure.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{19}{figure.2.4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of running the simulation}}}{22}{figure.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Provot cloth model}}{20}{figure.2.5}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Provot cloth model}}{23}{figure.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Choi Ko cloth model}}{22}{figure.2.6}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Choi Ko cloth model}}{25}{figure.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Super-elasticity problems}}{23}{figure.2.7}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Super-elasticity problems}}{26}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Super-elastic effect}}}{23}{figure.2.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Super-elastic effect}}}{26}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of correcting super-elasticity}}}{23}{figure.2.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Result of correcting super-elasticity}}}{26}{figure.2.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Constraint relaxation}}{25}{figure.2.8}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Constraint relaxation}}{28}{figure.2.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Explicit integrator stability regions}}{28}{figure.2.9}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Waterfall development methodology}}{33}{figure.3.1}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Explicit integrator stability regions}}{31}{figure.2.9}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Initial design for the first development cycle}}{46}{figure.A.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Final design for the first development cycle}}{47}{figure.A.2}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Initial design for the second development cycle}}{48}{figure.A.3}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Final design for the second development cycle}}{49}{figure.A.4}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Initial design for the third development cycle}}{50}{figure.A.5}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Final design for the third development cycle}}{51}{figure.A.6}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Waterfall development methodology}}{36}{figure.3.1}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Profiling results using an std::vector to store springs}}{53}{figure.B.1}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Profiling results using dynamic arrays to store springs}}{53}{figure.B.2}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.3}{\ignorespaces Profiling results for unoptimised calcSpringForce}}{54}{figure.B.3}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Initial design for the first development cycle}}{56}{figure.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Profiling results for optimised calcSpringForce}}{55}{figure.B.4}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Final design for the first development cycle}}{57}{figure.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {B.5}{\ignorespaces test}}{56}{figure.B.5}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Initial design for the second development cycle}}{58}{figure.A.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Final design for the second development cycle}}{59}{figure.A.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Initial design for the third development cycle}}{60}{figure.A.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Final design for the third development cycle}}{61}{figure.A.6}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Profiling results using a std::vector to store springs}}{63}{figure.B.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Profiling results using dynamic arrays to store springs}}{63}{figure.B.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Profiling results for unoptimised calcSpringForce}}{64}{figure.B.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Profiling results for optimised calcSpringForce}}{65}{figure.B.4}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Explicit Euler time step against average FPS (sheet)}}{67}{figure.C.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Explicit Euler mesh size against average FPS (sheet)}}{68}{figure.C.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Explicit Euler time step against average FPS for a 300 by 300 mesh (sheet)}}{68}{figure.C.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Explicit Euler mesh size against average update time (sheet)}}{69}{figure.C.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Explicit Euler mesh size against average internal force time (sheet)}}{69}{figure.C.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Explicit Euler frame time breakdown (sheet)}}{70}{figure.C.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Explicit Euler update time breakdown (sheet)}}{70}{figure.C.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.8}{\ignorespaces Explicit Euler mesh size against average FPS (flag)}}{71}{figure.C.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.9}{\ignorespaces Explicit Euler mesh size against average FPS (flag)}}{72}{figure.C.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.10}{\ignorespaces Explicit Euler time step against average FPS for a 300 by 300 mesh (flag)}}{72}{figure.C.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.11}{\ignorespaces Explicit Euler mesh size against average update time (flag)}}{73}{figure.C.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.12}{\ignorespaces Explicit Euler mesh size against average internal force time (flag)}}{73}{figure.C.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.13}{\ignorespaces Explicit Euler frame time breakdown (flag)}}{74}{figure.C.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.14}{\ignorespaces Explicit Euler update time breakdown (flag)}}{74}{figure.C.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.15}{\ignorespaces Verlet time step against average FPS (sheet)}}{76}{figure.C.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.16}{\ignorespaces Verlet mesh size against average FPS (sheet)}}{77}{figure.C.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.17}{\ignorespaces Verlet time step against average FPS for a 300 by 300 mesh (sheet)}}{77}{figure.C.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.18}{\ignorespaces Verlet mesh size against average update time (sheet)}}{78}{figure.C.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.19}{\ignorespaces Verlet mesh size against average internal force time (sheet)}}{78}{figure.C.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.20}{\ignorespaces Verlet frame time breakdown (sheet)}}{79}{figure.C.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.21}{\ignorespaces Verlet update time breakdown (sheet)}}{79}{figure.C.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.22}{\ignorespaces Verlet mesh size against average FPS (flag)}}{80}{figure.C.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.23}{\ignorespaces Verlet mesh size against average FPS (flag)}}{81}{figure.C.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.24}{\ignorespaces Verlet time step against average FPS for a 300 by 300 mesh (flag)}}{81}{figure.C.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.25}{\ignorespaces Verlet mesh size against average update time (flag)}}{82}{figure.C.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.26}{\ignorespaces Verlet mesh size against average internal force time (flag)}}{82}{figure.C.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.27}{\ignorespaces Verlet frame time breakdown (flag)}}{83}{figure.C.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.28}{\ignorespaces Verlet update time breakdown (flag)}}{83}{figure.C.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.29}{\ignorespaces Midpoint time step against average FPS (sheet)}}{85}{figure.C.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.30}{\ignorespaces Midpoint mesh size against average FPS (sheet)}}{86}{figure.C.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.31}{\ignorespaces Midpoint time step against average FPS for a 300 by 300 mesh (sheet)}}{86}{figure.C.31}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.32}{\ignorespaces Midpoint mesh size against average update time (sheet)}}{87}{figure.C.32}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.33}{\ignorespaces Midpoint mesh size against average internal force time (sheet)}}{87}{figure.C.33}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.34}{\ignorespaces Midpoint frame time breakdown (sheet)}}{88}{figure.C.34}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.35}{\ignorespaces Midpoint update time breakdown (sheet)}}{88}{figure.C.35}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.36}{\ignorespaces Midpoint mesh size against average FPS (flag)}}{89}{figure.C.36}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.37}{\ignorespaces Midpoint mesh size against average FPS (flag)}}{90}{figure.C.37}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.38}{\ignorespaces Midpoint time step against average FPS for a 300 by 300 mesh (flag)}}{90}{figure.C.38}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.39}{\ignorespaces Midpoint mesh size against average update time (flag)}}{91}{figure.C.39}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.40}{\ignorespaces Midpoint mesh size against average internal force time (flag)}}{91}{figure.C.40}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.41}{\ignorespaces Midpoint frame time breakdown (flag)}}{92}{figure.C.41}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.42}{\ignorespaces Midpoint update time breakdown (flag)}}{92}{figure.C.42}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.43}{\ignorespaces Fourth Order Runge-Kutta time step against average FPS (sheet)}}{94}{figure.C.43}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.44}{\ignorespaces Fourth Order Runge-Kutta mesh size against average FPS (sheet)}}{95}{figure.C.44}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.45}{\ignorespaces Fourth Order Runge-Kutta time step against average FPS for a 300 by 300 mesh (sheet)}}{95}{figure.C.45}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.46}{\ignorespaces Fourth Order Runge-Kutta mesh size against average update time (sheet)}}{96}{figure.C.46}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.47}{\ignorespaces Fourth Order Runge-Kutta mesh size against average internal force time (sheet)}}{96}{figure.C.47}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.48}{\ignorespaces Fourth Order Runge-Kutta frame time breakdown (sheet)}}{97}{figure.C.48}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.49}{\ignorespaces Fourth Order Runge-Kutta update time breakdown (sheet)}}{97}{figure.C.49}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.50}{\ignorespaces Fourth Order Runge-Kutta mesh size against average FPS (flag)}}{98}{figure.C.50}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.51}{\ignorespaces Fourth Order Runge-Kutta mesh size against average FPS (flag)}}{99}{figure.C.51}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.52}{\ignorespaces Fourth Order Runge-Kutta time step against average FPS for a 300 by 300 mesh (flag)}}{99}{figure.C.52}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.53}{\ignorespaces Fourth Order Runge-Kutta mesh size against average update time (flag)}}{100}{figure.C.53}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.54}{\ignorespaces Fourth Order Runge-Kutta mesh size against average internal force time (flag)}}{100}{figure.C.54}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.55}{\ignorespaces Fourth Order Runge-Kutta frame time breakdown (flag)}}{101}{figure.C.55}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.56}{\ignorespaces Fourth Order Runge-Kutta update time breakdown (flag)}}{101}{figure.C.56}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.57}{\ignorespaces Mesh size against average FPS for all integrators with 1ms time step (sheet)}}{103}{figure.C.57}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.58}{\ignorespaces Mesh size against average FPS for all integrators with 5ms time step (sheet)}}{104}{figure.C.58}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.59}{\ignorespaces Mesh size against average FPS for all integrators with 10ms time step (sheet)}}{105}{figure.C.59}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.60}{\ignorespaces Mesh size against average FPS for all integrators with 15ms time step (sheet)}}{106}{figure.C.60}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.61}{\ignorespaces Mesh size against average FPS for all integrators with 20ms time step (sheet)}}{107}{figure.C.61}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.62}{\ignorespaces Average update time for each integrator (sheet)}}{108}{figure.C.62}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.63}{\ignorespaces Mesh size against average FPS for all integrators with 1ms time step (flag)}}{109}{figure.C.63}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.64}{\ignorespaces Mesh size against average FPS for all integrators with 5ms time step (flag)}}{110}{figure.C.64}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.65}{\ignorespaces Mesh size against average FPS for all integrators with 10ms time step (flag)}}{111}{figure.C.65}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.66}{\ignorespaces Mesh size against average FPS for all integrators with 15ms time step (flag)}}{112}{figure.C.66}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.67}{\ignorespaces Mesh size against average FPS for all integrators with 20ms time step (flag)}}{113}{figure.C.67}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {C.68}{\ignorespaces Average update time for each integrator (flag)}}{114}{figure.C.68}
