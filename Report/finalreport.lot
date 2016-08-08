@@ -16,12 +16,20 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.1}{\ignorespaces Stability results for explicit Euler (sheet)}}{53}{table.5.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5.2}{\ignorespaces Stability results for explicit Euler (flag)}}{54}{table.5.2}
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.1}{\ignorespaces Stability results for explicit Euler (sheet)}}{71}{table.C.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.2}{\ignorespaces Stability results for explicit Euler (flag)}}{76}{table.C.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.3}{\ignorespaces Stability results for Verlet (sheet)}}{82}{table.C.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.4}{\ignorespaces Stability results for Verlet (flag)}}{87}{table.C.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.5}{\ignorespaces Stability results for Midpoint (sheet)}}{93}{table.C.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.6}{\ignorespaces Stability results for Midpoint (flag)}}{98}{table.C.6}

@@ -7,18 +7,18 @@ This chapter will present and analyse the data gathered with the test plan detai
 The first stage of the data collection process was to choose suitable values for the parameters detailed previously.
 
 \subsection{Mesh Size}
-The maximum mesh size used was 300 by 300; this is the largest mesh size the can be run at real time frame rates with the most expensive integrator (RK4). This maximum was decreased by 50 in both dimensions, to a minimum size of 50 by 50, to give the six mesh sizes below.
+The maximum mesh size used was 300$^{2}$; this is the largest mesh size the can be run at real time frame rates with the most expensive integrator (RK4). This maximum was decreased by 50 in both dimensions, to a minimum size of 50$^{2}$, to give the six mesh sizes below.
 \begin{itemize}
-\item{300 by 300}
-\item{250 by 250}
-\item{200 by 200}
-\item{150 by 150}
-\item{100 by 100}
-\item{50 by 50}
+\item{300$^{2}$}
+\item{250$^{2}$}
+\item{200$^{2}$}
+\item{150$^{2}$}
+\item{100$^{2}$}
+\item{50$^{2}$}
 \end{itemize}
 
 \subsection{Time Step}
-The maximum time step was 20ms. This was the largest time step where at least one integrator was still stable for a 50 by 50 mesh. This values was decreased by 5ms giving the ranges of five time steps listed below.
+The maximum time step was 20ms. This was the largest time step where at least one integrator was still stable for a 50$^{2}$ mesh. This values was decreased by 5ms giving the ranges of five time steps listed below.
 \begin{itemize}
 \item{20ms}
 \item{15ms}
@@ -44,107 +44,39 @@ For Verlet, a constant damping factor of 0.5\% was used.
 
 \subsection{Explicit Euler}
 Fig \ref{fig:ee fps sheet} shows the average simulation frame rate for every time step at every mesh size, in the sheet scenario. The graph shows two things, firstly that as mesh size increases average frame rate decreases and secondly that as time step increases average frame rate increases.
-\\\\The data shows that varying mesh size can have a dramatic effect on the frame rate, this is shown well by Fig \ref{fig:ee mesh fps sheet}. This graph uses the average FPS for a 1ms time step, so that only one variable is changed. It has a strong negative correlation, which supports the conclusion that mesh size has a large effect on performance. Also, it clearly shows a dramatic frame rate decrease as mesh size is increased to 100 by 100 and 150 by 150; for a 100 by 100 mesh the decrease is approximately 1.4 times and for 150 by 150 approximately 5.4 times.
-\\The decrease in frame rate can be explained by examining where the time each frame is spent. Fig \ref{fig:ee ft sheet} shows that the majority of the frame time is spent in the update function for a 300 by 300 mesh using a 1ms time step. This is the worst case test, but the conclusion is reflected across all other mesh sizes and time steps. By plotting the average time spent in the update function against mesh size, it is possible to explain why the frame rate decreases. Fig \ref{fig:ee mesh update sheet} shows this graph; as with Fig \ref{fig:ee mesh fps sheet} it shows data for a 1ms time step. This shows a strong positive correlation, thus it can be concluded that update time increases with mesh size. If the time for each update increases with mesh size, then the total time for each frame must increase also, thus reducing the frame rate of the simulation. 
+\\\\The data shows that varying mesh size can have a dramatic effect on the frame rate, this is shown well by Fig \ref{fig:ee mesh fps sheet}. This graph uses the average FPS for a 1ms time step, so that only one variable is changed. It has a strong negative correlation, which supports the conclusion that mesh size has a large effect on performance. Also, it clearly shows a dramatic frame rate decrease as mesh size is increased to 100$^{2}$ and 150$^{2}$; for a 100$^{2}$ mesh the decrease is approximately 1.4 times and for 150$^{2}$ approximately 5.4 times.
+\\The decrease in frame rate can be explained by examining where the time each frame is spent. Fig \ref{fig:ee ft sheet} shows that the majority of the frame time is spent in the update function for a 300$^{2}$ mesh using a 1ms time step. This is the worst case test, but the conclusion is reflected across all other mesh sizes and time steps. By plotting the average time spent in the update function against mesh size, it is possible to explain why the frame rate decreases. Fig \ref{fig:ee mesh update sheet} shows this graph; as with Fig \ref{fig:ee mesh fps sheet} it shows data for a 1ms time step. This shows a strong positive correlation, thus it can be concluded that update time increases with mesh size. If the time for each update increases with mesh size, then the total time for each frame must increase also, thus reducing the frame rate of the simulation. 
 \\Digging a little deeper, Fig \ref{fig:ee ut sheet} shows that calculating the internal forces, i.e. the spring forces, is the most expensive part of each update. By plotting this against mesh size, shown in Fig \ref{fig:ee mesh csf sheet}, a strong positive correlation is again observed. This is easy to explain. As mesh size increases, the number of particles increases, and therefore the number of springs also increases. More springs means that Equations \ref{eq:hooke equation} and \ref{eq:spring damping} must be calculated more, hence the time spent on internal forces increases.
-\\\\The increase in update time with mesh size also explains the increase in frame rate as the time step increases. As the time step increases, the expensive update function is called less frequently, so overall frame time is decreased, thus increasing the frame rate. Fig \ref{fig:ee step fps sheet} shows the average frame rate plotted against the time step for a 300 by 300 mesh. This graph shows a positive correlation, thus supporting that frame rate increases with time step. It also shows that frame rate only increases once the time step exceeds some threshold; this is also shown in Fig \ref{fig:ee fps sheet}. Again, this result can be explained by examining the average update time. For the 300 by 300 mesh, the average update time was approximately 6ms, and frame rate only increased once the time step reaches 10ms. The reason for this should be obvious; both the 1ms and 5ms time steps are less than the total update time, therefore the update function will still be called every frame.
-\\\\When looking at the results in the figures above, it is also important to look at the stability of each test. The stability of each test was evaluated subjectively, and the results are listed in Table \ref{tab:ee stability sheet}
-\begin{table}[tp]
-   \begin{minipage}{\textwidth}
-      \begin{center}
-         \begin{tabular}{c|c|c}
-           Mesh Size & Time Step (ms) & Stable/Unstable\\
-           \hline
-           50 by 50 & 1 & Stable\\
-           50 by 50 & 5 & Stable\\
-           50 by 50 & 10 & Unstable\\
-           50 by 50 & 15 & Unstable\\
-           50 by 50 & 20 & Unstable\\
-           100 by 100 & 1 & Stable\\
-           100 by 100 & 5 & Unstable\\
-           100 by 100 & 10 & Unstable\\
-           100 by 100 & 15 & Unstable\\
-           100 by 100 & 20 & Unstable\\           
-           150 by 150 & 1 & Stable\\
-           150 by 150 & 5 & Unstable\\
-           150 by 150 & 10 & Unstable\\
-           150 by 150 & 15 & Unstable\\
-           150 by 150 & 20 & Unstable\\           
-           200 by 200 & 1 & Stable\\
-           200 by 200 & 5 & Unstable\\
-           200 by 200 & 10 & Unstable\\
-           200 by 200 & 15 & Unstable\\
-           200 by 200 & 20 & Unstable\\           
-           250 by 250 & 1 & Stable\\
-           250 by 250 & 5 & Unstable\\
-           250 by 250 & 10 & Unstable\\
-           250 by 250 & 15 & Unstable\\
-           250 by 250 & 20 & Unstable\\           
-           300 by 300 & 1 & Stable\\
-           300 by 300 & 5 & Unstable\\
-           300 by 300 & 10 & Unstable\\
-           300 by 300 & 15 & Unstable\\
-           300 by 300 & 20 & Unstable\\
-         \end{tabular}
-      \end{center}
-   \end{minipage}
-   \caption{Stability results for explicit Euler (sheet)}
-   \label{tab:ee stability sheet}
-\end{table}
-As can be seen, for the sheet scenario, explicit Euler was really only stable with a 1ms time step, with the exception of the 50 by 50 mesh, where it was stable with a 5ms time step as well.
-\\\\The data for the flag scenario shows similar correlations to the sheet scenario. Figs \ref{fig:ee fps flag} and \ref{fig:ee mesh fps flag} show that as mesh size increases FPS decreases, with the same initial dramatic decreases as the sheet scenario; the decrease for a 100 by 100 mesh is approximately 2.3 times and approximately 5 times for 150 by 150. As with the sheet scenario, the majority of the frame time is still spent within update (see Fig \ref{fig:ee ft flag}) and Fig \ref{fig:ee mesh update flag} displays a strong positive correlation as well.
-\\Fig \ref{fig:ee ut flag} shows a slightly different time breakdown within the update function. Calculating the internal forces is still the most expensive part, but the cost of calculating external forces has risen significantly over the sheet scenario; an approximate increase of 6.7 times. This is because the flag scenario includes wind as an additional external force. In order to apply wind, the particles must be split into triangles and the surface normal of every triangle calculated at every time step.
-\\Figs \ref{fig:ee fps flag} and \ref{fig:ee step fps flag} also show that as time step increases the FPS increases with it. They also support the conclusion that frame rate only increases once the time step exceeds the total update time; again the frame rate for the 300 by 300 mesh only increased at 10ms, because the average update time was approximately 8ms.
-\\The stability of the flag scenario tests, listed in Table \ref{tab:ee stability flag} are also similar to the sheet scenario, with the only difference being that a 5ms time step and 100 by 100 mesh was stable for the flag scenario.
-
-\begin{table}[tp]
-   \begin{minipage}{\textwidth}
-      \begin{center}
-         \begin{tabular}{c|c|c}
-           Mesh Size & Time Step (ms) & Stable/Unstable\\
-           \hline
-           50 by 50 & 1 & Stable\\
-           50 by 50 & 5 & Stable\\
-           50 by 50 & 10 & Unstable\\
-           50 by 50 & 15 & Unstable\\
-           50 by 50 & 20 & Unstable\\
-           100 by 100 & 1 & Stable\\
-           100 by 100 & 5 & Stable\\
-           100 by 100 & 10 & Unstable\\
-           100 by 100 & 15 & Unstable\\
-           100 by 100 & 20 & Unstable\\           
-           150 by 150 & 1 & Stable\\
-           150 by 150 & 5 & Unstable\\
-           150 by 150 & 10 & Unstable\\
-           150 by 150 & 15 & Unstable\\
-           150 by 150 & 20 & Unstable\\           
-           200 by 200 & 1 & Stable\\
-           200 by 200 & 5 & Unstable\\
-           200 by 200 & 10 & Unstable\\
-           200 by 200 & 15 & Unstable\\
-           200 by 200 & 20 & Unstable\\           
-           250 by 250 & 1 & Stable\\
-           250 by 250 & 5 & Unstable\\
-           250 by 250 & 10 & Unstable\\
-           250 by 250 & 15 & Unstable\\
-           250 by 250 & 20 & Unstable\\           
-           300 by 300 & 1 & Stable\\
-           300 by 300 & 5 & Unstable\\
-           300 by 300 & 10 & Unstable\\
-           300 by 300 & 15 & Unstable\\
-           300 by 300 & 20 & Unstable\\
-         \end{tabular}
-      \end{center}
-   \end{minipage}
-   \caption{Stability results for explicit Euler (flag)}
-   \label{tab:ee stability flag}
-\end{table}
+\\\\The increase in update time with mesh size also explains the increase in frame rate as the time step increases. As the time step increases, the expensive update function is called less frequently, so overall frame time is decreased, thus increasing the frame rate. Fig \ref{fig:ee step fps sheet} shows the average frame rate plotted against the time step for a 300$^{2}$ mesh. This graph shows a positive correlation, thus supporting that frame rate increases with time step. It also shows that frame rate only increases once the time step exceeds some threshold; this is also shown in Fig \ref{fig:ee fps sheet}. Again, this result can be explained by examining the average update time. For the 300$^{2}$ mesh, the average update time was approximately 6ms, and frame rate only increased once the time step reaches 10ms. The reason for this should be obvious; both the 1ms and 5ms time steps are less than the total update time, therefore the update function will still be called every frame.
+\\\\When looking at the results in the figures above, it is also important to look at the stability of each test. The stability of each test was evaluated subjectively, and the results are listed in Table \ref{tab:ee stability sheet}. As can be seen, for the sheet scenario, explicit Euler was really only stable with a 1ms time step, with the exception of the 50$^{2}$ mesh, where it was stable with a 5ms time step as well.
+\\\\The data for the flag scenario shows similar correlations to the sheet scenario. Figs \ref{fig:ee fps flag} and \ref{fig:ee mesh fps flag} show that as mesh size increases FPS decreases, with the same initial dramatic decreases as the sheet scenario; the decrease for a 100$^{2}$ mesh is approximately 2.3 times and approximately 5 times for 150$^{2}$. As with the sheet scenario, the majority of the frame time is still spent within update (see Fig \ref{fig:ee ft flag}) and Fig \ref{fig:ee mesh update flag} displays a strong positive correlation as well.
+\\The frame rates for the flag scenario are slightly lower than those for the sheet, this is explained by looking at Fig \ref{fig:ee ut flag}. It shows a slightly different time breakdown within the update function. Calculating the internal forces is still the most expensive part, but the cost of calculating external forces has risen significantly over the sheet scenario; an approximate increase of 6.7 times. This is because the flag scenario includes wind as an additional external force. In order to apply wind, the particles must be split into triangles and the surface normal of every triangle calculated at every time step. 
+\\Figs \ref{fig:ee fps flag} and \ref{fig:ee step fps flag} also show that as time step increases the FPS increases with it. They also support the conclusion that frame rate only increases once the time step exceeds the total update time; again the frame rate for the 300$^{2}$ mesh only increased at 10ms, because the average update time was approximately 8ms.
+\\The stability of the flag scenario tests, listed in Table \ref{tab:ee stability flag} are also similar to the sheet scenario, with the only difference being that a 5ms time step and 100$^{2}$ mesh was stable for the flag scenario.
+\\\\Overall, explicit Euler is efficient. It easily supports the largest mesh size with a 1ms time step, running at 175 and 120FPS for the sheet and flag scenarios respectively, well over the 30FPS limit needed for a real time system. The update times for the same mesh are only 6 and 8ms, respectively, as well, which leaves approximately 27 and 25ms available each frame for other game related functions. The caveat is that it is only really stable for a 1ms time step, so the cloth will be updated frequently. However, as has been shown, the low cost of the integrator counters this disadvantage somewhat.
 
 \subsection{Verlet}
+The data for Verlet integration shows similar trends to explicit Euler.
+\\Fig \ref{fig:v fps sheet} shows the average FPS decreases as mesh size increases for Verlet integration. This is supported by Fig \ref{fig:v mesh fps sheet} which has a strong negative correlation. Both graphs also show a dramatic frame rate decrease as mesh size is increased to 100$^{2}$ and 150$^{2}$; approximately 1.4 and 5.4 times respectively. Again, this is explained by Figs \ref{fig:v ft sheet} and \ref{fig:v mesh update sheet} which show that the update function continues to be the most expensive code path and that update time has a positive correlation as mesh size increases. Calculating the internal forces continues to be the most expensive part of update, as shown in Fig \ref{fig:v ut sheet}, and similar to explicit Euler, displays a positive correlation with mesh size (Fig \ref{fig:v mesh csf sheet}).
+\\Fig \ref{fig:v fps sheet} also shows that frame rate increases as the time step increases. This is supported by Fig \ref{fig:v step fps sheet} as it shows a positive correlation for FPS as time step increases. As with explicit Euler, both graphs show that the frame rate only increases once the time step exceeds some threshold. Again, this is because the update time for the 300$^{2}$ mesh is roughly 6ms.
+\\The stability of Verlet can be seen in Table \ref{tab:v stability sheet}. It shows that Verlet is much more stable than explicit Euler, being stable for every time step for the 50$^{2}$ mesh and even stable with a 5ms time step for 150$^{2}$ and 200$^{2}$ meshes. This increased stability may be a result of the damping factor added in Equation \ref{eq:dampened verlet}. Even with the small damping factor used (0.5\%), the damping was much more noticeable than other integrators.
+\\\\Similarly, the flag scenario also displays the same trends as the sheet scenario. Figs \ref{fig:v fps flag} and \ref{fig:v mesh fps flag} both show a negative correlation for FPS as mesh size increases, again with large initial decreases; approximately 3 times for 100$^{2}$ and approximately 4.1 times for 150$^{2}$. The majority of the frame time is still spent within update (see Fig \ref{fig:v ft flag}) and Fig \ref{fig:v mesh update flag} continues to display a strong positive correlation for update time.
+\\As with explicit Euler, Fig \ref{fig:v ut flag} shows that the cost of calculating external forces has risen significantly over the sheet scenario; approximately 6.8 times. This is reflected in the frame rate, and explains why the frame rates for the flag scenario are lower than the sheet scenario.
+\\The trend that FPS increases with time step is also reflected in the flag scenario; Figs \ref{fig:v fps flag} and \ref{fig:v step fps sheet} show a positive correlation for FPS as time step increases. Again, the same time step thresholds as explicit Euler are observed.
+\\The stability of the flag scenario tests, listed in Table \ref{tab:v stability flag} are identical to the sheet scenario, supporting the conclusion that Verlet is more stable than explicit Euler.
+\\\\Compared like by like Verlet has slightly lower performance than explicit Euler, as the integration equations involve slightly more calculations. However, since Verlet is much more stable it offers performance advantages over explicit Euler. For example, for a 200$^{2}$ mesh, explicit Euler is limited to a 1ms time step which results in frame rates of 426 and 295 for the sheet and flag scenarios. By contrast, Verlet is stable for a 5ms time step leading to a frame rate of 2892 and 1742 for the two scenarios, an increase of approximately 6.8 and 5.9 times respectively. For mesh sizes over 200$^{2}$ however, Verlet is limited to a 1ms time step as well, so is more comparable to explicit Euler.
+\\Since the damping equation \ref{eq:spring damping} is useless for Verlet, it may be possible to increase the performance by adding an if check to the calcSpringForce function in the Spring class that would not calculate \ref{eq:spring damping} when using Verlet integration.
 
 \subsection{Midpoint}
+As with the previous integrators, the data for Midpoint displays similar trends.
+\\Figs \ref{fig:m fps sheet}, \ref{fig:m mesh fps sheet}, \ref{fig:m fps flag} and \ref{fig:m mesh fps flag} all show that both the sheet and flag scenarios have a similar negative correlation to that displayed by the previous integrators. Yet again there are large initial drops in frame rate as the mesh size is changed to 100$^{2}$ and 150$^{2}$, but for midpoint the drop for the 100$^{2}$ mesh is much larger than explicit Euler or Verlet; approximately 8.4 and 10.2 times for the two scenarios. Consequently, the decrease from 150$^{2}$ is much lower than the other integrators, roughly only 2 and 2.2 times.
+\\Figs \ref{fig:m fps sheet} and \ref{fig:m fps flag} also continue to show the same positive correlation between FPS and time step for both scenarios, a conclusion also supported by Figs \ref{fig:m step fps sheet} and \ref{fig:m step fps flag}. The same thresholding phenomenon is also observed, but it is more exaggerated for the Midpoint integrator. For the sheet scenario, the 250$^{2}$ mesh now has a time step threshold of 10ms, and the 300$^{2}$ mesh has an increased threshold of 15ms. The flag scenario further increases the time step thresholds; the 200$^{2}$ mesh now has a threshold of 10ms and the thresholds for both 250$^{2}$ and 300$^{2}$ meshes have increased by 5ms.
+\\Figs \ref{fig:m ft sheet} and \ref{fig:m ft flag} explain why the threshold values have increased. The graphs show that the average time spent in the update function has increased over the previous integrators by almost 2 times. This is expected, as the Midpoint integrator involves two derivates, so the forces acting on the cloth must be calculated twice. Consequently, it is expected that the average time spent calculating the forces should increase as well, a theory supported by Figs \ref{fig:m ut sheet} and \ref{fig:m ut flag}, both of which show that force calculation times have almost doubled. As a result of this increased update time, the frame rates for Midpoint are often significantly lower than both explicit Euler and Verlet, especially when using a time step below an increase threshold.
+\\The stability of the integrator is shown in Tables \ref{tab:m stability sheet} and \ref{tab:m stability flag}. It shows that Midpoint is only slightly more stable than explicit Euler but much less stable than Verlet; it is stable up to 10ms for the 50$^{2}$ mesh, but unstable with time steps greater than 1ms for every other mesh size.
+\\\\The data shows that, as expected, Midpoint is roughly twice as expensive as explicit Euler and Verlet and slightly more stable than explicit Euler. As a result, for small mesh sizes (below 50$^{2}$), the Midpoint integrator is a better choice than explicit Euler as it has increased performance due to the larger stable time step; Midpoint offers an FPS increase of approximately 1.2 times. For anything other than small meshes, Midpoint is not recommended, as it is only stable with a 1ms time step which is too small to counteract the increased cost of the integrator.
 
 \subsection{Fourth Order Runge-Kutta}
+
 
 \section{Evaluation}
 
