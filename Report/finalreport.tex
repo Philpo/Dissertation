@@ -6,6 +6,7 @@
 \usepackage{textcomp}
 \usepackage{listings}
 \usepackage{algorithmic}
+\usepackage[capitalise]{cleveref}
 
 \usepackage{color}
 \definecolor{gray}{rgb}{0.4,0.4,0.4}
@@ -29,6 +30,8 @@
   keywordstyle=\color{cyan},
   morekeywords={rows,columns,type,mass,spring_coefficient,damping_coefficient,time_step,height,width,x,y,z,id,wind_constant}% list your attributes here
 }
+
+\crefrangeformat{figure}{Figs~#3#1#4 to #5#2#6}
 
 % Write the approved title of your dissertation
 \title{An Investigation into the Performance of Integration Methodologies for Real Time Mass-Spring Cloth Simulations}

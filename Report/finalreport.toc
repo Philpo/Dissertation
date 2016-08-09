@@ -126,52 +126,52 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2.4}Fourth Order Runge-Kutta}{55}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Evaluation}{55}{section.5.3}
+\contentsline {section}{\numberline {5.3}Evaluation}{56}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.1}Null Hypothesis}{55}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.1}Null Hypothesis}{56}{subsection.5.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}Alternative Hypothesis}{55}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.2}Alternative Hypothesis}{57}{subsection.5.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Class Diagrams}{56}{appendix.A}
+\contentsline {chapter}{\numberline {A}Class Diagrams}{58}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}First Cycle Design}{56}{section.A.1}
+\contentsline {section}{\numberline {A.1}First Cycle Design}{58}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Second Cycle Design}{58}{section.A.2}
+\contentsline {section}{\numberline {A.2}Second Cycle Design}{60}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Third Cycle Design}{60}{section.A.3}
+\contentsline {section}{\numberline {A.3}Third Cycle Design}{62}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Profiling Results}{62}{appendix.B}
+\contentsline {chapter}{\numberline {B}Profiling Results}{64}{appendix.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.1}First Cycle}{62}{section.B.1}
+\contentsline {section}{\numberline {B.1}First Cycle}{64}{section.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Test Results}{66}{appendix.C}
+\contentsline {chapter}{\numberline {C}Test Results}{68}{appendix.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.1}Explicit Euler}{66}{section.C.1}
+\contentsline {section}{\numberline {C.1}Explicit Euler}{68}{section.C.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.1.1}Sheet Data}{66}{subsection.C.1.1}
+\contentsline {subsection}{\numberline {C.1.1}Sheet Data}{68}{subsection.C.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.1.2}Flag Data}{72}{subsection.C.1.2}
+\contentsline {subsection}{\numberline {C.1.2}Flag Data}{74}{subsection.C.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.2}Verlet}{77}{section.C.2}
+\contentsline {section}{\numberline {C.2}Verlet}{79}{section.C.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.2.1}Sheet Data}{77}{subsection.C.2.1}
+\contentsline {subsection}{\numberline {C.2.1}Sheet Data}{79}{subsection.C.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.2.2}Flag Data}{83}{subsection.C.2.2}
+\contentsline {subsection}{\numberline {C.2.2}Flag Data}{85}{subsection.C.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.3}Midpoint}{88}{section.C.3}
+\contentsline {section}{\numberline {C.3}Midpoint}{90}{section.C.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.3.1}Sheet Data}{88}{subsection.C.3.1}
+\contentsline {subsection}{\numberline {C.3.1}Sheet Data}{90}{subsection.C.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.3.2}Flag Data}{94}{subsection.C.3.2}
+\contentsline {subsection}{\numberline {C.3.2}Flag Data}{96}{subsection.C.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.4}Fourth Order Runge-Kutta}{99}{section.C.4}
+\contentsline {section}{\numberline {C.4}Fourth Order Runge-Kutta}{101}{section.C.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.4.1}Sheet Data}{99}{subsection.C.4.1}
+\contentsline {subsection}{\numberline {C.4.1}Sheet Data}{101}{subsection.C.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.4.2}Flag Data}{104}{subsection.C.4.2}
+\contentsline {subsection}{\numberline {C.4.2}Flag Data}{107}{subsection.C.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.5}All Integrators}{108}{section.C.5}
+\contentsline {section}{\numberline {C.5}All Integrators}{112}{section.C.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.5.1}Sheet Data}{108}{subsection.C.5.1}
+\contentsline {subsection}{\numberline {C.5.1}Sheet Data}{112}{subsection.C.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.5.2}Flag Data}{115}{subsection.C.5.2}
+\contentsline {subsection}{\numberline {C.5.2}Flag Data}{119}{subsection.C.5.2}
