@@ -16,7 +16,7 @@ Cloth has several properties that should be considered for modelling.
 
 \subsubsection{Mechanical Properties}
 Cloth has three mechanical properties that control its behaviour; stretching, shearing and bending, Fig \ref{fig:mechanical properties} shows how each property affects the cloth.
-\\Stretching is the displacement of the cloth in either the horizontal or vertical direction. Most cloth has a high resistance to stretching and can typically only be stretched by 10\% \parencites[1]{Yalcn}[4]{Provot2001}.
+\\Stretching is the displacement of the cloth in either the horizontal or vertical direction. Most cloth has a high resistance to stretching and can typically only be stretched by 10\% \parencites{Yalcn}{Provot2001}.
 \\Shearing is the displacement of the cloth in a diagonal direction. Again, most cloths have high shearing resistance and this, coupled with high stretch resistance, makes cloth incompressible.
 \\Finally, bending is the overall curvature of the cloth surface. Typically, cloth has low bending resistance and so is easily folded.
 \begin{figure}[tp]
@@ -45,7 +45,7 @@ Techniques for modelling cloth are usually classified as either Geometric or Phy
 \subsubsection{Geometric Models}
 This family of techniques were the first models used to simulate cloth. They model the cloth using geometric equations and are especially good at modelling folds and wrinkles.
 \\According to \textcite{Ng1996}, Weil was the first to propose a geometric model in 1986 and uses catenary curves to model the drape and folds of a hanging cloth. Following on from Weil, a number of other geometric models were proposed (see \textcite{Ng1996} for more information).
-\\All geometric techniques focus on simulating the appearance of cloth, rather than the physical properties. As such, geometric models are typically more computationally efficient than physically-based models, as there is no need to solve a series of complex equations. However, geometric techniques are unable to accurately simulate the motion of cloth, \parencites[1]{Mongus2012}[2]{Zhang2001}[1-2]{Xinrong2009}, and so are mostly useful for static cloth simulations.
+\\All geometric techniques focus on simulating the appearance of cloth, rather than the physical properties. As such, geometric models are typically more computationally efficient than physically-based models, as there is no need to solve a series of complex equations. However, geometric techniques are unable to accurately simulate the motion of cloth, \parencites{Mongus2012}{Zhang2001}{Xinrong2009}, and so are mostly useful for static cloth simulations.
 \\As such, geometric models have not been considered for this project.
 
 \subsubsection{Physically-based Models}
@@ -66,7 +66,7 @@ By contrast, physically-based models are concerned with the accurate modelling o
 
 \paragraph{Continuum Models}\leavevmode\\
 Continuum models were the first physical models to be proposed. Techniques in this family model cloth as a continuous surface and utilise continuum mechanics to calculate its behaviour; the Lagrange equations are most commonly used.
-\\To discretise the continuous model, a numerical technique, such as a finite element method (FEM), is used. This is one of the advantages of continuum methods; they allow the use of a low resolution discretisation without sacrificing the accuracy of the simulation \parencite[4-5]{Wacker2005a}.
+\\To discretise the continuous model, a numerical technique, such as a finite element method (FEM), is used. This is one of the advantages of continuum methods; they allow the use of a low resolution discretisation without sacrificing the accuracy of the simulation \parencite{Wacker2005a}.
 \\Another advantage of continuum models are that they are accurate; "they provide accurate models of the material derived directly from mechanical laws and models of material properties" \parencite[200]{Magnenat-Thalmann2006}.
 \\This accuracy comes at the cost of computational performance, the main disadvantage of these techniques. The accuracy also renders these models inappropriate for use in dynamic simulations; "the formal and analytical description they require for the mechanical behavior of the material cannot easily be altered to represent transitory and non-linear events. Hence, phenomena such as frequent collisions or other highly variable geometrical constraints cannot be conveniently taken into account" \parencite[200]{Magnenat-Thalmann2006}. 
 \\Hence, continuum models are typically only considered appropriate for static simulations, or simulations where accuracy is paramount. As a result, continuum models have not been considered.
@@ -74,7 +74,7 @@ Continuum models were the first physical models to be proposed. Techniques in th
 \paragraph{Discrete Models}\leavevmode\\
 According to \textcite[2]{Choi2002}, "Cloth is not a homogeneous continuum. Therefore modeling fabrics as a continuum and employing FEM or FDM has several potential drawbacks". As a result several discrete, or particle, models have been proposed.
 \\With these techniques the discretisation in space is carried out by modelling the cloth as a discrete mesh, either regular or triangular, of point masses, called particles. This sacrifices some of the accuracy of continuum models, as the accuracy will depend on the number of particles used. However, this loss in accuracy is traded off against better computational performance; physical models are the only models that can be used for dynamic, real-time simulations.
-\\The discretisation of the cloth has a direct affect on the performance of the simulation; \textcite[5]{Volino2001} have this to be of order O($n^{3}$). Hence, there is a trade off to be made between accuracy and performance when using discrete models, depending on the use-case.
+\\The discretisation of the cloth has a direct affect on the performance of the simulation; \textcite{Volino2001} have this to be of order O($n^{3}$). Hence, there is a trade off to be made between accuracy and performance when using discrete models, depending on the use-case.
 \\By far the most popular technique is the mass-spring model. This is because, according to \textcite[2]{Zink2007}, "Mass-spring models are the most efficient as well as the simplest of the cloth models" and "is one of the most popular techniques for simulating cloth, especially when interactive frame rates are required". Thus, it has been chosen for this project and will now be described in more detail.
 
 \subsection{Mass-Spring Models}
@@ -177,7 +177,7 @@ F$_{internal}$ are the resultant forces of the springs connecting the mesh.
   \\&\text{p$_{1}$ \& p$_{2}$ are the positions of the two connected particles}
 \end{split}
 \end{equation}
-Using this equation, the cloth will be modelled with pure elastic springs and will oscillate indefinitely. However, as mentioned in \ref{sec:visual properties} and \textcite[1]{Provot2001}, cloth is a non-elastic medium and therefore the model needs to account for the energy lost due to internal friction.
+Using this equation, the cloth will be modelled with pure elastic springs and will oscillate indefinitely. However, as mentioned in \ref{sec:visual properties} and \textcite{Provot2001}, cloth is a non-elastic medium and therefore the model needs to account for the energy lost due to internal friction.
 \\This is typically modelled as an extra internal damping force, calculated using \parencite[201]{Parent2012}:
 \begin{equation}
 \begin{split}
@@ -212,7 +212,7 @@ Two types of interactions are defined, type 1 and type 2. Type 1 interactions mo
 
 \subsubsection{Justification of Choice}
 Mass-spring models are suitable for use in this project as they are efficient and simple to implement; "Mass-spring models are the most efficient as well as the simplest of the cloth models.  This method is one of the most popular techniques for simulating cloth, especially when interactive frame rates are required" \parencite[2]{Zink2007}. As this project is concerned with the real time animation of cloth, mass-spring models are therefore the obvious choice.
-\\Mass-spring models are also the most common method of modelling cloth in video games, used in games such as Alan Wake, \parencite[2]{Enqvist2010}, and Hitman: Codename 47, \parencite[1]{Jakobsen2005}, as well as commercial physics engines for games, such as PhysX. Again, since this project is concerned with the simulation of cloth for use in a video game, mass-spring models are the logical choice.
+\\Mass-spring models are also the most common method of modelling cloth in video games, used in games such as Alan Wake, \parencite{Enqvist2010}, and Hitman: Codename 47, \parencite{Jakobsen2005}, as well as commercial physics engines for games, such as PhysX. Again, since this project is concerned with the simulation of cloth for use in a video game, mass-spring models are the logical choice.
 \\In particular, the Provot model was used for this project as the force-based approach requires the solving of a much simpler series of equations than the energy-based approach of the Choi Ko model, and is therefore likely to be more computationally efficient.
 \\\\One disadvantage of the mass-spring model is that it does not achieve realistic animation of cloth as "mass-spring systems do not model any specific material and are not related to measured properties of real clothes" \parencite[3]{Wacker2005a}. However, by careful tuning of the spring stiffness coefficients pleasing results can be achieved; \textcite{Mongus2012} have shown that, with tuning, mass-spring models can reproduce the drape of a cloth with an accuracy of 97\%.
 \\Another disadvantage of mass-spring models is what Provot calls 'super-elasticity'; springs are allowed to deform too much, leading to unrealistic results. This is caused because "the springs are “ideal” and they have unlimited linear deformation rate" \parencite[3]{Vassilev2001}. To counter this effect, Provot suggests enforcing length constraints on structural and shear springs. First the position of the particles are updated, then the deformation of the springs are calculated. If this deformation value is greater than some threshold, $\tau_{c}$, then the position of the connected particles are adjusted so the deformation rate equals $\tau_{c}$. Fig \ref{fig:super-elasticity} shows the super-elasticity problem and the results of employing Provot's corrective method. As can be seen, correcting the super-elasticity results in a much more realistic model.
@@ -228,8 +228,8 @@ Mass-spring models are suitable for use in this project as they are efficient an
 \subsubsection{Mass-Spring Models for Video Games}
 Both the Provot and Choi Ko Mass-Spring models can be separated into two component, the modelling component and the animation component. The modelling component describes how the cloth will be represented internally, i.e. the disrectisation by point masses and the interconnectivity of the springs, and the animation component details how the cloth will be animated over time; for the Provot model, using the force equations detailed in the previous sections. 
 \\For video games, where performance is a key factor, using the force based animation methods in the Provot and Choi Ko models may be prohibitively expensive over a certain mesh size. This results from the fact that the number of springs grows rapidly as the number of particles increases, leading to more internal force calculations per time step. For example, for a cloth represented by a 50$^{2}$ mesh of particles connected as in the Provot model, there are 14502 springs, and therefore Equations \ref{eq:hooke equation} and \ref{eq:spring damping} must be calculated 14502 times at every time step. For the Choi Ko model, the internal force cost would only rise, as not only are there more springs in their model, but also their force calculations are more expensive. Thus, another approach to animating Mass-Spring models is usually taken for video games, called Position Based Dynamics (PBD).
-\\\\PBD were first used by \textcite{Jakobsen2005} to implement cloth in Hitman: Codename 47 and have since gone on to become the standard for cloth animation in games \parencite[2]{Enqvist2010} and commercial physics engines \parencite{Kim2011}.
-\\When using PBD, the cloth is modelled either using the Provot method \parencite[2]{Enqvist2010} or using a simplified version of the Provot model, where the flexion springs are omitted \parencites[7]{Zeller2005}[25]{Kim2011}. Instead of being modelled as Hooke springs, the spring connections are instead treated as distance constraints of the form
+\\\\PBD were first used by \textcite{Jakobsen2005} to implement cloth in Hitman: Codename 47 and have since gone on to become the standard for cloth animation in games \parencite{Enqvist2010} and commercial physics engines \parencite{Kim2011}.
+\\When using PBD, the cloth is modelled either using the Provot method \parencite{Enqvist2010} or using a simplified version of the Provot model, where the flexion springs are omitted \parencites{Zeller2005}{Kim2011}. Instead of being modelled as Hooke springs, the spring connections are instead treated as distance constraints of the form
 \begin{equation}
 \begin{split}
 \label{eq:distance constraint}
@@ -257,7 +257,7 @@ The work of \textcite{Jakobsen2005} was developed in \textcite{Muller2006} resul
   \\&\text{w1 and w2 are the weights of the respective particles}
 \end{split}
 \end{equation}
-This method of iteratively checking constraints and relaxing them immediately is called the Gauss-Seidel method and has one main problem; relaxing one constraint may violate other, already examined, constraints and therefore multiple relaxation passes may be needed. According to \textcite[1]{Jakobsen2005} however, for most cloth only one relaxation pass is necessary for visually pleasing animation, although this is contradicted by \parencite{Kim2011}, who suggests that multiple passes are needed when using a Gauss-Seidel approach.
+This method of iteratively checking constraints and relaxing them immediately is called the Gauss-Seidel method and has one main problem; relaxing one constraint may violate other, already examined, constraints and therefore multiple relaxation passes may be needed. According to \textcite{Jakobsen2005} however, for most cloth only one relaxation pass is necessary for visually pleasing animation, although this is contradicted by \parencite{Kim2011}, who suggests that multiple passes are needed when using a Gauss-Seidel approach.
 \\\\A PBD approach is unconditionally stable, as any instability will be corrected by the relaxation process, and can therefore use a large time step to reduce the performance cost of the simulation. Whilst implicit integrators, discussed below, offer unconditional stability for the traditional Mass-Spring models, they are much more difficult to implement, so the fact that PBD are stable and simple explains their popularity for use in video games. The need for multiple Gauss-Seidel passes can be used to control the performance hit of the cloth as well; the amount of frame time available for cloth simulation could be used to adjust the number of relaxation passes, so that if more time is available, more accurate cloth is produced.
 \\Despite its advantages, PBD was not chosen for this project as it is somewhat of  a closed problem for cloth simulation in video games. PBDs are the standard method of animating cloth for games, and have been implemented efficiently, and parallelised, in commercial physics engines. By contrast, the Provot Mass-Spring model is not conventionally used, as it may be too expensive for certain mesh sizes. However, the research into the performance of the Provot model is either old, or makes no reference to the hardware used, and therefore there is scope for further work to investigate whether performance is still a concern with modern hardware.
 
@@ -334,7 +334,7 @@ The Fourth order Runge-Kutta (RK4) integrator offers greater stability using lar
   \\&k_{4} = F\bigg(t_{i} + \Delta t, v_{i} + \frac{\Delta t}{2}k_{3}\bigg)
 \end{split}
 \end{equation}
-This integrator has a significantly higher computational cost than the other methods discussed, however \textcite[4]{Volino2001} have shown that the RK4 supports time steps almost six times larger than the midpoint method. Therefore, given that RK4 is three times as computationally expensive as midpoint, this suggests that this integrator can lead to twice the overall simulation performance. \textcite[4]{Wang2009a} have also shown that RK4 offers performance gains over midpoint.
+This integrator has a significantly higher computational cost than the other methods discussed, however \textcite{Volino2001} have shown that the RK4 supports time steps almost six times larger than the midpoint method. Therefore, given that RK4 is three times as computationally expensive as midpoint, this suggests that this integrator can lead to twice the overall simulation performance. \textcite{Wang2009a} have also shown that RK4 offers performance gains over midpoint.
 
 \paragraph{Verlet}\leavevmode\\
 Verlet integration is an alternative to the Runge-Kutta family of integrators. It avoids velocity calculations by approximating the velocity of a particle using its previous positions.
@@ -367,7 +367,7 @@ $F^{t + \Delta t}_{i}$ cannot be calculated at the current time step, and so mus
 \label{eq:implicit euler 2}
   F^{t + \Delta t} = F^{t} + \frac{\delta F}{\delta x}\Delta x^{t + \Delta t}
 \end{equation}
-$\Delta x^{t + \Delta t}$ can be written as $\Delta t(v^{t} + \Delta v^{t + \Delta t})$ and so eq. \ref{eq:implicit euler 2} can be rewritten, giving the series of linear equations \parencite[3]{Kang2000}:
+$\Delta x^{t + \Delta t}$ can be written as $\Delta t(v^{t} + \Delta v^{t + \Delta t})$ and so Equation \ref{eq:implicit euler 2} can be rewritten, giving the series of linear equations \parencite[3]{Kang2000}:
 \begin{equation}
 \begin{split}
 \label{eq:implicit euler 3}

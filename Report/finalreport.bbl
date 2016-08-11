@@ -16,6 +16,29 @@
   {}
 \endgroup
 
+\entry{Adriansnetlis2016}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Adriansnetlis}{A.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{A1}
+  \strng{fullhash}{A1}
+  \field{labelyear}{2016}
+  \field{sortinit}{A}
+  \field{title}{{How does Runge-Kutta 4 work in games}}
+  \verb{url}
+  \verb https://www.gamedev.net/topic/679116-how-does-runge-kutta-4-work-in-gam
+  \verb es/
+  \endverb
+  \field{year}{2016}
+  \field{urlday}{30}
+  \field{urlmonth}{06}
+  \field{urlyear}{2016}
+\endentry
+
 \entry{Akiya2011}{inproceedings}{}
   \name{author}{3}{}{%
     {{}%
@@ -114,7 +137,7 @@
   \field{title}{{Simulation of Tearable Cloth}}
   \verb{url}
   \verb https://nccastaff.bournemouth.ac.uk/jmacey/CGITech/reports2015/PBartels
-  \verb {\_}PieterjanBartels{\_}CGITECH{\_}final.pdf
+  \verb _PieterjanBartels_CGITECH_final.pdf
   \endverb
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
@@ -220,9 +243,6 @@
   \field{edition}{Second}
   \field{isbn}{ISBN 9781449361051}
   \field{title}{{Physics for Game Developers}}
-  \verb{url}
-  \verb https://www.dawsonera.com/abstract/9781449361051
-  \endverb
   \list{location}{1}{%
     {Sebastopol}%
   }
@@ -385,9 +405,6 @@
   \field{sortinit}{C}
   \field{edition}{First}
   \field{title}{{Physics Modeling for Game Programmers}}
-  \verb{url}
-  \verb http://site.ebrary.com/lib/staffordshire/reader.action?docID=10065752
-  \endverb
   \list{location}{1}{%
     {Boston}%
   }
@@ -493,6 +510,29 @@
   \field{year}{1999}
 \endentry
 
+\entry{Endre2011}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Endre}{E.}%
+     {Sim{\'{o}}}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ES1}
+  \strng{fullhash}{ES1}
+  \field{labelyear}{2011}
+  \field{sortinit}{E}
+  \field{title}{{Cloth simulation with RK4 numerical integration}}
+  \verb{url}
+  \verb http://www.esimov.com/2011/07/cloth-simulation-with-rk4-numerical-integ
+  \verb ration#.V4YzVjVpuvY
+  \endverb
+  \field{year}{2011}
+  \field{urlday}{13}
+  \field{urlmonth}{07}
+  \field{urlyear}{2016}
+\endentry
+
 \entry{Enqvist2010}{misc}{}
   \name{author}{1}{}{%
     {{}%
@@ -518,8 +558,8 @@
   \field{sortinit}{E}
   \field{title}{{The Secrets Of Cloth Simulation In Alan Wake}}
   \verb{url}
-  \verb http://www.gamasutra.com/view/feature/132771/the{\_}secrets{\_}of{\_}cl
-  \verb oth{\_}simulation{\_}in{\_}.php?page=1
+  \verb http://www.gamasutra.com/view/feature/132771/the_secrets_of_cloth_simul
+  \verb ation_in_.php
   \endverb
   \field{annotation}{%
   good example of how to do cloth for games P2 Para 1-2. cloth model Para 6.
@@ -547,7 +587,7 @@
   \field{title}{{Cloth Simulation}}
   \verb{url}
   \verb https://nccastaff.bournemouth.ac.uk/jmacey/CGITech/reports2015/BErtekin
-  \verb {\_}burakertekin-cgitech.pdf
+  \verb _burakertekin-cgitech.pdf
   \endverb
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
@@ -575,11 +615,13 @@
   }
   \strng{namehash}{FG1}
   \strng{fullhash}{FG1}
+  \field{labelyear}{2006}
   \field{sortinit}{F}
   \field{title}{{Integration Basics}}
   \verb{url}
   \verb http://gafferongames.com/game-physics/integration-basics/
   \endverb
+  \field{year}{2006}
   \field{urlday}{30}
   \field{urlmonth}{06}
   \field{urlyear}{2016}
@@ -606,7 +648,7 @@
   \field{number}{June}
   \field{title}{{A simple Mass-Spring system for Character Animation}}
   \verb{url}
-  \verb http://www.gmrv.es/{~}cgarre/APO{\_}MassSpring{\_}Jun08.pdf
+  \verb http://www.gmrv.es/~cgarre/APO_MassSpring_Jun08.pdf
   \endverb
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
@@ -712,7 +754,7 @@
   \field{chapter}{29}
   \field{title}{{Real-Time Rigid Body Simulation on GPUs}}
   \verb{url}
-  \verb http://http.developer.nvidia.com/GPUGems3/gpugems3{\_}ch29.html
+  \verb http://http.developer.nvidia.com/GPUGems3/gpugems3_ch29.html
   \endverb
   \field{annotation}{%
   Not very useful Maybe an example of how simulation still too expensive for
@@ -737,7 +779,7 @@
   \field{sortinit}{J}
   \field{title}{{Advanced Character Physics}}
   \verb{url}
-  \verb http://www.gotoandplay.it/{\_}articles/2005/08/advCharPhysics.php
+  \verb http://www.gotoandplay.it/_articles/2005/08/advCharPhysics.php
   \endverb
   \field{annotation}{%
   alternate technique using a different spring model {\&}amp; no differential
@@ -848,8 +890,8 @@
   \field{sortinit}{L}
   \field{title}{{Collision Response: Bouncy, Trouncy, Fun}}
   \verb{url}
-  \verb http://www.gamasutra.com/view/feature/3427/collision{\_}response{\_}bou
-  \verb ncy{\_}.php
+  \verb http://www.gamasutra.com/view/feature/3427/collision_response_bouncy_.p
+  \verb hp
   \endverb
   \field{annotation}{%
   Derivations of the hooke equations for mass-spring models%
@@ -886,8 +928,8 @@
   \field{sortinit}{L}
   \field{title}{{Devil in the Blue Faceted Dress: Real Time Cloth Animation}}
   \verb{url}
-  \verb http://www.gamasutra.com/view/feature/131851/devil{\_}in{\_}the{\_}blue
-  \verb {\_}faceted{\_}dress{\_}.php
+  \verb http://www.gamasutra.com/view/feature/131851/devil_in_the_blue_faceted_
+  \verb dress_.php
   \endverb
   \field{annotation}{%
   focus on games P2. Para 3. problems with only structural springs Para 5.
@@ -896,6 +938,35 @@
   of springs%
   }
   \field{year}{2000}
+  \field{urlday}{03}
+  \field{urlmonth}{03}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{Lovrovic2014}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Lovrovic}{L.}%
+     {Bojan}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{B-spline,Cloth,Real,Simulation,Surfaces,Time,achieve,amounts,cloth,devastating,effects,fidelity,have,high,large,often,particles,requires,simulation,springs,use,visual,which}
+  \strng{namehash}{LB1}
+  \strng{fullhash}{LB1}
+  \field{labelyear}{2014}
+  \field{sortinit}{L}
+  \field{title}{{Real Time Cloth Simulation with B-spline Surfaces - Graphics
+  Programming and Theory - Articles - Articles - GameDev.net}}
+  \verb{url}
+  \verb http://www.gamedev.net/page/resources/_/technical/graphics-programming-
+  \verb and-theory/real-time-cloth-simulation-with-b-spline-surfaces-r3814
+  \endverb
+  \field{annotation}{%
+  GPU accelerated approach; evidence that performance still a concern para 1.
+  -ve of spring models%
+  }
+  \field{year}{2014}
   \field{urlday}{03}
   \field{urlmonth}{03}
   \field{urlyear}{2016}
@@ -1205,6 +1276,7 @@
   }
   \strng{namehash}{N1}
   \strng{fullhash}{N1}
+  \field{labelyear}{2015}
   \field{sortinit}{N}
   \field{title}{{What is Waterfall Model in software testing and what are
   advantages and disadvantages of Waterfall Model}}
@@ -1212,6 +1284,7 @@
   \verb http://testingfreak.com/waterfall-model-software-testing-advantages-dis
   \verb advantages-waterfall-model/
   \endverb
+  \field{year}{2015}
   \field{urlday}{15}
   \field{urlmonth}{06}
   \field{urlyear}{2016}
@@ -1387,9 +1460,6 @@
   \field{sortinit}{P}
   \field{edition}{Third}
   \field{title}{{Computer Animation Algorithms and Techniques}}
-  \verb{url}
-  \verb https://www.dawsonera.com/readonline/9780124159730/startPage/20
-  \endverb
   \list{location}{1}{%
     {Waltham}%
   }
@@ -1458,6 +1528,33 @@
   algorithm P6. deformation rates {\&}amp; targets, results%
   }
   \field{year}{1995}
+\endentry
+
+\entry{RubyNL2012}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {RubyNL}{R.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{3-dimensional,First,Hello,Rope/cloth,cloth,code,course,extending,had,have,having,modelling,problems,program,rope,simulation,simulationIm,some,though,troubles}
+  \strng{namehash}{R1}
+  \strng{fullhash}{R1}
+  \field{labelyear}{2012}
+  \field{sortinit}{R}
+  \field{title}{{Rope/cloth simulation problems}}
+  \verb{url}
+  \verb https://www.gamedev.net/topic/626870-ropecloth-simulation-problems/
+  \endverb
+  \field{annotation}{%
+  some interesting points -ve of Jackonsen method; large number of iterations
+  potentially needed 2nd post. dampened Hooke equations%
+  }
+  \field{year}{2012}
+  \field{urlday}{03}
+  \field{urlmonth}{03}
+  \field{urlyear}{2016}
 \endentry
 
 \entry{SantosSouza2014}{article}{}
@@ -1609,6 +1706,29 @@
   goals for different cloth uses, problems with cloth, -ve of integrators%
   }
   \field{year}{2009}
+\endentry
+
+\entry{Shadx2006}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Shadx}{S.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{S2}
+  \strng{fullhash}{S2}
+  \field{labelyear}{2006}
+  \field{sortinit}{S}
+  \field{title}{{Runge Kutta 4 For cloth simulation}}
+  \verb{url}
+  \verb https://www.gamedev.net/topic/368698-runge-kutta-4-for-cloth-simulation
+  \verb /
+  \endverb
+  \field{year}{2006}
+  \field{urlday}{30}
+  \field{urlmonth}{06}
+  \field{urlyear}{2016}
 \endentry
 
 \entry{Tang2013}{article}{}
@@ -2159,23 +2279,24 @@
 \entry{Yalcn}{misc}{}
   \name{author}{2}{}{%
     {{}%
-     {Yal{\c{c}}ın}{Y.}%
+     {Yal{\c{c}}in}{Y.}%
      {M~Adil}{M.~A.}%
      {}{}%
      {}{}}%
     {{}%
-     {Yıldız}{Y.}%
-     {Cansın}{C.}%
+     {Yildiz}{Y.}%
+     {Cansin}{C.}%
      {}{}%
      {}{}}%
   }
   \strng{namehash}{YMAYC1}
   \strng{fullhash}{YMAYC1}
+  \field{labelyear}{2009}
   \field{sortinit}{Y}
   \field{title}{{Techniques for Animating Cloth}}
   \verb{url}
-  \verb http://www.cs.bilkent.edu.tr/{~}cansin/projects/cs567-animation/cloth/c
-  \verb loth-paper.pdf
+  \verb http://www.cs.bilkent.edu.tr/~cansin/projects/cs567-animation/cloth/clo
+  \verb th-paper.pdf
   \endverb
   \verb{file}
   \verb :C$\backslash$:/Users/Chris/AppData/Local/Mendeley Ltd./Mendeley Deskto
@@ -2189,6 +2310,7 @@
   of Provot, explicit Euler P5. try to read reference 15 P9. try to find
   reference 19%
   }
+  \field{year}{2009}
   \field{urlday}{25}
   \field{urlmonth}{05}
   \field{urlyear}{2016}
