@@ -4,178 +4,178 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{List of Figures}{9}{chapter*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Tables}{13}{chapter*.5}
+\contentsline {chapter}{List of Tables}{15}{chapter*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Introduction}{14}{chapter.1}
+\contentsline {chapter}{\numberline {1}Introduction}{16}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Project Aims}{15}{section.1.1}
+\contentsline {section}{\numberline {1.1}Project Aims}{17}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Hypotheses}{15}{section.1.2}
+\contentsline {section}{\numberline {1.2}Hypotheses}{17}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}Null Hypothesis}{15}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.1}Null Hypothesis}{17}{subsection.1.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.2}Alternative Hypothesis}{15}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.2}Alternative Hypothesis}{17}{subsection.1.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Report Structure}{16}{section.1.3}
+\contentsline {section}{\numberline {1.3}Report Structure}{18}{section.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Literature Review}{17}{chapter.2}
+\contentsline {chapter}{\numberline {2}Literature Review}{19}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Cloth Simulation}{17}{section.2.1}
+\contentsline {section}{\numberline {2.1}Cloth Simulation}{19}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}Cloth Properties}{17}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.1}Cloth Properties}{19}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.1.1}Mechanical Properties}{18}{subsubsection.2.1.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Mechanical Properties}{20}{subsubsection.2.1.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.1.2}Visual Properties}{18}{subsubsection.2.1.1.2}
+\contentsline {subsubsection}{\numberline {2.1.1.2}Visual Properties}{20}{subsubsection.2.1.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Cloth Models}{18}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.2}Cloth Models}{20}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.2.1}Geometric Models}{19}{subsubsection.2.1.2.1}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Geometric Models}{21}{subsubsection.2.1.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.2.2}Physically-based Models}{19}{subsubsection.2.1.2.2}
+\contentsline {subsubsection}{\numberline {2.1.2.2}Physically-based Models}{21}{subsubsection.2.1.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {2.1.2.2.1}Continuum Models}{20}{paragraph.2.1.2.2.1}
+\contentsline {paragraph}{\numberline {2.1.2.2.1}Continuum Models}{22}{paragraph.2.1.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {2.1.2.2.2}Discrete Models}{20}{paragraph.2.1.2.2.2}
+\contentsline {paragraph}{\numberline {2.1.2.2.2}Discrete Models}{22}{paragraph.2.1.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.3}Mass-Spring Models}{21}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.3}Mass-Spring Models}{23}{subsection.2.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.3.1}Provot Model}{21}{subsubsection.2.1.3.1}
+\contentsline {subsubsection}{\numberline {2.1.3.1}Provot Model}{23}{subsubsection.2.1.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.3.2}Choi Ko Model}{24}{subsubsection.2.1.3.2}
+\contentsline {subsubsection}{\numberline {2.1.3.2}Choi Ko Model}{26}{subsubsection.2.1.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.3.3}Justification of Choice}{25}{subsubsection.2.1.3.3}
+\contentsline {subsubsection}{\numberline {2.1.3.3}Justification of Choice}{27}{subsubsection.2.1.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.3.4}Mass-Spring Models for Video Games}{26}{subsubsection.2.1.3.4}
+\contentsline {subsubsection}{\numberline {2.1.3.4}Mass-Spring Models for Video Games}{28}{subsubsection.2.1.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.4}Numerical Integration for Mass-Spring Models}{29}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.4}Numerical Integration for Mass-Spring Models}{31}{subsection.2.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.4.1}Explicit Integrators}{29}{subsubsection.2.1.4.1}
+\contentsline {subsubsection}{\numberline {2.1.4.1}Explicit Integrators}{31}{subsubsection.2.1.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {2.1.4.1.1}Euler}{29}{paragraph.2.1.4.1.1}
+\contentsline {paragraph}{\numberline {2.1.4.1.1}Euler}{31}{paragraph.2.1.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {2.1.4.1.2}Midpoint}{30}{paragraph.2.1.4.1.2}
+\contentsline {paragraph}{\numberline {2.1.4.1.2}Midpoint}{32}{paragraph.2.1.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {2.1.4.1.3}Fourth order Runge-Kutta}{31}{paragraph.2.1.4.1.3}
+\contentsline {paragraph}{\numberline {2.1.4.1.3}Fourth order Runge-Kutta}{33}{paragraph.2.1.4.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {2.1.4.1.4}Verlet}{31}{paragraph.2.1.4.1.4}
+\contentsline {paragraph}{\numberline {2.1.4.1.4}Verlet}{33}{paragraph.2.1.4.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.4.2}Implicit Integrators}{32}{subsubsection.2.1.4.2}
+\contentsline {subsubsection}{\numberline {2.1.4.2}Implicit Integrators}{34}{subsubsection.2.1.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{\numberline {2.1.4.2.1}Euler}{32}{paragraph.2.1.4.2.1}
+\contentsline {paragraph}{\numberline {2.1.4.2.1}Euler}{34}{paragraph.2.1.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.1.4.3}Chosen Integration Methods}{34}{subsubsection.2.1.4.3}
+\contentsline {subsubsection}{\numberline {2.1.4.3}Chosen Integration Methods}{36}{subsubsection.2.1.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Design and Implementation}{35}{chapter.3}
+\contentsline {chapter}{\numberline {3}Design and Implementation}{37}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Development Methodology}{35}{section.3.1}
+\contentsline {section}{\numberline {3.1}Development Methodology}{37}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Sequential}{35}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}Sequential}{37}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Cyclical}{36}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.2}Cyclical}{38}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.3}Chosen Methodology}{37}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.3}Chosen Methodology}{39}{subsection.3.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Development}{37}{section.3.2}
+\contentsline {section}{\numberline {3.2}Development}{39}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}First Cycle}{37}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.1}First Cycle}{39}{subsection.3.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Second Cycle}{39}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.2}Second Cycle}{41}{subsection.3.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Third Cycle}{41}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}Third Cycle}{43}{subsection.3.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Profiling and Optimisation}{43}{section.3.3}
+\contentsline {section}{\numberline {3.3}Profiling and Optimisation}{45}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}First Cycle}{43}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.1}First Cycle}{45}{subsection.3.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1.1}Second Cycle}{44}{subsubsection.3.3.1.1}
+\contentsline {subsubsection}{\numberline {3.3.1.1}Second Cycle}{46}{subsubsection.3.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Test Plan}{45}{chapter.4}
+\contentsline {chapter}{\numberline {4}Test Plan}{47}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Test Data}{45}{section.4.1}
+\contentsline {section}{\numberline {4.1}Test Data}{47}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Test Parameters}{45}{section.4.2}
+\contentsline {section}{\numberline {4.2}Test Parameters}{47}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Mesh Size}{46}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.1}Mesh Size}{48}{subsection.4.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Integrator Time Step}{46}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.2}Integrator Time Step}{48}{subsection.4.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Spring and Damping Coefficients}{46}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.3}Spring and Damping Coefficients}{48}{subsection.4.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.4}Particle Mass}{47}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4}Particle Mass}{49}{subsection.4.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Test Process}{47}{section.4.3}
+\contentsline {section}{\numberline {4.3}Test Process}{49}{section.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Data Analysis and Evaluation}{49}{chapter.5}
+\contentsline {chapter}{\numberline {5}Data Analysis and Evaluation}{51}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Chosen Parameters}{49}{section.5.1}
+\contentsline {section}{\numberline {5.1}Chosen Parameters}{51}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Mesh Size}{49}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.1}Mesh Size}{51}{subsection.5.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Time Step}{50}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.2}Time Step}{52}{subsection.5.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.3}Mass and Spring and Damping Coefficients}{50}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.3}Mass and Spring and Damping Coefficients}{52}{subsection.5.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Results}{51}{section.5.2}
+\contentsline {section}{\numberline {5.2}Results}{53}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Explicit Euler}{51}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}Explicit Euler}{53}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Verlet}{53}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.2}Verlet}{55}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Midpoint}{54}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.3}Midpoint}{56}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}Fourth Order Runge-Kutta}{55}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.4}Fourth Order Runge-Kutta}{57}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Evaluation}{56}{section.5.3}
+\contentsline {section}{\numberline {5.3}Evaluation}{58}{section.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.1}Null Hypothesis}{56}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.1}Null Hypothesis}{58}{subsection.5.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.2}Alternative Hypothesis}{57}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.2}Alternative Hypothesis}{59}{subsection.5.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Conclusion}{58}{chapter.6}
+\contentsline {chapter}{\numberline {6}Conclusion}{60}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Future Work}{59}{section.6.1}
+\contentsline {section}{\numberline {6.1}Future Work}{61}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Class Diagrams}{61}{appendix.A}
+\contentsline {chapter}{\numberline {A}Class Diagrams}{63}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}First Cycle Design}{61}{section.A.1}
+\contentsline {section}{\numberline {A.1}First Cycle Design}{63}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Second Cycle Design}{63}{section.A.2}
+\contentsline {section}{\numberline {A.2}Second Cycle Design}{65}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Third Cycle Design}{65}{section.A.3}
+\contentsline {section}{\numberline {A.3}Third Cycle Design}{67}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Profiling Results}{67}{appendix.B}
+\contentsline {chapter}{\numberline {B}Profiling Results}{69}{appendix.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {B.1}First Cycle}{67}{section.B.1}
+\contentsline {section}{\numberline {B.1}First Cycle}{69}{section.B.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Test Results}{71}{appendix.C}
+\contentsline {chapter}{\numberline {C}Test Results}{73}{appendix.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.1}Explicit Euler}{71}{section.C.1}
+\contentsline {section}{\numberline {C.1}Explicit Euler}{73}{section.C.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.1.1}Sheet Data}{71}{subsection.C.1.1}
+\contentsline {subsection}{\numberline {C.1.1}Sheet Data}{73}{subsection.C.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.1.2}Flag Data}{84}{subsection.C.1.2}
+\contentsline {subsection}{\numberline {C.1.2}Flag Data}{92}{subsection.C.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.2}Verlet}{97}{section.C.2}
+\contentsline {section}{\numberline {C.2}Verlet}{111}{section.C.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.2.1}Sheet Data}{97}{subsection.C.2.1}
+\contentsline {subsection}{\numberline {C.2.1}Sheet Data}{111}{subsection.C.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.2.2}Flag Data}{110}{subsection.C.2.2}
+\contentsline {subsection}{\numberline {C.2.2}Flag Data}{130}{subsection.C.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.3}Midpoint}{123}{section.C.3}
+\contentsline {section}{\numberline {C.3}Midpoint}{149}{section.C.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.3.1}Sheet Data}{123}{subsection.C.3.1}
+\contentsline {subsection}{\numberline {C.3.1}Sheet Data}{149}{subsection.C.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.3.2}Flag Data}{136}{subsection.C.3.2}
+\contentsline {subsection}{\numberline {C.3.2}Flag Data}{168}{subsection.C.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.4}Fourth Order Runge-Kutta}{149}{section.C.4}
+\contentsline {section}{\numberline {C.4}Fourth Order Runge-Kutta}{187}{section.C.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.4.1}Sheet Data}{149}{subsection.C.4.1}
+\contentsline {subsection}{\numberline {C.4.1}Sheet Data}{187}{subsection.C.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.4.2}Flag Data}{162}{subsection.C.4.2}
+\contentsline {subsection}{\numberline {C.4.2}Flag Data}{206}{subsection.C.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.5}All Integrators}{175}{section.C.5}
+\contentsline {section}{\numberline {C.5}All Integrators}{225}{section.C.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.5.1}Sheet Data}{175}{subsection.C.5.1}
+\contentsline {subsection}{\numberline {C.5.1}Sheet Data}{225}{subsection.C.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {C.5.2}Flag Data}{182}{subsection.C.5.2}
+\contentsline {subsection}{\numberline {C.5.2}Flag Data}{232}{subsection.C.5.2}
