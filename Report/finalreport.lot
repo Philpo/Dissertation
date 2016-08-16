@@ -24,18 +24,34 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.1}{\ignorespaces Stability results for explicit Euler (sheet)}}{76}{table.C.1}
+\contentsline {table}{\numberline {C.1}{Raw data for explicit Euler (sheet)}}{78}{table.C.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.2}{\ignorespaces Stability results for explicit Euler (flag)}}{81}{table.C.2}
+\contentsline {table}{\numberline {C.2}{\ignorespaces Stability results for explicit Euler (sheet)}}{83}{table.C.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.3}{\ignorespaces Stability results for Verlet (sheet)}}{87}{table.C.3}
+\contentsline {table}{\numberline {C.3}{Stability results for explicit Euler (flag)}}{91}{table.C.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.4}{\ignorespaces Stability results for Verlet (flag)}}{92}{table.C.4}
+\contentsline {table}{\numberline {C.4}{\ignorespaces Stability results for explicit Euler (flag)}}{96}{table.C.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.5}{\ignorespaces Stability results for Midpoint (sheet)}}{98}{table.C.5}
+\contentsline {table}{\numberline {C.5}{Raw data for Verlet (sheet)}}{104}{table.C.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.6}{\ignorespaces Stability results for Midpoint (flag)}}{103}{table.C.6}
+\contentsline {table}{\numberline {C.6}{\ignorespaces Stability results for Verlet (sheet)}}{109}{table.C.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.7}{\ignorespaces Stability results for fourth order Runge-Kutta (sheet)}}{109}{table.C.7}
+\contentsline {table}{\numberline {C.7}{Raw data for Verlet (flag)}}{117}{table.C.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.8}{\ignorespaces Stability results for fourth order Runge-Kutta (flag)}}{114}{table.C.8}
+\contentsline {table}{\numberline {C.8}{\ignorespaces Stability results for Verlet (flag)}}{122}{table.C.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.9}{Raw data for Midpoint (sheet)}}{130}{table.C.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.10}{\ignorespaces Stability results for Midpoint (sheet)}}{135}{table.C.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.11}{Raw data for Midpoint (flag)}}{143}{table.C.11}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.12}{\ignorespaces Stability results for Midpoint (flag)}}{148}{table.C.12}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.13}{Raw data for fourth order Runge-Kutta (sheet)}}{156}{table.C.13}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.14}{\ignorespaces Stability results for fourth order Runge-Kutta (sheet)}}{161}{table.C.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.15}{Raw data for fourth order Runge-Kutta (flag)}}{169}{table.C.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.16}{\ignorespaces Stability results for fourth order Runge-Kutta (flag)}}{174}{table.C.16}

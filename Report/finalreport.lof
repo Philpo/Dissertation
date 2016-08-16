@@ -72,138 +72,138 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Explicit Euler time step against average FPS (sheet)}}{72}{figure.C.1}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Explicit Euler time step against average FPS (sheet)}}{79}{figure.C.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Explicit Euler mesh size against average FPS (sheet)}}{73}{figure.C.2}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Explicit Euler mesh size against average FPS (sheet)}}{80}{figure.C.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Explicit Euler time step against average FPS for a 300 by 300 mesh (sheet)}}{73}{figure.C.3}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Explicit Euler time step against average FPS for a 300 by 300 mesh (sheet)}}{80}{figure.C.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.4}{\ignorespaces Explicit Euler mesh size against average update time (sheet)}}{74}{figure.C.4}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Explicit Euler mesh size against average update time (sheet)}}{81}{figure.C.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.5}{\ignorespaces Explicit Euler mesh size against average internal force time (sheet)}}{74}{figure.C.5}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Explicit Euler mesh size against average internal force time (sheet)}}{81}{figure.C.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.6}{\ignorespaces Explicit Euler frame time breakdown (sheet)}}{75}{figure.C.6}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Explicit Euler frame time breakdown (sheet)}}{82}{figure.C.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.7}{\ignorespaces Explicit Euler update time breakdown (sheet)}}{75}{figure.C.7}
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Explicit Euler update time breakdown (sheet)}}{82}{figure.C.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.8}{\ignorespaces Explicit Euler mesh size against average FPS (flag)}}{77}{figure.C.8}
+\contentsline {figure}{\numberline {C.8}{\ignorespaces Explicit Euler mesh size against average FPS (flag)}}{92}{figure.C.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.9}{\ignorespaces Explicit Euler mesh size against average FPS (flag)}}{78}{figure.C.9}
+\contentsline {figure}{\numberline {C.9}{\ignorespaces Explicit Euler mesh size against average FPS (flag)}}{93}{figure.C.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.10}{\ignorespaces Explicit Euler time step against average FPS for a 300 by 300 mesh (flag)}}{78}{figure.C.10}
+\contentsline {figure}{\numberline {C.10}{\ignorespaces Explicit Euler time step against average FPS for a 300 by 300 mesh (flag)}}{93}{figure.C.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.11}{\ignorespaces Explicit Euler mesh size against average update time (flag)}}{79}{figure.C.11}
+\contentsline {figure}{\numberline {C.11}{\ignorespaces Explicit Euler mesh size against average update time (flag)}}{94}{figure.C.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.12}{\ignorespaces Explicit Euler mesh size against average internal force time (flag)}}{79}{figure.C.12}
+\contentsline {figure}{\numberline {C.12}{\ignorespaces Explicit Euler mesh size against average internal force time (flag)}}{94}{figure.C.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.13}{\ignorespaces Explicit Euler frame time breakdown (flag)}}{80}{figure.C.13}
+\contentsline {figure}{\numberline {C.13}{\ignorespaces Explicit Euler frame time breakdown (flag)}}{95}{figure.C.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.14}{\ignorespaces Explicit Euler update time breakdown (flag)}}{80}{figure.C.14}
+\contentsline {figure}{\numberline {C.14}{\ignorespaces Explicit Euler update time breakdown (flag)}}{95}{figure.C.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.15}{\ignorespaces Verlet time step against average FPS (sheet)}}{83}{figure.C.15}
+\contentsline {figure}{\numberline {C.15}{\ignorespaces Verlet time step against average FPS (sheet)}}{105}{figure.C.15}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.16}{\ignorespaces Verlet mesh size against average FPS (sheet)}}{84}{figure.C.16}
+\contentsline {figure}{\numberline {C.16}{\ignorespaces Verlet mesh size against average FPS (sheet)}}{106}{figure.C.16}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.17}{\ignorespaces Verlet time step against average FPS for a 300 by 300 mesh (sheet)}}{84}{figure.C.17}
+\contentsline {figure}{\numberline {C.17}{\ignorespaces Verlet time step against average FPS for a 300 by 300 mesh (sheet)}}{106}{figure.C.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.18}{\ignorespaces Verlet mesh size against average update time (sheet)}}{85}{figure.C.18}
+\contentsline {figure}{\numberline {C.18}{\ignorespaces Verlet mesh size against average update time (sheet)}}{107}{figure.C.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.19}{\ignorespaces Verlet mesh size against average internal force time (sheet)}}{85}{figure.C.19}
+\contentsline {figure}{\numberline {C.19}{\ignorespaces Verlet mesh size against average internal force time (sheet)}}{107}{figure.C.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.20}{\ignorespaces Verlet frame time breakdown (sheet)}}{86}{figure.C.20}
+\contentsline {figure}{\numberline {C.20}{\ignorespaces Verlet frame time breakdown (sheet)}}{108}{figure.C.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.21}{\ignorespaces Verlet update time breakdown (sheet)}}{86}{figure.C.21}
+\contentsline {figure}{\numberline {C.21}{\ignorespaces Verlet update time breakdown (sheet)}}{108}{figure.C.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.22}{\ignorespaces Verlet mesh size against average FPS (flag)}}{88}{figure.C.22}
+\contentsline {figure}{\numberline {C.22}{\ignorespaces Verlet mesh size against average FPS (flag)}}{118}{figure.C.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.23}{\ignorespaces Verlet mesh size against average FPS (flag)}}{89}{figure.C.23}
+\contentsline {figure}{\numberline {C.23}{\ignorespaces Verlet mesh size against average FPS (flag)}}{119}{figure.C.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.24}{\ignorespaces Verlet time step against average FPS for a 300 by 300 mesh (flag)}}{89}{figure.C.24}
+\contentsline {figure}{\numberline {C.24}{\ignorespaces Verlet time step against average FPS for a 300 by 300 mesh (flag)}}{119}{figure.C.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.25}{\ignorespaces Verlet mesh size against average update time (flag)}}{90}{figure.C.25}
+\contentsline {figure}{\numberline {C.25}{\ignorespaces Verlet mesh size against average update time (flag)}}{120}{figure.C.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.26}{\ignorespaces Verlet mesh size against average internal force time (flag)}}{90}{figure.C.26}
+\contentsline {figure}{\numberline {C.26}{\ignorespaces Verlet mesh size against average internal force time (flag)}}{120}{figure.C.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.27}{\ignorespaces Verlet frame time breakdown (flag)}}{91}{figure.C.27}
+\contentsline {figure}{\numberline {C.27}{\ignorespaces Verlet frame time breakdown (flag)}}{121}{figure.C.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.28}{\ignorespaces Verlet update time breakdown (flag)}}{91}{figure.C.28}
+\contentsline {figure}{\numberline {C.28}{\ignorespaces Verlet update time breakdown (flag)}}{121}{figure.C.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.29}{\ignorespaces Midpoint time step against average FPS (sheet)}}{94}{figure.C.29}
+\contentsline {figure}{\numberline {C.29}{\ignorespaces Midpoint time step against average FPS (sheet)}}{131}{figure.C.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.30}{\ignorespaces Midpoint mesh size against average FPS (sheet)}}{95}{figure.C.30}
+\contentsline {figure}{\numberline {C.30}{\ignorespaces Midpoint mesh size against average FPS (sheet)}}{132}{figure.C.30}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.31}{\ignorespaces Midpoint time step against average FPS for a 300 by 300 mesh (sheet)}}{95}{figure.C.31}
+\contentsline {figure}{\numberline {C.31}{\ignorespaces Midpoint time step against average FPS for a 300 by 300 mesh (sheet)}}{132}{figure.C.31}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.32}{\ignorespaces Midpoint mesh size against average update time (sheet)}}{96}{figure.C.32}
+\contentsline {figure}{\numberline {C.32}{\ignorespaces Midpoint mesh size against average update time (sheet)}}{133}{figure.C.32}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.33}{\ignorespaces Midpoint mesh size against average internal force time (sheet)}}{96}{figure.C.33}
+\contentsline {figure}{\numberline {C.33}{\ignorespaces Midpoint mesh size against average internal force time (sheet)}}{133}{figure.C.33}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.34}{\ignorespaces Midpoint frame time breakdown (sheet)}}{97}{figure.C.34}
+\contentsline {figure}{\numberline {C.34}{\ignorespaces Midpoint frame time breakdown (sheet)}}{134}{figure.C.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.35}{\ignorespaces Midpoint update time breakdown (sheet)}}{97}{figure.C.35}
+\contentsline {figure}{\numberline {C.35}{\ignorespaces Midpoint update time breakdown (sheet)}}{134}{figure.C.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.36}{\ignorespaces Midpoint mesh size against average FPS (flag)}}{99}{figure.C.36}
+\contentsline {figure}{\numberline {C.36}{\ignorespaces Midpoint mesh size against average FPS (flag)}}{144}{figure.C.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.37}{\ignorespaces Midpoint mesh size against average FPS (flag)}}{100}{figure.C.37}
+\contentsline {figure}{\numberline {C.37}{\ignorespaces Midpoint mesh size against average FPS (flag)}}{145}{figure.C.37}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.38}{\ignorespaces Midpoint time step against average FPS for a 300 by 300 mesh (flag)}}{100}{figure.C.38}
+\contentsline {figure}{\numberline {C.38}{\ignorespaces Midpoint time step against average FPS for a 300 by 300 mesh (flag)}}{145}{figure.C.38}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.39}{\ignorespaces Midpoint mesh size against average update time (flag)}}{101}{figure.C.39}
+\contentsline {figure}{\numberline {C.39}{\ignorespaces Midpoint mesh size against average update time (flag)}}{146}{figure.C.39}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.40}{\ignorespaces Midpoint mesh size against average internal force time (flag)}}{101}{figure.C.40}
+\contentsline {figure}{\numberline {C.40}{\ignorespaces Midpoint mesh size against average internal force time (flag)}}{146}{figure.C.40}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.41}{\ignorespaces Midpoint frame time breakdown (flag)}}{102}{figure.C.41}
+\contentsline {figure}{\numberline {C.41}{\ignorespaces Midpoint frame time breakdown (flag)}}{147}{figure.C.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.42}{\ignorespaces Midpoint update time breakdown (flag)}}{102}{figure.C.42}
+\contentsline {figure}{\numberline {C.42}{\ignorespaces Midpoint update time breakdown (flag)}}{147}{figure.C.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.43}{\ignorespaces Fourth Order Runge-Kutta time step against average FPS (sheet)}}{105}{figure.C.43}
+\contentsline {figure}{\numberline {C.43}{\ignorespaces Fourth Order Runge-Kutta time step against average FPS (sheet)}}{157}{figure.C.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.44}{\ignorespaces Fourth Order Runge-Kutta mesh size against average FPS (sheet)}}{106}{figure.C.44}
+\contentsline {figure}{\numberline {C.44}{\ignorespaces Fourth Order Runge-Kutta mesh size against average FPS (sheet)}}{158}{figure.C.44}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.45}{\ignorespaces Fourth Order Runge-Kutta time step against average FPS for a 300 by 300 mesh (sheet)}}{106}{figure.C.45}
+\contentsline {figure}{\numberline {C.45}{\ignorespaces Fourth Order Runge-Kutta time step against average FPS for a 300 by 300 mesh (sheet)}}{158}{figure.C.45}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.46}{\ignorespaces Fourth Order Runge-Kutta mesh size against average update time (sheet)}}{107}{figure.C.46}
+\contentsline {figure}{\numberline {C.46}{\ignorespaces Fourth Order Runge-Kutta mesh size against average update time (sheet)}}{159}{figure.C.46}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.47}{\ignorespaces Fourth Order Runge-Kutta mesh size against average internal force time (sheet)}}{107}{figure.C.47}
+\contentsline {figure}{\numberline {C.47}{\ignorespaces Fourth Order Runge-Kutta mesh size against average internal force time (sheet)}}{159}{figure.C.47}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.48}{\ignorespaces Fourth Order Runge-Kutta frame time breakdown (sheet)}}{108}{figure.C.48}
+\contentsline {figure}{\numberline {C.48}{\ignorespaces Fourth Order Runge-Kutta frame time breakdown (sheet)}}{160}{figure.C.48}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.49}{\ignorespaces Fourth Order Runge-Kutta update time breakdown (sheet)}}{108}{figure.C.49}
+\contentsline {figure}{\numberline {C.49}{\ignorespaces Fourth Order Runge-Kutta update time breakdown (sheet)}}{160}{figure.C.49}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.50}{\ignorespaces Fourth Order Runge-Kutta mesh size against average FPS (flag)}}{110}{figure.C.50}
+\contentsline {figure}{\numberline {C.50}{\ignorespaces Fourth Order Runge-Kutta mesh size against average FPS (flag)}}{170}{figure.C.50}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.51}{\ignorespaces Fourth Order Runge-Kutta mesh size against average FPS (flag)}}{111}{figure.C.51}
+\contentsline {figure}{\numberline {C.51}{\ignorespaces Fourth Order Runge-Kutta mesh size against average FPS (flag)}}{171}{figure.C.51}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.52}{\ignorespaces Fourth Order Runge-Kutta time step against average FPS for a 300 by 300 mesh (flag)}}{111}{figure.C.52}
+\contentsline {figure}{\numberline {C.52}{\ignorespaces Fourth Order Runge-Kutta time step against average FPS for a 300 by 300 mesh (flag)}}{171}{figure.C.52}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.53}{\ignorespaces Fourth Order Runge-Kutta mesh size against average update time (flag)}}{112}{figure.C.53}
+\contentsline {figure}{\numberline {C.53}{\ignorespaces Fourth Order Runge-Kutta mesh size against average update time (flag)}}{172}{figure.C.53}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.54}{\ignorespaces Fourth Order Runge-Kutta mesh size against average internal force time (flag)}}{112}{figure.C.54}
+\contentsline {figure}{\numberline {C.54}{\ignorespaces Fourth Order Runge-Kutta mesh size against average internal force time (flag)}}{172}{figure.C.54}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.55}{\ignorespaces Fourth Order Runge-Kutta frame time breakdown (flag)}}{113}{figure.C.55}
+\contentsline {figure}{\numberline {C.55}{\ignorespaces Fourth Order Runge-Kutta frame time breakdown (flag)}}{173}{figure.C.55}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.56}{\ignorespaces Fourth Order Runge-Kutta update time breakdown (flag)}}{113}{figure.C.56}
+\contentsline {figure}{\numberline {C.56}{\ignorespaces Fourth Order Runge-Kutta update time breakdown (flag)}}{173}{figure.C.56}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.57}{\ignorespaces Mesh size against average FPS for all integrators with 1ms time step (sheet)}}{116}{figure.C.57}
+\contentsline {figure}{\numberline {C.57}{\ignorespaces Mesh size against average FPS for all integrators with 1ms time step (sheet)}}{176}{figure.C.57}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.58}{\ignorespaces Mesh size against average FPS for all integrators with 5ms time step (sheet)}}{117}{figure.C.58}
+\contentsline {figure}{\numberline {C.58}{\ignorespaces Mesh size against average FPS for all integrators with 5ms time step (sheet)}}{177}{figure.C.58}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.59}{\ignorespaces Mesh size against average FPS for all integrators with 10ms time step (sheet)}}{118}{figure.C.59}
+\contentsline {figure}{\numberline {C.59}{\ignorespaces Mesh size against average FPS for all integrators with 10ms time step (sheet)}}{178}{figure.C.59}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.60}{\ignorespaces Mesh size against average FPS for all integrators with 15ms time step (sheet)}}{119}{figure.C.60}
+\contentsline {figure}{\numberline {C.60}{\ignorespaces Mesh size against average FPS for all integrators with 15ms time step (sheet)}}{179}{figure.C.60}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.61}{\ignorespaces Mesh size against average FPS for all integrators with 20ms time step (sheet)}}{120}{figure.C.61}
+\contentsline {figure}{\numberline {C.61}{\ignorespaces Mesh size against average FPS for all integrators with 20ms time step (sheet)}}{180}{figure.C.61}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.62}{\ignorespaces Average update time for each integrator (sheet)}}{121}{figure.C.62}
+\contentsline {figure}{\numberline {C.62}{\ignorespaces Average update time for each integrator (sheet)}}{181}{figure.C.62}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.63}{\ignorespaces Mesh size against average FPS for all integrators with 1ms time step (flag)}}{122}{figure.C.63}
+\contentsline {figure}{\numberline {C.63}{\ignorespaces Mesh size against average FPS for all integrators with 1ms time step (flag)}}{182}{figure.C.63}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.64}{\ignorespaces Mesh size against average FPS for all integrators with 5ms time step (flag)}}{123}{figure.C.64}
+\contentsline {figure}{\numberline {C.64}{\ignorespaces Mesh size against average FPS for all integrators with 5ms time step (flag)}}{183}{figure.C.64}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.65}{\ignorespaces Mesh size against average FPS for all integrators with 10ms time step (flag)}}{124}{figure.C.65}
+\contentsline {figure}{\numberline {C.65}{\ignorespaces Mesh size against average FPS for all integrators with 10ms time step (flag)}}{184}{figure.C.65}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.66}{\ignorespaces Mesh size against average FPS for all integrators with 15ms time step (flag)}}{125}{figure.C.66}
+\contentsline {figure}{\numberline {C.66}{\ignorespaces Mesh size against average FPS for all integrators with 15ms time step (flag)}}{185}{figure.C.66}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.67}{\ignorespaces Mesh size against average FPS for all integrators with 20ms time step (flag)}}{126}{figure.C.67}
+\contentsline {figure}{\numberline {C.67}{\ignorespaces Mesh size against average FPS for all integrators with 20ms time step (flag)}}{186}{figure.C.67}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {C.68}{\ignorespaces Average update time for each integrator (flag)}}{127}{figure.C.68}
+\contentsline {figure}{\numberline {C.68}{\ignorespaces Average update time for each integrator (flag)}}{187}{figure.C.68}
