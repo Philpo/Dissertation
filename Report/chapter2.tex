@@ -40,7 +40,7 @@ The mechanical properties of cloth, discussed above, cause cloth to exhibit two 
 \end{figure}
 
 \subsection{Cloth Models}
-Techniques for modelling cloth are usually classified as either Geometric or Physically-based, and the choice of which modelling method to use depends on the use-case for the simulation.
+Techniques for modelling cloth are usually classified as either Geometric or Physically-based, and the choice of which modelling method to use depends on the use case for the simulation.
 
 \subsubsection{Geometric Models}
 This family of techniques were the first models used to simulate cloth. They model the cloth using geometric equations and are especially good at modelling folds and wrinkles.
@@ -74,7 +74,7 @@ Continuum models were the first physical models to be proposed. Techniques in th
 \paragraph{Discrete Models}\leavevmode\\
 According to \textcite[2]{Choi2002}, "Cloth is not a homogeneous continuum. Therefore modeling fabrics as a continuum and employing FEM or FDM has several potential drawbacks". As a result several discrete, or particle, models have been proposed.
 \\With these techniques the discretisation in space is carried out by modelling the cloth as a discrete mesh, either regular or triangular, of point masses, called particles. This sacrifices some of the accuracy of continuum models, as the accuracy will depend on the number of particles used. However, this loss in accuracy is traded off against better computational performance; physical models are the only models that can be used for dynamic, real-time simulations.
-\\The discretisation of the cloth has a direct affect on the performance of the simulation; \textcite{Volino2001} have this to be of order O($n^{3}$). Hence, there is a trade off to be made between accuracy and performance when using discrete models, depending on the use-case.
+\\The discretisation of the cloth has a direct affect on the performance of the simulation; \textcite{Volino2001} have shown this to be of order O($n^{3}$). Hence, there is a trade off to be made between accuracy and performance when using discrete models, depending on the use case.
 \\By far the most popular technique is the mass-spring model. This is because, according to \textcite[2]{Zink2007}, "Mass-spring models are the most efficient as well as the simplest of the cloth models" and "is one of the most popular techniques for simulating cloth, especially when interactive frame rates are required". Thus, it has been chosen for this project and will now be described in more detail.
 
 \subsection{Mass-Spring Models}

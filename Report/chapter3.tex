@@ -155,7 +155,7 @@ became
 \begin{verbatim}
   XMVECTOR length = XMVectorSubtract(p1->getPosition(), p2->getPosition());
 \end{verbatim}
-Fig \ref{fig:profiling4} shows the the profiling results after these changes were added. The most expensive code paths now are all DirectXMath functions directly involved in calculating Equations \ref{eq:hooke equation} and \ref{eq:spring damping}.
+Fig \ref{fig:profiling4} shows the profiling results after these changes were added. The most expensive code paths now are all DirectXMath functions directly involved in calculating Equations \ref{eq:hooke equation} and \ref{eq:spring damping}.
 \\Implementing both of these changes awarded performance gains of 40FPS for a debug build with a 50$^{2}$ mesh.
 \\\\A final optimisation step was changing the accessors and mutators in Particle to return and pass by reference. This improved performance slightly, giving gains of roughly 5FPS.
 

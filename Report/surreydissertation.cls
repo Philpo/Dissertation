@@ -81,6 +81,7 @@
 
 \newcommand{\degree}[1]{\def\@degree{#1}}
 \newcommand{\supervisor}[1]{\def\@supervisor{#1}}
+\newcommand{\wordcount}[1]{\def\@wordcount{#1}}
 \newcommand{\urn}[1]{\def\@urn{#1}}
 
 \renewcommand{\maketitle}{
@@ -123,6 +124,7 @@
    \vspace{\stretch{1.5}}
 
    Supervised by: \@supervisor
+   \\Word count: \@wordcount
    \end{titlepage}
    \newpage
    \pagestyle{empty}
