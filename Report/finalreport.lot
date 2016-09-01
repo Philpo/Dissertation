@@ -8,11 +8,9 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {3.1}{\ignorespaces First cycle requirements}}{39}{table.3.1}
+\contentsline {table}{\numberline {3.1}{\ignorespaces First cycle requirements}}{40}{table.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {3.2}{\ignorespaces Second cycle requirements}}{41}{table.3.2}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.2}{\ignorespaces Second cycle requirements}}{42}{table.3.2}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
@@ -24,34 +22,36 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.1}{Raw data for explicit Euler (sheet)}}{81}{table.C.1}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.2}{\ignorespaces Stability results for explicit Euler (sheet)}}{92}{table.C.2}
+\contentsline {table}{\numberline {C.1}{Raw data for explicit Euler (sheet)}}{82}{table.C.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.3}{Raw data for explicit Euler (flag)}}{100}{table.C.3}
+\contentsline {table}{\numberline {C.2}{\ignorespaces Stability results for explicit Euler (sheet)}}{93}{table.C.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.4}{\ignorespaces Stability results for explicit Euler (flag)}}{111}{table.C.4}
+\contentsline {table}{\numberline {C.3}{Raw data for explicit Euler (flag)}}{101}{table.C.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.5}{Raw data for Verlet (sheet)}}{119}{table.C.5}
+\contentsline {table}{\numberline {C.4}{\ignorespaces Stability results for explicit Euler (flag)}}{112}{table.C.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.6}{\ignorespaces Stability results for Verlet (sheet)}}{130}{table.C.6}
+\contentsline {table}{\numberline {C.5}{Raw data for Verlet (sheet)}}{120}{table.C.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.7}{Raw data for Verlet (flag)}}{138}{table.C.7}
+\contentsline {table}{\numberline {C.6}{\ignorespaces Stability results for Verlet (sheet)}}{131}{table.C.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.8}{\ignorespaces Stability results for Verlet (flag)}}{149}{table.C.8}
+\contentsline {table}{\numberline {C.7}{Raw data for Verlet (flag)}}{139}{table.C.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.9}{Raw data for Midpoint (sheet)}}{157}{table.C.9}
+\contentsline {table}{\numberline {C.8}{\ignorespaces Stability results for Verlet (flag)}}{150}{table.C.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.10}{\ignorespaces Stability results for Midpoint (sheet)}}{168}{table.C.10}
+\contentsline {table}{\numberline {C.9}{Raw data for Midpoint (sheet)}}{158}{table.C.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.11}{Raw data for Midpoint (flag)}}{176}{table.C.11}
+\contentsline {table}{\numberline {C.10}{\ignorespaces Stability results for Midpoint (sheet)}}{169}{table.C.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.12}{\ignorespaces Stability results for Midpoint (flag)}}{187}{table.C.12}
+\contentsline {table}{\numberline {C.11}{Raw data for Midpoint (flag)}}{177}{table.C.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.13}{Raw data for fourth order Runge-Kutta (sheet)}}{195}{table.C.13}
+\contentsline {table}{\numberline {C.12}{\ignorespaces Stability results for Midpoint (flag)}}{188}{table.C.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.14}{\ignorespaces Stability results for fourth order Runge-Kutta (sheet)}}{206}{table.C.14}
+\contentsline {table}{\numberline {C.13}{Raw data for fourth order Runge-Kutta (sheet)}}{196}{table.C.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.15}{Raw data for fourth order Runge-Kutta (flag)}}{214}{table.C.15}
+\contentsline {table}{\numberline {C.14}{\ignorespaces Stability results for fourth order Runge-Kutta (sheet)}}{207}{table.C.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {C.16}{\ignorespaces Stability results for fourth order Runge-Kutta (flag)}}{225}{table.C.16}
+\contentsline {table}{\numberline {C.15}{Raw data for fourth order Runge-Kutta (flag)}}{215}{table.C.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {C.16}{\ignorespaces Stability results for fourth order Runge-Kutta (flag)}}{226}{table.C.16}
